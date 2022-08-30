@@ -1221,18 +1221,27 @@ table {
     transition: transform 0.4s;
   }
   &:hover {
-    background: var(--Main-Gradient);
+    background: var(--DarkCyan);
     color: var(--White);
   }
 }
 .acc_content {
-  background-color: #fff;
+  background-color: var(--DarkCyan);
+  color: white;
   font-weight: 0.85em;
   line-height: 1.6;
   display: none;
+  p {
+    color: var(--White);
+  }
+}
+.acc_input:checked ~ .acc_label {
+  background-color: var(--DarkCyan);
+  color: var(--White);
 }
 .acc_input:checked ~ .acc_content {
   display: block;
+  background-color: var(--DarkCyan);
 }
 .acc_input:checked ~ .acc_label::after {
   content: "-";

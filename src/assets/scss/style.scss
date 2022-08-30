@@ -26,12 +26,7 @@
   --Magnolia: #f4f3fe;
   --ChineseSilver: #cccccc;
   --LavenderGray: #c5c0db;
-  --Main-Gradient: linear-gradient(
-    93.48deg,
-    #ee611a -25.93%,
-    #9f3eff 57.01%,
-    #4dafec 111.22%
-  );
+  --Main-Gradient: linear-gradient(79.85deg, #009ba2 -20.87%, #bc658d 87.74%);
   --blue: rgb(26, 57, 87);
   --white: rgb(236, 236, 236);
   --DeepGreen-CyanTurquoise: #206d62;
@@ -428,8 +423,9 @@
   }
 }
 .newsletter_s {
-  background-color: var(--Gunmetal);
+  background: var(--Main-Gradient);
   padding: 80px 20px;
+  border-radius: 5px;
   margin-top: 80px;
   .subscribe {
     text-align: center;
@@ -2473,14 +2469,22 @@ textarea {
 
 .slick-dots {
   // margin-top: 20px !important;
-  bottom: -60px !important;
+  bottom: 15px !important;
 }
 .slick-dots li button:before {
   width: 30px !important;
   height: 30px !important;
+  color: var(--DarkCyan) !important;
+}
+.slick-dots li.slick-active button:before {
+  width: 30px !important;
+  height: 30px !important;
+  color: var(--DarkCyan) !important;
 }
 .testimonial_class {
-  margin-top: 110px;
+  margin-top: 60px;
+  max-width: 1024px;
+  margin: 60px auto 0 auto;
   h2 {
     font-weight: 600;
     font-size: 28px;
@@ -2490,6 +2494,13 @@ textarea {
   }
 
   .testimonial_carousels {
+    .overflow {
+      display: flex;
+      img {
+        margin-right: 15px;
+        margin-bottom: 0 !important;
+      }
+    }
     .per_review {
       background: var(--White) !important;
       margin: 8px !important;
@@ -2497,8 +2508,10 @@ textarea {
       box-shadow: var(--shadow);
       border-radius: 5px;
       img {
-        width: 25px;
-        height: 25px;
+        width: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--DarkCyan);
+        height: 40px;
         margin-bottom: 20px;
       }
       p {

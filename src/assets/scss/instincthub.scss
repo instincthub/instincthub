@@ -1,0 +1,130 @@
+@import "./main";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import "./footer";
+
+:root {
+  --DarkCyan: #00838f;
+  --TurkishRose: #bc658d;
+  --Gunmetal: #2c333a;
+  --ViridianGreen: #009ba2;
+  --White: #ffffff;
+  --Rhythm: #69779b;
+  --LightBlack: #354858;
+  --CaribbeanGreen: #00c5a2;
+  --OldLavender: #756c83;
+  --AmericanPurple: #432160;
+  --ChineseBlue: #415b90;
+  --DarkSlateGray: #314a52;
+  --MaximumRedPurple: #a03c78;
+  --DarkLavender: #6f539b;
+  --MetallicBlue: #3c5186;
+  --TiffanyBlue: #0fabbc;
+  --PoliceBlue: #394a6d;
+  --Corn: #fbeb5b;
+  --LimeGreen: #4be133;
+  --OldRose: #394a6d;
+  --Magnolia: #f4f3fe;
+  --ChineseSilver: #cccccc;
+  --LavenderGray: #c5c0db;
+  --Main-Gradient: linear-gradient(79.85deg, #009ba2 -20.87%, #bc658d 87.74%);
+  --blue: rgb(26, 57, 87);
+  --white: rgb(236, 236, 236);
+  --DeepGreen-CyanTurquoise: #206d62;
+  --Nunito: "Nunito", sans-serif;
+  --Montserat: "Montserrat", sans-serif;
+  --shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
+  --overlay: rgba(44, 51, 58, 0.2);
+}
+
+.gradient {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+  h2 {
+    font-weight: 600;
+    font-size: 28px;
+    background: var(--Main-Gradient);
+    color: #2c333a;
+    background-color: var(--Gunmetal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 34px;
+    margin-bottom: 0;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.h2heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+  h2 {
+    font-weight: 600;
+    font-size: 28px;
+    // background: var(--Main-Gradient);
+    color: #2c333a;
+    background-color: var(--Gunmetal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 34px;
+    margin-bottom: 0;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.g_carousel {
+  padding-top: 40px;
+  background-color: var(--Magnolia);
+  border-radius: 5px;
+  margin-top: 200px;
+  position: relative;
+  &::after {
+    content: "";
+    background: url("../images/testimonial-b.png") no-repeat;
+    background-size: contain;
+    background-position: right;
+    display: inline-block;
+    width: 371px !important;
+    position: absolute;
+    right: 0;
+    z-index: -11;
+    top: -210px;
+    height: 251px !important;
+  }
+}
+
+.accordion {
+  max-width: 875px;
+  margin: 20px auto;
+}
+
+.course_base {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+
+  h3 {
+    width: 100%;
+    display: block;
+    // background-color: var(--AmericanPurple);
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .python {
+    &::before {
+      content: url("../svg/python.svg");
+    }
+  }
+}

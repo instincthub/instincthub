@@ -14,11 +14,81 @@ footer {
   box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
   height: auto;
   background-color: var(--White);
-
   z-index: 10;
   margin-top: 100px;
+
   position: relative;
+  .InstinctHub_foot {
+    width: 215px;
+  }
+  .media {
+    // width: 50%;
+    display: flex;
+    max-width: 255px;
+    width: 100%;
+    margin: 0;
+    justify-content: space-between;
+    img {
+      width: 40px;
+      height: 30px;
+      object-fit: cover;
+    }
+  }
+  .location {
+    padding-left: 27px;
+    &::before {
+      content: url("../svg/location.svg");
+      position: absolute;
+      left: -5px;
+    }
+  }
+  .phone {
+    padding-left: 27px;
+    &::before {
+      content: url("../svg/phone.svg");
+      position: absolute;
+      left: -5px;
+    }
+  }
+  .email {
+    padding-left: 27px;
+    &::before {
+      content: url("../svg/email.svg");
+      position: absolute;
+      left: -5px;
+    }
+  }
   .footer_wrap {
+  }
+  .reserved_foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid rgba(33, 33, 33, 0.2);
+    .main {
+      margin-right: auto;
+      display: flex;
+      flex-wrap: wrap;
+      h5 {
+        margin-right: 20px;
+      }
+      ul {
+        display: flex;
+
+        li {
+          margin-top: 0;
+          padding: 0 10px;
+          &::before {
+            content: "";
+            width: 5px;
+            display: inline-block;
+            // height: 5px;
+            background-color: rgba(44, 51, 58, 0.2);
+          }
+        }
+      }
+    }
   }
   .reserved {
     padding: 15px 0;
@@ -50,7 +120,8 @@ footer {
       transition: 0.4s;
       margin-bottom: 10px;
       &:hover {
-        transform: scale(1.03);
+        color: var(--ViridianGreen);
+        font-weight: 600;
       }
     }
   }
@@ -127,6 +198,16 @@ footer {
       padding-bottom: 40px;
       width: 44%;
     }
+  }
+}
+@media (max-width: 540px) {
+  footer .reserved_foot .main {
+    text-align: center;
+    justify-content: center;
+  }
+  footer .media {
+    max-width: 250px;
+    margin: 20px auto;
   }
 }
 @media (min-width: 980px) {
