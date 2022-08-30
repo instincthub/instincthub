@@ -2601,6 +2601,7 @@ footer ul.breadcrumb li a:hover {
 .course_base h3 {
   width: 100%;
   display: block;
+  background-color: var(--AmericanPurple);
   max-width: 200px;
   margin: 0 auto;
   text-align: center;
