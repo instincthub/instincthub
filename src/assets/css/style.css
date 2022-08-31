@@ -635,6 +635,13 @@ button:disabled {
   background-color: var(--White);
   color: var(--DarkCyan);
   border: 2px solid var(--DarkCyan);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.outlined-btn:hover {
+  color: var(--White);
+  background-color: var(--DarkCyan);
 }
 
 .primary-btn {

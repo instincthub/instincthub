@@ -15,5 +15,9 @@ const SVGs = {
   php: require("../svg/php.svg").default,
   python: require("../svg/python.svg").default,
   react: require("../svg/react.svg").default,
+  accessable: require("../svg/accessable.svg").default,
+  affordable: require("../svg/affordable.svg").default,
+  community: require("../svg/community.svg").default,
+  support: require("../svg/support.svg").default,
 };
 export default SVGs;
