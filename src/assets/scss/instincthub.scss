@@ -80,7 +80,7 @@
   padding-top: 40px;
   background-color: var(--Magnolia);
   border-radius: 5px;
-  margin-top: 200px;
+  margin-top: 280px;
   position: relative;
   &::after {
     content: "";
@@ -97,11 +97,26 @@
   }
 }
 
+.width-manager {
+  max-width: 1440px;
+  margin: 100px auto;
+}
+
 .accordion {
   max-width: 875px;
   margin: 20px auto;
 }
-
+#courses {
+  margin: 60px auto;
+  button {
+    // margin-top: 0;
+    display: inherit;
+    margin: 0 auto;
+    &:hover {
+      animation: pulsate 0.5s;
+    }
+  }
+}
 .course_base {
   display: flex;
   justify-content: space-between;
@@ -113,7 +128,7 @@
   h3 {
     width: 100%;
     display: block;
-    background-color: var(--AmericanPurple);
+    // background-color: var(--AmericanPurple);
     max-width: 200px;
     margin: 0 auto;
     text-align: center;
@@ -125,6 +140,182 @@
   .python {
     &::before {
       content: url("../svg/python.svg");
+      position: relative;
+      left: -12px;
+      top: 15px;
     }
+  }
+  .React {
+    &::before {
+      content: url("../svg/react.svg");
+      position: relative;
+      left: -12px;
+      top: 15px;
+    }
+  }
+  .css {
+    &::before {
+      content: url("../svg/css.svg");
+      position: relative;
+      left: -12px;
+      top: 15px;
+    }
+  }
+  .html {
+    &::before {
+      content: url("../svg/html.svg");
+      position: relative;
+      left: -12px;
+      top: 15px;
+    }
+  }
+  .django {
+    &::before {
+      content: url("../svg/django.svg");
+      position: relative;
+      left: -12px;
+      top: 15px;
+    }
+  }
+  .javascript {
+    &::before {
+      content: url("../svg/js.svg");
+      position: relative;
+      left: -12px;
+      top: 15px;
+    }
+  }
+  .php {
+    &::before {
+      content: url("../svg/php.svg");
+      position: relative;
+      left: -12px;
+      top: 15px;
+    }
+  }
+}
+.featured {
+  max-width: 1172px;
+  .features_cap {
+    padding: 0 20px;
+  }
+  img {
+    height: 450px;
+    object-fit: cover;
+  }
+  h2 {
+    font-weight: 600;
+    line-height: 45px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    span {
+      font-weight: 600;
+      font-family: var(--Montserat);
+      font-size: 32px;
+      background: var(--Main-Gradient);
+      color: #2c333a;
+      background-color: var(--Gunmetal);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 34px;
+      margin-bottom: 0;
+    }
+  }
+}
+.features_cap {
+  max-width: 601px;
+}
+.manage_features {
+  h4 {
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 0;
+    line-height: 22px;
+  }
+  div {
+    padding-left: 35px;
+  }
+  p {
+    margin-top: 2px;
+  }
+  .accessible {
+    position: relative;
+    &::before {
+      content: url("../svg/accessable.svg");
+      position: absolute;
+      left: -5px;
+      top: 26px;
+    }
+  }
+  .affordable {
+    position: relative;
+    &::before {
+      content: url("../svg/affordable.svg");
+      position: absolute;
+      left: -5px;
+      top: 26px;
+    }
+  }
+  .community {
+    position: relative;
+    &::before {
+      content: url("../svg/support.svg");
+      position: absolute;
+      left: -5px;
+      top: 26px;
+    }
+  }
+  .flexible {
+    position: relative;
+    &::before {
+      content: url("../svg/flexible.svg");
+      position: absolute;
+      left: -5px;
+      top: 26px;
+    }
+  }
+}
+@media (max-width: 580px) {
+  .manage_features div::before {
+    top: 0 !important;
+  }
+}
+@media (min-width: 580px) {
+  .manage_features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div {
+      width: 47%;
+      // background-color: var(--Corn);
+      margin: 5px;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .featured h2 {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 800px) {
+  .featured {
+    display: flex;
+    justify-content: space-between;
+    .frame {
+      width: 48%;
+      img {
+        // width: 48%;
+      }
+    }
+
+    .features_cap {
+      width: 50%;
+    }
+  }
+}
+@keyframes pulsate {
+  0% {
+    box-shadow: var(--Main-Gradient);
   }
 }
