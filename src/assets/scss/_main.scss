@@ -606,7 +606,6 @@ nav {
 }
 .toggle_it {
   width: 25px;
-  // position: relative;
 }
 .underline {
   border-bottom: 1px solid var(--AmericanPurple);
@@ -935,7 +934,6 @@ $tab-content-height: 300px;
   transform: translateY(-50%);
   align-items: center;
   margin: 0 auto;
-
   display: flex;
   justify-content: center;
   background: rgba(0, 0, 0, 0.2);

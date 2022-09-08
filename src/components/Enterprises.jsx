@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Images from "../assets/images/Images";
 
 const Enterprises = () => {
@@ -15,9 +16,12 @@ const Enterprises = () => {
               graduate for that matter, to be successful. You just need
               framework and a dream.
             </p>
-
-            <button className="important-btn cab">Employee Training</button>
-            <button className="important-btn">Digital Course Creation</button>
+            <Link to="#">
+              <button className="outlined-btn cab">Employee Training</button>
+            </Link>
+            <Link to="course-creation/">
+              <button className="outlined-btn">Digital Course Creation</button>
+            </Link>
           </div>
         </div>
       </div>

@@ -19,5 +19,14 @@ const SVGs = {
   affordable: require("../svg/affordable.svg").default,
   community: require("../svg/community.svg").default,
   support: require("../svg/support.svg").default,
+  group: require("../svg/group.svg").default,
+  brief: require("../svg/brief.svg").default,
+  creation: require("../svg/creation.svg").default,
+  handoff: require("../svg/handoff.svg").default,
+  reviews: require("../svg/reviews.svg").default,
+  bulb: require("../svg/bulb.svg").default,
+  call: require("../svg/call.svg").default,
+  critical_thinking: require("../svg/critical_thinking.svg").default,
+  problem_solving: require("../svg/problem_solving.svg").default,
 };
 export default SVGs;

@@ -17,7 +17,7 @@ const IndividualGlass = () => {
               fail is not taking risks
             </p>
             <Link to="/individual">
-              <button className="important-btn">View Details</button>
+              <button className="outlined-btn">View Details</button>
             </Link>
           </div>
         </div>

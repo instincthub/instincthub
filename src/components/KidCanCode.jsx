@@ -15,8 +15,9 @@ const KidCanCode = () => {
               changing really quickly, the only strategy that is guaranteed to
               fail is not taking risks
             </p>
-
-            <button className="important-btn">View Details</button>
+            <Link to="kidscancode/">
+              <button className="outlined-btn">View Details</button>
+            </Link>
           </div>
         </div>
       </div>

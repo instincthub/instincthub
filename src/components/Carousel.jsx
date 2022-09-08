@@ -2,10 +2,10 @@ import React from "react";
 import Testimonial from "../components/Testimonial";
 import H2headings from "../components/H2headings";
 
-const Carousel = () => {
+const Carousel = (props) => {
   return (
     <section className="container">
-      <div className="g_carousel">
+      <div className="g_carousel" id={props.id}>
         <H2headings
           class="container gradient"
           h2="What People Say About Us"

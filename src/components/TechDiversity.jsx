@@ -17,7 +17,7 @@ const TechDiversity = () => {
               their hands, create value, and ultimately create opportunities
             </p>
             <a href="https://tech.instincthub.com/">
-              <button className="important-btn">View Details</button>
+              <button className="outlined-btn">View Details</button>
             </a>
           </div>
         </div>

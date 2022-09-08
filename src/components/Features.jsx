@@ -3,7 +3,7 @@ import Images from "../assets/images/Images";
 
 const Features = () => {
   return (
-    <section className="width-manager">
+    <section className="width-manager" id="spaces">
       <div className="featured">
         <div className="frame">
           <img src={Images.feature1} alt="FEATURES Pictures" />

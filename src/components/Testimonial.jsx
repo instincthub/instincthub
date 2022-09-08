@@ -8,6 +8,9 @@ export default class Responsive extends Component {
   render() {
     var settings = {
       dots: true,
+      // // className: "center",
+      // centerPadding: "60px",
+      // centerMode: true,
       margin: 10,
       infinite: false,
       speed: 500,
@@ -18,7 +21,7 @@ export default class Responsive extends Component {
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 4,
             slidesToScroll: 3,
             infinite: true,
             dots: true,
@@ -43,7 +46,7 @@ export default class Responsive extends Component {
     };
     return (
       <>
-        <section className="container">
+        <section className="container maximize_height">
           <div className=" testimonial_class">
             <Slider {...settings} className="testimonial_carousels">
               <div>
@@ -88,20 +91,18 @@ export default class Responsive extends Component {
                   </div>
                 </div>
               </div>
-
               <div>
                 <div className="per_review">
-                  <img src={Images.G_ig} alt="" />
                   <p>
-                    {" "}
                     LABEL Quis sagittis phasellus tristique scelerisque vel
-                    viverra et pulvinar purus. Dolor pretium vulputate purus,
+                    viverra et pulvinate purus. Dolor pretium vulputate purus,
                     libero enim in enim. Dolor pretium vulputate purus, libero
                     enim in enim.
                   </p>
-
-                  <h3>Authors Name</h3>
-                  <h6>Lagos,Nigeria</h6>
+                  <div className="overflow">
+                    <img src={Images.carosel1} alt="" />
+                    <h3>Authors Name</h3>
+                  </div>
                 </div>
               </div>
             </Slider>
