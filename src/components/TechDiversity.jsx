@@ -10,7 +10,7 @@ const TechDiversity = () => {
       <div className="ent_d3 slide-in-bck-center">
         <div className="prior">
           <div className="trans">
-            <h2>Individual</h2>
+            <h2>Tech Diversity</h2>
             <p>
               We believed that tech is beyond just the new oil, it is a unique
               opportunity to position young minds to take their own future in

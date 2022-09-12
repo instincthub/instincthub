@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/css/style.css";
 import "./assets/css/instincthub.css";
 import LandingPage from "./Pages/Landing";
+import About from "./Pages/About";
 import Individual from "./Pages/Apps/Individual";
 import KidsCanCode from "./Pages/Apps/KidsCanCode";
 import Enterprise from "./Pages/Apps/Enterprises";
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route index element={<LandingPage />} />
           <Route path="individual/" element={<Individual />} />
+          <Route path="about/" element={<About />} />
           <Route path="kidscancode/" element={<KidsCanCode />} />
           <Route path="enterprise/" element={<Enterprise />} />
           <Route path="course-creation/" element={<CourseCreation />} />

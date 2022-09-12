@@ -3,14 +3,14 @@ import H2headings from "./H2headings";
 
 const Accordion = () => {
   return (
-    <section className="mt-10">
+    <section className="mt-10 container" id="spaces">
       <div className="container">
         <H2headings
           class="container h2heading"
           h2="Frequently Asked Question"
           p="The best decision you can make for your self is to invest heavely into your learning."
         />
-        <div className="accordion">
+        <div className="accordion ">
           {/* What is Instincthub ? */}
           <div>
             <input

@@ -4,7 +4,7 @@ import Images from "../assets/images/Images";
 const Features = () => {
   return (
     <section className="width-manager " id="spaces">
-      <div className="featured pt-10 pb-10" id="1240">
+      <div className="featured pt-7 pb-2" id="1240">
         <div className="frame">
           <img src={Images.workspace} alt="FEATURES Pictures" />
         </div>

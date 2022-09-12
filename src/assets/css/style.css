@@ -952,7 +952,7 @@ nav h2 {
 }
 
 .hamburger {
-  margin-top: 27px;
+  margin-top: 0px;
 }
 
 .hamburger div {
@@ -2569,11 +2569,10 @@ footer ul.breadcrumb li a:hover {
   margin-top: 0;
 }
 
-.grid_container .grid-3 .ent_d3,
-.grid_container .grid-3 .ent_d4,
-.grid_container .grid-4 .ent_d3,
-.grid_container .grid-4 .ent_d4 {
-  background: url("https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80");
+.grid_container .grid-3 .ent_d3 {
+  background: url("../images/tech_diversity.png") no-repeat;
+  background-size: cover;
+  background-position: center;
   width: 100%;
   position: absolute;
   display: none;
@@ -2581,9 +2580,51 @@ footer ul.breadcrumb li a:hover {
   height: 100%;
 }
 
-.grid_container .grid-3 .ent_d3 .trans,
-.grid_container .grid-3 .ent_d4 .trans,
-.grid_container .grid-4 .ent_d3 .trans,
+.grid_container .grid-3 .ent_d3 .trans {
+  width: 100%;
+  position: absolute !important;
+  bottom: 0;
+  z-index: 99;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: inset 12.8333px -12.8333px 12.8333px rgba(165, 165, 165, 0.094), inset -12.8333px 12.8333px 12.8333px rgba(255, 255, 255, 0.094);
+          box-shadow: inset 12.8333px -12.8333px 12.8333px rgba(165, 165, 165, 0.094), inset -12.8333px 12.8333px 12.8333px rgba(255, 255, 255, 0.094);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+.grid_container .grid-3 .ent_d3 .trans h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.grid_container .grid-3 .ent_d3 .trans p {
+  color: var(--White);
+}
+
+.grid_container .grid-3 .ent_d3 .trans .c_description {
+  position: absolute !important;
+  bottom: 0 !important;
+}
+
+.grid_container .grid-3:hover .ent_d3 {
+  display: block;
+}
+
+.grid_container .grid-4 .ent_d4 {
+  background: url("https://images.unsplash.com/photo-1542000551557-3fd0ad0eb15f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80") no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  position: absolute;
+  display: none;
+  top: 0;
+  height: 100%;
+}
+
 .grid_container .grid-4 .ent_d4 .trans {
   width: 100%;
   position: absolute !important;
@@ -2597,9 +2638,6 @@ footer ul.breadcrumb li a:hover {
           backdrop-filter: blur(2px);
 }
 
-.grid_container .grid-3 .ent_d3 .trans h2,
-.grid_container .grid-3 .ent_d4 .trans h2,
-.grid_container .grid-4 .ent_d3 .trans h2,
 .grid_container .grid-4 .ent_d4 .trans h2 {
   font-weight: 600;
   font-size: 20px;
@@ -2608,24 +2646,15 @@ footer ul.breadcrumb li a:hover {
   margin-bottom: 0;
 }
 
-.grid_container .grid-3 .ent_d3 .trans p,
-.grid_container .grid-3 .ent_d4 .trans p,
-.grid_container .grid-4 .ent_d3 .trans p,
 .grid_container .grid-4 .ent_d4 .trans p {
   color: var(--White);
 }
 
-.grid_container .grid-3 .ent_d3 .trans .c_description,
-.grid_container .grid-3 .ent_d4 .trans .c_description,
-.grid_container .grid-4 .ent_d3 .trans .c_description,
 .grid_container .grid-4 .ent_d4 .trans .c_description {
   position: absolute !important;
   bottom: 0 !important;
 }
 
-.grid_container .grid-3:hover .ent_d3,
-.grid_container .grid-3:hover .ent_d4,
-.grid_container .grid-4:hover .ent_d3,
 .grid_container .grid-4:hover .ent_d4 {
   display: block;
 }
@@ -2674,8 +2703,10 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container .ent .ent_d2 {
-  background: url("https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background: url("../images/enterprise_p.png") no-repeat;
   width: 100%;
+  background-size: cover;
+  background-position: center;
   position: absolute;
   display: none;
   top: 0;
@@ -2787,7 +2818,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container .enterprise .ent_d {
-  background: url("https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80") no-repeat;
+  background: url("../images/individual_p.png") no-repeat;
   background-position: center;
   background-size: cover;
   width: 100%;

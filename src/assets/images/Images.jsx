@@ -6,6 +6,7 @@ const Images = {
   testimonial_b: require("../images/testimonial-b.png"),
   feature1: require("../images/feature1.png"),
   talentQl: require("../images/talentQl.png"),
+  enterprise: require("../images/enterprise.png"),
   // kidscancode: require("../images/kidscancode.png"),
   kidscancode: require("../images/kidscancode.gif"),
   eyowo: require("../images/eyowo.png"),
@@ -17,6 +18,7 @@ const Images = {
   kidsgif: require("../images/kidsgif.gif"),
   enterprise_landing: require("../images/enterprise_landing.png"),
   workspace: require("../images/workspace.png"),
+  laptop: require("../images/laptop.png"),
   videogif: require("../images/videogif.gif"),
   on_phone: require("../images/on_phone.jpg"),
 };

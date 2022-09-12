@@ -1,23 +1,22 @@
 import React from "react";
 import Accordion from "../../components/Accordion";
-import Carousel from "../../components/Carousel";
 import Images from "../../assets/images/Images";
 import Footer from "../../components/Footer";
 import Newsletter from "../../components/Newsletter";
 import Banner from "../../components/Banner";
 import Navbar from "../../components/Navbar";
 import Partners from "../../components/Partners";
-// import Benefits from "../../components/Benefits";
 import H2headings from "../../components/H2headings";
 import Ent_Feature from "../../components/Ent_Feature";
-import MiniHeading from "../../components/MiniHeading";
-import Process from "../../components/Process";
-import EnterpriseFeatures from "../../components/EContentF";
+import Stat from "../../components/Stat";
+import Growth from "../../components/Growth";
+import CompanyTestimonial from "../../components/Ent_Testimonials";
+import Header from "../../components/navbar/Header";
 
 const Enterprises = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Banner
         specify="indv"
         h1="A trusted partner for your employee development"
@@ -32,6 +31,10 @@ const Enterprises = () => {
         <Partners />
       </div>
       <Ent_Feature />
+      <Stat />
+      <Growth />
+      <Header />
+      <CompanyTestimonial />
       <Accordion />
       <Newsletter />
       <Footer />

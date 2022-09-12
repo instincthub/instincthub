@@ -16,7 +16,7 @@ const Enterprises = () => {
               graduate for that matter, to be successful. You just need
               framework and a dream.
             </p>
-            <Link to="#">
+            <Link to="enterprise/">
               <button className="outlined-btn cab">Employee Training</button>
             </Link>
             <Link to="course-creation/">
