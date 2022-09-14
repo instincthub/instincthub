@@ -12,11 +12,12 @@ import H2headings from "../../components/H2headings";
 import MiniHeading from "../../components/MiniHeading";
 import Process from "../../components/Process";
 import EnterpriseFeatures from "../../components/EContentF";
+import Header from "../../components/navbar/Header";
 
 const Enterprises = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <Banner
         specify="kidscc"
         h1="We help digitalizing course creation from conventional mode to digital."

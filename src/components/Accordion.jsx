@@ -3,7 +3,7 @@ import H2headings from "./H2headings";
 
 const Accordion = () => {
   return (
-    <section className="mt-10 container" id="spaces">
+    <section className="mt-10 container">
       <div className="container">
         <H2headings
           class="container h2heading"

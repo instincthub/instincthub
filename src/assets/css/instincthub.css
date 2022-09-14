@@ -1536,12 +1536,15 @@ input {
   width: 100%;
   font-style: var(--Montserat);
   padding: 15px;
-  border: 1px solid #d0d0d0;
+  border: 1px solid rgba(44, 51, 58, 0.5);
+  -webkit-filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
+          filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
+  border-radius: 5px;
   border-radius: 5px;
   height: 50px;
   font-size: 15px;
   outline: 0;
-  background-color: transparent;
+  background-color: var(--White);
 }
 
 .radio {
@@ -2978,9 +2981,36 @@ footer ul.breadcrumb li a:hover {
      object-fit: contain;
 }
 
+.gradient_b {
+  margin-top: 78px;
+  background: var(--Main-Gradient);
+}
+
+.contact_banner {
+  padding-top: 60px !important;
+  padding-bottom: 150px !important;
+  max-width: 538px;
+}
+
+.contact_banner h1 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 52px;
+  color: var(--White);
+  margin-bottom: 10px;
+}
+
+.contact_banner p {
+  color: var(--White);
+}
+
 .accordion {
   max-width: 875px;
   margin: 20px auto;
+}
+
+#active-nav {
+  border-bottom: 1px solid var(--ChineseBlue);
 }
 
 #courses {
@@ -3636,6 +3666,38 @@ footer ul.breadcrumb li a:hover {
   color: var(--White);
 }
 
+.contact_form {
+  min-height: 580px;
+  border-radius: 5px;
+  position: relative;
+  top: -80px;
+}
+
+.contact_form .contact_us {
+  background: var(--White);
+  padding: 20px;
+  min-height: 580px;
+  -webkit-box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact_form .address {
+  background-color: var(--Gunmetal);
+  padding: 30px;
+}
+
+.contact_form .address h2 {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 40px;
+  color: var(--White);
+  margin-bottom: 10px;
+}
+
+.contact_form .address ul li {
+  color: var(--White);
+}
+
 @media (max-width: 480px) {
   .individual_banner .crave_both h1 {
     font-size: 35px;
@@ -3778,6 +3840,17 @@ footer ul.breadcrumb li a:hover {
   .control_banner .cut_img img {
     margin-top: 60px;
   }
+  .contact_form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .contact_form .contact_us {
+    width: 55%;
+  }
+  .contact_form .address {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -3807,6 +3880,9 @@ footer ul.breadcrumb li a:hover {
   }
   .stats .per_stat {
     width: 30%;
+  }
+  .contact_form .contact_us {
+    padding-right: 70px;
   }
   #ent_testify {
     display: -webkit-box;

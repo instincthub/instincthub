@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
 import { Link } from "react-router-dom";
 
-const MenuItems = ({ items, depthLevel }) => {
+const MenuItems = ({ items, depthLevel }, props) => {
   const [dropdown, setDropdown] = useState(false);
 
   let ref = useRef();
@@ -36,7 +36,8 @@ const MenuItems = ({ items, depthLevel }) => {
 
   return (
     <li
-      className="menu-items"
+      className="menu-items "
+      id={props.active}
       ref={ref}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

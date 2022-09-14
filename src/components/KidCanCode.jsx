@@ -15,7 +15,7 @@ const KidCanCode = () => {
               changing really quickly, the only strategy that is guaranteed to
               fail is not taking risks
             </p>
-            <Link to="kidscancode/">
+            <Link to="products/kidscancode/">
               <button className="outlined-btn">View Details</button>
             </Link>
           </div>

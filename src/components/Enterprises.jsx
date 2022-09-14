@@ -16,10 +16,10 @@ const Enterprises = () => {
               graduate for that matter, to be successful. You just need
               framework and a dream.
             </p>
-            <Link to="enterprise/">
+            <Link to="products/enterprise/">
               <button className="outlined-btn cab">Employee Training</button>
             </Link>
-            <Link to="course-creation/">
+            <Link to="products/course-creation/">
               <button className="outlined-btn">Digital Course Creation</button>
             </Link>
           </div>

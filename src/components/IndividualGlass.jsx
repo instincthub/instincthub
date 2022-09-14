@@ -16,7 +16,7 @@ const IndividualGlass = () => {
               changing really quickly, the only strategy that is guaranteed to
               fail is not taking risks
             </p>
-            <Link to="/individual">
+            <Link to="products/individual">
               <button className="outlined-btn">View Details</button>
             </Link>
           </div>

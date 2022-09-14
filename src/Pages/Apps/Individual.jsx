@@ -9,16 +9,16 @@ import Footer from "../../components/Footer";
 import Newsletter from "../../components/Newsletter";
 import Images from "../../assets/images/Images";
 import Banner from "../../components/Banner";
-import Navbar from "../../components/Navbar";
+import Header from "../../components/navbar/Header";
 
 const Individual = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <Banner
         specify="indv"
         h1="Learn easily anywhere and anytime with our online Courses"
-        p=" Our courses provides you fun time while learning with us. With the
+        p="Our courses provides you fun time while learning with us. With the
       best mentors we have, educational strategies and well structured
       curriculum. we ensure you education will be guaranteed."
         img={Images.individual}

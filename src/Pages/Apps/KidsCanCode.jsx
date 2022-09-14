@@ -6,13 +6,13 @@ import Images from "../../assets/images/Images";
 import Footer from "../../components/Footer";
 import Newsletter from "../../components/Newsletter";
 import Banner from "../../components/Banner";
-import Navbar from "../../components/Navbar";
 import Benefits from "../../components/Benefits";
+import Header from "../../components/navbar/Header";
 
 const Individual = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <Banner
         specify="kidscc"
         h1="Quality tutoring for you Children through our digital tutorials."

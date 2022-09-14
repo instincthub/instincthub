@@ -4,7 +4,6 @@ import Images from "../../assets/images/Images";
 import Footer from "../../components/Footer";
 import Newsletter from "../../components/Newsletter";
 import Banner from "../../components/Banner";
-import Navbar from "../../components/Navbar";
 import Partners from "../../components/Partners";
 import H2headings from "../../components/H2headings";
 import Ent_Feature from "../../components/Ent_Feature";
@@ -16,7 +15,7 @@ import Header from "../../components/navbar/Header";
 const Enterprises = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Header />
       <Banner
         specify="indv"
         h1="A trusted partner for your employee development"
@@ -33,7 +32,7 @@ const Enterprises = () => {
       <Ent_Feature />
       <Stat />
       <Growth />
-      <Header />
+
       <CompanyTestimonial />
       <Accordion />
       <Newsletter />

@@ -7,14 +7,42 @@ import SVGs from "../assets/svg/SVGs";
 
 const Ent_Testimonials = () => {
   var settings = {
+    dots: true,
+
     margin: 10,
-    infinite: true,
-    speed: 500,
+    // infinite: false,
+    // speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
     autoplaySpeed: 5000,
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //     settings: {
+    //       slidesToShow: 4,
+    //       slidesToScroll: 3,
+    //       infinite: true,
+    //       dots: true,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 768,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 2,
+    //       initialSlide: 2,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 580,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
   };
   let PerCompanyStats = (props) => {
     return (
@@ -39,7 +67,7 @@ const Ent_Testimonials = () => {
                 faucibus augue elit. Urna donec sagittis.
               </p>
             </div>
-            <Slider
+            {/* <Slider
               {...settings}
               className="testimonial_carousels"
               id="id_carousel"
@@ -80,6 +108,7 @@ const Ent_Testimonials = () => {
                   />
                 </div>
               </div>
+
               <div>
                 <div className="per_review">
                   <img
@@ -116,7 +145,7 @@ const Ent_Testimonials = () => {
                   />
                 </div>
               </div>
-            </Slider>
+            </Slider> */}
           </div>
           <div className="static_img">
             <img src={Images.enterprise} alt="" />

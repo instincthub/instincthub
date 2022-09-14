@@ -5,44 +5,33 @@ export const menuItems = [
     submenu: [
       {
         title: "Course Library",
-        url: "/web-design",
+        url: "/course-library",
       },
-
       {
         title: "Track Library",
-        url: "seo",
+        url: "/track-library",
       },
     ],
   },
-  // {
-  //   title: "About",
-  //   url: "/who-we-are",
-  //   // submenu: [
-  //   //   {
-  //   //     title: "Who we are",
-  //   //     url: "who-we-are",
-  //   //   },
-  //   //   {
-  //   //     title: "Our values",
-  //   //     url: "our-values",
-  //   //   },
-  //   // ],
-  // },
+
   {
     title: "Blog",
     url: "/",
   },
   {
     title: "Pricing",
-    url: "/about",
+    url: "/products/pricing",
   },
   {
     title: "Career",
-    url: "/about",
+    url: "/products/career",
   },
-
+  {
+    title: "About",
+    url: "/products/about",
+  },
   {
     title: "Contact",
-    url: "/about",
+    url: "/products/contact",
   },
 ];
