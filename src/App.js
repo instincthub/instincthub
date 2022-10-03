@@ -5,6 +5,8 @@ import "./assets/css/instincthub.css";
 import LandingPage from "./Pages/Landing";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import Policy from "./Pages/Policy";
+import Career from "./Pages/Career";
 import Individual from "./Pages/Apps/Individual";
 import KidsCanCode from "./Pages/Apps/KidsCanCode";
 import Enterprise from "./Pages/Apps/Enterprises";
@@ -21,6 +23,8 @@ function App() {
           <Route path="/products/contact/" element={<Contact />} />
           <Route path="/products/kidscancode/" element={<KidsCanCode />} />
           <Route path="/products/enterprise/" element={<Enterprise />} />
+          <Route path="/privacy-policy" element={<Policy />} />
+          <Route path="/products/career" element={<Career />} />
           <Route
             path="/products/course-creation/"
             element={<CourseCreation />}

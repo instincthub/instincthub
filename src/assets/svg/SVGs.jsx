@@ -12,6 +12,11 @@ const SVGs = {
   django: require("../svg/django.svg").default,
   html: require("../svg/html.svg").default,
   js: require("../svg/js.svg").default,
+  w_facebook: require("../svg/w_facebook.svg").default,
+  w_twitter: require("../svg/w_twitter.svg").default,
+  w_linkedin: require("../svg/w_linkedin.svg").default,
+  w_whatsapp: require("../svg/w_whatsapp.svg").default,
+  w_ig: require("../svg/w_ig.svg").default,
   php: require("../svg/php.svg").default,
   python: require("../svg/python.svg").default,
   react: require("../svg/react.svg").default,
@@ -30,5 +35,8 @@ const SVGs = {
   sterling: require("../svg/sterling.svg").default,
   critical_thinking: require("../svg/critical_thinking.svg").default,
   problem_solving: require("../svg/problem_solving.svg").default,
+  star_gif: require("../svg/stargif.svg").default,
+  mail: require("../svg/mail.svg").default,
+  linkedin_b: require("../svg/linkedin_b.svg").default,
 };
 export default SVGs;

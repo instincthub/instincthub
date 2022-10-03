@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Images from "../assets/images/Images";
 import SVGs from "../assets/svg/SVGs";
 
@@ -40,10 +41,12 @@ const Footer = () => {
         </div>
         <div className="quick_links">
           <ul>
-            <h5>Categories</h5>
+            <h5>Helpful Links</h5>
+
             <li>
-              <a href="">Privacy and policy</a>
+              <Link to="/privacy-policy">Privacy and policy</Link>
             </li>
+
             <li>
               <a href="">Terms & Condition</a>
             </li>

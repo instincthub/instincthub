@@ -1,24 +1,8 @@
-import React from "react";
-
-const Test = () => {
-  return (
-    <>
-      <div>
-        <h1>I am a test</h1>
-        Lorem ipsum dlor sit amet consectetur adipisicing elit. Laudantium
-        numquam illo neque ab, animi quo ad. Commodi numquam quia modi porro eum
-        aperies perspiciatis illum pariatur, consequuntur aut, quasi fugit?
-      </div>
-
-      <div className="grid_container">
-        <div className="individual">Header</div>
-        <div className="enterprise">Enterprises</div>
-        <div className="">Enterprises</div>
-        <div className="">Enterprises</div>
-        <div className="footer">Footer</div>
-      </div>
-    </>
-  );
-};
-
-export default Test;
+<div className="mini_heading">
+  <p className="cap_lock-txt">Our Team</p>
+  <h2>Meet our team</h2>
+  <p>
+    Eget egestas dolor pretium etiam volutpat. Dapibus non malesuada purus
+    venenatis cursus orci nunc ut eu. Non interdum vitae risus eu purus
+  </p>
+</div>;

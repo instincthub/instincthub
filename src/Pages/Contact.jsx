@@ -11,7 +11,7 @@ const Contact = () => {
       <Header />
       <C_Banner />
       <ContactForm />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </>
   );
