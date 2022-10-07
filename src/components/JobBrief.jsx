@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Privacy from "./Privacy";
-import Terms from "./Terms";
+import { HashLink as Link } from "react-router-hash-link";
+import JBrief from "./JBrief";
 
 const JobTabs = () => {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -10,19 +10,13 @@ const JobTabs = () => {
   return (
     <>
       <div className="container job_tab">
-        <div className="mt-10 tab_flex">
+        <div className="mt-5 tab_flex">
           <div className="tabs flex_1 dummy_height">
             <button
               className={`tab ${checkActive(1, "active")}`}
               onClick={() => handleClick(1)}
             >
-              Privacy Policy
-            </button>
-            <button
-              className={`tab ${checkActive(2, "active")}`}
-              onClick={() => handleClick(2)}
-            >
-              Terms and condition
+              Job Brief
             </button>
           </div>
 
@@ -31,14 +25,7 @@ const JobTabs = () => {
               Privacy Policy
             =========== */}
             <div className={`panel ${checkActive(1, "active")}`}>
-              <Privacy />
-            </div>
-
-            {/*==========
-              Terms and condition
-            =========== */}
-            <div className={`panel ${checkActive(2, "active")}`}>
-              <Terms />
+              <JBrief />
             </div>
           </div>
         </div>

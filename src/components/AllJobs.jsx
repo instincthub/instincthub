@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AllJobs = () => {
   let PerJob = (props) => {
@@ -8,8 +9,9 @@ const AllJobs = () => {
           <h5>{props.role}</h5>
           <p>{props.location}</p>
         </div>
-
-        <button className="outlined-btn">Apply</button>
+        <Link to="/products/job">
+          <button className="outlined-btn">Apply</button>
+        </Link>
       </div>
     );
   };

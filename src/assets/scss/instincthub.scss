@@ -574,6 +574,12 @@
     line-height: 45px;
     margin-bottom: 0px;
   }
+  h3 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 45px;
+    margin-bottom: 0px;
+  }
 }
 #ent_testify {
   margin: 0 !important;
@@ -894,6 +900,382 @@
     }
   }
 }
+.job_values {
+  margin-top: 50px;
+  .ff_case {
+    margin-bottom: 50px;
+    img {
+      width: 120px;
+      height: 120px;
+    }
+    h4 {
+      font-weight: 600;
+      font-size: 25px;
+      margin-top: 18px;
+      line-height: 30px;
+      margin-bottom: 0;
+    }
+  }
+}
+#CareerBenefits {
+  max-width: 1080px;
+  margin: 50px auto;
+  margin-bottom: 150px;
+  .mini_heading {
+    margin: 0 auto;
+  }
+  .benefit_parent {
+    text-align: center;
+    margin-top: 50px;
+    .p_benefit {
+      margin-bottom: 50px;
+      img {
+        width: 48px;
+        height: 48px;
+      }
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 0em;
+        margin-bottom: 0;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+#Growth {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  .mini_heading {
+    margin-bottom: 30px;
+  }
+}
+.career_banner {
+  background-color: rgba(43, 131, 143, 0.07);
+  min-height: 570px;
+  margin-top: 80px;
+  h1 {
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  button {
+    margin-top: 8px;
+  }
+  .frame_2 {
+    display: flex;
+    margin-top: 35px;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+  }
+  .main_content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      text-align: center;
+    }
+  }
+}
+#jobBrief {
+  .main_post {
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 34px;
+      margin-bottom: 0;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    > .job_mode {
+      padding-bottom: 15px;
+      display: flex;
+      border-bottom: 1px solid #2c333a;
+      justify-content: space-between;
+      max-width: 271px;
+      margin-top: 17px;
+      h4 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+
+        text-align: left;
+      }
+      ul {
+        li {
+          margin: 0;
+          list-style: square;
+        }
+      }
+    }
+  }
+  .main_brief {
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 35px;
+      line-height: 22px;
+      letter-spacing: 0em;
+      margin-bottom: 0;
+      text-align: left;
+    }
+    ul {
+      li {
+        margin-left: 20px;
+        list-style: square;
+      }
+    }
+  }
+}
+#latestBlog {
+  margin-top: 130px;
+  // max-width: 1111px;
+
+  .mini_heading {
+    margin: 0 auto;
+    p {
+      text-align: center;
+    }
+  }
+  .main_latest {
+    margin-top: 100px;
+  }
+  .blog_title {
+    margin-top: 25px;
+    p {
+      max-width: 500px;
+    }
+    h2 {
+      font-size: 32px;
+      margin-top: 20px;
+      font-weight: 600;
+      margin-bottom: 0;
+      line-height: 45px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+}
+.b_label {
+  button {
+    margin-top: 0;
+    margin-right: 15px;
+    cursor: none;
+    padding: 8 15px;
+    &:hover {
+      background: none;
+      color: unset;
+    }
+  }
+
+  .on_technology {
+    color: #bc658d;
+    border: 2px solid #bc658d;
+  }
+}
+.avatar_time {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  .avatar_before {
+    display: flex;
+    margin-right: 30px;
+    img {
+      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+      line-height: 22px;
+      letter-spacing: 0em;
+      margin-top: 5px;
+      text-align: left;
+    }
+  }
+  h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    &::before {
+      position: relative;
+      top: 5px;
+      margin-right: 10px;
+      content: url("../svg/clock.svg");
+    }
+  }
+}
+.blog_categories {
+  margin-top: 100px;
+  .tab.active {
+    background-color: transparent;
+    color: var(--DarkCyan);
+    border-bottom: 4px solid var(--DarkCyan);
+  }
+  button {
+    text-align: center;
+    border-radius: 0;
+  }
+  .tabs {
+    margin: 0 auto;
+    margin-bottom: 60px;
+  }
+}
+.blog_control {
+  .blog_title {
+    margin-top: 20px;
+    button {
+      border-radius: 5px;
+      padding: 8px 15px;
+    }
+  }
+  .each_blog {
+    margin-bottom: 50px;
+    img {
+    }
+    h2 {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 40px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-bottom: 0;
+    }
+    p {
+      max-width: 410px;
+    }
+  }
+}
+
+.details_img {
+  height: 350px;
+  object-fit: cover;
+}
+.more_posts {
+  margin-top: 120px;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  h4 {
+    margin-bottom: 30px;
+  }
+}
+.compulsory {
+  footer {
+    margin-top: 0;
+  }
+}
+.blog_details {
+  .blog_d {
+    max-width: 873px;
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 45px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    h2 {
+      margin-top: 40px;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 30px;
+      margin-bottom: 10px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    p {
+      margin-top: 20px;
+    }
+  }
+
+  .views {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 16px;
+    margin-left: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .blog_title {
+    margin-top: 50px;
+    button {
+      margin-top: 15px;
+      padding: 8px 15px;
+    }
+  }
+  .avatar_time {
+    margin-bottom: 15px;
+  }
+}
+.next_prev {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  p {
+    margin-top: 0;
+  }
+  .prev_btn,
+  .next_btn {
+    display: flex;
+  }
+  button {
+    margin: 0 15px;
+    margin-top: 10px;
+    height: 45px;
+  }
+  .next_btn {
+    p {
+      text-align: right;
+    }
+  }
+}
+
+.comment_section {
+  max-width: 760px;
+  h4 {
+    margin-bottom: 30px;
+  }
+  .eachcomment {
+    display: flex;
+    border-bottom: 2px solid #2c333a;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    img {
+      width: 45px;
+      height: 45px;
+      margin-right: 20px;
+      border-radius: 50%;
+    }
+    h4 {
+      margin: 0;
+    }
+  }
+}
 // ============
 @media (max-width: 480px) {
   .individual_banner .crave_both h1 {
@@ -920,6 +1302,9 @@
     h2 {
       margin-top: 0;
     }
+  }
+  .flex_2 {
+    margin-top: 150px;
   }
   .whoweare {
     margin: 0 auto;
@@ -964,6 +1349,19 @@
     }
   }
 }
+@media (min-width: 670px) {
+  #CareerBenefits {
+    .benefit_parent {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .p_benefit {
+        width: 48%;
+        padding: 0 20px;
+      }
+    }
+  }
+}
 @media (max-width: 800px) {
   .featured h2 {
     margin-top: 20px;
@@ -988,12 +1386,14 @@
       width: 45%;
     }
   }
-  .fourcard_grid {
+  .fourcard_grid,
+  .threecard_grid {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     .grid-row {
-      width: 48%;
+      margin-bottom: 75px;
+      width: 47%;
     }
   }
 }
@@ -1039,7 +1439,7 @@
     display: flex;
     justify-content: space-between;
     .crave_both {
-      width: 52%;
+      width: 45%;
     }
     .txt-align {
       text-align: left;
@@ -1059,6 +1459,33 @@
       width: 55%;
     }
     .address {
+      width: 50%;
+    }
+  }
+  .CoreValues {
+    display: flex;
+    justify-content: space-between;
+    .mini_heading {
+      width: 45%;
+    }
+    .job_values {
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  .main_latest {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+
+    img {
+      width: 45%;
+      height: 350px;
+      object-fit: cover;
+    }
+    .blog_title {
+      margin-top: 0 !important;
       width: 50%;
     }
   }
@@ -1088,10 +1515,48 @@
       height: 70px;
     }
   }
+  .career_banner {
+    .frame1 {
+      background-image: url("../images/together.png");
+      background-repeat: no-repeat;
+      background-position: top right;
+      padding-top: 25px;
+    }
+    .frame_2 {
+      background-image: url("../images/together_2.png");
+      background-repeat: no-repeat;
+      background-size: 218px 181px;
+      background-position: bottom left;
+    }
+  }
   .stats .per_stat {
     width: 30%;
   }
-  .fourcard_grid {
+  #CareerBenefits {
+    margin-bottom: 80px;
+    .benefit_parent {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .p_benefit {
+        width: 33%;
+        padding: 0 20px;
+      }
+    }
+  }
+  #Growth {
+    display: flex;
+    justify-content: space-between;
+    .mini_heading {
+      width: 47%;
+    }
+    .img_disk {
+      margin-top: 50px;
+      width: 50%;
+    }
+  }
+  .fourcard_grid,
+  .threecard_grid {
     .grid-row {
       width: 32.5%;
     }
@@ -1124,6 +1589,22 @@
 
     .process {
       width: 30%;
+    }
+  }
+  .CoreValues {
+    display: flex;
+    justify-content: space-between;
+    .mini_heading {
+      width: 40%;
+    }
+    .job_values {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .ff_case {
+        width: 45%;
+      }
     }
   }
 }

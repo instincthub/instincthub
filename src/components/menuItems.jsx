@@ -16,7 +16,7 @@ export const menuItems = [
 
   {
     title: "Blog",
-    url: "/",
+    url: "/blog",
   },
   {
     title: "Pricing",

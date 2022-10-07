@@ -2570,6 +2570,9 @@ footer ul.breadcrumb li a:hover {
 
 .grid_container button {
   margin-top: 0;
+  background: transparent;
+  border: 1px solid var(--White);
+  color: #ffffff !important;
 }
 
 .grid_container .grid-3 .ent_d3 {

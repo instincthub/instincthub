@@ -7,6 +7,9 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Policy from "./Pages/Policy";
 import Career from "./Pages/Career";
+import JobDetails from "./Pages/JobDetails";
+import Blog from "./Pages/Blog/Blog";
+import BlogDetails from "./Pages/Blog/BlogDetails";
 import Individual from "./Pages/Apps/Individual";
 import KidsCanCode from "./Pages/Apps/KidsCanCode";
 import Enterprise from "./Pages/Apps/Enterprises";
@@ -25,6 +28,9 @@ function App() {
           <Route path="/products/enterprise/" element={<Enterprise />} />
           <Route path="/privacy-policy" element={<Policy />} />
           <Route path="/products/career" element={<Career />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog-details" element={<BlogDetails />} />
+          <Route path="/products/job" element={<JobDetails />} />
           <Route
             path="/products/course-creation/"
             element={<CourseCreation />}

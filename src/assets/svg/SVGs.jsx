@@ -37,6 +37,10 @@ const SVGs = {
   problem_solving: require("../svg/problem_solving.svg").default,
   star_gif: require("../svg/stargif.svg").default,
   mail: require("../svg/mail.svg").default,
-  linkedin_b: require("../svg/linkedin_b.svg").default,
+  dollar: require("../svg/dollar.svg").default,
+  growth: require("../svg/growth_chart.svg").default,
+  plane: require("../svg/plane.svg").default,
+  workstation: require("../svg/workstation.svg").default,
+  team: require("../svg/team.svg").default,
 };
 export default SVGs;
