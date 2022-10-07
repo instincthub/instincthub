@@ -3276,7 +3276,10 @@ footer ul.breadcrumb li a:hover {
   background-color: rgba(43, 131, 143, 0.07);
   -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
           box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  min-height: 88vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
 }
 
 #kidscc {
@@ -3288,8 +3291,7 @@ footer ul.breadcrumb li a:hover {
   background-image: url("../svg/glass.svg");
   background-repeat: no-repeat;
   background-position: top right;
-  padding-top: 80px;
-  min-height: 450px !important;
+  min-height: 100vh !important;
 }
 
 .individual_banner .crave_both {
@@ -3937,7 +3939,7 @@ footer ul.breadcrumb li a:hover {
 
 .career_banner {
   background-color: rgba(43, 131, 143, 0.07);
-  min-height: 570px;
+  min-height: 100vh;
   margin-top: 80px;
 }
 
