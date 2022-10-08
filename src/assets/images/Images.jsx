@@ -11,7 +11,6 @@ const Images = {
   blog2: require("../images/blog2.jpg"),
   blog3: require("../images/blog3.jpg"),
   blog4: require("../images/blog4.jpg"),
-
   casual: require("../images/Casual-life.png"),
   casual2: require("../images/casual2.png"),
   carosel1: require("../images/carosel1.png"),

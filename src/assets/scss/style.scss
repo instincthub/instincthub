@@ -43,9 +43,9 @@
 }
 
 .g-background {
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
-  margin-top: 67px;
+
   background: linear-gradient(79.85deg, #009ba2 -20.87%, #bc658d 87.74%);
 }
 .second_guy {
@@ -61,8 +61,7 @@
   max-width: 495px;
 }
 .grid_container {
-  margin-top: 20px;
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   font-size: 20px;
   display: grid;
@@ -1801,75 +1800,101 @@ textarea {
   transition: 0.4s;
   margin-bottom: 30px;
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.02);
     box-shadow: var(--shadow);
   }
 }
 .subsc {
-  margin-top: 50px;
+  padding-top: 150px;
   margin-bottom: 100px;
   // .plans {
   //   margin-bottom: 40px;
   //   width: 100%;
   // }
   .plan_top {
-    text-align: center;
-    // padding: 10px 0;
-    background-color: var(--Magnolia);
+    text-align: left;
+    // padding: 15px;
+    background-color: #fdfdfd;
+    a {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: var(--DarkCyan);
+      margin-left: 15px;
+    }
     h3 {
-      background-color: var(--Gunmetal);
-      padding: 5px 0;
+      background: var(--Main-Gradient);
+      padding: 5px 15px;
       color: var(--White);
       font-size: 18px;
       margin: 0;
     }
+    .price {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 27px;
+      letter-spacing: 0em;
+    }
+    span {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
     h4 {
       padding-top: 15px;
       font-weight: 600;
+      margin-left: 15px;
+      margin-bottom: 15px;
     }
     p {
       padding-bottom: 15px;
       margin-top: 0px;
-      text-align: center;
+      margin-left: 15px;
+
       font-weight: 500;
     }
   }
   .access {
-    padding: 10px 20px;
+    padding: 10px 15px;
     button {
-      margin-top: 100px;
+      margin-top: 50px;
       width: 100%;
+      background: var(--DarkCyan);
     }
     li {
       position: relative;
-      margin-left: 45px;
+      margin-left: 30px;
       margin-top: 20px;
       &::before {
-        background: url("https://www.svgrepo.com/show/49904/check-mark-black-outline.svg");
+        background: url("../svg/outline_check.svg");
         background-repeat: no-repeat;
         content: "";
         background-size: cover;
         display: block;
         height: 20px;
         position: absolute;
-        top: 6px;
-        left: -40px;
+        top: 4px;
+        left: -32px;
         width: 20px;
       }
     }
     .not_available {
       position: relative;
-      margin-left: 45px;
+      margin-left: 30px;
       &::before {
-        background: url("https://www.svgrepo.com/show/112623/close.svg");
+        background: url("../svg/outline_close.svg");
         background-repeat: no-repeat;
         content: "";
         background-size: cover;
         display: block;
         height: 20px;
         position: absolute;
-        top: 6px;
-        left: -40px;
+        top: 4px;
+        left: -32px;
         width: 20px;
       }
     }
@@ -1899,6 +1924,7 @@ textarea {
     max-width: 600px;
   }
 }
+
 // TABS
 .select_case {
   max-width: 700px;

@@ -6,6 +6,7 @@ const SVGs = {
   facebook: require("../svg/facebook.svg").default,
   youtube: require("../svg/youtube.svg").default,
   linkedin: require("../svg/linkedin.svg").default,
+  linkedin_b: require("../svg/linkedin_b.svg").default,
   twitter: require("../svg/twitter.svg").default,
   instagram: require("../svg/instagram.svg").default,
   css: require("../svg/css.svg").default,

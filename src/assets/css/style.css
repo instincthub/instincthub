@@ -1077,6 +1077,7 @@ ul.breadcrumb li a:hover {
 .container {
   max-width: 1680px;
   margin: 0 auto;
+  margin-bottom: 150px;
   padding: 0 20px;
 }
 
@@ -2228,6 +2229,10 @@ footer {
   position: relative;
 }
 
+footer .container {
+  margin-bottom: 0;
+}
+
 footer .InstinctHub_foot {
   width: 215px;
 }
@@ -2531,9 +2536,8 @@ footer ul.breadcrumb li a:hover {
 }
 
 .g-background {
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
-  margin-top: 67px;
   background: linear-gradient(79.85deg, #009ba2 -20.87%, #bc658d 87.74%);
 }
 
@@ -2550,8 +2554,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container {
-  margin-top: 20px;
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   font-size: 20px;
   display: -ms-grid;
@@ -4609,85 +4612,113 @@ textarea {
 }
 
 .plans:hover {
-  -webkit-transform: scale(1.04);
-          transform: scale(1.04);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
   -webkit-box-shadow: var(--shadow);
           box-shadow: var(--shadow);
 }
 
 .subsc {
-  margin-top: 50px;
+  padding-top: 150px;
   margin-bottom: 100px;
 }
 
 .subsc .plan_top {
+  text-align: left;
+  background-color: #fdfdfd;
+}
+
+.subsc .plan_top a {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
   text-align: center;
-  background-color: var(--Magnolia);
+  color: var(--DarkCyan);
+  margin-left: 15px;
 }
 
 .subsc .plan_top h3 {
-  background-color: var(--Gunmetal);
-  padding: 5px 0;
+  background: var(--Main-Gradient);
+  padding: 5px 15px;
   color: var(--White);
   font-size: 18px;
   margin: 0;
 }
 
+.subsc .plan_top .price {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0em;
+}
+
+.subsc .plan_top span {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
 .subsc .plan_top h4 {
   padding-top: 15px;
   font-weight: 600;
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
 
 .subsc .plan_top p {
   padding-bottom: 15px;
   margin-top: 0px;
-  text-align: center;
+  margin-left: 15px;
   font-weight: 500;
 }
 
 .subsc .access {
-  padding: 10px 20px;
+  padding: 10px 15px;
 }
 
 .subsc .access button {
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100%;
+  background: var(--DarkCyan);
 }
 
 .subsc .access li {
   position: relative;
-  margin-left: 45px;
+  margin-left: 30px;
   margin-top: 20px;
 }
 
 .subsc .access li::before {
-  background: url("https://www.svgrepo.com/show/49904/check-mark-black-outline.svg");
+  background: url("../svg/outline_check.svg");
   background-repeat: no-repeat;
   content: "";
   background-size: cover;
   display: block;
   height: 20px;
   position: absolute;
-  top: 6px;
-  left: -40px;
+  top: 4px;
+  left: -32px;
   width: 20px;
 }
 
 .subsc .access .not_available {
   position: relative;
-  margin-left: 45px;
+  margin-left: 30px;
 }
 
 .subsc .access .not_available::before {
-  background: url("https://www.svgrepo.com/show/112623/close.svg");
+  background: url("../svg/outline_close.svg");
   background-repeat: no-repeat;
   content: "";
   background-size: cover;
   display: block;
   height: 20px;
   position: absolute;
-  top: 6px;
-  left: -40px;
+  top: 4px;
+  left: -32px;
   width: 20px;
 }
 

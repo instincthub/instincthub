@@ -7,6 +7,8 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Policy from "./Pages/Policy";
 import Career from "./Pages/Career";
+import Pricing from "./Pages/Pricing";
+import Payment from "./Pages//Payment";
 import JobDetails from "./Pages/JobDetails";
 import Blog from "./Pages/Blog/Blog";
 import BlogDetails from "./Pages/Blog/BlogDetails";
@@ -28,6 +30,8 @@ function App() {
           <Route path="/products/enterprise/" element={<Enterprise />} />
           <Route path="/privacy-policy" element={<Policy />} />
           <Route path="/products/career" element={<Career />} />
+          <Route path="/products/pricing" element={<Pricing />} />
+          <Route path="/payment" element={<Payment />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog-details" element={<BlogDetails />} />
           <Route path="/products/job" element={<JobDetails />} />

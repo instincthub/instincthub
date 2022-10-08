@@ -1,3 +1,4 @@
+import SpeedDial from "../components/SpeedDial";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -21,6 +22,7 @@ const KidCanCode = () => {
           </div>
         </div>
       </div>
+      <SpeedDial />
     </div>
   );
 };
