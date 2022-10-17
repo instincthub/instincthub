@@ -415,6 +415,9 @@
   background-repeat: no-repeat;
   background-position: top right;
   min-height: 100vh !important;
+  .container {
+    margin-bottom: 0px !important;
+  }
   .crave_both {
     padding-top: 100px;
     h1 {

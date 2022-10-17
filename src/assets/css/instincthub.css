@@ -3371,6 +3371,10 @@ footer ul.breadcrumb li a:hover {
   min-height: 100vh !important;
 }
 
+.individual_banner .container {
+  margin-bottom: 0px !important;
+}
+
 .individual_banner .crave_both {
   padding-top: 100px;
 }

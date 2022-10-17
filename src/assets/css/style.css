@@ -2601,7 +2601,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .g-background {
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   background: linear-gradient(79.85deg, #009ba2 -20.87%, #bc658d 87.74%);
 }
@@ -2619,12 +2619,12 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container {
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   font-size: 20px;
   display: -ms-grid;
   display: grid;
-  margin-top: 60px;
+  margin-top: 67px;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: 0 1fr 1fr;
