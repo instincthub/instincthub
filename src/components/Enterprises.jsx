@@ -17,10 +17,10 @@ const Enterprises = () => {
               framework and a dream.
             </p>
             <Link to="products/enterprise/">
-              <button className="outlined-btn cab">Employee Training</button>
+              <button className="outlined-btn cab">Training</button>
             </Link>
             <Link to="products/course-creation/">
-              <button className="outlined-btn">Digital Course Creation</button>
+              <button className="outlined-btn">Create Course</button>
             </Link>
           </div>
         </div>

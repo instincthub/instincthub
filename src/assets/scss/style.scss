@@ -43,7 +43,7 @@
 }
 
 .g-background {
-  height: 90vh;
+  height: 90.7vh;
   width: 100vw;
 
   background: linear-gradient(79.85deg, #009ba2 -20.87%, #bc658d 87.74%);
@@ -61,11 +61,11 @@
   max-width: 495px;
 }
 .grid_container {
-  height: 90vh;
+  height: 90.7vh;
   width: 100vw;
   font-size: 20px;
   display: grid;
-  margin-top: 67px;
+
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 0 1fr 1fr;
   // gap: 10px;
@@ -425,6 +425,7 @@
     }
   }
 }
+
 .Majorheading {
   font-weight: 600;
   font-size: 32px;
