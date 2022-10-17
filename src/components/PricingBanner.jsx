@@ -15,8 +15,8 @@ const PricingBanner = () => {
 
             <span class="slider round"></span>
           </label>
-          <p className="monthly_bill">Billed monthly</p>
-          <p className="yearly_bill">Billed Yearly</p>
+          <p className="monthly_bill">Bill me Yearly</p>
+          {/* <p className="yearly_bill">Billed Yearly</p> */}
         </div>
       </div>
     </section>

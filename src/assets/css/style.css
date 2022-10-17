@@ -2077,6 +2077,71 @@ input:valid {
   font-weight: 400;
 }
 
+.select_me {
+  width: 200px;
+  position: relative;
+  font-family: var(--Nunito);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.select_me .select-btn {
+  padding: 10px;
+  background: var(--White);
+  border-radius: 5px;
+  border: 1px solid rgba(44, 51, 58, 0.2);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--Gunmetal);
+}
+
+.select_me .select-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.select_me .select_content {
+  position: absolute;
+  top: 55px;
+  padding: 10px;
+  width: 100%;
+  left: 0;
+  font-weight: 500;
+  background: #ffffff;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+}
+
+.select_me .select_items {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 10px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.select_me .select_items:hover {
+  background-color: rgba(0, 131, 143, 0.07);
+}
+
 @media (max-width: 768px) {
   .navlinks {
     -webkit-box-orient: vertical;
@@ -2559,6 +2624,7 @@ footer ul.breadcrumb li a:hover {
   font-size: 20px;
   display: -ms-grid;
   display: grid;
+  margin-top: 60px;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: 0 1fr 1fr;
@@ -4608,7 +4674,7 @@ textarea {
           transform: scale(1);
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .plans:hover {
@@ -5731,9 +5797,9 @@ textarea {
 }
 
 /**
- * ----------------------------------------
+ * ---------------------
  * animation slide-bottom
- * ---------------------------------- */
+ * ------------------- */
 @-webkit-keyframes slide-bottom {
   0% {
     -webkit-transform: translateY(0);
@@ -6045,6 +6111,7 @@ textarea {
   .grid_container {
     display: block;
     height: 100%;
+    margin-top: 60px;
   }
   .grid_container .per_gird {
     min-height: 400px;

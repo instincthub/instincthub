@@ -65,6 +65,7 @@
   width: 100vw;
   font-size: 20px;
   display: grid;
+  margin-top: 60px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 0 1fr 1fr;
   // gap: 10px;
@@ -1798,7 +1799,7 @@ textarea {
   border-radius: 5px;
   transform: scale(1);
   transition: 0.4s;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   &:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow);
@@ -2733,9 +2734,9 @@ textarea {
 }
 
 /**
- * ----------------------------------------
+ * ---------------------
  * animation slide-bottom
- * ---------------------------------- */
+ * ------------------- */
 @-webkit-keyframes slide-bottom {
   0% {
     -webkit-transform: translateY(0);
@@ -3028,7 +3029,7 @@ textarea {
   .grid_container {
     display: block;
     height: 100%;
-
+    margin-top: 60px;
     .per_gird {
       min-height: 400px;
       // border: 1px solid chartreuse;

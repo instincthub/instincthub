@@ -26,6 +26,7 @@ const SVGs = {
   community: require("../svg/community.svg").default,
   support: require("../svg/support.svg").default,
   group: require("../svg/group.svg").default,
+  chevron_down: require("../svg/chevron_down.svg").default,
   clock: require("../svg/clock.svg").default,
   brief: require("../svg/brief.svg").default,
   creation: require("../svg/creation.svg").default,
