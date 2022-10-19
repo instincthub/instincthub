@@ -24,7 +24,7 @@ const AllBlog = () => {
     <>
       <section className="threecard_grid blog_control">
         <EachBlog
-          link=""
+          link="slug"
           blogimg={Images.blog1}
           authorimg={Images.img1}
           authorname="Sodiq A. Makinde"
@@ -33,6 +33,7 @@ const AllBlog = () => {
           encryption="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
         />
         <EachBlog
+          link="slug"
           blogimg={Images.blog2}
           authorimg={Images.img2}
           authorname="Sodiq A. Makinde"
@@ -41,6 +42,7 @@ const AllBlog = () => {
           encryption="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
         />
         <EachBlog
+          link="slug"
           blogimg={Images.blog3}
           authorimg={Images.img3}
           authorname="Sodiq A. Makinde"
@@ -49,6 +51,7 @@ const AllBlog = () => {
           encryption="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
         />
         <EachBlog
+          link="slug"
           blogimg={Images.blog4}
           authorimg={Images.img4}
           authorname="Sodiq A. Makinde"

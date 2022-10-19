@@ -5,11 +5,11 @@ export const menuItems = [
     submenu: [
       {
         title: "Course Library",
-        url: "/course-library",
+        url: "https://skills.instincthub.com/",
       },
       {
         title: "Track Library",
-        url: "/track-library",
+        url: "https://skills.instincthub.com/tracks/",
       },
     ],
   },
@@ -24,14 +24,14 @@ export const menuItems = [
   },
   {
     title: "Career",
-    url: "/products/career",
+    url: "/about/career",
   },
   {
     title: "About",
-    url: "/products/about",
+    url: "/about",
   },
   {
     title: "Contact",
-    url: "/products/contact",
+    url: "/about/contact",
   },
 ];

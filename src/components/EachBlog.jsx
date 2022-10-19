@@ -10,7 +10,7 @@ const EachBlog = (props) => {
           <button className="outlined-btn on_education">Education</button>
           <button className="outlined-btn on_technology">Technology</button>
         </div>
-        <Link to="/blog-details">
+        <Link to={'/blog/'+props.link}>
           <h2>{props.title}</h2>
         </Link>
         <p>{props.encryption}</p>

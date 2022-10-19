@@ -9,7 +9,7 @@ const AllJobs = () => {
           <h5>{props.role}</h5>
           <p>{props.location}</p>
         </div>
-        <Link to="/products/job">
+        <Link to="/about/career/slug/">
           <button className="outlined-btn">Apply</button>
         </Link>
       </div>

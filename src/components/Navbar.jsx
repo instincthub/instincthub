@@ -38,10 +38,10 @@ const Navbar = (props) => {
               <li>About</li>
             </Link>
 
-            <Link to="/contact">
+            <Link to="/about/contact">
               <li>Contact</li>
             </Link>
-            <Link to="/contact">
+            <Link to="/about/contact">
               <li>Contact</li>
             </Link>
             <Link to="/blog">

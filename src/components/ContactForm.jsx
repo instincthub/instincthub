@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SVGs from "../assets/svg/SVGs";
 
 const ContactForm = () => {
@@ -38,37 +39,43 @@ const ContactForm = () => {
           <h2>Contact info</h2>
           <ul>
             <li className="phone">
-              <a href="">(+234) 816 288 0409</a>
+              <a href="tel:+2348162880409" target='_blank' rel="noopener">(+234) 816 288 0409</a> &nbsp; | &nbsp;
+              <a href="tel:+23490164140911" target='_blank' rel="noopener">(+234) 901 641 40911</a>
             </li>
             <li className="email">
-              <a href="">info@instincthub.com</a>
+              <a href="mailto:info@instincthub.com">info@instincthub.com</a>
             </li>
           </ul>
 
           <ul className="socials_round">
             <li>
-              <a href="">
-                <img src={SVGs.w_facebook} alt="" />
+              <a href="https://wa.me/message/5IA2QYCI53SUM1" target='_blank' rel="noopener">
+                <img src={SVGs.w_whatsapp} alt="WhatsApp" />
               </a>
             </li>
             <li>
-              <a href="">
-                <img src={SVGs.w_twitter} alt="" />
+              <a href="https://facebook.com/instincthub" target='_blank' rel="noopener">
+                <img src={SVGs.w_facebook} alt="Facebook" />
               </a>
             </li>
             <li>
-              <a href="">
-                <img src={SVGs.w_whatsapp} alt="" />
+              <a href="https://twitter.com/instincthub/" target='_blank' rel="noopener">
+                <img src={SVGs.w_twitter} alt="Twitter" />
               </a>
             </li>
             <li>
-              <a href="">
-                <img src={SVGs.w_linkedin} alt="" />
+              <a href="https://linkedin.com/company/instincthub" target='_blank' rel="noopener">
+                <img src={SVGs.w_linkedin} alt="LinkedIn" />
               </a>
             </li>
             <li>
-              <a href="">
-                <img src={SVGs.w_ig} alt="" />
+              <a href="https://instagram.com/instincthub_" target='_blank' rel="noopener">
+                <img src={SVGs.w_ig} alt="Instagram" />
+              </a>
+            </li>
+            <li>
+              <a href="https://youtube.com/instincthub" target='_blank' rel="noopener">
+                <img src={SVGs.w_youtube} alt="YouTube" />
               </a>
             </li>
           </ul>

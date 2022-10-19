@@ -34,15 +34,15 @@ const Header = () => {
               );
             })}
             <div className="sign_up" id="mobile">
-              <button className="outlined-btn">Login</button>
-              <button className="important-btn">Get Started</button>
+              <Link to="/"> <button className="outlined-btn">Login</button> </Link> 
+              <Link to="/"> <button className="important-btn">Get Started</button> </Link> 
             </div>
           </ul>
         </div>
 
         <div className="sign_up" id="screen">
-          <button className="outlined-btn">Login</button>
-          <button className="important-btn">Get Started</button>
+          <Link to="/"> <button className="outlined-btn">Login</button> </Link> 
+          <Link to="/"> <button className="important-btn">Get Started</button> </Link> 
         </div>
         <div
           className="hamburger"

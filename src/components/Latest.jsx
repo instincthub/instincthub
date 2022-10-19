@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Images from "../assets/images/Images";
 
 const Latest = () => {
@@ -17,7 +18,7 @@ const Latest = () => {
             <button className="outlined-btn on_education">Education</button>
             <button className="outlined-btn on_technology">Technology</button>
           </div>
-          <h2>Password Authentication Vs Passwordless Authentication</h2>
+          <Link to="/blog/slug/"><h2>Password Authentication Vs Passwordless Authentication</h2></Link>
           <p>
             Passwords have significantly impacted today's society since the
             beginning of the 21st century. However, technology is beyond; we use

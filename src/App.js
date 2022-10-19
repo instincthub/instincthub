@@ -23,22 +23,28 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<LandingPage />} />
+
+          {/* About */}
+          <Route path="/about/" element={<About />} />
+          <Route path="/about/contact/" element={<Contact />} />
+          <Route path="/about/career/" element={<Career />} />
+          <Route path="/about/career/:slug/" element={<JobDetails />} />
+
+          {/* Products */}
           <Route path="/products/individual/" element={<Individual />} />
-          <Route path="/products/about/" element={<About />} />
-          <Route path="/products/contact/" element={<Contact />} />
           <Route path="/products/kidscancode/" element={<KidsCanCode />} />
           <Route path="/products/enterprise/" element={<Enterprise />} />
-          <Route path="/privacy-policy" element={<Policy />} />
-          <Route path="/products/career" element={<Career />} />
-          <Route path="/products/pricing" element={<Pricing />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/products/course-creation/" element={<CourseCreation />} />
+          <Route path="/products/pricing/" element={<Pricing />} />
+          <Route path="/product/payment/" element={<Payment />} />
+
+          {/* Policies */}
+          <Route path="/policies/privacy-policy/" element={<Policy />} />
+          
+          {/* Posts */}
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog-details" element={<BlogDetails />} />
-          <Route path="/products/job" element={<JobDetails />} />
-          <Route
-            path="/products/course-creation/"
-            element={<CourseCreation />}
-          />
+          <Route path="/blog/:slug/" element={<BlogDetails />} />
+          
         </Routes>
       </BrowserRouter>
     </>

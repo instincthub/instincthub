@@ -65,10 +65,11 @@ const Footer = () => {
               <a href="">No 1. Apapa lane, Dolphin Estate, Ikoyi, Lagos</a>
             </li>
             <li className="phone">
-              <a href="">(+234) 816 288 0409</a>
+              <a href="tel:+2348162880409" target='_blank' rel="noopener">(+234) 816 288 0409</a><br></br>
+              <a href="tel:+23490164140911" target='_blank' rel="noopener">(+234) 901 641 40911</a>
             </li>
             <li className="email">
-              <a href="">info@instincthub.com</a>
+              <a href="mailto:info@instincthub.com">info@instincthub.com</a>
             </li>
           </ul>
         </div>
@@ -79,30 +80,33 @@ const Footer = () => {
           <div className="main">
             <h5>© 2022. All right reserved</h5>
             <ul>
-              <a href="">
+              <a href="/">
                 <li>Terms & Conditions</li>
               </a>
-              <a href="">
+              <a href="/policies/privacy-policy">
                 <li>Privacy</li>
               </a>
             </ul>
           </div>
 
           <div className="media">
-            <a href="">
-              <img src={SVGs.youtube} alt="ig" />
+            <a href="https://wa.me/message/5IA2QYCI53SUM1" blank="_blank" rel="noreferrer">
+              <img src={SVGs.whatsapp} alt="ig" />
             </a>
-            <a href="">
-              <img src={SVGs.linkedin} alt="ig" />
+            <a href="https://twitter.com/instincthub/" blank="_blank" rel="noreferrer">
+              <img src={SVGs.twitter} alt="ig" />
             </a>
-            <a href="">
+            <a href="https://facebook.com/instincthub" blank="_blank" rel="noreferrer">
               <img src={SVGs.facebook} alt="ig" />
             </a>
-            <a href="">
+            <a href="https://instagram.com/instincthub_" blank="_blank" rel="noreferrer">
               <img src={SVGs.instagram} alt="ig" />
             </a>
-            <a href="">
-              <img src={SVGs.twitter} alt="ig" />
+            <a href="https://linkedin.com/company/instincthub" blank="_blank" rel="noreferrer">
+              <img src={SVGs.linkedin} alt="ig" />
+            </a>
+            <a href="https://youtube.com/instincthub" blank="_blank" rel="noreferrer">
+              <img src={SVGs.youtube} alt="ig" />
             </a>
           </div>
         </div>

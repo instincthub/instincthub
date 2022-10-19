@@ -2437,6 +2437,7 @@ nav h2 {
   .sign_up button {
     padding: 8px 15px;
     margin: 0;
+    height: 40px;
   }
   .sign_up .outlined-btn {
     margin-right: 10px;
@@ -3852,7 +3853,7 @@ footer ul.breadcrumb li a:hover {
       -ms-flex-align: center;
           align-items: center;
   min-height: 500px;
-  background: url("https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80") no-repeat;
+  background: url("../images/about.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -4459,11 +4460,13 @@ footer ul.breadcrumb li a:hover {
 
 .speed_dial .major_dial ul {
   position: absolute;
-  top: -10px;
+  top: 0px;
   background-color: var(--White);
-  left: -30px;
+  left: -40px;
   padding: 15px;
   width: 200px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .speed_dial .major_dial ul li {
@@ -4472,6 +4475,7 @@ footer ul.breadcrumb li a:hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   font-weight: 600;
+  border-radius: 5px;
 }
 
 .speed_dial .major_dial ul li:hover {
@@ -4480,16 +4484,23 @@ footer ul.breadcrumb li a:hover {
 }
 
 .speed_dial .major_dial button {
-  width: 65px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   padding: 0;
   position: relative;
-  top: 180px;
+  top: 197px;
   left: 121px;
   background: var(--White);
   border-radius: 50%;
   color: var(--DarkCyan) !important;
   font-size: 45px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
+}
+.speed_dial .major_dial button::after{
+  content: '+';
+  position: absolute;
+  top: -3px;
+  right: 10px;
 }
 
 .speed_dial .major_dial button:hover {
