@@ -1539,8 +1539,6 @@ input {
   font-style: var(--Montserat);
   padding: 15px;
   border: 1px solid rgba(44, 51, 58, 0.5);
-  -webkit-filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
-          filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
   border-radius: 5px;
   border-radius: 5px;
   height: 50px;
@@ -2647,7 +2645,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container .grid-3 .ent_d3 {
-  background: url("../images/tech_diversity.png") no-repeat;
+  background: url("../images/tech-diversity.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -2692,7 +2690,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container .grid-4 .ent_d4 {
-  background: url("https://images.unsplash.com/photo-1542000551557-3fd0ad0eb15f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80") no-repeat;
+  background: url("../images/kids-cann-code.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -2780,7 +2778,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container .ent .ent_d2 {
-  background: url("../images/enterprise_p.png") no-repeat;
+  background: url("../images/enterprise.jpg") no-repeat;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -6113,7 +6111,6 @@ textarea {
   .grid_container {
     display: block;
     height: 100%;
-    margin-top: 60px;
   }
   .grid_container .per_gird {
     min-height: 400px;
