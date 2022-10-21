@@ -1,3 +1,4 @@
+import React from "react";
 // import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/css/style.css";
@@ -19,7 +20,6 @@ import LandingPage from "./Pages/Landing";
 
 function App() {
   return (
-    <>
       <BrowserRouter>
         <Routes>
           <Route index element={<LandingPage />} />
@@ -47,7 +47,6 @@ function App() {
           
         </Routes>
       </BrowserRouter>
-    </>
   );
 }
 
