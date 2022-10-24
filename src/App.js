@@ -20,7 +20,7 @@ import LandingPage from "./Pages/Landing";
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename="/instincthub">
         <Routes>
           <Route index element={<LandingPage />} />
 
