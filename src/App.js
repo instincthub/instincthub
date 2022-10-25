@@ -31,7 +31,7 @@ function App() {
         <Route path="/about/career/:slug/" element={<JobDetails />} />
 
         {/* Products */}
-        <Route path="/products/individual/" element={<Individual />} />
+        <Route path="products/individual" element={<Individual />} />
         <Route path="/products/kidscancode/" element={<KidsCanCode />} />
         <Route path="/products/enterprise/" element={<Enterprise />} />
         <Route path="/products/course-creation/" element={<CourseCreation />} />
