@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/instincthub/static/css/main.42984555.css",
-    "main.js": "/instincthub/static/js/main.9245bdce.js",
+    "main.css": "/instincthub/static/css/main.7c63ffec.css",
+    "main.js": "/instincthub/static/js/main.a4f3bd64.js",
     "static/media/about.png": "/instincthub/static/media/about.4c70c71c7ad630fb478f.png",
     "static/media/individual_p.png": "/instincthub/static/media/individual_p.37c7a7703df8de16f315.png",
     "static/media/feature1.png": "/instincthub/static/media/feature1.c7f957c1de39382371f3.png",
@@ -66,10 +66,13 @@
     "static/media/dollar.svg": "/instincthub/static/media/dollar.2c4d0816135a72c14433751ac2994530.svg",
     "static/media/growth_chart.svg": "/instincthub/static/media/growth_chart.18760ae3bf2f64da2e4ba6075acf76c9.svg",
     "static/media/reviews.svg": "/instincthub/static/media/reviews.766b9dc80bc4eeb70cbe1e3e3039415a.svg",
+    "static/media/slick.svg": "/instincthub/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/w_whatsapp.svg": "/instincthub/static/media/w_whatsapp.bdc6753f9439516a76afa6c552f58bfb.svg",
     "index.html": "/instincthub/index.html",
     "static/media/workstation.svg": "/instincthub/static/media/workstation.633e7c47ed0b5f6ca106590aab907d9a.svg",
+    "static/media/slick.eot": "/instincthub/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/python.svg": "/instincthub/static/media/python.4b58c87e8122aa176bc9a28a86ba3355.svg",
+    "static/media/slick.ttf": "/instincthub/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/instructor.svg": "/instincthub/static/media/instructor.7b26d26fc10e8ecc145e.svg",
     "static/media/community.svg": "/instincthub/static/media/community.7e074b3a18732907b9c2ef1802942f2f.svg",
     "static/media/support.svg": "/instincthub/static/media/support.7e074b3a18732907b9c2ef1802942f2f.svg",
@@ -78,6 +81,7 @@
     "static/media/student.svg": "/instincthub/static/media/student.670397acbb910e011c61.svg",
     "static/media/size.svg": "/instincthub/static/media/size.eaa9439de1e8fc321e9a.svg",
     "static/media/affordable.svg": "/instincthub/static/media/affordable.5d07f9d0836cb9abfbab5bbf3e574e34.svg",
+    "static/media/slick.woff": "/instincthub/static/media/slick.295183786cd8a1389865.woff",
     "static/media/creation.svg": "/instincthub/static/media/creation.26dca0584c6e8562400baed22cba81f1.svg",
     "static/media/call.svg": "/instincthub/static/media/call.f4567a757e151a1cacd12a78004fdce1.svg",
     "static/media/phone.svg": "/instincthub/static/media/phone.788d74d6c54a6f3f1a5a357cae12d8a8.svg",
@@ -111,11 +115,11 @@
     "static/media/outline_check.svg": "/instincthub/static/media/outline_check.5f638d9494735465c064.svg",
     "static/media/check_circle.svg": "/instincthub/static/media/check_circle.5b09b32cfe7845f971c9.svg",
     "static/media/chevron_down.svg": "/instincthub/static/media/chevron_down.183bb32dd4d3c1b6f2165b21fd545519.svg",
-    "main.42984555.css.map": "/instincthub/static/css/main.42984555.css.map",
-    "main.9245bdce.js.map": "/instincthub/static/js/main.9245bdce.js.map"
+    "main.7c63ffec.css.map": "/instincthub/static/css/main.7c63ffec.css.map",
+    "main.a4f3bd64.js.map": "/instincthub/static/js/main.a4f3bd64.js.map"
   },
   "entrypoints": [
-    "static/css/main.42984555.css",
-    "static/js/main.9245bdce.js"
+    "static/css/main.7c63ffec.css",
+    "static/js/main.a4f3bd64.js"
   ]
 }
