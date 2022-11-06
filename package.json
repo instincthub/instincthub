@@ -21,6 +21,7 @@
     "react-spring": "^9.5.2",
     "react-switch": "^7.0.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

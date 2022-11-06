@@ -20,20 +20,28 @@ const SpeedDial = () => {
   return (
     <div className="speed_dial">
       <div className="major_dial">
-        <ul className={showMenu} onMou>
-          <Link to="/about/contact/">
-            <li>Contact </li>
-          </Link>
-
+        <ul className={showMenu}>
           <Link to="/about/">
             <li>About</li>
+          </Link>
+
+          <Link to="/blog">
+            <li>Blog</li>
+          </Link>
+
+          <Link to="/about/contact/">
+            <li>Contact </li>
           </Link>
 
           <Link to="/products/pricing/">
             <li>Pricing</li>
           </Link>
         </ul>
-        <button className="outlined-btn" onClick={Dial} onMouseOver={Dial}></button>
+        <button
+          className="outlined-btn"
+          onClick={Dial}
+          onMouseOver={Dial}
+        ></button>
       </div>
     </div>
   );

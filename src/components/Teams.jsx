@@ -15,7 +15,7 @@ const Teams = () => {
               <img src={SVGs.linkedin_b} alt="" />
             </a>
             <a href={props.email}>
-              <img src={SVGs.mail} alt="" />
+              <img src={SVGs.custom_t} alt="" />
             </a>
           </div>
         </div>

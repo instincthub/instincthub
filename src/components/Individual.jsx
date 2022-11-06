@@ -10,7 +10,7 @@ const FreePlan = () => {
           <p className="price">
             N20,000 <span> /Monthly</span>
           </p>
-          <p>$000 billed annually save 20%</p>
+          <p>N0 saved from monthly ,0% Discount</p>
         </div>
 
         <ul className="access">

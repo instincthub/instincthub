@@ -10,6 +10,7 @@ const SVGs = {
   linkedin_b: require("../svg/linkedin_b.svg").default,
   twitter: require("../svg/twitter.svg").default,
   instagram: require("../svg/instagram.svg").default,
+  custom_t: require("../svg/custom-twitter.svg").default,
   css: require("../svg/css.svg").default,
   django: require("../svg/django.svg").default,
   html: require("../svg/html.svg").default,
