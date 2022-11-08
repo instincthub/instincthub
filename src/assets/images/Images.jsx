@@ -1,5 +1,9 @@
 const Images = {
   logo: require("../images/instincthub.png"),
+  avatar: require("../images/avatar.png"),
+  pencil: require("../images/pencil.png"),
+  valid: require("../images/Valid.png"),
+  error: require("../images/error.png"),
   img1: require("../images/img1.jpg"),
   img2: require("../images/img2.jpg"),
   img3: require("../images/img3.jpg"),

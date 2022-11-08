@@ -10,6 +10,8 @@ import Policy from "./Pages/Policy";
 import Career from "./Pages/Career";
 import Pricing from "./Pages/Pricing";
 import Payment from "./Pages//Payment";
+import Success from "./Pages/PricingAlert/Success";
+import Error from "./Pages/PricingAlert/Error";
 import JobDetails from "./Pages/JobDetails";
 import Blog from "./Pages/Blog/Blog";
 import BlogDetails from "./Pages/Blog/BlogDetails";
@@ -36,7 +38,9 @@ function App() {
         <Route path="/products/enterprise/" element={<Enterprise />} />
         <Route path="/products/course-creation/" element={<CourseCreation />} />
         <Route path="/products/pricing/" element={<Pricing />} />
-        <Route path="/product/payment/" element={<Payment />} />
+        {/* <Route path="/product/payment/" element={<Payment />} /> */}
+        <Route path="/product/payment=success" element={<Success />} />
+        <Route path="/product/payment=error" element={<Error />} />
 
         {/* Policies */}
         <Route path="/policies/privacy-policy/" element={<Policy />} />

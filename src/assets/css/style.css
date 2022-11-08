@@ -54,6 +54,169 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.HandlingOverlay {
+  width: 100%;
+  overflow: auto;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.overlayFormEngage .easy {
+  max-width: 550px;
+}
+
+.overlayFormEngage .easy h4 {
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.overlayFormEngage span {
+  margin: 0;
+  position: relative;
+  top: -7px;
+  left: 10px;
+}
+
+.overlayFormEngage .through {
+  margin-top: 20px;
+  border-bottom: 1px solid #3333;
+}
+
+.overlayFormEngage .through .thefile {
+  text-align: center;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px dashed rgba(44, 51, 58, 0.5);
+  margin-bottom: 30px;
+}
+
+.overlayFormEngage .through .thefile input {
+  display: none;
+}
+
+.overlayFormEngage button {
+  border: 1px solid var(--Gunmetal) !important;
+  padding: 15px 20px;
+  margin: 0;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.overlayFormEngage .checkmac {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.overlayFormEngage .personal {
+  margin-top: 20px;
+  border-bottom: 1px solid #3333;
+  padding-bottom: 30px;
+}
+
+.overlayFormEngage .action-btn {
+  text-align: right;
+}
+
+.overlayFormEngage .action-btn button {
+  border: 0;
+  font-weight: 500;
+}
+
+.overlayFormEngage .hiring {
+  margin-top: 30px;
+}
+
+.overlayFormEngage input,
+.overlayFormEngage textarea {
+  margin-bottom: 17px;
+}
+
+.overlayFormEngage .addin_exp {
+  border-bottom: 1px solid #3333;
+  margin: 25px 0;
+  padding-bottom: 40px;
+}
+
+.overlayFormEngage .addin_exp .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.overlayFormEngage .addin_exp .top h4 {
+  font-weight: 500;
+}
+
+.overlayFormEngage .addin_exp .top button {
+  background: linear-gradient(79.85deg, #009ba2 -20.87%, #bc658d 87.74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.overlayFormEngage .addin_exp .main_experience {
+  padding: 15px;
+  background: #fdfdfd;
+  border: 1px solid rgba(44, 51, 58, 0.2);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+@media (max-width: 488px) {
+  .overlayFormEngage {
+    padding: 20px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .overlayFormEngage .personal h4 {
+    margin-bottom: 10px;
+  }
+  .overlayFormEngage .double_input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .overlayFormEngage .double_input input {
+    width: 48.5%;
+  }
+  .overlayFormEngage .through {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .overlayFormEngage .through .thefile {
+    width: 65%;
+  }
+  .overlayFormEngage .through .usethis {
+    width: 30%;
+  }
+}
+
 .DarkLavender {
   background-color: var(--DarkLavender);
 }

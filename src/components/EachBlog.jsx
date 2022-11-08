@@ -7,10 +7,12 @@ const EachBlog = (props) => {
       <img src={props.blogimg} alt="" />
       <div className="blog_title">
         <div className="b_label">
-          <button className="outlined-btn on_education">Education</button>
-          <button className="outlined-btn on_technology">Technology</button>
+          <button className="outlined-btn on_technology">
+            {props.category}
+          </button>
+          {/* <button className="outlined-btn on_technology">Technology</button> */}
         </div>
-        <Link to={'/blog/'+props.link}>
+        <Link to={"/blog/" + props.link}>
           <h2>{props.title}</h2>
         </Link>
         <p>{props.encryption}</p>

@@ -2,7 +2,8 @@ import React from "react";
 import Footer from "../../components/Footer";
 import LatestBlog from "../../components/Latest";
 import Newsletter from "../../components/Newsletter";
-import Categories from "../../components/BlogCategories";
+import Checkthis from "./Checkthis";
+// import Categories from "../../components/BlogCategories";
 import Header from "../../components/navbar/Header";
 
 const Blog = () => {
@@ -10,7 +11,8 @@ const Blog = () => {
     <section>
       <Header />
       <LatestBlog />
-      <Categories />
+      {/* <Categories /> */}
+      <Checkthis />
       <Newsletter />
       <Footer />
     </section>

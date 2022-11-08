@@ -32,9 +32,9 @@ const FreePlan = () => {
           </li>
           <li className="not_available">Team learning Analytics</li>
 
-          <Link to="/payment">
-            <button className="native-btn">Choose Plan</button>
-          </Link>
+          <button className="native-btn" disabled>
+            Activated
+          </button>
         </ul>
       </div>
     </div>

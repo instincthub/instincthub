@@ -35,9 +35,11 @@ const FreePlan = () => {
           </li>
           <li className="not_available">Team learning Analytics</li>
 
-          <Link to="/payment">
+          {/* <Link to="/payment"> */}
+          <a href="https://paystack.com/pay/instincthub-courses-month">
             <button className="native-btn">Choose Plan</button>
-          </Link>
+          </a>
+          {/* </Link> */}
         </ul>
       </div>
     </div>

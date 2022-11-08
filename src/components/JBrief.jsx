@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Modal from "../components/ApplyForm";
 
-const Privacy = () => {
+const JobBriefing = () => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className="phone_top" id="jobBrief">
       <div className="main_post">
@@ -124,10 +126,13 @@ const Privacy = () => {
           </ul>
         </div>
 
-        <button className="important-btn">Apply Now</button>
+        <button className="important-btn" onClick={() => setOpenModal(true)}>
+          Apply Now
+        </button>
+        <Modal open={openModal} onClose={() => setOpenModal(false)} />
       </div>
     </div>
   );
 };
 
-export default Privacy;
+export default JobBriefing;

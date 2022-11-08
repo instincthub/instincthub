@@ -9,7 +9,7 @@ const FreePlan = () => {
           <h3>Recommended</h3>
           <h4>Track</h4>
           <p className="price">
-            672,000 <span> /Yearly</span>
+            400,000 <span> /Yearly</span>
           </p>
           <p>N168,000 saved from annual,20% Discount</p>
         </div>
@@ -30,9 +30,9 @@ const FreePlan = () => {
           <li>Ability to assign courses & Skill paths</li>
           <li>Team learning Analytics</li>
 
-          <Link to="/payment">
+          <a href="https://paystack.com/pay/instincthub-tracks-yearly">
             <button className="native-btn">Choose Plan</button>
-          </Link>
+          </a>
         </ul>
       </div>
     </div>

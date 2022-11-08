@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Images from "../assets/images/Images";
 import SVGs from "../assets/svg/SVGs";
 
 const Footer = () => {
+  // const [year, setYear] = useState("changeYear");
+
+  // const handleYear = () => {
+  //   if (year === "changeYear") {
+  //     setYear.innerHTML = new Date().getFullYear();
+  //   }
+  // };
+
+  const getYear = () => {
+    return new Date().getFullYear();
+  };
+
   return (
     <footer>
       <div className="footer_wrap container">
@@ -44,7 +56,7 @@ const Footer = () => {
             <h5>Helpful Links</h5>
 
             <li>
-              <Link to="/privacy-policy">Privacy and policy</Link>
+              <Link to="/policies/privacy-policy/">Privacy and policy</Link>
             </li>
 
             <li>
@@ -65,8 +77,13 @@ const Footer = () => {
               <a href="">No 1. Apapa lane, Dolphin Estate, Ikoyi, Lagos</a>
             </li>
             <li className="phone">
-              <a href="tel:+2348162880409" target='_blank' rel="noopener">(+234) 816 288 0409</a><br></br>
-              <a href="tel:+23490164140911" target='_blank' rel="noopener">(+234) 901 641 40911</a>
+              <a href="tel:+2348162880409" target="_blank" rel="noopener">
+                (+234) 816 288 0409
+              </a>
+              <br></br>
+              <a href="tel:+23490164140911" target="_blank" rel="noopener">
+                (+234) 901 641 40911
+              </a>
             </li>
             <li className="email">
               <a href="mailto:info@instincthub.com">info@instincthub.com</a>
@@ -78,7 +95,9 @@ const Footer = () => {
       <div className=" container">
         <div className="foot_label reserved_foot">
           <div className="main">
-            <h5>© 2022. All right reserved</h5>
+            <h5>
+              © <span id="changeYear">2021</span> All right reserved
+            </h5>
             <ul>
               <a href="/">
                 <li>Terms & Conditions</li>
@@ -90,22 +109,46 @@ const Footer = () => {
           </div>
 
           <div className="media">
-            <a href="https://wa.me/message/5IA2QYCI53SUM1" blank="_blank" rel="noreferrer">
+            <a
+              href="https://wa.me/message/5IA2QYCI53SUM1"
+              blank="_blank"
+              rel="noreferrer"
+            >
               <img src={SVGs.whatsapp} alt="ig" />
             </a>
-            <a href="https://twitter.com/instincthub/" blank="_blank" rel="noreferrer">
+            <a
+              href="https://twitter.com/instincthub/"
+              blank="_blank"
+              rel="noreferrer"
+            >
               <img src={SVGs.twitter} alt="ig" />
             </a>
-            <a href="https://facebook.com/instincthub" blank="_blank" rel="noreferrer">
+            <a
+              href="https://facebook.com/instincthub"
+              blank="_blank"
+              rel="noreferrer"
+            >
               <img src={SVGs.facebook} alt="ig" />
             </a>
-            <a href="https://instagram.com/instincthub_" blank="_blank" rel="noreferrer">
+            <a
+              href="https://instagram.com/instincthub_"
+              blank="_blank"
+              rel="noreferrer"
+            >
               <img src={SVGs.instagram} alt="ig" />
             </a>
-            <a href="https://linkedin.com/company/instincthub" blank="_blank" rel="noreferrer">
+            <a
+              href="https://linkedin.com/company/instincthub"
+              blank="_blank"
+              rel="noreferrer"
+            >
               <img src={SVGs.linkedin} alt="ig" />
             </a>
-            <a href="https://youtube.com/instincthub" blank="_blank" rel="noreferrer">
+            <a
+              href="https://youtube.com/instincthub"
+              blank="_blank"
+              rel="noreferrer"
+            >
               <img src={SVGs.youtube} alt="ig" />
             </a>
           </div>

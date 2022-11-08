@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "title": "Jubilant HollisterStier LLC",
+    "category": "Security",
+    "author": "Hobey",
+    "date": "2022-01-23 07:44:02"
+  },
+  {
+    "id": 2,
+    "title": "Par Pharmaceutical Inc.",
+    "category": "Education",
+    "author": "Byran",
+    "date": "2022-08-11 01:18:21"
+  },
+  {
+    "id": 3,
+    "title": "Robell Research, Inc.",
+    "category": "Security",
+    "author": "Rourke",
+    "date": "2022-07-11 01:04:33"
+  },
+  {
+    "id": 4,
+    "title": "Physicians Total Care, Inc.",
+    "category": "Security",
+    "author": "Guy",
+    "date": "2022-09-07 20:31:35"
+  },
+  {
+    "id": 5,
+    "title": "PACK Pharmaceuticals, LLC",
+    "category": "Digital",
+    "author": "Eugenie",
+    "date": "2022-06-17 06:48:17"
+  },
+  {
+    "id": 6,
+    "title": "Teva Pharmaceuticals USA Inc",
+    "category": "Digital",
+    "author": "Mayor",
+    "date": "2022-10-14 05:41:42"
+  },
+  {
+    "id": 7,
+    "title": "PD-Rx Pharmaceuticals, Inc.",
+    "category": "Security",
+    "author": "Taddeusz",
+    "date": "2021-11-26 15:59:43"
+  },
+  {
+    "id": 8,
+    "title": "Topco Associates LLC",
+    "category": "Security",
+    "author": "Lil",
+    "date": "2022-06-28 14:32:04"
+  },
+  {
+    "id": 9,
+    "title": "Kinray Inc.",
+    "category": "Community",
+    "author": "Land",
+    "date": "2022-06-17 15:14:32"
+  },
+  {
+    "id": 10,
+    "title": "Uriel Pharmacy Inc",
+    "category": "Digital",
+    "author": "Augy",
+    "date": "2022-09-13 05:08:49"
+  },
+  {
+    "id": 11,
+    "title": "Bayer HealthCare Consumer Care",
+    "category": "Community",
+    "author": "Brennan",
+    "date": "2022-11-05 06:34:02"
+  },
+  {
+    "id": 12,
+    "title": "L'Oreal USA Products Inc",
+    "category": "Community",
+    "author": "Chaddie",
+    "date": "2022-07-26 05:31:56"
+  },
+  {
+    "id": 13,
+    "title": "Cardinal Health",
+    "category": "Digital",
+    "author": "Con",
+    "date": "2022-09-14 11:43:07"
+  },
+  {
+    "id": 14,
+    "title": "Watson Laboratories, Inc.",
+    "category": "Security",
+    "author": "Dona",
+    "date": "2022-01-12 13:27:20"
+  },
+  {
+    "id": 15,
+    "title": "REMEDYREPACK INC.",
+    "category": "Community",
+    "author": "Glori",
+    "date": "2022-06-12 04:49:01"
+  },
+  {
+    "id": 16,
+    "title": "Jubilant HollisterStier LLC",
+    "category": "Security",
+    "author": "Frazier",
+    "date": "2022-08-25 13:57:36"
+  },
+  {
+    "id": 17,
+    "title": "Citron Pharma LLC",
+    "category": "Education",
+    "author": "Gran",
+    "date": "2022-09-03 08:31:25"
+  },
+  {
+    "id": 18,
+    "title": "Major Pharmaceuticals",
+    "category": "Education",
+    "author": "Sancho",
+    "date": "2022-08-13 00:41:53"
+  },
+  {
+    "id": 19,
+    "title": "Nelco Laboratories, Inc.",
+    "category": "Education",
+    "author": "Hieronymus",
+    "date": "2022-09-02 13:43:41"
+  },
+  {
+    "id": 20,
+    "title": "Pfizer Laboratories Div Pfizer Inc",
+    "category": "Technology",
+    "author": "Catha",
+    "date": "2022-09-21 15:25:08"
+  },
+  {
+    "id": 21,
+    "title": "Nelco Laboratories, Inc.",
+    "category": "Digital",
+    "author": "Pansie",
+    "date": "2022-10-04 22:38:37"
+  },
+  {
+    "id": 22,
+    "title": "Sage Products, Inc.",
+    "category": "Digital",
+    "author": "Stephenie",
+    "date": "2022-04-18 17:04:07"
+  },
+  {
+    "id": 23,
+    "title": "AMERISOURCE BERGEN",
+    "category": "Security",
+    "author": "Julietta",
+    "date": "2021-12-16 21:07:58"
+  },
+  {
+    "id": 24,
+    "title": "North Safety Products",
+    "category": "Community",
+    "author": "Katuscha",
+    "date": "2022-01-28 19:05:39"
+  },
+  {
+    "id": 25,
+    "title": "Western Family Foods, Inc",
+    "category": "Digital",
+    "author": "Averil",
+    "date": "2022-08-17 14:06:17"
+  },
+  {
+    "id": 26,
+    "title": "AvKARE, Inc.",
+    "category": "Digital",
+    "author": "Teresa",
+    "date": "2021-11-15 18:39:54"
+  },
+  {
+    "id": 27,
+    "title": "Physicians Total Care, Inc.",
+    "category": "Security",
+    "author": "Timmy",
+    "date": "2022-02-11 11:54:01"
+  },
+  {
+    "id": 28,
+    "title": "Elizabeth Arden, Inc",
+    "category": "Digital",
+    "author": "Lisetta",
+    "date": "2022-06-23 01:29:15"
+  },
+  {
+    "id": 29,
+    "title": "O.P. Products, Inc.",
+    "category": "Community",
+    "author": "Diego",
+    "date": "2022-08-20 04:10:11"
+  },
+  {
+    "id": 30,
+    "title": "Perrigo New York Inc",
+    "category": "Education",
+    "author": "Archie",
+    "date": "2022-05-23 08:45:06"
+  }
+]
