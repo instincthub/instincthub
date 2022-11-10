@@ -12,7 +12,7 @@ header {
   background: var(--Glass);
   backdrop-filter: blur(15px);
   width: 100%;
-  z-index: 40;
+  z-index: 99;
   height: 80px;
   background-color: var();
   position: fixed;
@@ -255,18 +255,22 @@ nav {
 }
 
 @media (max-width: 768px) {
+  nav {
+    top: 40px !important;
+  }
   .navlinks {
     flex-direction: column;
     display: flex;
     justify-content: initial;
-    min-width: 280px;
-    // width: 100%;
+    // min-width: 280px;
+    width: 100%;
     position: fixed;
     background: var(--White);
     padding: 20px;
     min-height: 150px;
-    top: 0;
+    top: 80px;
     z-index: 90;
+    border-top: 1px solid #2c333a26;
     transition: 0.4s;
     transform: translateX(-768px);
     left: 0;
@@ -301,7 +305,7 @@ nav {
   //   flex-direction: row-reverse;
   // }
   .menudrop {
-    transform: translate(0);
+    transform: translateY(0);
   }
   #from_mobile {
     display: none;

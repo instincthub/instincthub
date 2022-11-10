@@ -9,11 +9,13 @@ import Contact from "./Pages/Contact";
 import Policy from "./Pages/Policy";
 import Career from "./Pages/Career";
 import Pricing from "./Pages/Pricing";
-import Payment from "./Pages//Payment";
+// import Payment from "./Pages//Payment";
+import AdminLogin from "./Pages/Authentication/Login";
 import Success from "./Pages/PricingAlert/Success";
 import Error from "./Pages/PricingAlert/Error";
 import JobDetails from "./Pages/JobDetails";
 import Blog from "./Pages/Blog/Blog";
+import AdminBlog from "./Pages/Blog/Admin";
 import BlogDetails from "./Pages/Blog/BlogDetails";
 import Individual from "./Pages/Apps/Individual";
 import KidsCanCode from "./Pages/Apps/KidsCanCode";
@@ -25,6 +27,9 @@ function App() {
     <BrowserRouter basename="/instincthub">
       <Routes>
         <Route index element={<LandingPage />} />
+
+        {/* Admin Login */}
+        <Route path="/login/" element={<AdminLogin />} />
 
         {/* About */}
         <Route path="/about/" element={<About />} />
@@ -47,6 +52,7 @@ function App() {
 
         {/* Posts */}
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/admin" element={<AdminBlog />} />
         <Route path="/blog/:slug/" element={<BlogDetails />} />
       </Routes>
     </BrowserRouter>

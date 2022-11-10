@@ -1800,6 +1800,7 @@ textarea {
   transform: scale(1);
   transition: 0.4s;
   margin-bottom: 50px;
+  position: relative;
   &:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow);
@@ -1861,9 +1862,13 @@ textarea {
   }
   .access {
     padding: 10px 15px;
+    // position: relative;
     button {
       margin-top: 50px;
+      // position: absolute;
+      // bottom: 20px;
       width: 100%;
+      float: bottom;
       background: var(--DarkCyan);
     }
     li {
@@ -3080,6 +3085,9 @@ textarea {
   // .slick-slide {
   //   width: 33% !important;
   // }
+  .free_bro {
+    margin-top: 160px !important;
+  }
   .client_section {
     margin-top: 20px;
     display: flex;
@@ -3123,6 +3131,7 @@ textarea {
     margin-bottom: 100px;
     .plans {
       // width: 30%;
+      min-height: 1126px;
       margin-bottom: 20px;
     }
   }

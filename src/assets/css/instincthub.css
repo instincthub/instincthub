@@ -916,6 +916,7 @@ nav h2 {
           align-items: center;
   position: fixed;
   top: 0;
+  left: 0;
   -webkit-box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
           box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -2241,6 +2242,28 @@ input:valid {
   font-weight: 400;
 }
 
+.full-w {
+  width: 100%;
+}
+
+.selectDropdown .select_me {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.selectDropdown .select_me .select_content {
+  z-index: 3;
+}
+
+.selectDropdown .select_me .select-btn {
+  margin-bottom: 0;
+}
+
+.selectDropdown .select_me input:focus {
+  border: none;
+}
+
 .select_me {
   width: 200px;
   position: relative;
@@ -2249,13 +2272,18 @@ input:valid {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  margin-right: 10px;
+  cursor: help;
 }
 
 .select_me .select-btn {
   padding: 10px;
   background: var(--White);
   border-radius: 5px;
-  border: 1px solid rgba(44, 51, 58, 0.2);
+  border: 1px solid #2c333a;
+  -webkit-filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
+          filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
+  border-radius: 5px;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -2271,10 +2299,19 @@ input:valid {
       -ms-flex-align: center;
           align-items: center;
   color: var(--Gunmetal);
+  margin-bottom: 30px;
+}
+
+.select_me .select-btn input {
+  padding: 0 !important;
+  border: 0;
+  background-color: transparent;
+  margin: 0 !important;
+  height: auto !important;
 }
 
 .select_me .select-btn img {
-  width: 24px;
+  width: 30px;
   height: 24px;
 }
 
@@ -2453,7 +2490,7 @@ header {
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
   width: 100%;
-  z-index: 40;
+  z-index: 99;
   height: 80px;
   background-color: var();
   position: fixed;
@@ -2681,6 +2718,9 @@ nav h2 {
 }
 
 @media (max-width: 768px) {
+  nav {
+    top: 40px !important;
+  }
   .navlinks {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2692,13 +2732,14 @@ nav h2 {
     -webkit-box-pack: initial;
         -ms-flex-pack: initial;
             justify-content: initial;
-    min-width: 280px;
+    width: 100%;
     position: fixed;
     background: var(--White);
     padding: 20px;
     min-height: 150px;
-    top: 0;
+    top: 80px;
     z-index: 90;
+    border-top: 1px solid #2c333a26;
     -webkit-transition: 0.4s;
     transition: 0.4s;
     -webkit-transform: translateX(-768px);
@@ -2730,8 +2771,8 @@ nav h2 {
     display: block;
   }
   .menudrop {
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   #from_mobile {
     display: none;
@@ -3099,6 +3140,97 @@ footer ul.breadcrumb li a:hover {
   --Montserat: "Montserrat", sans-serif;
   --shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
   --overlay: rgba(44, 51, 58, 0.2);
+}
+
+.formfd {
+  background-color: #fdfdfd;
+  padding: 30px 20px;
+  padding-top: 80px;
+}
+
+.google_facebook {
+  margin-top: 15px;
+}
+
+.google_facebook a {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.google_facebook .google_f {
+  margin-bottom: 15px;
+  height: 49.15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 0.89362px solid rgba(44, 51, 58, 0.8);
+  border-radius: 4.46809px;
+  text-align: center;
+  padding: 5px;
+}
+
+.google_facebook .google_f::before {
+  position: relative;
+  left: -10px;
+  top: 5px;
+}
+
+.google_facebook .google:before {
+  content: url("https://www.svgrepo.com/show/355037/google.svg");
+}
+
+.google_facebook .facebook:before {
+  content: url("../svg/facebook_b.svg");
+}
+
+.paginationButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 452px;
+  margin: 0 auto;
+}
+
+.paginationButtons .next,
+.paginationButtons .previous {
+  background-color: #00838f;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 5px 15px;
+}
+
+.paginationButtons .next:hover,
+.paginationButtons .previous:hover {
+  background: #00838f;
+}
+
+.paginationButtons li {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.018em;
+  padding: 5px 10px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.paginationButtons li:hover {
+  background: #f3f3f3;
+}
+
+.paginationButtons .paginationActive {
+  font-weight: 600;
+  border-bottom: 2px solid #00838f;
 }
 
 .txt-align {
@@ -4312,6 +4444,33 @@ footer ul.breadcrumb li a:hover {
   text-align: left;
 }
 
+.search_set {
+  border: 1px solid #333333;
+  padding: 0 10px;
+  border-radius: 5px;
+  max-width: 400px;
+  height: 46px;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search_set img {
+  width: 25px;
+  margin-right: 0px;
+  top: 6px;
+}
+
+.search_set input {
+  border: 0;
+  background: transparent !important;
+  outline: 0;
+  height: 43px;
+  font-size: 16px;
+  padding: 10px;
+}
+
 .b_label button {
   margin-top: 0;
   margin-right: 15px;
@@ -4327,6 +4486,11 @@ footer ul.breadcrumb li a:hover {
 .b_label .on_technology {
   color: #bc658d;
   border: 2px solid #bc658d;
+}
+
+.b_label .on_security {
+  color: #ea5f5e;
+  border: 2px solid #ea5f5e;
 }
 
 .avatar_time {
@@ -4661,7 +4825,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .speed_dial .major_dial button::after {
-  content: '+';
+  content: "+";
   position: absolute;
   top: -3px;
   right: 10px;

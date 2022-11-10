@@ -1,212 +1,402 @@
 [
   {
     "id": 1,
-    "title": "Jubilant HollisterStier LLC",
+    "title": "Chester Packaging, LLC",
     "category": "Security",
-    "author": "Hobey",
-    "date": "2022-01-23 07:44:02"
+    "author": "Blinny",
+    "date": "2022-09-03 04:52:22",
+    "authorImg": "2022-08-13 20:41:40"
   },
   {
     "id": 2,
-    "title": "Par Pharmaceutical Inc.",
-    "category": "Education",
-    "author": "Byran",
-    "date": "2022-08-11 01:18:21"
+    "title": "Medsep Corporation",
+    "category": "Digital",
+    "author": "Lynelle",
+    "date": "2022-01-06 11:21:52",
+    "authorImg": "2022-10-30 22:16:14"
   },
   {
     "id": 3,
-    "title": "Robell Research, Inc.",
-    "category": "Security",
-    "author": "Rourke",
-    "date": "2022-07-11 01:04:33"
+    "title": "Wallace Pharmaceuticals Inc.",
+    "category": "Community",
+    "author": "Darren",
+    "date": "2022-08-02 13:29:41",
+    "authorImg": "2022-06-11 02:39:03"
   },
   {
     "id": 4,
-    "title": "Physicians Total Care, Inc.",
-    "category": "Security",
-    "author": "Guy",
-    "date": "2022-09-07 20:31:35"
+    "title": "REMEDYREPACK INC.",
+    "category": "Digital",
+    "author": "Consolata",
+    "date": "2022-05-14 22:46:31",
+    "authorImg": "2022-07-24 12:03:11"
   },
   {
     "id": 5,
-    "title": "PACK Pharmaceuticals, LLC",
+    "title": "Major Pharmaceuticals",
     "category": "Digital",
-    "author": "Eugenie",
-    "date": "2022-06-17 06:48:17"
+    "author": "Megen",
+    "date": "2021-11-25 03:05:30",
+    "authorImg": "2022-08-21 07:51:10"
   },
   {
     "id": 6,
-    "title": "Teva Pharmaceuticals USA Inc",
-    "category": "Digital",
-    "author": "Mayor",
-    "date": "2022-10-14 05:41:42"
+    "title": "Natural Health Supply",
+    "category": "Security",
+    "author": "Sianna",
+    "date": "2022-03-30 00:32:46",
+    "authorImg": "2022-02-01 12:19:31"
   },
   {
     "id": 7,
-    "title": "PD-Rx Pharmaceuticals, Inc.",
-    "category": "Security",
-    "author": "Taddeusz",
-    "date": "2021-11-26 15:59:43"
+    "title": "A-S Medication Solutions LLC",
+    "category": "Education",
+    "author": "Teddy",
+    "date": "2022-04-26 04:53:03",
+    "authorImg": "2022-04-20 15:32:12"
   },
   {
     "id": 8,
-    "title": "Topco Associates LLC",
-    "category": "Security",
-    "author": "Lil",
-    "date": "2022-06-28 14:32:04"
+    "title": "Aurobindo Pharma Limited",
+    "category": "Community",
+    "author": "Kerstin",
+    "date": "2022-08-22 09:28:14",
+    "authorImg": "2022-04-12 08:50:15"
   },
   {
     "id": 9,
-    "title": "Kinray Inc.",
-    "category": "Community",
-    "author": "Land",
-    "date": "2022-06-17 15:14:32"
+    "title": "Aidarex Pharmaceuticals LLC",
+    "category": "Digital",
+    "author": "Goldina",
+    "date": "2022-06-21 05:50:29",
+    "authorImg": "2022-07-07 13:26:19"
   },
   {
     "id": 10,
-    "title": "Uriel Pharmacy Inc",
-    "category": "Digital",
-    "author": "Augy",
-    "date": "2022-09-13 05:08:49"
+    "title": "AbbVie Inc.",
+    "category": "Community",
+    "author": "Brnaba",
+    "date": "2022-06-22 10:53:01",
+    "authorImg": "2022-06-18 14:09:18"
   },
   {
     "id": 11,
-    "title": "Bayer HealthCare Consumer Care",
-    "category": "Community",
-    "author": "Brennan",
-    "date": "2022-11-05 06:34:02"
+    "title": "Ventura Corporation LTD",
+    "category": "Security",
+    "author": "Ulrika",
+    "date": "2022-08-03 10:58:02",
+    "authorImg": "2021-11-20 22:56:51"
   },
   {
     "id": 12,
-    "title": "L'Oreal USA Products Inc",
-    "category": "Community",
-    "author": "Chaddie",
-    "date": "2022-07-26 05:31:56"
+    "title": "Aruba Aloe Balm NV",
+    "category": "Education",
+    "author": "Lilllie",
+    "date": "2022-07-26 02:39:38",
+    "authorImg": "2021-12-22 03:40:53"
   },
   {
     "id": 13,
-    "title": "Cardinal Health",
-    "category": "Digital",
-    "author": "Con",
-    "date": "2022-09-14 11:43:07"
+    "title": "McKesson Packaging Services a business unit of McKesson Corporation",
+    "category": "Technology",
+    "author": "Jobina",
+    "date": "2022-04-20 08:00:44",
+    "authorImg": "2022-01-30 04:50:40"
   },
   {
     "id": 14,
-    "title": "Watson Laboratories, Inc.",
-    "category": "Security",
-    "author": "Dona",
-    "date": "2022-01-12 13:27:20"
+    "title": "TYA Pharmaceuticals",
+    "category": "Technology",
+    "author": "Hiram",
+    "date": "2022-06-03 00:10:21",
+    "authorImg": "2022-10-28 09:20:27"
   },
   {
     "id": 15,
-    "title": "REMEDYREPACK INC.",
-    "category": "Community",
-    "author": "Glori",
-    "date": "2022-06-12 04:49:01"
+    "title": "The Man Can, LLC",
+    "category": "Security",
+    "author": "Genny",
+    "date": "2021-12-15 04:09:08",
+    "authorImg": "2022-09-09 01:58:26"
   },
   {
     "id": 16,
-    "title": "Jubilant HollisterStier LLC",
-    "category": "Security",
-    "author": "Frazier",
-    "date": "2022-08-25 13:57:36"
+    "title": "Chain Drug Marketing Association Inc",
+    "category": "Education",
+    "author": "Adair",
+    "date": "2022-04-06 07:30:46",
+    "authorImg": "2021-12-06 18:19:22"
   },
   {
     "id": 17,
-    "title": "Citron Pharma LLC",
+    "title": "Newton Laboratories, Inc.",
     "category": "Education",
-    "author": "Gran",
-    "date": "2022-09-03 08:31:25"
+    "author": "Kittie",
+    "date": "2022-04-18 07:28:52",
+    "authorImg": "2022-08-07 21:26:27"
   },
   {
     "id": 18,
-    "title": "Major Pharmaceuticals",
-    "category": "Education",
-    "author": "Sancho",
-    "date": "2022-08-13 00:41:53"
+    "title": "Dynarex Corporation",
+    "category": "Digital",
+    "author": "Trixie",
+    "date": "2022-07-25 19:05:39",
+    "authorImg": "2022-06-16 19:47:46"
   },
   {
     "id": 19,
-    "title": "Nelco Laboratories, Inc.",
-    "category": "Education",
-    "author": "Hieronymus",
-    "date": "2022-09-02 13:43:41"
+    "title": "Aspen Global Inc.",
+    "category": "Technology",
+    "author": "Emilie",
+    "date": "2021-12-27 20:03:01",
+    "authorImg": "2022-09-25 14:08:13"
   },
   {
     "id": 20,
-    "title": "Pfizer Laboratories Div Pfizer Inc",
-    "category": "Technology",
-    "author": "Catha",
-    "date": "2022-09-21 15:25:08"
+    "title": "Allergy Laboratories, Inc.",
+    "category": "Security",
+    "author": "Pooh",
+    "date": "2022-05-20 02:14:46",
+    "authorImg": "2022-05-14 21:32:18"
   },
   {
     "id": 21,
-    "title": "Nelco Laboratories, Inc.",
-    "category": "Digital",
-    "author": "Pansie",
-    "date": "2022-10-04 22:38:37"
+    "title": "McKesson Packaging Services a business unit of McKesson Corporation",
+    "category": "Technology",
+    "author": "Ludwig",
+    "date": "2022-10-01 03:20:29",
+    "authorImg": "2022-11-01 04:13:20"
   },
   {
     "id": 22,
-    "title": "Sage Products, Inc.",
+    "title": "LIBINVEST",
     "category": "Digital",
-    "author": "Stephenie",
-    "date": "2022-04-18 17:04:07"
+    "author": "Jerry",
+    "date": "2022-04-04 12:35:02",
+    "authorImg": "2022-06-22 01:36:21"
   },
   {
     "id": 23,
-    "title": "AMERISOURCE BERGEN",
-    "category": "Security",
-    "author": "Julietta",
-    "date": "2021-12-16 21:07:58"
+    "title": "Ellen H Frankle MD Inc",
+    "category": "Digital",
+    "author": "Elaina",
+    "date": "2022-09-17 18:40:44",
+    "authorImg": "2022-10-16 23:57:09"
   },
   {
     "id": 24,
-    "title": "North Safety Products",
-    "category": "Community",
-    "author": "Katuscha",
-    "date": "2022-01-28 19:05:39"
+    "title": "Teva Pharmaceuticals USA Inc",
+    "category": "Technology",
+    "author": "Wendie",
+    "date": "2022-07-19 09:22:59",
+    "authorImg": "2022-10-04 16:19:22"
   },
   {
     "id": 25,
-    "title": "Western Family Foods, Inc",
-    "category": "Digital",
-    "author": "Averil",
-    "date": "2022-08-17 14:06:17"
+    "title": "Contract Pharmacy Services-PA",
+    "category": "Security",
+    "author": "Nil",
+    "date": "2022-08-22 01:56:16",
+    "authorImg": "2022-11-04 20:58:13"
   },
   {
     "id": 26,
-    "title": "AvKARE, Inc.",
-    "category": "Digital",
-    "author": "Teresa",
-    "date": "2021-11-15 18:39:54"
+    "title": "Unifirst First Aid Corporation",
+    "category": "Technology",
+    "author": "Erica",
+    "date": "2022-07-25 06:54:16",
+    "authorImg": "2022-01-15 07:17:00"
   },
   {
     "id": 27,
-    "title": "Physicians Total Care, Inc.",
-    "category": "Security",
-    "author": "Timmy",
-    "date": "2022-02-11 11:54:01"
+    "title": "Taro Pharmaceuticals U.S.A., Inc.",
+    "category": "Digital",
+    "author": "Sky",
+    "date": "2022-03-18 02:59:53",
+    "authorImg": "2022-09-26 04:25:36"
   },
   {
     "id": 28,
-    "title": "Elizabeth Arden, Inc",
+    "title": "ALK-Abello, Inc.",
     "category": "Digital",
-    "author": "Lisetta",
-    "date": "2022-06-23 01:29:15"
+    "author": "Brice",
+    "date": "2022-10-27 08:24:53",
+    "authorImg": "2022-06-02 01:46:48"
   },
   {
     "id": 29,
-    "title": "O.P. Products, Inc.",
-    "category": "Community",
-    "author": "Diego",
-    "date": "2022-08-20 04:10:11"
+    "title": "Dr. Reddy's Laboratories Limited",
+    "category": "Technology",
+    "author": "Brennen",
+    "date": "2022-06-22 07:21:20",
+    "authorImg": "2022-04-27 22:31:53"
   },
   {
     "id": 30,
-    "title": "Perrigo New York Inc",
+    "title": "Alcon Laboratories, Inc.",
+    "category": "Technology",
+    "author": "Benedicta",
+    "date": "2022-06-07 17:06:12",
+    "authorImg": "2022-11-07 17:03:11"
+  },
+  {
+    "id": 31,
+    "title": "AMI Cosmetic Co.,Ltd.",
+    "category": "Community",
+    "author": "Yvor",
+    "date": "2022-05-06 11:31:24",
+    "authorImg": "2022-01-20 09:00:40"
+  },
+  {
+    "id": 32,
+    "title": "International Beauty Exchange",
+    "category": "Security",
+    "author": "Karlotte",
+    "date": "2022-10-05 10:40:53",
+    "authorImg": "2022-10-07 20:40:19"
+  },
+  {
+    "id": 33,
+    "title": "Colgate-Palmolive Company",
+    "category": "Security",
+    "author": "Jacquenetta",
+    "date": "2022-09-09 17:45:58",
+    "authorImg": "2022-07-11 15:04:44"
+  },
+  {
+    "id": 34,
+    "title": "Rite Aid Corporation",
+    "category": "Security",
+    "author": "Delphinia",
+    "date": "2022-10-21 22:59:01",
+    "authorImg": "2022-03-28 01:09:47"
+  },
+  {
+    "id": 35,
+    "title": "Preferred Pharmaceuticals, Inc.",
+    "category": "Community",
+    "author": "Johann",
+    "date": "2022-02-15 12:37:47",
+    "authorImg": "2022-03-18 20:18:51"
+  },
+  {
+    "id": 36,
+    "title": "Ventura Corporation LTD",
+    "category": "Security",
+    "author": "Angela",
+    "date": "2021-12-23 12:07:05",
+    "authorImg": "2022-05-28 16:51:37"
+  },
+  {
+    "id": 37,
+    "title": "PurKlenz Formulations Inc.",
     "category": "Education",
-    "author": "Archie",
-    "date": "2022-05-23 08:45:06"
+    "author": "Helge",
+    "date": "2022-07-23 10:54:15",
+    "authorImg": "2021-12-18 20:07:23"
+  },
+  {
+    "id": 38,
+    "title": "Boehringer Ingelheim Pharmaceuticals, Inc.",
+    "category": "Digital",
+    "author": "Gloriana",
+    "date": "2022-02-28 14:54:03",
+    "authorImg": "2022-11-02 00:14:18"
+  },
+  {
+    "id": 39,
+    "title": "ALK-Abello, Inc.",
+    "category": "Digital",
+    "author": "Joline",
+    "date": "2022-06-08 04:18:23",
+    "authorImg": "2022-04-03 10:56:01"
+  },
+  {
+    "id": 40,
+    "title": "Rebel Distributors Corp",
+    "category": "Security",
+    "author": "Jason",
+    "date": "2022-05-10 09:00:27",
+    "authorImg": "2022-03-28 04:43:47"
+  },
+  {
+    "id": 41,
+    "title": "Forces of Nature",
+    "category": "Technology",
+    "author": "Christa",
+    "date": "2022-03-18 05:49:54",
+    "authorImg": "2022-08-14 20:08:40"
+  },
+  {
+    "id": 42,
+    "title": "Physicians Total Care, Inc.",
+    "category": "Digital",
+    "author": "Grazia",
+    "date": "2022-05-07 10:43:15",
+    "authorImg": "2021-12-11 07:51:59"
+  },
+  {
+    "id": 43,
+    "title": "Wockhardt Limited",
+    "category": "Digital",
+    "author": "Julieta",
+    "date": "2022-09-14 05:28:15",
+    "authorImg": "2021-11-08 19:01:08"
+  },
+  {
+    "id": 44,
+    "title": "Conopco Inc. d/b/a Unilever",
+    "category": "Technology",
+    "author": "Ignazio",
+    "date": "2022-01-05 12:36:31",
+    "authorImg": "2021-12-29 09:18:05"
+  },
+  {
+    "id": 45,
+    "title": "Reckitt Benckiser LLC",
+    "category": "Education",
+    "author": "Alphonse",
+    "date": "2022-06-04 09:25:48",
+    "authorImg": "2022-04-25 18:58:14"
+  },
+  {
+    "id": 46,
+    "title": "Cardinal Health",
+    "category": "Technology",
+    "author": "Dollie",
+    "date": "2022-04-04 01:15:02",
+    "authorImg": "2022-06-06 14:04:49"
+  },
+  {
+    "id": 47,
+    "title": "Baxter Healthcare Corporation",
+    "category": "Security",
+    "author": "Adoree",
+    "date": "2021-12-18 08:10:06",
+    "authorImg": "2022-05-12 22:18:30"
+  },
+  {
+    "id": 48,
+    "title": "Pliva Inc.",
+    "category": "Technology",
+    "author": "Mahala",
+    "date": "2022-10-21 18:45:49",
+    "authorImg": "2022-08-16 09:03:17"
+  },
+  {
+    "id": 49,
+    "title": "Sandoz Inc.",
+    "category": "Community",
+    "author": "Alameda",
+    "date": "2022-06-14 08:34:54",
+    "authorImg": "2022-07-02 02:22:09"
+  },
+  {
+    "id": 50,
+    "title": "Physicians Total Care, Inc.",
+    "category": "Security",
+    "author": "Alonso",
+    "date": "2022-08-11 19:33:54",
+    "authorImg": "2022-01-03 01:07:54"
   }
 ]

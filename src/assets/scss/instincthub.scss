@@ -36,7 +36,82 @@
   --shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
   --overlay: rgba(44, 51, 58, 0.2);
 }
+.formfd {
+  background-color: #fdfdfd;
+  padding: 30px 20px;
+  padding-top: 80px;
+}
+.google_facebook {
+  margin-top: 15px;
+  a {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .google_f {
+    margin-bottom: 15px;
+    height: 49.15px;
+    align-items: center;
+    border: 0.893617px solid rgba(44, 51, 58, 0.8);
+    border-radius: 4.46809px;
+    text-align: center;
+    padding: 5px;
 
+    &::before {
+      position: relative;
+      left: -10px;
+      top: 5px;
+    }
+  }
+  .google {
+    &:before {
+      content: url("https://www.svgrepo.com/show/355037/google.svg");
+    }
+  }
+  .facebook {
+    &:before {
+      content: url("../svg/facebook_b.svg");
+    }
+  }
+}
+.paginationButtons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 452px;
+  margin: 0 auto;
+  .next,
+  .previous {
+    background-color: #00838f;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 5px 15px;
+    &:hover {
+      background: #00838f;
+    }
+  }
+  li {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.018em;
+    padding: 5px 10px;
+    margin: 3px;
+    cursor: pointer;
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+  .paginationActive {
+    font-weight: 600;
+    border-bottom: 2px solid #00838f;
+  }
+}
 .txt-align {
   text-align: center;
 }
@@ -1074,6 +1149,28 @@
     }
   }
 }
+.search_set {
+  border: 1px solid #333333;
+  padding: 0 10px;
+  border-radius: 5px;
+  max-width: 400px;
+  height: 46px;
+  width: 300px;
+  display: flex;
+  img {
+    width: 25px;
+    margin-right: 0px;
+    top: 6px;
+  }
+  input {
+    border: 0;
+    background: transparent !important;
+    outline: 0;
+    height: 43px;
+    font-size: 16px;
+    padding: 10px;
+  }
+}
 .b_label {
   button {
     margin-top: 0;
@@ -1091,8 +1188,8 @@
     border: 2px solid #bc658d;
   }
   .on_security {
-    color: #EA5F5E;
-    border: 2px solid #EA5F5E;
+    color: #ea5f5e;
+    border: 2px solid #ea5f5e;
   }
 }
 .avatar_time {
@@ -1368,8 +1465,8 @@
       color: var(--DarkCyan) !important;
       font-size: 45px;
       box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
-      &::after{
-        content: '+';
+      &::after {
+        content: "+";
         position: absolute;
         top: -3px;
         right: 10px;

@@ -10,6 +10,7 @@ function EventDataDisplay() {
   const [events, setEvents] = useState(API.slice(0, 20));
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
   const [searchTerm, setSearchTerm] = useState("");
+  const [selected, setSelected] = useState("Filter");
   const [activeIndex, setActiveIndex] = useState(1);
   const handleClick = (index) => setActiveIndex(index);
   const checkActive = (index, className) =>
@@ -124,22 +125,22 @@ function EventDataDisplay() {
               </span>
             </div>
             <div className="event-input">
-              <input
-                className="eventt"
-                type="text"
-                name="name"
-                placeholder="Search Blog ..."
-                onChange={(event) => {
-                  setSearchTerm(event.target.value);
-                }}
-              />
-              <select className="event-select">
-                <option value="javascript">Sort by</option>
-                <option value="php">PHP</option>
-                <option value="java">Java</option>
-                <option value="java">Nextjs</option>
-                <option value="java">Reactjs</option>
-              </select>
+              <FilterBy selected={selected} setSelected={setSelected} />
+              <div class="search_set">
+                <img
+                  src="https://www.svgrepo.com/show/13682/search.svg"
+                  alt=""
+                />
+                <input
+                  className="eventt"
+                  type="text"
+                  name="name"
+                  placeholder="Search Blog ..."
+                  onChange={(event) => {
+                    setSearchTerm(event.target.value);
+                  }}
+                />
+              </div>
             </div>
           </HandleSearchAndTab>
         </div>
@@ -162,8 +163,8 @@ function EventDataDisplay() {
         </div>
       </div>
       <ReactPaginate
-        previousLabel={"Previous"}
-        nextLabel={"Next"}
+        previousLabel={"<"}
+        nextLabel={">"}
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName={"paginationButtons"}
@@ -178,6 +179,38 @@ function EventDataDisplay() {
 
 export default EventDataDisplay;
 
+const FilterBy = ({ selected, setSelected }) => {
+  const [isActive, setIsActive] = useState(false);
+  const options = ["Last 7days", "Last 14 days", "This month", "Last Month"];
+
+  return (
+    <div className="select_me">
+      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
+        <input type="text" value={selected} readOnly className="input_drop" />
+        {/* {selected} */}
+        <img
+          src="https://www.svgrepo.com/show/379863/chevron-down.svg"
+          alt=""
+        />
+      </div>
+      {isActive && (
+        <div className="select_content">
+          {options.map((option) => (
+            <div
+              className="select_items"
+              onClick={(e) => {
+                setSelected(option);
+                setIsActive(false);
+              }}
+            >
+              {option}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 const HandleSearchAndTab = styled.section`
   .container {
     margin-bottom: 20px;
@@ -193,6 +226,14 @@ const HandleSearchAndTab = styled.section`
   @media (min-width: 760px) {
     display: flex;
     justify-content: space-between;
+    .event-input {
+      display: flex;
+      justify-content: space-between;
+      width: 40%;
+      .event-select {
+        width: 20%;
+      }
+    }
   }
   @media (max-width: 540px) {
     .event-input {

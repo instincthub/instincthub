@@ -4,48 +4,49 @@ import styled from "styled-components";
 import SVGs from "../assets/svg/SVGs";
 
 const CustomLabel = styled.div`
-  // Official Input
-  .input-wrapper {
+  // Control Label
+  .field {
     position: relative;
-    line-height: 14px;
+    margin-top: 25px;
   }
-  label {
-    color: #bbb;
-    font-size: 12px;
-    position: absolute;
-    z-index: 2;
-    // left: 20px;
-    top: 12px;
-    padding: 0 3px;
-    color: var(--DarkCyan);
-    left: 15px;
-    pointer-events: none;
-    background: #fff;
-    transition: transform 0.4s ease;
-    transform: translateY(-20px);
-  }
+
   input {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 25px;
-    outline: none;
-    border: 1px solid #bbb;
-    // padding: 10px 20px;
-    padding: 15px;
-    padding-top: 18px;
+    border: 0;
+    border: 1px solid rgba(44, 51, 58, 0.5);
+
     border-radius: 5px;
-    position: relative;
-  }
-  input:invalid + label {
-    transform: translateY(0px);
+    font-size: inherit;
+
+    outline: none;
   }
   input:focus {
-    border-color: var(--DarkCyan);
+    border: 1px solid #00838f;
   }
-  input:focus + label {
-    color: var(--DarkCyan);
-
-    transform: translateY(0px);
+  input::placeholder {
+    color: transparent;
+  }
+  input:focus::placeholder {
+    color: transparent;
+  }
+  input + span {
+    position: absolute;
+    top: 3px;
+    left: 15px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  input:not(:placeholder-shown) + span,
+  input:focus + span {
+    background: #ffffff;
+    top: -10px;
+    height: 20px;
+    padding: 5px;
+    margin: 0;
+    color: #00838f;
+    font-size: 14px;
+    pointer-events: initial;
+    left: 15px;
+    line-height: 10px;
   }
 `;
 
@@ -56,17 +57,17 @@ const ContactForm = () => {
         <div className="contact_us">
           <CustomLabel>
             <form action="">
-              <div class="input-wrapper">
-                <input type="text" placeholder="First Name" />
-                <label for="First Name">First Name</label>
+              <div class="field">
+                <input type="text" name="text" id="Fname" placeholder="John" />
+                <span>First Name</span>
               </div>
-              <div class="input-wrapper">
-                <input type="text" placeholder="Last Name" />
-                <label for="Last Name">Last Name</label>
+              <div class="field">
+                <input type="text" name="text" id="Lname" placeholder="John" />
+                <span>Last Name</span>
               </div>
-              <div class="input-wrapper">
-                <input type="text" placeholder="Email" />
-                <label for="Email">Email</label>
+              <div class="field">
+                <input type="email" name="text" id="email" placeholder="John" />
+                <span>Email</span>
               </div>
 
               <div className="input-wrapper">

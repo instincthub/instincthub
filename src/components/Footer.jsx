@@ -95,9 +95,7 @@ const Footer = () => {
       <div className=" container">
         <div className="foot_label reserved_foot">
           <div className="main">
-            <h5>
-              © <span id="changeYear">2021</span> All right reserved
-            </h5>
+            <h5>© {getCurrentYear()} All right reserved</h5>
             <ul>
               <a href="/">
                 <li>Terms & Conditions</li>
@@ -159,3 +157,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const getCurrentYear = () => {
+  return new Date().getFullYear();
+};

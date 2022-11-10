@@ -752,6 +752,7 @@ nav {
   align-items: center;
   position: fixed;
   top: 0;
+  left: 0;
   box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
   .center {
     text-align: center;
@@ -1928,16 +1929,39 @@ input:valid {
     }
   }
 }
+.full-w {
+  width: 100%;
+}
+.selectDropdown {
+  .select_me {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 0;
+    .select_content {
+      z-index: 3;
+    }
+    .select-btn {
+      margin-bottom: 0;
+    }
+    input:focus {
+      border: none;
+    }
+  }
+}
 .select_me {
   width: 200px;
   position: relative;
   font-family: var(--Nunito);
   user-select: none;
+  margin-right: 10px;
+  cursor: help;
   .select-btn {
     padding: 10px;
     background: var(--White);
     border-radius: 5px;
-    border: 1px solid rgba(44, 51, 58, 0.2);
+    border: 1px solid #2c333a;
+    filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
+    border-radius: 5px;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -1947,8 +1971,17 @@ input:valid {
     justify-content: space-between;
     align-items: center;
     color: var(--Gunmetal);
+
+    margin-bottom: 30px;
+    input {
+      padding: 0 !important;
+      border: 0;
+      background-color: transparent;
+      margin: 0 !important;
+      height: auto !important;
+    }
     img {
-      width: 24px;
+      width: 30px;
       height: 24px;
     }
   }
