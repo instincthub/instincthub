@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/instincthub/static/css/main.22fcc6bf.css",
-    "main.js": "/instincthub/static/js/main.da7078aa.js",
+    "main.css": "/instincthub/static/css/main.ff34fb0e.css",
+    "main.js": "/instincthub/static/js/main.769eb3ef.js",
     "static/media/about.png": "/instincthub/static/media/about.4c70c71c7ad630fb478f.png",
     "static/media/individual_p.png": "/instincthub/static/media/individual_p.37c7a7703df8de16f315.png",
     "static/media/feature1.png": "/instincthub/static/media/feature1.c7f957c1de39382371f3.png",
@@ -121,12 +121,14 @@
     "static/media/outline_close.svg": "/instincthub/static/media/outline_close.103ef1d116bb817c70c1.svg",
     "static/media/outline_check.svg": "/instincthub/static/media/outline_check.5f638d9494735465c064.svg",
     "static/media/check_circle.svg": "/instincthub/static/media/check_circle.5b09b32cfe7845f971c9.svg",
+    "static/media/bin.svg": "/instincthub/static/media/bin.cd4c5a666b147dfa7a6953bb2914dfae.svg",
+    "static/media/download.svg": "/instincthub/static/media/download.903257b448c0c765c90f61dff728f0d6.svg",
     "static/media/chevron_down.svg": "/instincthub/static/media/chevron_down.183bb32dd4d3c1b6f2165b21fd545519.svg",
-    "main.22fcc6bf.css.map": "/instincthub/static/css/main.22fcc6bf.css.map",
-    "main.da7078aa.js.map": "/instincthub/static/js/main.da7078aa.js.map"
+    "main.ff34fb0e.css.map": "/instincthub/static/css/main.ff34fb0e.css.map",
+    "main.769eb3ef.js.map": "/instincthub/static/js/main.769eb3ef.js.map"
   },
   "entrypoints": [
-    "static/css/main.22fcc6bf.css",
-    "static/js/main.da7078aa.js"
+    "static/css/main.ff34fb0e.css",
+    "static/js/main.769eb3ef.js"
   ]
 }
