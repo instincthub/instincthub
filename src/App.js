@@ -1,8 +1,8 @@
 import React from "react";
 // import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./assets/css/style.css";
-import "./assets/css/instincthub.css";
+import "./assets/scss/style.css";
+import "./assets/scss/instincthub.css";
 import LandingPage from "./Pages/Landing";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
@@ -15,7 +15,7 @@ import Success from "./Pages/PricingAlert/Success";
 import Error from "./Pages/PricingAlert/Error";
 import JobDetails from "./Pages/JobDetails";
 import Blog from "./Pages/Blog/Blog";
-import AdminBlog from "./Pages/Blog/Admin";
+import AdminBlogList from "./Pages/Blog/AdminBlogList";
 import BlogDetails from "./Pages/Blog/BlogDetails";
 import Individual from "./Pages/Apps/Individual";
 import KidsCanCode from "./Pages/Apps/KidsCanCode";
@@ -52,7 +52,7 @@ function App() {
 
         {/* Posts */}
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/admin" element={<AdminBlog />} />
+        <Route exact path="/blog/admin" element={<AdminBlogList />} />
         <Route path="/blog/:slug/" element={<BlogDetails />} />
       </Routes>
     </BrowserRouter>

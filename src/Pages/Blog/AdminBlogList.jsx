@@ -10,7 +10,7 @@ import Edit from "./Edit";
 import Header from "../../components/navbar/Header";
 import Footer from "../../components/Footer";
 
-function EventDataDisplay() {
+function AdminBlogList() {
   const [events, setEvents] = useState(API.slice(0, 20));
   const [value, setvalue] = useState("");
 
@@ -190,7 +190,7 @@ function EventDataDisplay() {
   );
 }
 
-export default EventDataDisplay;
+export default AdminBlogList;
 
 const FilterBy = ({ selected, setSelected }) => {
   const [isActive, setIsActive] = useState(false);

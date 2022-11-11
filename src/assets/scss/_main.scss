@@ -1937,6 +1937,8 @@ input:valid {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 0;
+    cursor: pointer;
+
     .select_content {
       z-index: 3;
     }
@@ -1954,12 +1956,11 @@ input:valid {
   font-family: var(--Nunito);
   user-select: none;
   margin-right: 10px;
-  cursor: help;
   .select-btn {
     padding: 10px;
     background: var(--White);
     border-radius: 5px;
-    border: 1px solid #2c333a;
+    border: 1px solid #D8D8D8;
 
     border-radius: 5px;
     font-size: 16px;
@@ -1979,6 +1980,8 @@ input:valid {
       background-color: transparent;
       margin: 0 !important;
       height: auto !important;
+      font-family: var(--Nunito);
+      cursor: pointer;
     }
     img {
       width: 30px;

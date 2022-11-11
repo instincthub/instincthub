@@ -338,7 +338,7 @@ const HandlingOverlay = styled.div`
 
   input {
     border: 0;
-    border: 1px solid rgba(44, 51, 58, 0.5);
+    border: 1px solid #D8D8D8;
 
     border-radius: 5px;
     font-size: inherit;
