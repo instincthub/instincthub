@@ -12,6 +12,8 @@ import Footer from "../../components/Footer";
 
 function EventDataDisplay() {
   const [events, setEvents] = useState(API.slice(0, 20));
+  const [value, setvalue] = useState("");
+
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
   const [searchTerm, setSearchTerm] = useState("");
   const [openModal, setOpenModal] = useState(false); // state for Modal
@@ -21,16 +23,15 @@ function EventDataDisplay() {
   const handleClick = (index) => setActiveIndex(index);
   const checkActive = (index, className) =>
     activeIndex === index ? className : "";
-  const [isActive, setActive] = useState("normal_tab");
 
-  const toggleClass = () => {
-    isActive === "normal_tab"
-      ? setActive("normal_tab add_tape")
-      : setActive("normal_tab");
-  };
+  /** ======to do
+   * 1. Handle all form event with handleChange function
+   * 2. No need for Filter as all blog display at one.Navigate using the pagination
+   */
 
+  const handleOnchange = (val) => setvalue(val);
   // const [ API, setData ] = useState(API)
-  const eventsPerPage = 6;
+  const eventsPerPage = 16;
   const pagesVisited = pageNumber * eventsPerPage;
 
   const filterEvents = (catItem) => {
@@ -55,12 +56,7 @@ function EventDataDisplay() {
       return (
         <AdminBlog
           key={id}
-          link="slug"
-          blogimg={Images.blog1}
-          authorimg={Images.img1}
-          authorname={author}
-          category={category}
-          date="October 5, 2022"
+          commentCount={id}
           title={title}
           edit={() => setEdit(true)}
           encryption="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
@@ -140,7 +136,6 @@ function EventDataDisplay() {
                 </div>
               </div>
               <div className="event-input">
-                <FilterBy selected={selected} setSelected={setSelected} />
                 <div class="search_set">
                   <img
                     src="https://www.svgrepo.com/show/13682/search.svg"
@@ -157,11 +152,13 @@ function EventDataDisplay() {
                   />
                 </div>
 
+                <FilterBy selected={selected} setSelected={setSelected} />
+
                 <button
                   className="important-btn"
                   onClick={() => setOpenModal(true)}
                 >
-                  Upload File
+                  New Blog
                 </button>
               </div>
             </HandleSearchAndTab>
@@ -169,23 +166,7 @@ function EventDataDisplay() {
         </div>
         <div className="panels">
           <div className={`panel ${checkActive(1, "active")}`}>
-            <div className="threecard_grid blog_control">{displayEvents}</div>
-          </div>
-
-          {/* Kindly remove this DIV is there is need to filter by Tab */}
-          <div>
-            {/* <div className={`panel ${checkActive(2, "active")}`}>
-            <div className="threecard_grid blog_control">{displayEvents}</div>
-          </div>
-          <div className={`panel ${checkActive(3, "active")}`}>
-            <div className="threecard_grid blog_control">{displayEvents}</div>
-          </div>
-          <div className={`panel ${checkActive(4, "active")}`}>
-            <div className="threecard_grid blog_control">{displayEvents}</div>
-          </div>
-          <div className={`panel ${checkActive(5, "active")}`}>
-            <div className="threecard_grid blog_control">{displayEvents}</div>
-          </div> */}
+            <Wrapper>{displayEvents}</Wrapper>
           </div>
         </div>
         <ReactPaginate
@@ -252,6 +233,7 @@ const HandleSearchAndTab = styled.section`
     background: transparent;
   }
   .event-input {
+    max-width: 675px;
     input {
       margin-bottom: 20px;
     }
@@ -263,6 +245,9 @@ const HandleSearchAndTab = styled.section`
       display: flex;
       justify-content: space-between;
       width: 57%;
+      .select_me {
+        margin-left: 10px;
+      }
       button {
         margin-top: 0;
         height: 45px;
@@ -309,5 +294,39 @@ const HandleSearchAndTab = styled.section`
   }
   .normal_tab.add_tape {
     border-bottom: 2px solid yellow;
+  }
+`;
+let Wrapper = styled.section`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .eachAdminBlog {
+    width: 49%;
+  }
+
+  @media (max-width: 400px) {
+    .eachAdminBlog {
+      width: 100%;
+    }
+  }
+  @media (min-width: 720px) {
+    .eachAdminBlog {
+      width: 32%;
+    }
+  }
+  @media (min-width: 900px) {
+    .eachAdminBlog {
+      width: 23%;
+    }
+  }
+  @media (min-width: 1200px) {
+    .eachAdminBlog {
+      width: 19%;
+    }
+  }
+  @media (min-width: 1380px) {
+    .eachAdminBlog {
+      width: 16%;
+    }
   }
 `;

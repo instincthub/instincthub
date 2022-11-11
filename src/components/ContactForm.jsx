@@ -69,7 +69,6 @@ const ContactForm = () => {
                 <input type="email" name="text" id="email" placeholder="John" />
                 <span>Email</span>
               </div>
-
               <div className="input-wrapper">
                 <textarea
                   name=""
