@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const FreePlan = () => {
+const TrackPlan = (props) => {
   return (
     <div className="grid-row">
       <div className="plans">
         <div className="plan_top">
           <h3>Recommended</h3>
           <h4>Track</h4>
+          
           <p className="price">
-            N70,000 <span> /Monthly</span>
+            {props.duration === 'monthly' ? 'N70,000/monthly' : 'N756,000/yearly'}<span> </span>
           </p>
-          <p>N0 saved from annual,0% Discount</p>
+          <span className="save_msg">{props.duration === 'yearly' ? 'N84,000 saved from yearly 10% discount' : ''}</span>
         </div>
 
         <ul className="access">
@@ -32,13 +33,13 @@ const FreePlan = () => {
           </li>
           <li className="not_available">Team learning Analytics</li>
 
-          <a href="https://paystack.com/pay/instincthub-tracks-month">
+          <Link to={props.duration === 'monthly' ? "https://paystack.com/pay/instincthub-tracks-month" : "https://paystack.com/pay/instincthub-tracks-yearly"}>
             <button className="native-btn">Choose Plan</button>
-          </a>
+          </Link>
         </ul>
       </div>
     </div>
   );
 };
 
-export default FreePlan;
+export default TrackPlan;

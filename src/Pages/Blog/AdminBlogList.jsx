@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 // import JsonData from '../Mock-API.json'
-import API from "./D4Blog.json";
+import API from "../../json/D4Blog.json";
 import AdminBlog from "../../components/AdminBlogs";
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
 import Images from "../../assets/images/Images";
 import styled from "styled-components";
-import Create from "./Create";
-import Edit from "./Edit";
+import Create from "../../components/BlogCreate";
+import BlogEdit from "../../components/BlogEdit";
 import Header from "../../components/navbar/Header";
 import Footer from "../../components/Footer";
 
@@ -185,7 +185,7 @@ function AdminBlogList() {
 
       {/* MODALS */}
       <Create open={openModal} onClose={() => setOpenModal(false)} />
-      <Edit open={edit} onClose={() => setEdit(false)} />
+      <BlogEdit open={edit} onClose={() => setEdit(false)} />
     </>
   );
 }

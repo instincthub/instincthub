@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
-import SVGs from "../../assets/svg/SVGs";
-import Blogs from "./D4Blog.json";
+import SVGs from "../assets/svg/SVGs";
 
 /**
  *  *
@@ -13,11 +12,103 @@ const handleFormSubmit = (e) => {
   e.preventDefault();
   console.log(e);
 };
-/**
- *  *
- *  todo
- *  *
- *  Master Component handle all the inputs together * */
+
+const BlogEdit = () => {
+  const [selected, setSelected] = useState("Category");
+  const [author, setAuthor] = useState("Writer");
+  return (
+    <Main>
+      <form action="" onSubmit={handleFormSubmit}>
+        <h3>Edit Blog</h3>
+
+        <img
+          src="https://images.unsplash.com/photo-1661956600684-97d3a4320e45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+          alt=""
+          className="featured_pic"
+        />
+
+        <div class="field">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="John"
+            value="Impact of CyberSecurity"
+          />
+          <span>Blog Title</span>
+        </div>
+        <div class="">
+          <textarea
+            name=""
+            placeholder="Description"
+            value="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
+          ></textarea>
+          <span></span>
+        </div>
+        <SelectCategories />
+        <div class="field">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="John"
+            value="Noah"
+          />
+          <span>Writer</span>
+        </div>
+
+        <div class="field">
+          <input
+            type="url"
+            name="title"
+            id="title"
+            placeholder="John"
+            value="https://unsplash.com/photos/04X1Yp9hNH8"
+          />
+          <span>Previous Blog</span>
+        </div>
+        <div class="field">
+          <input
+            type="url"
+            name="title"
+            id="title"
+            placeholder="John"
+            value="https://unsplash.com/photos/04X1Yp9hNH8"
+          />
+          <span>Next Blog</span>
+        </div>
+        <div class="field">
+          <input
+            type="url"
+            name="title"
+            id="title"
+            placeholder="John"
+            value="https://unsplash.com/photos/04X1Yp9hNH8"
+          />
+          <span>Link</span>
+        </div>
+
+        {/* Comments OR Feedbacks from Blog */}
+
+        <section className="feedbackContainer">
+          <h3>
+            Comments <span> (3)</span>{" "}
+          </h3>
+          <div className="feedback">
+            <EachComment />
+            <EachComment />
+            <EachComment />
+          </div>
+        </section>
+
+        <button className="important-btn" type="submit">
+          Update
+        </button>
+      </form>
+    </Main>
+  );
+};
+
 const Details = ({ open, onClose }) => {
   if (!open) return null;
   return (
@@ -27,7 +118,7 @@ const Details = ({ open, onClose }) => {
           e.stopPropagation();
         }}
       >
-        <Master />
+        <BlogEdit />
 
         <img
           className="close-btn"
@@ -37,62 +128,6 @@ const Details = ({ open, onClose }) => {
         />
       </ModalContainer>
     </HandlingOverlay>
-  );
-};
-
-const Master = () => {
-  const [selected, setSelected] = useState("Previous Blog");
-  const [next, setNext] = useState("Next Blog");
-  const [author, setAuthor] = useState("Writer");
-  return (
-    <Main>
-      <form action="" onSubmit={handleFormSubmit}>
-        <h3>Create Blog</h3>
-        <div className="custom_uploader">
-          <div>
-            <div className="tag_upload">
-              <img src={SVGs.pic_frame} alt="" className="cloud" />
-              <p>Drop File here 20MB File max size</p>
-            </div>
-            <input type="file" id="upload" name="upload" />
-            <label htmlFor="upload">Browse Files</label>
-          </div>
-        </div>
-        <div class="field">
-          <input type="text" name="title" id="title" placeholder="John" />
-          <span>Blog Title</span>
-        </div>
-        <div class="">
-          <textarea name="" placeholder="Blog Overview"></textarea>
-          <span></span>
-        </div>
-
-        <SelectCategories />
-
-        <div className="selectDropdown">
-          <PreviousBlog selected={selected} setSelected={setSelected} />
-        </div>
-        <div className="selectDropdown">
-          <NextBlog selected={next} setSelected={setNext} />
-        </div>
-        <div className="selectDropdown">
-          <Author selected={author} setSelected={setAuthor} />
-        </div>
-
-        <div class="field">
-          <input type="text" name="title" id="title" placeholder="John" />
-          <span>Link</span>
-        </div>
-        <div class="field">
-          <input type="text" name="title" id="title" placeholder="John" />
-          <span>Link 2</span>
-        </div>
-
-        <button className="important-btn" type="submit">
-          Publish
-        </button>
-      </form>
-    </Main>
   );
 };
 
@@ -132,6 +167,7 @@ function SelectCategories() {
             class="invisible"
             value="{props.agree}"
             onChange=""
+            checked
           />
           <div class="checkbox">
             <svg width="20px" height="20px" viewBox="0 0 20 20">
@@ -152,6 +188,7 @@ function SelectCategories() {
             class="invisible"
             value="{props.agree}"
             onChange=""
+            checked
           />
           <div class="checkbox">
             <svg width="20px" height="20px" viewBox="0 0 20 20">
@@ -192,6 +229,7 @@ function SelectCategories() {
             class="invisible"
             value="{props.agree}"
             onChange=""
+            checked
           />
           <div class="checkbox">
             <svg width="20px" height="20px" viewBox="0 0 20 20">
@@ -206,114 +244,21 @@ function SelectCategories() {
   );
 }
 
-/** ====TODO
- * 1. You can control the Previous BLog Dropdown from Here
- */
-const PreviousBlog = ({ selected, setSelected }) => {
-  const [isActive, setIsActive] = useState(false);
-  const options = Blogs;
-
+const EachComment = () => {
   return (
-    <div className="select_me maximum_height">
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
-        <input type="text" value={selected} readOnly className="input_drop" />
-        {/* {selected} */}
-        <img
-          src="https://www.svgrepo.com/show/379863/chevron-down.svg"
-          alt=""
-        />
-      </div>
-      {isActive && (
-        <div className="select_content">
-          {options.map((option) => (
-            <div
-              className="select_items"
-              onClick={(e) => {
-                setSelected(option.title);
-                setIsActive(false);
-              }}
-            >
-              {option.title}
-            </div>
-          ))}
-        </div>
-      )}
+    <div className="each_comment">
+      <h4>Commentator Name</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
+        corrupti aut repellendus culpa autem illum, cupiditate modi, reiciendis,
+        dolore maiores distinctio? Modi consectetur ipsam facere sapiente totam
+        facilis ipsum officia.
+      </p>
+
+      <textarea name="" id="" placeholder="Reply to comments"></textarea>
     </div>
   );
 };
-/** ====TODO
- * 1. You can control the Next BLog Dropdown from Here
- */
-const NextBlog = ({ selected, setSelected }) => {
-  const [isActive, setIsActive] = useState(false);
-  const options = Blogs;
-
-  return (
-    <div className="select_me maximum_height">
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
-        <input type="text" value={selected} readOnly className="input_drop" />
-        {/* {selected} */}
-        <img
-          src="https://www.svgrepo.com/show/379863/chevron-down.svg"
-          alt=""
-        />
-      </div>
-      {isActive && (
-        <div className="select_content">
-          {options.map((option) => (
-            <div
-              className="select_items"
-              onClick={(e) => {
-                setSelected(option.title);
-                setIsActive(false);
-              }}
-            >
-              {option.title}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-
-/** ====TODO
- * 1. You can control the author dropdown here
- * 2. You can dynamically add real authors to the OPTION Array
- */
-const Author = ({ selected, setSelected }) => {
-  const [isActive, setIsActive] = useState(false);
-  const options = ["Demilade", "Noah", "Victoria", "Toheeb"];
-
-  return (
-    <div className="select_me">
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
-        <input type="text" value={selected} readOnly className="input_drop" />
-        {/* {selected} */}
-        <img
-          src="https://www.svgrepo.com/show/379863/chevron-down.svg"
-          alt=""
-        />
-      </div>
-      {isActive && (
-        <div className="select_content">
-          {options.map((option) => (
-            <div
-              className="select_items"
-              onClick={(e) => {
-                setSelected(option);
-                setIsActive(false);
-              }}
-            >
-              {option}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-
 /**
  * Do not touch here !!!
  *
@@ -338,7 +283,7 @@ const HandlingOverlay = styled.div`
 
   input {
     border: 0;
-    border: 1px solid #D8D8D8;
+    border: 1px solid rgba(44, 51, 58, 0.5);
 
     border-radius: 5px;
     font-size: inherit;
@@ -454,6 +399,53 @@ const Main = styled.div`
   height: 100%;
   margin: 100px auto;
   padding: 40px;
+  .feedbackContainer {
+    margin-top: 20px;
+    h3 {
+      font-family: Nunito;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 19px;
+      margin-bottom: 15px;
+      text-align: left;
+      span {
+        font-family: Nunito;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 22px;
+
+        text-align: left;
+      }
+    }
+  }
+  .feedback {
+    .each_comment {
+      padding: 10px;
+      border: 1px solid rgba(44, 51, 58, 0.5);
+      border-radius: 5px;
+      margin-bottom: 15px;
+      textarea {
+        margin: 0 !important;
+      }
+      h4 {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  @media (min-width: 650px) {
+    .feedback {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .each_comment {
+        width: 48.5%;
+      }
+    }
+  }
+  .featured_pic {
+    height: 200px;
+    object-fit: cover;
+  }
   .maximum_height {
     .select_me {
       margin-bottom: 22px !important;

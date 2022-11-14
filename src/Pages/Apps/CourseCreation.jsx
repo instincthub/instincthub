@@ -13,8 +13,10 @@ import MiniHeading from "../../components/MiniHeading";
 import Process from "../../components/Process";
 import EnterpriseFeatures from "../../components/EContentF";
 import Header from "../../components/navbar/Header";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const Enterprises = () => {
+  ScrollToTop()
   return (
     <>
       <Header />

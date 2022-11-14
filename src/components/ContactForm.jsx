@@ -4,7 +4,7 @@ import styled from "styled-components";
 import SVGs from "../assets/svg/SVGs";
 
 const CustomLabel = styled.div`
-  // Control Label
+  /* Control Label */
   .field {
     position: relative;
     margin-top: 25px;
@@ -12,7 +12,7 @@ const CustomLabel = styled.div`
 
   input {
     border: 0;
-    border: 1px solid rgba(44, 51, 58, 0.5);
+    border: 1px solid #D8D8D8;
 
     border-radius: 5px;
     font-size: inherit;
@@ -34,6 +34,7 @@ const CustomLabel = styled.div`
     left: 15px;
     transition: all 0.3s ease;
     pointer-events: none;
+    font-size: 16px;
   }
   input:not(:placeholder-shown) + span,
   input:focus + span {
@@ -88,73 +89,73 @@ const ContactForm = () => {
           <h2>Contact info</h2>
           <ul>
             <li className="phone">
-              <a href="tel:+2348162880409" target="_blank" rel="noopener">
+              <Link to="tel:+2348162880409" target="_blank" rel="noopener">
                 (+234) 816 288 0409
-              </a>{" "}
+              </Link>{" "}
               &nbsp; | &nbsp;
-              <a href="tel:+23490164140911" target="_blank" rel="noopener">
+              <Link to="tel:+23490164140911" target="_blank" rel="noopener">
                 (+234) 901 641 40911
-              </a>
+              </Link>
             </li>
             <li className="email">
-              <a href="mailto:info@instincthub.com">info@instincthub.com</a>
+              <Link to="mailto:info@instincthub.com">info at instincthub dot com</Link>
             </li>
           </ul>
 
           <ul className="socials_round">
             <li>
-              <a
-                href="https://wa.me/message/5IA2QYCI53SUM1"
+              <Link
+                to="https://wa.me/message/5IA2QYCI53SUM1"
                 target="_blank"
                 rel="noopener"
               >
                 <img src={SVGs.w_whatsapp} alt="WhatsApp" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="https://facebook.com/instincthub"
+              <Link
+                to="https://facebook.com/instincthub"
                 target="_blank"
                 rel="noopener"
               >
                 <img src={SVGs.w_facebook} alt="Facebook" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="https://twitter.com/instincthub/"
+              <Link
+                to="https://twitter.com/instincthub/"
                 target="_blank"
                 rel="noopener"
               >
                 <img src={SVGs.w_twitter} alt="Twitter" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="https://linkedin.com/company/instincthub"
+              <Link
+                to="https://linkedin.com/company/instincthub"
                 target="_blank"
                 rel="noopener"
               >
                 <img src={SVGs.w_linkedin} alt="LinkedIn" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="https://instagram.com/instincthub_"
+              <Link
+                to="https://instagram.com/instincthub_"
                 target="_blank"
                 rel="noopener"
               >
                 <img src={SVGs.w_ig} alt="Instagram" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="https://youtube.com/instincthub"
+              <Link
+                to="https://youtube.com/instincthub"
                 target="_blank"
                 rel="noopener"
               >
                 <img src={SVGs.w_youtube} alt="YouTube" />
-              </a>
+              </Link>
             </li>
           </ul>
 
