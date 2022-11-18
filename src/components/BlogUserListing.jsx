@@ -6,7 +6,7 @@ import ReactPaginate from "react-paginate"; //  Using react-paginate from the re
 import Images from "../assets/images/Images";
 import styled from "styled-components";
 
-function BlogListing() {
+function BlogUserListing() {
   const [events, setEvents] = useState(API.slice(0, 20));
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
   const [searchTerm, setSearchTerm] = useState("");
@@ -177,7 +177,7 @@ function BlogListing() {
   );
 }
 
-export default BlogListing;
+export default BlogUserListing;
 
 const FilterBy = ({ selected, setSelected }) => {
   const [isActive, setIsActive] = useState(false);

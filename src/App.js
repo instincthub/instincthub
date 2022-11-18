@@ -1,4 +1,4 @@
-import {React, useLayoutEffect} from "react";
+import {React} from "react";
 // import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/scss/style.css";
@@ -9,7 +9,7 @@ import Contact from "./Pages/Contact";
 import Policy from "./Pages/Policy";
 import Career from "./Pages/Career";
 import Pricing from "./Pages/Pricing";
-import AdminLogin from "./Pages/Authentication/Login";
+import AdminLogin from "./Pages/Blog/Login";
 import Success from "./Pages/PricingAlert/Success";
 import Error from "./Pages/PricingAlert/Error";
 import JobDetails from "./Pages/JobDetails";
@@ -28,7 +28,7 @@ function App() {
         <Route index element={<LandingPage />} />
 
         {/* Admin Login */}
-        <Route path="/login/" element={<AdminLogin />} />
+        <Route exact path="/login/" element={<AdminLogin />} />
 
         {/* About */}
         <Route path="/about/" element={<About />} />

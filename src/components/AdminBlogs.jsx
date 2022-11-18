@@ -4,11 +4,15 @@ import styled from "styled-components";
 import SVGs from "../assets/svg/SVGs";
 
 const EachBlog = (props) => {
+  const updateStates = () =>{
+    props.edit(true)
+    props.blog_edit(props.data)
+  }
   return (
     <EachAdminBlog className="eachAdminBlog">
-      <div className="clickable" onClick={props.edit}>
-        <h1>{props.title}</h1>
-        <p>{props.encryption}</p>
+      <div className="clickable" onClick={updateStates}>
+        <h1>{props.data.title}</h1>
+        <p>{props.data.overview}</p>
       </div>
 
       <div className="comments_dels">
@@ -30,7 +34,7 @@ const EachBlog = (props) => {
 
 export default EachBlog;
 
-let EachAdminBlog = styled.section`
+let EachAdminBlog = styled.div`
   background: #ffffff;
   border: 1.5px solid #EAEAEA;
   border-radius: 5px;
