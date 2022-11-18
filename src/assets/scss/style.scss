@@ -82,7 +82,7 @@
   }
   .grid-3 {
     .ent_d3 {
-      background: url("../images/tech-diversity.jpg") no-repeat;
+      background: url("../images/tech-diversity_overlay.jpg") no-repeat;
       background-size: cover;
       background-position: center;
       width: 100%;
@@ -122,7 +122,7 @@
   }
   .grid-4 {
     .ent_d4 {
-      background: url("../images/kids-cann-code.jpg") no-repeat;
+      background: url("../images/kids-cann-code_overlay.jpg") no-repeat;
       background-size: cover;
       background-position: center;
       width: 100%;
@@ -195,7 +195,7 @@
     grid-column-start: 2;
     grid-column-end: 4;
     .ent_d2 {
-      background: url("../images/enterprise.jpg") no-repeat;
+      background: url("../images/enterprise_overlay.jpg") no-repeat;
       width: 100%;
       background-size: cover;
       background-position: center;
@@ -630,11 +630,11 @@
   }
   .the_form {
     border-radius: 5px;
-    border: 1px solid rgba(44, 51, 58, 0.2);
+    border: 1px solid #D8D8D8;
     padding: 20px;
     input {
       margin-top: 20px;
-      border: 1px solid rgba(44, 51, 58, 0.5);
+      border: 1px solid #D8D8D8;
       // filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
       border-radius: 5px;
     }
@@ -657,6 +657,8 @@ textarea {
   // filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
   border-radius: 5px;
   outline: none;
+  font-family: 'Nunito';
+  font-size: 16px;
   &:focus {
     border: 1px solid #00838f;
   }
@@ -1797,18 +1799,6 @@ textarea {
     text-align: center;
   }
 }
-.plans {
-  border: 1px solid rgba(44, 51, 58, 0.2);
-  border-radius: 5px;
-  transform: scale(1);
-  transition: 0.4s;
-  margin-bottom: 50px;
-  position: relative;
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow);
-  }
-}
 .subsc {
   padding-top: 150px;
   margin-bottom: 100px;
@@ -1820,6 +1810,7 @@ textarea {
     text-align: left;
     // padding: 15px;
     background-color: #fdfdfd;
+    padding: 10px 15px;
     a {
       font-size: 14px;
       font-weight: 400;
@@ -1827,7 +1818,6 @@ textarea {
       letter-spacing: 0em;
       text-align: center;
       color: var(--DarkCyan);
-      margin-left: 15px;
     }
     h3 {
       background: var(--Main-Gradient);
@@ -1835,6 +1825,10 @@ textarea {
       color: var(--White);
       font-size: 18px;
       margin: 0;
+      position: absolute;
+      width: 100%;
+      top: 0px;
+      left: 0pc;
     }
     .price {
       font-size: 22px;
@@ -1849,18 +1843,13 @@ textarea {
       letter-spacing: 0em;
       text-align: center;
     }
-    h4 {
-      padding-top: 15px;
-      font-weight: 600;
-      margin-left: 15px;
-      margin-bottom: 15px;
+    .save_msg{
+      font-size: 12px;
+      font-style: italic;
     }
-    p {
-      padding-bottom: 15px;
-      margin-top: 0px;
-      margin-left: 15px;
-
-      font-weight: 500;
+    h4 {
+      font-weight: 600;
+      margin-bottom: 15px;
     }
   }
   .access {
@@ -1871,8 +1860,23 @@ textarea {
       // position: absolute;
       // bottom: 20px;
       width: 100%;
-      float: bottom;
       background: var(--DarkCyan);
+      position: absolute;
+      bottom: 10px;
+      width: 90%;
+      transition: .3s ease-in;
+      &:hover{
+        background-color: #2C333A;
+      }
+    }
+    button.schedule{
+      background-color: #2C333A;
+      &:before{
+        content: none;
+      }
+      &:hover{
+        background-color: #20262b;
+      }
     }
     li {
       position: relative;
@@ -3132,9 +3136,21 @@ textarea {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
+    .grid-row{
+      padding-bottom: 90px;
+      border: 1px solid #EAEAEA;
+      border-radius: 5px;
+      transform: scale(1);
+      transition: 0.4s;
+      margin-bottom: 50px;
+      position: relative;
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: var(--shadow);
+      }
+    }
     .plans {
       // width: 30%;
-      min-height: 1126px;
       margin-bottom: 20px;
     }
   }

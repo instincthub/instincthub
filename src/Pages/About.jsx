@@ -1,4 +1,4 @@
-import React from "react";
+import {React} from "react";
 import AboutBanner from "../components/AboutBanner";
 import Footer from "../components/Footer";
 import AboutProcess from "../components/AboutProcess";
@@ -6,8 +6,10 @@ import AboutF from "../components/AboutF";
 import Header from "../components/navbar/Header";
 import Teams from "../components/Teams";
 import Newsletter from "../components/Newsletter";
+import ScrollToTop from "../components/ScrollToTop";
 
 const About = () => {
+  ScrollToTop()
   return (
     <section>
       <Header />

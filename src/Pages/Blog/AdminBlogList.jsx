@@ -1,65 +1,58 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 // import JsonData from '../Mock-API.json'
-import API from "./D4Blog.json";
+import API from "../../json/D4Blog.json";
 import AdminBlog from "../../components/AdminBlogs";
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
-import Images from "../../assets/images/Images";
 import styled from "styled-components";
-import Create from "./Create";
-import Edit from "./Edit";
+import Create from "../../components/BlogCreate";
+import BlogEdit from "../../components/BlogEdit";
 import Header from "../../components/navbar/Header";
 import Footer from "../../components/Footer";
+import FilterArray from "../../components/FilterArray";
+import { reqOptions, fetAPI, HOST_URL, loginRequired, getCookie} from "../../assets/js/help_func";
 
 function AdminBlogList() {
-  const [events, setEvents] = useState(API.slice(0, 20));
-  const [value, setvalue] = useState("");
 
+  loginRequired(JSON.parse(getCookie('uu_id')))
+
+  const [events, setEvents] = useState(API.slice(0, 20));
+  const [blog_edit, setBlog_edit] = useState([]);
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
   const [searchTerm, setSearchTerm] = useState("");
   const [openModal, setOpenModal] = useState(false); // state for Modal
   const [edit, setEdit] = useState(false); // state for Modal
-  const [selected, setSelected] = useState("Filter");
   const [activeIndex, setActiveIndex] = useState(1);
   const handleClick = (index) => setActiveIndex(index);
-  const checkActive = (index, className) =>
-    activeIndex === index ? className : "";
+  const checkActive = (index, className) => activeIndex === index ? className : "";
+
+
+  useState(()=>{
+    let requestOptions  = reqOptions('get', null)
+    fetAPI(setEvents, HOST_URL()+"/api/v1/posts/", requestOptions, true)
+  })
 
   /** ======to do
    * 1. Handle all form event with handleChange function
    * 2. No need for Filter as all blog display at one.Navigate using the pagination
    */
 
-  const handleOnchange = (val) => setvalue(val);
-  // const [ API, setData ] = useState(API)
-  const eventsPerPage = 16;
+  const eventsPerPage = 18;
   const pagesVisited = pageNumber * eventsPerPage;
-
-  const filterEvents = (catItem) => {
-    const result = API.filter((curDate) => {
-      return curDate.category === catItem;
-    });
-    setEvents(result);
-  };
 
   const displayEvents = events
     .filter((event) => {
-      if (searchTerm === "") {
-        return event;
-      } else if (event.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return event;
-      }
+      if (searchTerm === "")return event;
+      else if (event.title.toLowerCase().includes(searchTerm.toLowerCase()))return event;
+      else return ''
     })
     .slice(pagesVisited, pagesVisited + eventsPerPage)
     .map((event) => {
-      const { id, title, category, author, date } = event;
-
       return (
         <AdminBlog
-          key={id}
-          commentCount={id}
-          title={title}
-          edit={() => setEdit(true)}
-          encryption="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
+          data={event}
+          edit={setEdit}
+          blog_edit={setBlog_edit}
+          key={event.id}
         />
       );
     }); // display items from 1 -6
@@ -87,56 +80,10 @@ function AdminBlogList() {
                   <button onClick={(e) => setEvents(API)}>All</button>
                 </span>
                 {/* Kindly remove this DIV is there is need to filter by Tab */}
-                <div>
-                  {/* <span
-                    className={`tab ${checkActive(2, "active")}`}
-                    onClick={() => handleClick(2)}
-                  >
-                    <button
-                      className="btn"
-                      onClick={() => filterEvents("Community")}
-                    >
-                      Community
-                    </button>
-                  </span>
 
-                  <span
-                    className={`tab ${checkActive(3, "active")}`}
-                    onClick={() => handleClick(3)}
-                  >
-                    <button
-                      className="btn"
-                      onClick={() => filterEvents("Education")}
-                    >
-                      Education
-                    </button>
-                  </span>
-                  <span
-                    className={`tab ${checkActive(4, "active")}`}
-                    onClick={() => handleClick(4)}
-                  >
-                    <button
-                      className="btn"
-                      onClick={() => filterEvents("Security")}
-                    >
-                      Security
-                    </button>
-                  </span>
-                  <span
-                    className={`tab ${checkActive(5, "active")}`}
-                    onClick={() => handleClick(5)}
-                  >
-                    <button
-                      className="btn"
-                      onClick={() => filterEvents("Digital")}
-                    >
-                      Digital
-                    </button>
-                  </span> */}
-                </div>
               </div>
               <div className="event-input">
-                <div class="search_set">
+                <div className="search_set">
                   <img
                     src="https://www.svgrepo.com/show/13682/search.svg"
                     alt=""
@@ -152,7 +99,9 @@ function AdminBlogList() {
                   />
                 </div>
 
-                <FilterBy selected={selected} setSelected={setSelected} />
+                <FilterArray 
+                  options ={["Last 7days", "Last 14 days", "This month", "Last Month"]} 
+                />
 
                 <button
                   className="important-btn"
@@ -185,45 +134,14 @@ function AdminBlogList() {
 
       {/* MODALS */}
       <Create open={openModal} onClose={() => setOpenModal(false)} />
-      <Edit open={edit} onClose={() => setEdit(false)} />
+      <BlogEdit open={edit} onClose={() => setEdit(false)} blog_edit={blog_edit} set_data={setEvents}/>
     </>
   );
 }
 
 export default AdminBlogList;
 
-const FilterBy = ({ selected, setSelected }) => {
-  const [isActive, setIsActive] = useState(false);
-  const options = ["Last 7days", "Last 14 days", "This month", "Last Month"];
 
-  return (
-    <div className="select_me">
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
-        <input type="text" value={selected} readOnly className="input_drop" />
-        {/* {selected} */}
-        <img
-          src="https://www.svgrepo.com/show/379863/chevron-down.svg"
-          alt=""
-        />
-      </div>
-      {isActive && (
-        <div className="select_content">
-          {options.map((option) => (
-            <div
-              className="select_items"
-              onClick={(e) => {
-                setSelected(option);
-                setIsActive(false);
-              }}
-            >
-              {option}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
 const HandleSearchAndTab = styled.section`
   margin-top: 130px;
   .container {

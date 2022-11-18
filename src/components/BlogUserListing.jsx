@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 // import JsonData from '../Mock-API.json'
-import API from "./D4Blog.json";
-import EachBlog from "../../components/EachBlog";
+import API from "../json/D4Blog.json";
+import EachBlog from "./EachBlog";
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
-import Images from "../../assets/images/Images";
+import Images from "../assets/images/Images";
 import styled from "styled-components";
 
-function EventDataDisplay() {
+function BlogUserListing() {
   const [events, setEvents] = useState(API.slice(0, 20));
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
   const [searchTerm, setSearchTerm] = useState("");
@@ -177,7 +177,7 @@ function EventDataDisplay() {
   );
 }
 
-export default EventDataDisplay;
+export default BlogUserListing;
 
 const FilterBy = ({ selected, setSelected }) => {
   const [isActive, setIsActive] = useState(false);

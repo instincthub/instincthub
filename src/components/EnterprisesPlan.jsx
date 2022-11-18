@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const FreePlan = () => {
+const EnterprisePlan = () => {
   return (
     <div className="grid-row">
       <div className="plans">
         <div className="plan_top">
           <h4>Enterprise</h4>
-          <a href="mailto:info@instincthub.com">Reach out for a quote</a>
-          <p>info@instincthub.com</p>
+          <Link to="#">Reach out for custom quote</Link>
         </div>
 
         <ul className="access">
@@ -26,10 +25,15 @@ const FreePlan = () => {
           <li>Onboarding plan creation</li>
           <li>Ability to assign courses & Skill paths</li>
           <li>Team learning Analytics</li>
+
+          <Link to="https://paystack.com/pay/instincthub-tracks-month">
+            <button className="native-btn schedule">Schedule a call</button>
+          </Link>
         </ul>
       </div>
+      
     </div>
   );
 };
 
-export default FreePlan;
+export default EnterprisePlan;

@@ -12,8 +12,10 @@ import Growth from "../../components/Growth";
 import Carousel from "../../components/Carousel";
 import CompanyTestimonial from "../../components/Ent_Testimonials";
 import Header from "../../components/navbar/Header";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const Enterprises = () => {
+  ScrollToTop()
   return (
     <>
       <Header />

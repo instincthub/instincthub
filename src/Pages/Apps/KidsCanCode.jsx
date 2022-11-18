@@ -8,8 +8,10 @@ import Newsletter from "../../components/Newsletter";
 import Banner from "../../components/Banner";
 import Benefits from "../../components/Benefits";
 import Header from "../../components/navbar/Header";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const Individual = () => {
+  ScrollToTop()
   return (
     <>
       <Header />

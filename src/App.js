@@ -1,4 +1,4 @@
-import React from "react";
+import {React} from "react";
 // import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/scss/style.css";
@@ -9,8 +9,7 @@ import Contact from "./Pages/Contact";
 import Policy from "./Pages/Policy";
 import Career from "./Pages/Career";
 import Pricing from "./Pages/Pricing";
-// import Payment from "./Pages//Payment";
-import AdminLogin from "./Pages/Authentication/Login";
+import AdminLogin from "./Pages/Blog/Login";
 import Success from "./Pages/PricingAlert/Success";
 import Error from "./Pages/PricingAlert/Error";
 import JobDetails from "./Pages/JobDetails";
@@ -24,12 +23,12 @@ import CourseCreation from "./Pages/Apps/CourseCreation";
 
 function App() {
   return (
-    <BrowserRouter basename="/instincthub">
+    <BrowserRouter basename="/">
       <Routes>
         <Route index element={<LandingPage />} />
 
         {/* Admin Login */}
-        <Route path="/login/" element={<AdminLogin />} />
+        <Route exact path="/login/" element={<AdminLogin />} />
 
         {/* About */}
         <Route path="/about/" element={<About />} />

@@ -1,36 +1,39 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../../components/Nav4Landing";
 
+import { reqOptions, fetAPI, HOST_URL, setCookie } from "../../assets/js/help_func";
+
 const Login = () => {
+  const [data, setData] = useState([])
+
+  useEffect(()=>{
+    if (data.access_token){
+      let json_str = JSON.stringify(data)
+      setCookie('uu_id', json_str, 30)
+      window.location.href = '/blog/admin'
+
+    }
+  }, [data])
+
   return (
     <section className="formfd">
       <Navbar />
-      <LoginContainer onSubmit="">
-        {/* USE FACEBOOK OR GOOGLE */}
-        <h1>Welcome Back</h1>
-        <div className="google_facebook">
-          <a href="">
-            <div className="google_f google">Continue with Google</div>
-          </a>
-          <a href="">
-            <div className="google_f facebook">Continue with Facebook</div>
-          </a>
-        </div>
-
-        <div className="or_line">
-          <p>Or</p>
-        </div>
+      <LoginContainer onSubmit={(form)=>{
+        form.preventDefault()
+        let requestOptions  = reqOptions('post', new FormData(form.target))
+        fetAPI(setData, HOST_URL()+"/api/v1/auth/login/", requestOptions, true)
+      }}>
+        <h1>Sign in</h1>
         <div class="field">
-          <input type="text" name="text" id="email" placeholder="John" />
+          <input type="text" name="username" placeholder="John" />
           <span>Username or Email</span>
         </div>
         <div class="field">
           <input
             type="password"
             name="password"
-            id="password"
             placeholder="John"
           />
           <span>Password</span>
@@ -38,21 +41,8 @@ const Login = () => {
         <div className="reset-password">
           <Link to="/reset-password">Forget Password ?</Link>
         </div>
-        <Link to="/">
-          <button className="important-btn">Login</button>
-        </Link>
-
-        <div className="new_here">
-          <p>
-            New to InstinctHub? <a href="">Sign up</a>
-          </p>
-
-          <p>
-            I accept InstinctHub <Link to="">Terms of Use and Privacy</Link>{" "}
-            Notice. Having trouble logging in?{" "}
-            <Link to="/">Contact Center</Link>
-          </p>
-        </div>
+    
+        <button type="submit" className="important-btn">Login</button>
       </LoginContainer>
     </section>
   );

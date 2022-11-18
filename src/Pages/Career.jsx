@@ -9,8 +9,10 @@ import SelectDrop from "../components/SelectDrop";
 import CareerBenefit from "../components/CareerBenefit";
 import CareerGrowth from "../components/CareerGrowth";
 import CareerBanner from "../components/CareerBanner";
+import ScrollToTop from "../components/ScrollToTop";
 
 const About = () => {
+  ScrollToTop()
   const [selected, setSelected] = useState("Choose One");
   return (
     <section>
