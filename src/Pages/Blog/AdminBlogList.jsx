@@ -52,6 +52,7 @@ function AdminBlogList() {
           data={event}
           edit={setEdit}
           blog_edit={setBlog_edit}
+          key={event.id}
         />
       );
     }); // display items from 1 -6
@@ -82,7 +83,7 @@ function AdminBlogList() {
 
               </div>
               <div className="event-input">
-                <div class="search_set">
+                <div className="search_set">
                   <img
                     src="https://www.svgrepo.com/show/13682/search.svg"
                     alt=""

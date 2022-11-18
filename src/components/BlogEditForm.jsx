@@ -30,7 +30,7 @@ import { reqOptions, fetAPI, HOST_URL } from "../assets/js/help_func";
         
         console.log(formdata.getAll('categories'));
 
-        let requestOptions  = reqOptions('PUT', formdata, true)
+        let requestOptions  = reqOptions('PUT', formdata, true);
         console.log(`${HOST_URL()}/api/v1/posts/post/${props.data.slug}/`);
 
         fetAPI(props.set_data, `${HOST_URL()}/api/v1/posts/post/${props.data.slug}/`, requestOptions, true)
