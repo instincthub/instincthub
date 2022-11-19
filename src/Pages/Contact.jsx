@@ -5,14 +5,16 @@ import Footer from "../components/Footer";
 import Header from "../components/navbar/Header";
 import Newsletter from "../components/Newsletter";
 import ScrollToTop from "../components/ScrollToTop";
+import TopModal from "../components/TopModal";
 
 const Contact = () => {
-  ScrollToTop()
+  ScrollToTop();
   return (
     <>
       <Header />
       <C_Banner />
       <ContactForm />
+      <TopModal />
       {/* <Newsletter /> */}
       <Footer />
     </>

@@ -86,8 +86,8 @@ const Header = () => {
               <li>
                 <div
                   className="actual main_target"
-                  onMouseEnter={() => setOpenModal(true)}
-                  onClick={() => setOpenModal(false)}
+                  onMouseEnter={() => setOpenModal(false)}
+                  onClick={() => setOpenModal(true)}
                   // onClick={() => setOpenModal(false)}
                 >
                   Courses
@@ -188,6 +188,7 @@ let DesktopCourses = styled.section`
   top: 80px;
   background: pink;
 `;
+
 let Multi = styled.ul`
   .actual {
     font-weight: 500;
