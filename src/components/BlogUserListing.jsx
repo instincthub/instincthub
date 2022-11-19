@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import API from "../json/D4Blog.json";
 import EachBlog from "./EachBlog";
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
-import Images from "../assets/images/Images";
 import styled from "styled-components";
+import { reqOptions, fetAPI, HOST_URL } from "../assets/js/help_func";
 
 function BlogUserListing() {
-  const [events, setEvents] = useState(API.slice(0, 20));
+  const [events, setEvents] = useState([]);
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
   const [searchTerm, setSearchTerm] = useState("");
   const [selected, setSelected] = useState("Filter");
@@ -17,11 +17,16 @@ function BlogUserListing() {
     activeIndex === index ? className : "";
   const [isActive, setActive] = useState("normal_tab");
 
-  const toggleClass = () => {
-    isActive === "normal_tab"
-      ? setActive("normal_tab add_tape")
-      : setActive("normal_tab");
-  };
+  useState(()=>{
+    let requestOptions  = reqOptions('get', null)
+    fetAPI(setEvents, HOST_URL()+"/api/v1/posts", requestOptions, true)
+  })
+
+  // const toggleClass = () => {
+  //   isActive === "normal_tab"
+  //     ? setActive("normal_tab add_tape")
+  //     : setActive("normal_tab");
+  // };
 
   // const [ API, setData ] = useState(API)
   const eventsPerPage = 6;
@@ -36,27 +41,16 @@ function BlogUserListing() {
 
   const displayEvents = events
     .filter((event) => {
-      if (searchTerm === "") {
-        return event;
-      } else if (event.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return event;
-      }
+      if (searchTerm === "") return event;
+      else if (event.title.toLowerCase().includes(searchTerm.toLowerCase()))return event;
+      else return ''
     })
     .slice(pagesVisited, pagesVisited + eventsPerPage)
     .map((event) => {
-      const { id, title, category, author, date } = event;
-
       return (
         <EachBlog
-          key={id}
-          link="slug"
-          blogimg={Images.blog1}
-          authorimg={Images.img1}
-          authorname={author}
-          category={category}
-          date="October 5, 2022"
-          title={title}
-          encryption="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
+          key={event.id}
+          data={event}
         />
       );
     }); // display items from 1 -6
@@ -89,7 +83,7 @@ function BlogUserListing() {
                   className="btn"
                   onClick={() => filterEvents("Community")}
                 >
-                  Community
+                  Frontend
                 </button>
               </span>
 
@@ -101,7 +95,7 @@ function BlogUserListing() {
                   className="btn"
                   onClick={() => filterEvents("Education")}
                 >
-                  Education
+                  Backend
                 </button>
               </span>
               <span
@@ -112,7 +106,7 @@ function BlogUserListing() {
                   className="btn"
                   onClick={() => filterEvents("Security")}
                 >
-                  Security
+                  Machine Learning
                 </button>
               </span>
               <span
@@ -120,12 +114,20 @@ function BlogUserListing() {
                 onClick={() => handleClick(5)}
               >
                 <button className="btn" onClick={() => filterEvents("Digital")}>
-                  Digital
+                Cybersecurity
+                </button>
+              </span>
+              <span
+                className={`tab ${checkActive(5, "active")}`}
+                onClick={() => handleClick(5)}
+              >
+                <button className="btn" onClick={() => filterEvents("Digital")}>
+                Career Advice
                 </button>
               </span>
             </div>
             <div className="event-input">
-              <FilterBy selected={selected} setSelected={setSelected} />
+              {/* <FilterBy selected={selected} setSelected={setSelected} /> */}
               <div class="search_set">
                 <img
                   src="https://www.svgrepo.com/show/13682/search.svg"

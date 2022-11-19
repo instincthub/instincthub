@@ -12,7 +12,7 @@ const FilterArray = (props) => {
           {/* {selected} */}
 
           <div>
-            <input type="text" defaultValue={selected} id={'id_'+props.input_name} name={props.input_name} readOnly className="input_drop" />
+            <input type="text" defaultValue={selected} name={props.input_name} readOnly className="input_drop" />
             <p>{selected}</p>
           </div>
           <label className="filter_label">{props.label}</label>
@@ -26,6 +26,7 @@ const FilterArray = (props) => {
           <div className="select_content">
             {props.options.map((option) => (
               <div
+                key={option}
                 className="select_items"
                 onClick={(e) => {
                   setSelected(option);
@@ -46,6 +47,7 @@ export default FilterArray
 
 const SelectMe = styled.div`
     width: 100%;
+    cursor: pointer;
 
     .select-btn input:focus{
         border: none;

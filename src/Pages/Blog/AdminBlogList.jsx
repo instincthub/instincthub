@@ -28,7 +28,7 @@ function AdminBlogList() {
 
   useState(()=>{
     let requestOptions  = reqOptions('get', null)
-    fetAPI(setEvents, HOST_URL()+"/api/v1/posts/", requestOptions, true)
+    fetAPI(setEvents, HOST_URL()+"/api/v1/posts/admin/", requestOptions, true)
   })
 
   /** ======to do
@@ -99,9 +99,11 @@ function AdminBlogList() {
                   />
                 </div>
 
-                <FilterArray 
-                  options ={["Last 7days", "Last 14 days", "This month", "Last Month"]} 
-                />
+                <div className="filter">
+                  <FilterArray 
+                    options ={["Last 7days", "Last 14 days", "This month", "Last Month"]} 
+                  />
+                </div>
 
                 <button
                   className="important-btn"
@@ -154,6 +156,13 @@ const HandleSearchAndTab = styled.section`
     max-width: 675px;
     input {
       margin-bottom: 20px;
+    }
+    .important-btn{
+      min-width: 160px;
+    }
+    .filter{
+      width: 170px;
+      height: 47.5px;
     }
   }
   @media (min-width: 760px) {

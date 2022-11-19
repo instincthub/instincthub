@@ -4,13 +4,10 @@ import styled from "styled-components";
 function BlogEditCategories(props) {
     const [objects, setObjects] = useState([])
 
-    /** ====TODO
-     * 1. Checkboxes for All Category of blog belong here
+    /*
      * Objects trows error when you loop with map or forEach.
      * Solution: convert to array.
      */
-
-
      useEffect(()=>{
         // Objects to array
         let obj = []

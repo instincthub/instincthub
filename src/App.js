@@ -50,7 +50,7 @@ function App() {
         <Route path="/policies/privacy-policy/" element={<Policy />} />
 
         {/* Posts */}
-        <Route path="/blog" element={<Blog />} />
+        <Route exact path="/blog" element={<Blog />} />
         <Route exact path="/blog/admin" element={<AdminBlogList />} />
         <Route path="/blog/:slug/" element={<BlogDetails />} />
       </Routes>

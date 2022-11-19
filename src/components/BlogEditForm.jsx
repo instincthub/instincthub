@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from "react";
+import {React, useEffect } from "react";
 import styled from "styled-components";
 import BlogEditCategories from "./BlogEditCategories";
 import FilterObjects from "./FilterObjects";
@@ -8,7 +8,6 @@ import { reqOptions, fetAPI, HOST_URL } from "../assets/js/help_func";
 
   
   const BlogEditForm = (props) => {
-    const [data, setData] = useState([])
     useEffect(()=>{
         let authors = []
         let author_ids = []
