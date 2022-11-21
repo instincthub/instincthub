@@ -187,6 +187,9 @@ let DesktopCourses = styled.section`
   position: absolute;
   top: 80px;
   background: pink;
+  header{
+    z-index: 1000;
+  }
 `;
 
 let Multi = styled.ul`

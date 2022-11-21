@@ -3,10 +3,12 @@ import Footer from "../../components/Footer";
 import LatestBlog from "../../components/Latest";
 import Newsletter from "../../components/Newsletter";
 import BlogUserListing from "../../components/BlogUserListing";
+import ScrollToTop from "../../components/ScrollToTop";
 // import Categories from "../../components/BlogCategories";
 import Header from "../../components/navbar/Header";
 
 const Blog = () => {
+  ScrollToTop();
   return (
     <section>
       <Header />

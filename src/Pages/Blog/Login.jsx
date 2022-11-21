@@ -2,10 +2,12 @@ import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../../components/Nav4Landing";
+import ScrollToTop from "../../components/ScrollToTop";
 
 import { reqOptions, fetAPI, HOST_URL, setCookie } from "../../assets/js/help_func";
 
 const Login = () => {
+  ScrollToTop();
   const [data, setData] = useState([])
 
   useEffect(()=>{

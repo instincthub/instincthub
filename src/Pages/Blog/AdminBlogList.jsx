@@ -2,17 +2,19 @@ import { React, useState } from "react";
 // import JsonData from '../Mock-API.json'
 import API from "../../json/D4Blog.json";
 import AdminBlog from "../../components/AdminBlogs";
-import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
 import styled from "styled-components";
 import Create from "../../components/BlogCreate";
-import BlogEdit from "../../components/BlogEdit";
+// import BlogEdit from "../../components/BlogEdit";
 import Header from "../../components/navbar/Header";
 import Footer from "../../components/Footer";
-import FilterArray from "../../components/FilterArray";
+import FilterArray from "../../components/forms/FilterArray";
+import StatusMessage from "../../components/message/StatusMessage";
+import ScrollToTop from "../../components/ScrollToTop";
+import AdminBlogEditForm from "../../components/AdminBlogEditForm";
 import { reqOptions, fetAPI, HOST_URL, loginRequired, getCookie} from "../../assets/js/help_func";
 
 function AdminBlogList() {
-
+  ScrollToTop();
   loginRequired(JSON.parse(getCookie('uu_id')))
 
   const [events, setEvents] = useState(API.slice(0, 20));
@@ -26,9 +28,30 @@ function AdminBlogList() {
   const checkActive = (index, className) => activeIndex === index ? className : "";
 
 
+  /* 
+    Show message for "success" or "error".
+    The default state is ''.
+    Render the StatusMessage below the Header
+    props: [type, setType, message]
+  */
+  const [messageType, setMessageType] = useState('');
+  const [msg, setMsg] = useState(messageType === 'success' ? "Awesome! the blog post was updated." : "Ooops..., It something went wrong. Try again");
+  const [error, setError] = useState([])
+
+
   useState(()=>{
     let requestOptions  = reqOptions('get', null)
     fetAPI(setEvents, HOST_URL()+"/api/v1/posts/admin/", requestOptions, true)
+
+    console.log(error);
+    // if (error) {
+    //   setMsg(error)
+    //   console.log(error);
+    //   Object.entries(error).forEach((item, index)=> {
+    //     const [key, value] = item;
+    //     console.log(key, value, index)
+    //   });
+    // }
   })
 
   /** ======to do
@@ -36,37 +59,14 @@ function AdminBlogList() {
    * 2. No need for Filter as all blog display at one.Navigate using the pagination
    */
 
-  const eventsPerPage = 18;
-  const pagesVisited = pageNumber * eventsPerPage;
-
-  const displayEvents = events
-    .filter((event) => {
-      if (searchTerm === "")return event;
-      else if (event.title.toLowerCase().includes(searchTerm.toLowerCase()))return event;
-      else return ''
-    })
-    .slice(pagesVisited, pagesVisited + eventsPerPage)
-    .map((event) => {
-      return (
-        <AdminBlog
-          data={event}
-          edit={setEdit}
-          blog_edit={setBlog_edit}
-          key={event.id}
-        />
-      );
-    }); // display items from 1 -6
-
-  const pageCount = Math.ceil(events.length / eventsPerPage); // Rounding up
-
-  const changePage = ({ selected }) => {
-    // selected the number for the page we want to move too
-    setPageNumber(selected);
-  };
-
   return (
     <>
       <Header />
+      <StatusMessage 
+          setMessageType={setMessageType}
+          messageType={messageType}
+          message={msg}
+      />
 
       <section className="container">
         <div className="">
@@ -115,28 +115,18 @@ function AdminBlogList() {
             </HandleSearchAndTab>
           </div>
         </div>
-        <div className="panels">
-          <div className={`panel ${checkActive(1, "active")}`}>
-            <Wrapper>{displayEvents}</Wrapper>
-          </div>
-        </div>
-        <ReactPaginate
-          previousLabel={"<"}
-          nextLabel={">"}
-          pageCount={pageCount}
-          onPageChange={changePage}
-          containerClassName={"paginationButtons"}
-          previousLinkClassName={"previousButton"}
-          nextLinkClassName={"nextButton"}
-          disabledClassName={"paginationDisabled"}
-          activeClassName={"paginationActive"}
-        />
+        
+        {/* List Blog Post */}
+        <AdminBlog events={events} setBlog_edit={setBlog_edit} setEdit={setEdit} searchTerm={searchTerm}/>
+        
       </section>
       <Footer />
 
       {/* MODALS */}
-      <Create open={openModal} onClose={() => setOpenModal(false)} />
-      <BlogEdit open={edit} onClose={() => setEdit(false)} blog_edit={blog_edit} set_data={setEvents}/>
+      <Create openModal={openModal} setOpenModal={setOpenModal} data={events} set_data={setEvents} setMessageType={setMessageType} messageType={messageType} setError={setError} error={error}/>
+
+      <AdminBlogEditForm edit={edit} setEdit={setEdit} data={blog_edit} set_data={setEvents} setMessageType={setMessageType} messageType={messageType} setError={setError}/>
+
     </>
   );
 }
@@ -221,39 +211,5 @@ const HandleSearchAndTab = styled.section`
   }
   .normal_tab.add_tape {
     border-bottom: 2px solid yellow;
-  }
-`;
-let Wrapper = styled.section`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  .eachAdminBlog {
-    width: 49%;
-  }
-
-  @media (max-width: 400px) {
-    .eachAdminBlog {
-      width: 100%;
-    }
-  }
-  @media (min-width: 720px) {
-    .eachAdminBlog {
-      width: 32%;
-    }
-  }
-  @media (min-width: 900px) {
-    .eachAdminBlog {
-      width: 23%;
-    }
-  }
-  @media (min-width: 1200px) {
-    .eachAdminBlog {
-      width: 19%;
-    }
-  }
-  @media (min-width: 1380px) {
-    .eachAdminBlog {
-      width: 16%;
-    }
   }
 `;

@@ -1,316 +1,112 @@
-import React from "react";
-import { useState } from "react";
+import { React, useEffect } from "react";
 import styled from "styled-components";
 import SVGs from "../assets/svg/SVGs";
-import Blogs from "../json/D4Blog.json";
+import TextArea from "./forms/TextArea";
+import TextField from "./forms/TextField";
+import FilterObjects from "./FilterObjects";
+import FilterArray from "./forms/FilterArray";
+import SubmitBtn from "./forms/SubmitBtn";
+import CheckBoxes from "./forms/CheckBoxes";
+import { reqOptions, fetAPI, HOST_URL, printInputError } from "../assets/js/help_func";
 
-/**
- *  *
- *  todo
- *  *
- *  Lets Create a from * All input should slide up * */
-const handleFormSubmit = (e) => {
-  e.preventDefault();
-  console.log(e);
-};
-/**
- *  *
- *  todo
- *  *
- *  Master Component handle all the inputs together * */
-const BlogCreate = ({ open, onClose }) => {
-  if (!open) return null;
+const BlogCreate = (props) => {
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    // Enable Spinning button
+    e.target.querySelector('[type=submit]').classList.add('rolling');
+    e.target.querySelector('[type=submit]').disabled = true;
+
+    // Remove thumbnail from field if empty
+    var formdata = new FormData(e.target);
+    if (!formdata.get('thumbnail').size) formdata.delete('thumbnail')
+
+    let requestOptions  = reqOptions('POST', formdata, true);
+
+    fetAPI(props.set_data, `${HOST_URL()}/api/v1/posts/create/`, requestOptions, true, props.setMessageType, props.setError)
+  };
+
+  // Disable spinning button after getting status from fetch
+  if (props.messageType && document.querySelector('.rolling')) {
+    document.querySelector('[type=submit]').classList.remove('rolling')
+    document.querySelector('[type=submit]').disabled = false;
+  }
+
+  useEffect(()=>{// Remove overlay if success and display error message if error
+    if (props.data && props.messageType === 'success') {
+      props.setOpenModal(false)
+    }
+    else if(props.error && props.messageType === 'error'){
+      console.log(props.error);
+      printInputError(props.error)
+    }
+  },[props.error])
+
+
+  if (!props.openModal) return null;
   return (
-    <HandlingOverlay onClick={onClose}>
-      <ModalContainer
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-      >
-        <Master />
+    <HandlingOverlay onClick={()=>props.setOpenModal(false)}>
+      <ModalContainer onClick={(e) =>e.stopPropagation()}>
+        <Main>
+          <form onSubmit={handleFormSubmit}>
+            <h3>Create Blog</h3>
+            <div className="custom_uploader">
+              <div>
+                <div className="tag_upload">
+                  <img src={SVGs.pic_frame} alt="" className="cloud" />
+                  <p>Drop File here 1MB File max size</p>
+                </div>
+                <input type="file" name="thumbnail" />
+                <label htmlFor="upload">Browse Files</label>
+              </div>
+            </div>
+
+            <TextField type="text" name="title" label="Blog Title" />
+            <TextArea name="overview" rows="5" label="Overview" />
+            <TextArea name="content" rows="15" label="Content" />
+
+            <CheckBoxes 
+              default={false}
+              cat_list={props.data[0].category_list}/>
+
+            <FilterObjects 
+                options ={props.data[0].author_list} 
+                exists={props.data.author}
+                input_name="author"
+                label="Author"
+            />
+
+            <FilterObjects 
+                options ={props.data[0].previous_post_list} 
+                input_name="previous_post"
+                label="Previous Post"
+            />
+
+            <FilterObjects 
+                options ={props.data[0].previous_post_list} 
+                input_name="next_post"
+                label="Next Post"
+            />
+
+            <FilterArray 
+                options ={["DRAFT", "PUBLISHED"]} 
+                input_name="status"
+                label="Status"
+            />
+
+            <SubmitBtn add_class="important-btn" labels="Post Blog"/>
+          </form>
+        </Main>
 
         <img
           className="close-btn"
           src="https://www.svgrepo.com/show/315851/close.svg"
           alt="c"
-          onClick={onClose}
+          onClick={()=>props.setOpenModal(false)}
         />
       </ModalContainer>
     </HandlingOverlay>
-  );
-};
-
-const Master = () => {
-  const [selected, setSelected] = useState("Previous Blog");
-  const [next, setNext] = useState("Next Blog");
-  const [author, setAuthor] = useState("Writer");
-  return (
-    <Main>
-      <form action="" onSubmit={handleFormSubmit}>
-        <h3>Create Blog</h3>
-        <div className="custom_uploader">
-          <div>
-            <div className="tag_upload">
-              <img src={SVGs.pic_frame} alt="" className="cloud" />
-              <p>Drop File here 20MB File max size</p>
-            </div>
-            <input type="file" id="upload" name="upload" />
-            <label htmlFor="upload">Browse Files</label>
-          </div>
-        </div>
-        <div class="field">
-          <input type="text" name="title" id="title" placeholder="John" />
-          <span>Blog Title</span>
-        </div>
-        <div class="">
-          <textarea name="" placeholder="Blog Overview"></textarea>
-          <span></span>
-        </div>
-
-        <SelectCategories />
-
-        <div className="selectDropdown">
-          <PreviousBlog selected={selected} setSelected={setSelected} />
-        </div>
-        <div className="selectDropdown">
-          <NextBlog selected={next} setSelected={setNext} />
-        </div>
-        <div className="selectDropdown">
-          <Author selected={author} setSelected={setAuthor} />
-        </div>
-
-        <div class="field">
-          <input type="text" name="title" id="title" placeholder="John" />
-          <span>Link</span>
-        </div>
-        <div class="field">
-          <input type="text" name="title" id="title" placeholder="John" />
-          <span>Link 2</span>
-        </div>
-
-        <button className="important-btn" type="submit">
-          Publish
-        </button>
-      </form>
-    </Main>
-  );
-};
-
-function SelectCategories() {
-  /** ====TODO
-   * 1. Checkboxes for All Category of blog belong here
-   */
-  return (
-    <section className="manipulateCheckboxes">
-      {/* Marketing */}
-      <div class="cntr">
-        <label htmlFor="marketing" class="label-cbx">
-          <input
-            id="marketing"
-            name="marketing"
-            type="checkbox"
-            class="invisible"
-            value="{props.agree}"
-            onChange=""
-          />
-          <div class="checkbox">
-            <svg width="20px" height="20px" viewBox="0 0 20 20">
-              <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-              <polyline points="4 11 8 15 16 6"></polyline>
-            </svg>
-          </div>
-        </label>
-        <span>Marketing</span>
-      </div>
-      {/* Education */}
-      <div class="cntr">
-        <label htmlFor="education" class="label-cbx">
-          <input
-            id="education"
-            name="education"
-            type="checkbox"
-            class="invisible"
-            value="{props.agree}"
-            onChange=""
-          />
-          <div class="checkbox">
-            <svg width="20px" height="20px" viewBox="0 0 20 20">
-              <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-              <polyline points="4 11 8 15 16 6"></polyline>
-            </svg>
-          </div>
-        </label>
-        <span>Education</span>
-      </div>
-      {/* Technology */}
-      <div class="cntr">
-        <label htmlFor="technology" class="label-cbx">
-          <input
-            id="technology"
-            name="technology"
-            type="checkbox"
-            class="invisible"
-            value="{props.agree}"
-            onChange=""
-          />
-          <div class="checkbox">
-            <svg width="20px" height="20px" viewBox="0 0 20 20">
-              <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-              <polyline points="4 11 8 15 16 6"></polyline>
-            </svg>
-          </div>
-        </label>
-        <span>Technology</span>
-      </div>
-      {/* Security */}
-      <div class="cntr">
-        <label htmlFor="security" class="label-cbx">
-          <input
-            id="security"
-            name="security"
-            type="checkbox"
-            class="invisible"
-            value="{props.agree}"
-            onChange=""
-          />
-          <div class="checkbox">
-            <svg width="20px" height="20px" viewBox="0 0 20 20">
-              <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-              <polyline points="4 11 8 15 16 6"></polyline>
-            </svg>
-          </div>
-        </label>
-        <span>Security</span>
-      </div>
-      {/* Community */}
-      <div class="cntr">
-        <label htmlFor="community" class="label-cbx">
-          <input
-            id="community"
-            name="community"
-            type="checkbox"
-            class="invisible"
-            value="{props.agree}"
-            onChange=""
-          />
-          <div class="checkbox">
-            <svg width="20px" height="20px" viewBox="0 0 20 20">
-              <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-              <polyline points="4 11 8 15 16 6"></polyline>
-            </svg>
-          </div>
-        </label>
-        <span>Community</span>
-      </div>
-    </section>
-  );
-}
-
-/** ====TODO
- * 1. You can control the Previous BLog Dropdown from Here
- */
-const PreviousBlog = ({ selected, setSelected }) => {
-  const [isActive, setIsActive] = useState(false);
-  const options = Blogs;
-
-  return (
-    <div className="select_me maximum_height">
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
-        <input type="text" value={selected} readOnly className="input_drop" />
-        {/* {selected} */}
-        <img
-          src="https://www.svgrepo.com/show/379863/chevron-down.svg"
-          alt=""
-        />
-      </div>
-      {isActive && (
-        <div className="select_content">
-          {options.map((option) => (
-            <div
-              className="select_items"
-              onClick={(e) => {
-                setSelected(option.title);
-                setIsActive(false);
-              }}
-            >
-              {option.title}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-/** ====TODO
- * 1. You can control the Next BLog Dropdown from Here
- */
-const NextBlog = ({ selected, setSelected }) => {
-  const [isActive, setIsActive] = useState(false);
-  const options = Blogs;
-
-  return (
-    <div className="select_me maximum_height">
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
-        <input type="text" value={selected} readOnly className="input_drop" />
-        {/* {selected} */}
-        <img
-          src="https://www.svgrepo.com/show/379863/chevron-down.svg"
-          alt=""
-        />
-      </div>
-      {isActive && (
-        <div className="select_content">
-          {options.map((option) => (
-            <div
-              className="select_items"
-              onClick={(e) => {
-                setSelected(option.title);
-                setIsActive(false);
-              }}
-            >
-              {option.title}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-
-/** ====TODO
- * 1. You can control the author dropdown here
- * 2. You can dynamically add real authors to the OPTION Array
- */
-const Author = ({ selected, setSelected }) => {
-  const [isActive, setIsActive] = useState(false);
-  const options = ["Demilade", "Noah", "Victoria", "Toheeb"];
-
-  return (
-    <div className="select_me">
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
-        <input type="text" value={selected} readOnly className="input_drop" />
-        {/* {selected} */}
-        <img
-          src="https://www.svgrepo.com/show/379863/chevron-down.svg"
-          alt=""
-        />
-      </div>
-      {isActive && (
-        <div className="select_content">
-          {options.map((option) => (
-            <div
-              className="select_items"
-              onClick={(e) => {
-                setSelected(option);
-                setIsActive(false);
-              }}
-            >
-              {option}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
   );
 };
 
@@ -330,50 +126,6 @@ const HandlingOverlay = styled.div`
   @media (max-width: 488px) {
     padding: 20px !important;
   }
-  // Control Label
-  .field {
-    position: relative;
-    margin-top: 25px;
-  }
-
-  input {
-    border: 0;
-    border: 1px solid #D8D8D8;
-
-    border-radius: 5px;
-    font-size: inherit;
-
-    outline: none;
-  }
-  input:focus {
-    border: 1px solid #00838f;
-  }
-  input::placeholder {
-    color: transparent;
-  }
-  input:focus::placeholder {
-    color: transparent;
-  }
-  input + span {
-    position: absolute;
-    top: 3px;
-    left: 15px;
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-  input:not(:placeholder-shown) + span,
-  input:focus + span {
-    background: #ffffff;
-    top: -10px;
-    height: 20px;
-    padding: 5px;
-    margin: 0;
-    color: #00838f;
-    font-size: 14px;
-    pointer-events: initial;
-    left: 15px;
-    line-height: 10px;
-  }
 `;
 
 const ModalContainer = styled.div`
@@ -384,7 +136,6 @@ const ModalContainer = styled.div`
   .custom_uploader {
     position: relative;
     height: 230px;
-    display: flex;
     background: #f9f9f9;
     border: 1.5px dashed rgba(44, 51, 58, 0.4);
     border-radius: 5px;
@@ -392,6 +143,9 @@ const ModalContainer = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    p{
+      text-align: center;
+    }
     .tag_upload {
       margin-bottom: 30px;
       position: relative;
@@ -454,14 +208,14 @@ const Main = styled.div`
   height: 100%;
   margin: 100px auto;
   padding: 40px;
-  .maximum_height {
-    .select_me {
+
+  .select_me {
       margin-bottom: 22px !important;
+      margin-top: 40px;
     }
-    .select_content {
-      max-height: 300px;
-      overflow: auto;
-    }
+  .select_content {
+    max-height: 300px;
+    overflow: auto;
   }
   .manipulateCheckboxes {
     margin: 20px 0;

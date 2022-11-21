@@ -199,63 +199,75 @@ export const HOST_URL = ()=> {
     tag.style.backgroundSize = 'cover'
   }
   
-  export const printErr = (key, value, index) =>{
-      let inputField = document.querySelector('#regForm').querySelector(`[name="${key}"]`)
-      // console.log(key, value)
-  
-      let error_tag = null
-  
-      // Make input border red and check for the parent tag
-      if (inputField !== null) {
-        inputField.style.borderColor = 'var(--TurkishRose)';
-  
-        if (inputField.getAttribute('type') === 'radio'){
-            error_tag = inputField.parentElement.parentElement.parentElement.querySelector('.error');
+  export const printInputError = (items) =>{
+    let inputField
+    const eachInput = (key, value, index) =>{
+        console.log(key, value)
+        inputField = document.querySelector('form').querySelector(`[name="${key}"]`)
+        
+    
+        let error_tag = null
+    
+        // Make input border red and check for the parent tag
+        if (inputField !== null) {
+            inputField.style.borderColor = 'var(--TurkishRose)';
+    
+            if (inputField.getAttribute('type') === 'radio'){
+                error_tag = inputField.parentElement.parentElement.parentElement.querySelector('.error');
+            }
+            else if (inputField.getAttribute('type') === 'file'){
+            error_tag = inputField.parentElement.parentElement.querySelector('.error'); 
+            }
+            else{
+            error_tag = inputField.parentElement.querySelector('.error');
+            }
         }
-        else if (inputField.getAttribute('type') === 'file'){
-          error_tag = inputField.parentElement.parentElement.querySelector('.error'); 
+    
+        if (error_tag) {
+            error_tag.textContent = value
         }
         else{
-          error_tag = inputField.parentElement.querySelector('.error');
+            let span_tag = document.createElement('P')
+            span_tag.classList.add('error')
+            span_tag.textContent = value
+            span_tag.style.color = 'var(--TurkishRose)'
+            span_tag.style.display = 'block'
+            
+            if (key === "user") {
+            
+            }
+            else if (inputField !== null){
+            // console.log(inputField.parentElement)
+            if (inputField.getAttribute('type') === "radio" || inputField.classList.contains('dropdown')) {
+                // console.log(key)
+                inputField.parentElement.parentElement.parentElement.append(span_tag)
+            }
+            else if(inputField.getAttribute('type') === "checkbox"){
+                inputField.parentElement.parentElement.parentElement.parentElement.append(span_tag)
+            }
+            else if (inputField.getAttribute('type') === "file") {
+                // console.log(key)
+                inputField.parentElement.parentElement.append(span_tag)
+            }
+            else if (inputField.nodeName === "SELECT") {
+                console.log(key)
+                inputField.parentElement.append(span_tag)
+            }
+            else{
+                inputField.parentElement.parentElement.append(span_tag)
+            }
+            }
+            
         }
-      }
-  
-      if (error_tag) {
-        error_tag.textContent = value
-      }
-      else{
-        let span_tag = document.createElement('SPAN')
-        span_tag.classList.add('error')
-        span_tag.textContent = value
-        span_tag.style.color = 'var(--TurkishRose)'
-        span_tag.style.display = 'inline-block'
-        
-        if (key === "user") {
-          
+        if (index === 0 && inputField !== null) {
+            inputField.focused = true
         }
-        else if (inputField !== null){
-          // console.log(inputField.parentElement)
-          if (inputField.getAttribute('type') === "radio") {
-            // console.log(key)
-            inputField.parentElement.parentElement.parentElement.append(span_tag)
-          }
-          else if (inputField.getAttribute('type') === "file") {
-            // console.log(key)
-            inputField.parentElement.parentElement.append(span_tag)
-          }
-          else if (inputField.nodeName === "SELECT") {
-            console.log(key)
-            inputField.parentElement.append(span_tag)
-          }
-          else{
-            inputField.parentElement.append(span_tag)
-          }
-        }
-        
-      }
-      if (index === 0 && inputField !== null) {
-        inputField.focused = true
-      }
+    }
+
+    Object.entries(items).forEach((item, index)=> {
+        const [key, value] = item;
+        eachInput(key, value, index)
+    });
       
   }
   
@@ -283,7 +295,7 @@ export const HOST_URL = ()=> {
         spinBtn(registerForm, 'none', false) // spin button: parameter >> form, display and status
         Object.entries(items).forEach((item, index)=> {
           const [key, value] = item;
-          printErr(key, value, index)
+          printInputError(key, value, index)
         });
         document.querySelector('.server_err').style.display="none";
       }
@@ -350,7 +362,7 @@ export const HOST_URL = ()=> {
     return request
   }
   
-  export const fetAPI = (session, api, reqOptions, func=false) =>{
+  export const fetAPI = (session, api, reqOptions, func=false, setStatus=false, setError=false) =>{
   
       let status = null
       fetch(api, reqOptions)
@@ -359,6 +371,7 @@ export const HOST_URL = ()=> {
           if (status === 401) { // Login required
             loginRequired(status)
           }
+
           return res.json()
       })
       .then(
@@ -369,11 +382,14 @@ export const HOST_URL = ()=> {
                       status: status
                   })
               }else if (func === true){// if function component
-                  if (status === 401) {
-                      session(status)
+                  if (status === 400) {
+                    if(setStatus) setError(result);
+                    setStatus('error') // Display message banner. 
                   }
-                  else{
-                      session(result)
+                  else if(status === 201 || status === 200){
+                    if(setStatus)  setError([]);
+                    session(result);
+                    if(setStatus) setStatus('success'); // Display message banner. 
                   }
               }
               

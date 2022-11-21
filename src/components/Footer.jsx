@@ -4,15 +4,8 @@ import Images from "../assets/images/Images";
 import SVGs from "../assets/svg/SVGs";
 
 const Footer = () => {
-  // const [year, setYear] = useState("changeYear");
 
-  // const handleYear = () => {
-  //   if (year === "changeYear") {
-  //     setYear.innerHTML = new Date().getFullYear();
-  //   }
-  // };
-
-  const getYear = () => {
+  const getCurrentYear = () => {
     return new Date().getFullYear();
   };
 
@@ -157,7 +150,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-const getCurrentYear = () => {
-  return new Date().getFullYear();
-};
