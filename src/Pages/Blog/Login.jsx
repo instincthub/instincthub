@@ -1,48 +1,57 @@
-import {React, useState, useEffect} from "react";
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../../components/Nav4Landing";
 
-import { reqOptions, fetAPI, HOST_URL, setCookie } from "../../assets/js/help_func";
+import {
+  reqOptions,
+  fetAPI,
+  HOST_URL,
+  setCookie,
+} from "../../assets/js/help_func";
 
 const Login = () => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
-  useEffect(()=>{
-    if (data.access_token){
-      let json_str = JSON.stringify(data)
-      setCookie('uu_id', json_str, 30)
-      window.location.href = '/blog/admin'
-
+  useEffect(() => {
+    if (data.access_token) {
+      let json_str = JSON.stringify(data);
+      setCookie("uu_id", json_str, 30);
+      window.location.href = "/blog/admin";
     }
-  }, [data])
+  }, [data]);
 
   return (
     <section className="formfd">
       <Navbar />
-      <LoginContainer onSubmit={(form)=>{
-        form.preventDefault()
-        let requestOptions  = reqOptions('post', new FormData(form.target))
-        fetAPI(setData, HOST_URL()+"/api/v1/auth/login/", requestOptions, true)
-      }}>
+      <LoginContainer
+        onSubmit={(form) => {
+          form.preventDefault();
+          let requestOptions = reqOptions("post", new FormData(form.target));
+          fetAPI(
+            setData,
+            HOST_URL() + "/api/v1/auth/login/",
+            requestOptions,
+            true
+          );
+        }}
+      >
         <h1>Sign in</h1>
         <div class="field">
           <input type="text" name="username" placeholder="John" />
           <span>Username or Email</span>
         </div>
         <div class="field">
-          <input
-            type="password"
-            name="password"
-            placeholder="John"
-          />
+          <input type="password" name="password" placeholder="John" />
           <span>Password</span>
         </div>
         <div className="reset-password">
           <Link to="/reset-password">Forget Password ?</Link>
         </div>
-    
-        <button type="submit" className="important-btn">Login</button>
+
+        <button type="submit" className="important-btn">
+          Login
+        </button>
       </LoginContainer>
     </section>
   );

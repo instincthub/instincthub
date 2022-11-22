@@ -5,8 +5,7 @@ import useTimeout from "./UseTimeout";
 
 const TopModal = () => {
   const [openModal, setOpenModal] = useState(false);
-  // useTimeout(() => alert("Hello"), 2000);
-
+  //
   const HandleTimeOut = () => {
     setOpenModal(true);
     setTimeout((e) => {
