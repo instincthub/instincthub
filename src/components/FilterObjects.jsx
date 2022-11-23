@@ -5,7 +5,7 @@ const FilterObjects = (props) => {
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState(props.exists ? props.exists.title : "Choose...");
     const [objects, setObjects] = useState([])
-    const [id, setID] = useState(props.exists ? props.exists.id : '')
+    const [id, setID] = useState(props.exists_id ? props.exists.id : '')
 
      useEffect(()=>{
         /* 
@@ -23,7 +23,7 @@ const FilterObjects = (props) => {
       <SelectMe className="select_me">
         <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
           <div>
-            <input type="text" defaultValue={id} id={'id_'+props.input_name} name={props.input_name} readOnly className="input_drop" />
+            <input type="text" className="dropdown input_drop" defaultValue={id} id={'id_'+props.input_name} name={props.input_name} readOnly />
             <p>{selected}</p>
           </div>
           <label className="filter_label">{props.label}</label>

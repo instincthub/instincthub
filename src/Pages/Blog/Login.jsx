@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../../components/Nav4Landing";
+import ScrollToTop from "../../components/ScrollToTop";
 
 import {
   reqOptions,
@@ -11,8 +12,8 @@ import {
 } from "../../assets/js/help_func";
 
 const Login = () => {
+  ScrollToTop();
   const [data, setData] = useState([]);
-
   useEffect(() => {
     if (data.access_token) {
       let json_str = JSON.stringify(data);

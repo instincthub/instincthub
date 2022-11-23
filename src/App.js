@@ -1,4 +1,4 @@
-import {React} from "react";
+import { React } from "react";
 // import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/scss/style.css";
@@ -12,6 +12,8 @@ import Pricing from "./Pages/Pricing";
 import AdminLogin from "./Pages/Blog/Login";
 import Success from "./Pages/PricingAlert/Success";
 import Error from "./Pages/PricingAlert/Error";
+import Error404 from "./components/Status/Error404";
+import Error500 from "./components/Status/Error500";
 import JobDetails from "./Pages/JobDetails";
 import Blog from "./Pages/Blog/Blog";
 import AdminBlogList from "./Pages/Blog/AdminBlogList";
@@ -45,12 +47,14 @@ function App() {
         {/* <Route path="/product/payment/" element={<Payment />} /> */}
         <Route path="/product/payment=success" element={<Success />} />
         <Route path="/product/payment=error" element={<Error />} />
+        <Route path="/error404" element={<Error404 />} />
+        <Route path="/error500" element={<Error500 />} />
 
         {/* Policies */}
         <Route path="/policies/privacy-policy/" element={<Policy />} />
 
         {/* Posts */}
-        <Route path="/blog" element={<Blog />} />
+        <Route exact path="/blog" element={<Blog />} />
         <Route exact path="/blog/admin" element={<AdminBlogList />} />
         <Route path="/blog/:slug/" element={<BlogDetails />} />
       </Routes>

@@ -1956,7 +1956,6 @@ input:valid {
   position: relative;
   font-family: var(--Nunito);
   user-select: none;
-  margin-right: 10px;
   .select-btn {
     padding: 10px;
     background: var(--White);
@@ -1973,8 +1972,6 @@ input:valid {
     justify-content: space-between;
     align-items: center;
     color: var(--Gunmetal);
-
-    margin-bottom: 30px;
     input {
       padding: 0 !important;
       border: 0;

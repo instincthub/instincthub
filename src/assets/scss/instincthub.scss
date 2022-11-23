@@ -1172,22 +1172,13 @@
 .b_label {
   button {
     margin-top: 0;
-    margin-right: 15px;
+    margin-right: 5px;
     cursor: auto;
     padding: 8px 15px !important;
     &:hover {
       background: none;
       color: unset;
     }
-  }
-
-  .on_technology {
-    color: #bc658d;
-    border: 2px solid #bc658d;
-  }
-  .on_security {
-    color: #ea5f5e;
-    border: 2px solid #ea5f5e;
   }
 }
 .avatar_time {
@@ -1203,28 +1194,30 @@
       width: 30px;
       height: 30px;
       border-radius: 50%;
+      position: relative;
+      top: 6px;
     }
     h3 {
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 500;
       margin: 0;
       line-height: 22px;
       letter-spacing: 0em;
-      margin-top: 5px;
+      margin-top: 10px;
       text-align: left;
     }
   }
   h5 {
     margin: 0;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     line-height: 22px;
     letter-spacing: 0em;
     text-align: left;
     margin-top: 10px;
     &::before {
       position: relative;
-      top: 5px;
+      top: 7px;
       margin-right: 10px;
       content: url("../svg/clock.svg");
     }
