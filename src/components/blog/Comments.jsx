@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import Images from "../assets/images/Images";
+import Images from "../../assets/images/Images";
 
 const Comments = () => {
   const [items, setItems] = useState([]);

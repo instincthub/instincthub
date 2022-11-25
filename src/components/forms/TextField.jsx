@@ -12,8 +12,8 @@ const TextField = (props) => {
                 <input 
                     type={props.ty}
                     name={props.name} 
+                    required={props.required}
                     defaultValue={props.defaultValue}
-                    onFocus={()=>showLabel(this)}
                     onChange={ (e)=>showLabel(e) }/>
                 <span>{props.label}</span>
             </Wrapper>

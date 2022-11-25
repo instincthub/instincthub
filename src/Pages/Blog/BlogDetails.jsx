@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../../components/Footer";
-import BlogD from "../../components/BlogD";
+import BlogDetailRequest from "../../components/blog/BlogDetailRequest";
 import Header from "../../components/navbar/Header";
 import ScrollToTop from "../../components/ScrollToTop";
 
@@ -9,7 +9,7 @@ const Blog = () => {
   return (
     <section className="compulsory">
       <Header />
-      <BlogD />
+      <BlogDetailRequest />
       <Footer />
     </section>
   );

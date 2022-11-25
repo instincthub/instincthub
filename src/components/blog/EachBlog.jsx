@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const EachBlog = (props) => {
   const [objects, setObjects] = useState([])
-  const timestamp = useState(props.data ? props.data.timestamp.slice(0, 10) : '');
 
   /*
     Objects trows error when you loop with map or forEach.
@@ -33,11 +32,10 @@ const EachBlog = (props) => {
               {option.title}
             </button>
             })}
-            
-            {/* <button className="outlined-btn on_technology">Technology</button> */}
           </div>
+          
           <Link to={`/blog/${props.data.slug}`}>
-            <h2 title={props.data.title}>{props.data.title.length >= 70 ? props.data.title.substring(0,70)+'...' : props.data.title}</h2>
+            <h2>{props.data.title.length >= 70 ? props.data.title.substring(0,70)+'...' : props.data.title}</h2>
           
             <p>{props.data.overview.substring(0,150)+'...'}</p>
             <div className="avatar_time">
@@ -46,7 +44,7 @@ const EachBlog = (props) => {
                 <h3>{props.data.author.title}</h3>
               </div>
 
-              <h5 className="time_before">{ timestamp }</h5>
+              <h5 className="time_before">{ props.data ? props.data.timestamp.slice(0, 10) : '' }</h5>
             </div>
           </Link>
         </div>
@@ -58,15 +56,6 @@ const EachBlog = (props) => {
 export default EachBlog;
 
 const BlogCategory = styled.div  `
-  button.categories{
-    font-size: 10px;
-    border: .5px solid #D8D8D8 ;
-    color: #314A52;
-    padding: 5px 8px !important;
-
-    &:hover{
-      background-color: #EAEAEA;
-    }
-  }
+  
 
 `;

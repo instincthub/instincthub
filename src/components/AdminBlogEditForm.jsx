@@ -1,14 +1,17 @@
-import {React, useEffect } from "react";
+import {React, useEffect, useState } from "react";
 import styled from "styled-components";
 import CheckBoxes from "./forms/CheckBoxes";
-import FilterObjects from "./FilterObjects";
+import FilterObjects from "./forms/FilterObjects";
 import FilterArray from "./forms/FilterArray";
 import SubmitBtn from "./forms/SubmitBtn";
-import { reqOptions, fetAPI, HOST_URL } from "../assets/js/help_func";
+import TextField from "./forms/TextField";
+import TextArea from "./forms/TextArea";
+import { reqOptions, fetAPI, HOST_URL, printInputError } from "../assets/js/help_func";
 
 
   
   const AdminBlogEditForm = (props) => {
+    // const [thumbnail, setThumbnail] = useState(props.data.thumbnail)
     useEffect(()=>{
         let authors = []
         let author_ids = []
@@ -21,7 +24,17 @@ import { reqOptions, fetAPI, HOST_URL } from "../assets/js/help_func";
         // if (update && props.data.author_list)  setShowMessage(true)
         // else setShowMessage(false)
 
-    },[props.data.author_list])
+        // Remove overlay if success and display error message if error
+        if (props.events && props.messageType === 'success') {
+          props.setEdit(false)
+        }
+        else if(props.error && props.messageType === 'error'){
+          printInputError(props.error)
+        }
+
+    },[props.data.author_list, props.error, props.messageType])
+
+
 
 
     const handleFormSubmit = (e) => {
@@ -37,13 +50,26 @@ import { reqOptions, fetAPI, HOST_URL } from "../assets/js/help_func";
 
         let requestOptions  = reqOptions('PUT', formdata, true);
 
-        fetAPI(props.set_data, `${HOST_URL()}/api/v1/posts/post/${props.data.slug}/`, requestOptions, true, props.setMessageType)
+        fetAPI(props.set_data, `${HOST_URL()}/api/v1/posts/post/${props.data.slug}/`, requestOptions, true, props.setMessageType,  props.setError)
       };
 
       // Disable spinning button after getting status from fetch
       if (props.messageType && document.querySelector('.rolling')) {
         document.querySelector('[type=submit]').classList.remove('rolling')
         document.querySelector('[type=submit]').disabled = false;
+      }
+
+      function getBase64Image(img) {
+        var canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+    
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+    
+        var dataURL = canvas.toDataURL("image/png");
+    
+        return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
       }
 
       if (props.data && props.edit) {
@@ -70,47 +96,27 @@ import { reqOptions, fetAPI, HOST_URL } from "../assets/js/help_func";
                             type="file"
                             name="thumbnail"
                             placeholder="Title"
-                            //   value={props.data.thumbnail}
+                            onChange={(e)=>{
+                              console.log(getBase64Image(e))
+                              // reader.onload = function () {
+                              // localStorage.setItem("image", reader.result);
+                              // document.getElementById("imagePreview").setAttribute("src", localStorage.getItem("image"))
+                              // };
+                            }}
                             />
                             <span>Blog Title</span>
-                        </div>
-                
-                        <div className="field">
-                            <input
-                                type="text"
-                                name="title"
-                                placeholder="Title"
-                                defaultValue={props.data.title}
-                            />
-                            <span>Blog Title</span>
-                        </div>
-                        
-                        <div className="">
-                            <textarea
-                            name="overview"
-                            placeholder="Overview"
-                            defaultValue={props.data.overview}
-                            ></textarea>
-                            <span>Overview</span>
                         </div>
 
-                        <div className="">
-                            <textarea
-                            name="content"
-                            rows={30}
-                            placeholder="Content"
-                            defaultValue={props.data.content}
-                            ></textarea>
-                            <span></span>
-                        </div>
+                        <TextField type="text" name="title" label="Blog Title" required={true} defaultValue={props.data.title}/>
+                        <TextArea name="overview" rows="5" label="Overview" required={true} defaultValue={props.data.overview}/>
+                        <TextArea name="content" rows="30" label="Content" required={true} defaultValue={props.data.content}/>
+                        
 
                         <CheckBoxes 
                             cat={props.data.categories} 
                             cat_list={props.data.category_list}
                             default={true}
                             />
-                            
-
 
                         <FilterObjects 
                             options ={props.data.author_list} 

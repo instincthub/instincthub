@@ -2824,7 +2824,7 @@ footer ul.breadcrumb li a:hover {
   display: flex;
   justify-content: space-between;
   max-width: 452px;
-  margin: 0 auto;
+  margin: 50px auto 0px auto;
 }
 .paginationButtons .next,
 .paginationButtons .previous {
@@ -2833,7 +2833,9 @@ footer ul.breadcrumb li a:hover {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  padding: 5px 15px;
+  padding: 10px 15px 3px 15px;
+  height: 40px;
+  width: 40px;
 }
 .paginationButtons .next:hover,
 .paginationButtons .previous:hover {
@@ -2852,7 +2854,7 @@ footer ul.breadcrumb li a:hover {
 .paginationButtons li:hover {
   background: #f3f3f3;
 }
-.paginationButtons .paginationActive {
+.paginationButtons .pagination_active {
   font-weight: 600;
   border-bottom: 2px solid #00838f;
 }
@@ -3991,6 +3993,16 @@ footer ul.breadcrumb li a:hover {
   max-width: 410px;
 }
 
+button.categories {
+  font-size: 10px;
+  border: 0.5px solid #D8D8D8;
+  color: #314A52;
+  padding: 5px 8px !important;
+}
+button.categories:hover {
+  background-color: #EAEAEA;
+}
+
 .banner_pricing {
   margin-top: 150px;
   margin-bottom: 100px;
@@ -4034,7 +4046,9 @@ footer ul.breadcrumb li a:hover {
 }
 
 .blog_details .blog_d {
-  max-width: 873px;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .blog_details .blog_d h1 {
   font-size: 32px;
@@ -4083,44 +4097,18 @@ footer ul.breadcrumb li a:hover {
   margin-bottom: 15px;
 }
 
-.next_prev {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.next_prev h3 {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-.next_prev p {
-  margin-top: 0;
-}
-.next_prev .prev_btn,
-.next_prev .next_btn {
-  display: flex;
-}
-.next_prev button {
-  margin: 0 15px;
-  margin-top: 10px;
-  height: 45px;
-}
-.next_prev .next_btn p {
-  text-align: right;
-}
-
 .comment_section {
-  max-width: 760px;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 70px;
 }
 .comment_section h4 {
   margin-bottom: 30px;
 }
 .comment_section .eachcomment {
   display: flex;
-  border-bottom: 2px solid #2c333a;
+  border-bottom: 1.5px solid #EAEAEA;
   padding-bottom: 10px;
   margin-top: 20px;
 }

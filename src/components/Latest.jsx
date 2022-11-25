@@ -22,6 +22,7 @@ const Latest = () => {
       setTimestamp(data.timestamp.slice(0, 10))
       // setName()
     }
+    // eslint-disable-next-line
   }, [data.categories])
 
   if (data.title) {
@@ -38,12 +39,10 @@ const Latest = () => {
           <div className="blog_title">
             <div className="b_label">
             {categories.map((option)=>{
-              return <button key={option.id} className="outlined-btn on_education">{option.title}</button>
+              return <button key={option.id} className="outlined-btn on_education categories">{option.title}</button>
             })}
-              {/* <button className="outlined-btn on_education">Education</button>
-              <button className="outlined-btn on_technology">Technology</button> */}
             </div>
-            <Link to="/blog/slug/"><h2>{data.title}</h2></Link>
+            <Link to={"/blog/"+data.slug}><h2>{data.title}</h2></Link>
             <p>{ data.overview }</p>
             <div className="avatar_time">
               <div className="avatar_before">

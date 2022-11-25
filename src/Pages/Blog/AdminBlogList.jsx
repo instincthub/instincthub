@@ -3,7 +3,7 @@ import { React, useState } from "react";
 import API from "../../json/D4Blog.json";
 import AdminBlog from "../../components/AdminBlogs";
 import styled from "styled-components";
-import Create from "../../components/BlogCreate";
+import Create from "../../components/blog/BlogCreate";
 // import BlogEdit from "../../components/BlogEdit";
 import Header from "../../components/navbar/Header";
 import Footer from "../../components/Footer";
@@ -42,16 +42,6 @@ function AdminBlogList() {
   useState(()=>{
     let requestOptions  = reqOptions('get', null)
     fetAPI(setEvents, HOST_URL()+"/api/v1/posts/admin/", requestOptions, true)
-
-    console.log(error);
-    // if (error) {
-    //   setMsg(error)
-    //   console.log(error);
-    //   Object.entries(error).forEach((item, index)=> {
-    //     const [key, value] = item;
-    //     console.log(key, value, index)
-    //   });
-    // }
   })
 
   /** ======to do
@@ -125,7 +115,7 @@ function AdminBlogList() {
       {/* MODALS */}
       <Create openModal={openModal} setOpenModal={setOpenModal} data={events} set_data={setEvents} setMessageType={setMessageType} messageType={messageType} setError={setError} error={error}/>
 
-      <AdminBlogEditForm edit={edit} setEdit={setEdit} data={blog_edit} set_data={setEvents} setMessageType={setMessageType} messageType={messageType} setError={setError}/>
+      <AdminBlogEditForm events={events} edit={edit} setEdit={setEdit} data={blog_edit} set_data={setEvents} setMessageType={setMessageType} messageType={messageType} setError={setError}/>
 
     </>
   );

@@ -5,14 +5,16 @@ const TextArea = (props) => {
     const showLabel = (e) =>{
         if (e.target.value) e.target.parentElement.classList.add('value')
         else e.target.parentElement.classList.remove('value')
+
+        console.log(e.target.value);
     }
     return ( 
         <div className="field">
-            <Wrapper className='input_w'>
+            <Wrapper className={`input_w ${props.defaultValue ? 'value' : ''}`}>
                 <textarea 
                     name={props.name} 
                     rows={props.rows}
-                    onFocus={()=>showLabel(this)}
+                    defaultValue={props.defaultValue}
                     onChange={ (e)=>showLabel(e) }></textarea>
                 <span>{props.label}</span>
             </Wrapper>

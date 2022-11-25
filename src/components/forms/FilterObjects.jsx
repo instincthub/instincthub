@@ -5,7 +5,7 @@ const FilterObjects = (props) => {
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState(props.exists ? props.exists.title : "Choose...");
     const [objects, setObjects] = useState([])
-    const [id, setID] = useState(props.exists_id ? props.exists.id : '')
+    const [id, setID] = useState(props.exists ? props.exists.id : '')
 
      useEffect(()=>{
         /* 

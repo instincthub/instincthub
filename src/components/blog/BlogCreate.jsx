@@ -1,13 +1,13 @@
 import { React, useEffect } from "react";
 import styled from "styled-components";
-import SVGs from "../assets/svg/SVGs";
-import TextArea from "./forms/TextArea";
-import TextField from "./forms/TextField";
-import FilterObjects from "./FilterObjects";
-import FilterArray from "./forms/FilterArray";
-import SubmitBtn from "./forms/SubmitBtn";
-import CheckBoxes from "./forms/CheckBoxes";
-import { reqOptions, fetAPI, HOST_URL, printInputError } from "../assets/js/help_func";
+import SVGs from "../../assets/svg/SVGs";
+import TextArea from "../forms/TextArea";
+import TextField from "../forms/TextField";
+import FilterObjects from "../forms/FilterObjects";
+import FilterArray from "../forms/FilterArray";
+import SubmitBtn from "../forms/SubmitBtn";
+import CheckBoxes from "../forms/CheckBoxes";
+import { reqOptions, fetAPI, HOST_URL, printInputError } from "../../assets/js/help_func";
 
 const BlogCreate = (props) => {
 
@@ -41,6 +41,7 @@ const BlogCreate = (props) => {
       console.log(props.error);
       printInputError(props.error)
     }
+  // eslint-disable-next-line
   },[props.error])
 
 
@@ -57,14 +58,14 @@ const BlogCreate = (props) => {
                   <img src={SVGs.pic_frame} alt="" className="cloud" />
                   <p>Drop File here 1MB File max size</p>
                 </div>
-                <input type="file" name="thumbnail" />
-                <label htmlFor="upload">Browse Files</label>
+                <input type="file" name="thumbnail" required={true}/>
+                {/* <label htmlFor="upload">Browse Files</label> */}
               </div>
             </div>
 
-            <TextField type="text" name="title" label="Blog Title" />
-            <TextArea name="overview" rows="5" label="Overview" />
-            <TextArea name="content" rows="15" label="Content" />
+            <TextField type="text" name="title" label="Blog Title" required={true}/>
+            <TextArea name="overview" rows="5" label="Overview" required={true}/>
+            <TextArea name="content" rows="15" label="Content" required={true}/>
 
             <CheckBoxes 
               default={false}
@@ -173,9 +174,11 @@ const ModalContainer = styled.div`
       height: 50px;
     }
     input {
-      opacity: 0;
+      /* opacity: 0;
       position: absolute;
-      left: 0;
+      left: 0; */
+      text-align: center;
+      max-width: 400px;
     }
   }
   .close-btn {

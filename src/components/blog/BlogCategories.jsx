@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AllBlog from "./AllBlog";
+import AllBlog from "../AllBlog";
 
 const BlogCategories = () => {
   const [activeIndex, setActiveIndex] = useState(1);
