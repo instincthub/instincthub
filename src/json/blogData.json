@@ -1,0 +1,317 @@
+{
+    "count": 64,
+    "next": "http://127.0.0.1:8000/api/v1/posts/?limit=10&offset=10",
+    "previous": null,
+    "results": [
+        {
+            "id": 68,
+            "title": "Create enabling environment",
+            "slug": "bbbbbbb",
+            "overview": "jjhnkjnk",
+            "author": {
+                "id": 2,
+                "title": "Collins Okere",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/boxed-water-is-better-tkJnOS-jNGE-unsplash.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/gabriel-heinzer-g5jpH62pwes-unsplash_qtLP0ab.jpg",
+            "categories": [
+                {
+                    "id": 4,
+                    "title": "Learn",
+                    "tab": false,
+                    "order": 0
+                },
+                {
+                    "id": 8,
+                    "title": "Security",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 107,
+            "timestamp": "2022-11-20T22:38:09.894398+01:00"
+        },
+        {
+            "id": 63,
+            "title": "The TELCO Ban: What it means and how to stay connected",
+            "slug": "telco-ban-what-it-means-and-how-stay-connected",
+            "overview": "The uncertainties surrounding this new order are a lot especially with the suspension of the SIM registrations and some individuals not having the required NIN. The submission of NIN by subscribers to take place within two weeks, commencing December 16th 2020  and ending by December 30th 2020 (which is quite a short timeline).",
+            "author": {
+                "id": 1,
+                "title": "Oghenekewe Olatoye",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/IMG_0256_i0dild7.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/sim-card-2.png",
+            "categories": [
+                {
+                    "id": 1,
+                    "title": "Business Resources",
+                    "tab": true,
+                    "order": 0
+                },
+                {
+                    "id": 3,
+                    "title": "Community",
+                    "tab": false,
+                    "order": 0
+                },
+                {
+                    "id": 5,
+                    "title": "Engineering",
+                    "tab": true,
+                    "order": 0
+                },
+                {
+                    "id": 9,
+                    "title": "Makinde",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 296,
+            "timestamp": "2022-11-07T16:10:19.944743+01:00"
+        },
+        {
+            "id": 62,
+            "title": "4 Ways to create an Effective UI/UX Design",
+            "slug": "4-ways-create-effective-ui-ux-design",
+            "overview": "UI/UX design is a big deal for a brand and you need to embrace it as such. Whoever is taking this role needs to be effective in helping the brand uncover the opportunities laying before the organisation. As a UI/UX designer, you need to be able to speak for the user (users advocate) and at the same time, you need to be able to achieve the brands aim objectives while creating your design patterns.",
+            "author": {
+                "id": 1,
+                "title": "Oghenekewe Olatoye",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/IMG_0256_i0dild7.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/ux_design.png",
+            "categories": [
+                {
+                    "id": 3,
+                    "title": "Community",
+                    "tab": false,
+                    "order": 0
+                },
+                {
+                    "id": 4,
+                    "title": "Learn",
+                    "tab": false,
+                    "order": 0
+                },
+                {
+                    "id": 5,
+                    "title": "Engineering",
+                    "tab": true,
+                    "order": 0
+                },
+                {
+                    "id": 6,
+                    "title": "instinctHub News",
+                    "tab": false,
+                    "order": 0
+                }
+            ],
+            "view_count": 3,
+            "timestamp": "2022-11-07T16:10:16.220256+01:00"
+        },
+        {
+            "id": 61,
+            "title": "6 Digital Marketing Skills That Will Get You a High Paying Job in 2021",
+            "slug": "6-digital-marketing-skills-will-get-you-high-paying-job",
+            "overview": "The demand for digital marketing in Nigeria increases as more people, businesses, and agencies want to leverage the internet to drive business growth and development. However, you need to know about the basic skills that can help you thrive if you desire to start a digital marketing career. The 6 skills listed below will help you grow a successful career as a digital marketing officer in Nigeria.",
+            "author": {
+                "id": 2,
+                "title": "Collins Okere",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/boxed-water-is-better-tkJnOS-jNGE-unsplash.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/digital-marketting.png",
+            "categories": [
+                {
+                    "id": 1,
+                    "title": "Business Resources",
+                    "tab": true,
+                    "order": 0
+                },
+                {
+                    "id": 5,
+                    "title": "Engineering",
+                    "tab": true,
+                    "order": 0
+                },
+                {
+                    "id": 7,
+                    "title": "Digital Marketing",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 72,
+            "timestamp": "2022-11-07T16:10:14.708662+01:00"
+        },
+        {
+            "id": 60,
+            "title": "The 5 \"W\" Questions; if you cannot answer them, forget learning new skills",
+            "slug": "5-w-questions-if-you-cannot-answer-them-forget-learning-new-skills",
+            "overview": "The WHY, WHAT, WISH, WHERE and WINDOW questions! If you answer correctly, you will never be depressed in your learning process. I call them the 5WQs.",
+            "author": {
+                "id": 3,
+                "title": "Noah Olatoye",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/img3.c46010f4f1736d954ae1.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/the_5WQ_copy.png",
+            "categories": [
+                {
+                    "id": 2,
+                    "title": "Career Advice",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 7,
+            "timestamp": "2022-11-07T16:10:13.288017+01:00"
+        },
+        {
+            "id": 59,
+            "title": "Nigerian University Students Skills Assessment Report  for 2020",
+            "slug": "nigerian-university-students-skills-assessment-report-2020",
+            "overview": "The survey asked key questions to help perceive students interest in learning new skills. A total of 150 clean responses were recorded from the study.",
+            "author": {
+                "id": 1,
+                "title": "Oghenekewe Olatoye",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/IMG_0256_i0dild7.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/Nigerian_University_Skills_Assessment_Report__for_2020_thumbnail.png",
+            "categories": [
+                {
+                    "id": 3,
+                    "title": "Community",
+                    "tab": false,
+                    "order": 0
+                },
+                {
+                    "id": 4,
+                    "title": "Learn",
+                    "tab": false,
+                    "order": 0
+                }
+            ],
+            "view_count": 1,
+            "timestamp": "2022-11-07T16:10:09.728374+01:00"
+        },
+        {
+            "id": 58,
+            "title": "15 Digital Marketing Terminologies For Beginners in 2021",
+            "slug": "15-digital-marketing-terminologies-beginners-2021",
+            "overview": "Chances are you must have heard some of the names listed below but may not have fully understood what they mean and when to use them.\r\n\r\nNews...",
+            "author": {
+                "id": 2,
+                "title": "Collins Okere",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/boxed-water-is-better-tkJnOS-jNGE-unsplash.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/digital-marketting_jEYgPXf.png",
+            "categories": [
+                {
+                    "id": 2,
+                    "title": "Career Advice",
+                    "tab": true,
+                    "order": 0
+                },
+                {
+                    "id": 3,
+                    "title": "Community",
+                    "tab": false,
+                    "order": 0
+                },
+                {
+                    "id": 4,
+                    "title": "Learn",
+                    "tab": false,
+                    "order": 0
+                },
+                {
+                    "id": 7,
+                    "title": "Digital Marketing",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 1,
+            "timestamp": "2022-11-07T16:10:07.793529+01:00"
+        },
+        {
+            "id": 57,
+            "title": "5 Python Tricks That Will Make You Code Faster and Easier",
+            "slug": "5-python-tricks-will-make-you-code-faster-and-easier",
+            "overview": "Not all Python Developers know of these tricks yet; luckily for you, you are about to learn something that will save you lots of stress going foreword.",
+            "author": {
+                "id": 3,
+                "title": "Noah Olatoye",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/img3.c46010f4f1736d954ae1.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/Artboard_29_qfKNoNc.jpg",
+            "categories": [
+                {
+                    "id": 2,
+                    "title": "Career Advice",
+                    "tab": true,
+                    "order": 0
+                },
+                {
+                    "id": 4,
+                    "title": "Learn",
+                    "tab": false,
+                    "order": 0
+                },
+                {
+                    "id": 5,
+                    "title": "Engineering",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 1,
+            "timestamp": "2022-11-07T16:10:04.532240+01:00"
+        },
+        {
+            "id": 56,
+            "title": "Get Step-By-Step Guideline and Earn Yourself Job Opportunities",
+            "slug": "get-step-step-guideline-and-earn-yourself-job-opportunities",
+            "overview": "There are quite a number of these skills that can offer the best results; some of a few include UI/UX Design, Machine Learning, Data Science and Analytics, Python programming, Database Manage, Digital Marketing, Graphic Design, Web Development/Design and a whole lot more.",
+            "author": {
+                "id": 1,
+                "title": "Oghenekewe Olatoye",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/IMG_0256_i0dild7.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/Artboard_16.jpg",
+            "categories": [
+                {
+                    "id": 2,
+                    "title": "Career Advice",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 2,
+            "timestamp": "2022-11-07T16:10:01.561307+01:00"
+        },
+        {
+            "id": 55,
+            "title": "How to Change Navbar Background Color On Scroll",
+            "slug": "how-change-navbar-background-color-scroll",
+            "overview": "This tutorial will target a navbar element on the page and change both background color and text color when the user scroll 100px from top of the page.",
+            "author": {
+                "id": 3,
+                "title": "Noah Olatoye",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/img3.c46010f4f1736d954ae1.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/Blog_thunbnail.png",
+            "categories": [
+                {
+                    "id": 5,
+                    "title": "Engineering",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 37,
+            "timestamp": "2022-11-07T16:09:57.713399+01:00"
+        }
+    ]
+}

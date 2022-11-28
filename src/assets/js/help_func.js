@@ -8,6 +8,18 @@ export const HOST_URL = ()=> {
   }
 
   export const SK = "22-072021kidbackendyste3333ifkIks304"
+
+
+  export const checkUrl = (string)=> {
+    let givenURL ;
+    try {
+        givenURL = new URL (string);
+    } catch (error) {
+        console.log ("error is", error);
+       return false; 
+    }
+    return true;
+  }
   
   export const cookiesEnabled = () =>{
     var i, j, cookies, found;
@@ -405,7 +417,8 @@ export const HOST_URL = ()=> {
                   })
               }
               else{
-                  session(error)
+                //   session(error)
+                  
               }
               console.log(error.message)
               return error.message

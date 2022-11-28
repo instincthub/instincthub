@@ -1,4 +1,5 @@
 import {React, useState, useEffect } from 'react';
+import categoriesDefault from '../../json/categoriesDefault.json'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
@@ -9,7 +10,7 @@ import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 function Tabs(props) {
 
     const [searchParams] = useSearchParams();
-    const [categories, setCategories] = useState();
+    const [categories, setCategories] = useState(categoriesDefault);
     const requestOptions  = reqOptions('get', null)
 
     useEffect(()=>{

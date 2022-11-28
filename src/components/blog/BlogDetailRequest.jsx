@@ -1,4 +1,6 @@
 import {React, useEffect, useState, useRef} from "react";
+import blogDetailsDefault from '../../json/blogDetailsDefault.json'
+import categoriesDefault from '../../json/categoriesDefault.json'
 import BreadCrumb from "../BreadCrumb";
 import CommentsList from "./CommentsList";
 import CommentsAdd from "./CommentsAdd";
@@ -14,11 +16,11 @@ import { reqOptions, fetchAPI, HOST_URL} from "../../assets/js/help_func";
 const BlogDetailRequest = () => {
   useState(window.localStorage.setItem('renderCount', 1)) // track initial render
   const violationRef = useRef(null);
-  const [data, setData] = useState([])
+  const [data, setData] = useState(blogDetailsDefault)
   const [newComments, setNewComments] = useState([])
   const [messageType, setMessageType] = useState([])
   const [error, setError] = useState([])
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState();
   const [timestamp, setTimestamp] = useState('');
   let { slug } = useParams();
 
@@ -74,9 +76,13 @@ const BlogDetailRequest = () => {
               <h3 className="views">{data.view_count}</h3>
             </div>
             <div className="b_label">
-            {categories.map((option)=>{
-                return <button key={option.id} className="outlined-btn on_education categories">{option.title}</button>
-              })}
+            {
+            categories ? 
+            categories.map((option)=>{
+                 <button key={option.id} className="outlined-btn on_education categories">{option.title}</button>
+              })
+            : ''
+            }
             </div>
             <h1>{data.title}</h1>
             <main>

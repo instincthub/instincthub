@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
+import { reqOptions, fetchAPI, HOST_URL, checkUrl } from "../../assets/js/help_func";
 
 function Pagination(props) {
     const [searchParams] = useSearchParams();

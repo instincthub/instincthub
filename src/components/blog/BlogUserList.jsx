@@ -1,4 +1,5 @@
 import { React, useEffect, useState, useRef } from 'react';
+import BlogDefaultData from '../../json/blogData.json'
 import EachBlog from './EachBlog';
 import styled from 'styled-components';
 import Pagination from './Pagination';
@@ -8,7 +9,7 @@ import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 
 const BlogUserList = () => {
     const violationRef = useRef(null);
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(BlogDefaultData);
     const [searchValues, setSearchValues] = useState(false);
     const [tabsValues, setTabsValues] = useState(false);
     const [searchParams] = useSearchParams();

@@ -1,0 +1,120 @@
+{
+    "id": 63,
+    "title": "The TELCO Ban: What it means and how to stay connected",
+    "slug": "telco-ban-what-it-means-and-how-stay-connected",
+    "overview": "The uncertainties surrounding this new order are a lot especially with the suspension of the SIM registrations and some individuals not having the required NIN. The submission of NIN by subscribers to take place within two weeks, commencing December 16th 2020  and ending by December 30th 2020 (which is quite a short timeline).",
+    "content": "<p><span style=\"color: #000000;\">A few years back, the Central Bank of Nigeria (CBN) came up with a measure to curb Bank Account activities and reduce the rate of dummy bank accounts that existed; they introduced the use of a Bank Verification Number (BVN) for individuals who had accounts in local banks. People who refused to comply with this rule had their bank accounts frozen and this new way of bank verification to an extent may have curbed several Bank Security Threats.</span></p>\r\n<p>Similarly to the enforcement of BVN by the CBN, just recently, the <a style=\"color: #000000; display: inline;\" title=\"NCC Website\" href=\"https://www.ncc.gov.ng/media-centre/news-headlines/928-press-statement-implementation-of-new-sim-registration-rules\" target=\"_blank\" rel=\"noopener\">Nigerian Communications Commission (NCC)</a> issued a new measure for mobile phone SIM users which is a compulsory update of the SIM Card with a valid National Identification Number (NIN). This implementation followed the earlier directive on the suspension of new SIM Card registration by network operators (September 2020) by the Minister of Communications and Digital Economy, Dr Isa Pantami.</p>\r\n<p><span style=\"color: #000000;\">The uncertainties surrounding this new order are a lot especially with the suspension of the SIM registrations and some individuals not having the required NIN. The submission of NIN by subscribers to take place within two weeks, commencing December 16th 2020&nbsp; and ending by December 30th 2020 (which is quite a short timeline).</span></p>\r\n<p><span style=\"color: #000000;\">Many Nigerians are a bit curious and don't fully understand what this means and how it directly affects them. Here are a few ways this affects a SIM Card owner:</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"color: #000000;\"></p>\r\n<ol>\r\n<li>Acquire the National Identity Number (NIN). The process of obtaining the NIN is your best bet. To do this, visit the <a style=\"color: #000000; display: inline;\" title=\"NIMC Website\" href=\"https://www.nimc.gov.ng/\" target=\"_blank\" rel=\"noopener\">National Identity Management Commission (NIMC)</a> Website. There might be a way to carry out the registration process online, however, we cannot certain for sure how long that would take. You could also visit one of their outlets around you.</li>\r\n<li>Reach out to the Service Provider (Customer Care). Taking out time to call your Service Provider can give you a better understanding of the situation. They can explain to you what the current circumstance is and steps to linking the NIN to the SIM Card and avoid being blocked. MTN has begun capturing of Customers NIN when they visit their outlets with their valid NIN, this is another step to take in the validation process.&nbsp;</li>\r\n<li>Send an email to the Service Provider (you can get support email from their official website). This may seem like so much hassle, however, it is important that you take all available measures and steps to sort the verification process before the deadline date issued. Sending a mail to their customer care service and requesting to know the procedure for verification would help and move the process forward for you.&nbsp;</li>\r\n</ol>\r\n<p><span style=\"color: #000000;\">The above-listed steps are the most feasible we could come up with to help get a better view of things. Taking them as important would assist in this verification exercise.</span></p>",
+    "author": {
+        "id": 1,
+        "title": "Oghenekewe Olatoye",
+        "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/IMG_0256_i0dild7.jpg"
+    },
+    "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/sim-card-2.png",
+    "categories": [
+        {
+            "id": 1,
+            "title": "Business Resources",
+            "tab": true,
+            "order": 0
+        },
+        {
+            "id": 3,
+            "title": "Community",
+            "tab": false,
+            "order": 0
+        },
+        {
+            "id": 5,
+            "title": "Engineering",
+            "tab": true,
+            "order": 0
+        },
+        {
+            "id": 9,
+            "title": "Makinde",
+            "tab": true,
+            "order": 0
+        }
+    ],
+    "previous_post": {
+        "id": 63,
+        "title": "The TELCO Ban: What it means and how to stay connected",
+        "profile_picture": "telco-ban-what-it-means-and-how-stay-connected"
+    },
+    "next_post": {
+        "id": 62,
+        "title": "4 Ways to create an Effective UI/UX Design",
+        "profile_picture": "4-ways-create-effective-ui-ux-design"
+    },
+    "timestamp": "2022-11-07T16:10:19.944743+01:00",
+    "view_count": 298,
+    "comments": [],
+    "recommended_posts": [
+        {
+            "id": 23,
+            "title": "How to create a Startup",
+            "slug": "how-to-create-a-startup",
+            "overview": "Unfortunately, if you wait to gather enough money before you commence, I doubt if you will ever start! So, to get an accurate picture, let me share a bit of my experience with you.",
+            "author": {
+                "id": 3,
+                "title": "Noah Olatoye",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/img3.c46010f4f1736d954ae1.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/How_to_Create_a_Startup1.png",
+            "categories": [
+                {
+                    "id": 1,
+                    "title": "Business Resources",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 24,
+            "timestamp": "2022-11-07T16:07:01.051976+01:00"
+        },
+        {
+            "id": 5,
+            "title": "Impact of Technology on Economic Development",
+            "slug": "impact-of-technology-on-economic-development",
+            "overview": "Economic development has always been influenced by technology. Cars, electricity and the internet are just a few technologies contributing to economic growth. \r\n\r\nTechnological advancements continue to grow at an extraordinary speed making it hard for anyone to deny their impact on the world.",
+            "author": {
+                "id": 5,
+                "title": "Victoria Santos",
+                "profile_picture": "http://127.0.0.1:8000/media/Victoria.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/impact-of-tech.png",
+            "categories": [
+                {
+                    "id": 1,
+                    "title": "Business Resources",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 6,
+            "timestamp": "2022-11-07T16:04:07.168413+01:00"
+        },
+        {
+            "id": 23,
+            "title": "How to create a Startup",
+            "slug": "how-to-create-a-startup",
+            "overview": "Unfortunately, if you wait to gather enough money before you commence, I doubt if you will ever start! So, to get an accurate picture, let me share a bit of my experience with you.",
+            "author": {
+                "id": 3,
+                "title": "Noah Olatoye",
+                "profile_picture": "http://127.0.0.1:8000/media/media/profile_picture/img3.c46010f4f1736d954ae1.jpg"
+            },
+            "thumbnail": "http://127.0.0.1:8000/media/media/thumbnail/How_to_Create_a_Startup1.png",
+            "categories": [
+                {
+                    "id": 1,
+                    "title": "Business Resources",
+                    "tab": true,
+                    "order": 0
+                }
+            ],
+            "view_count": 24,
+            "timestamp": "2022-11-07T16:07:01.051976+01:00"
+        }
+    ]
+}

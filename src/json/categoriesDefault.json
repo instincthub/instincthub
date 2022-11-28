@@ -1,0 +1,37 @@
+{
+    "count": 5,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "title": "Business Resources",
+            "tab": true,
+            "order": 0
+        },
+        {
+            "id": 2,
+            "title": "Career Advice",
+            "tab": true,
+            "order": 0
+        },
+        {
+            "id": 5,
+            "title": "Engineering",
+            "tab": true,
+            "order": 0
+        },
+        {
+            "id": 7,
+            "title": "Digital Marketing",
+            "tab": true,
+            "order": 0
+        },
+        {
+            "id": 8,
+            "title": "Security",
+            "tab": true,
+            "order": 0
+        }
+    ]
+}
