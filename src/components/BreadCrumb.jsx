@@ -5,7 +5,7 @@ const BreadCrumb = (props) => {
   return (
     //===== BREADCRUMB
     <div className="b_heading ">
-      <ul class="breadcrumb container">
+      <ul className="breadcrumb container">
         <li>
           <Link to={props.prevlink}>{props.previous}</Link>
         </li>

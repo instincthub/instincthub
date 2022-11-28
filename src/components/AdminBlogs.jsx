@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import SVGs from "../assets/svg/SVGs";
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
+import Pagination from "./blog/Pagination";
 
 const EachBlog = (props) => {
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
@@ -12,39 +12,23 @@ const EachBlog = (props) => {
 
   const updateStates = (e) =>{
     // Used map key to get object
-    for (const i in props.events) {
-      if( props.events[i].id === Number(e.parentElement.dataset.key)){
-        props.setBlog_edit(props.events[i])
+    for (const i in props.events.results) {
+      if( props.events.results[i].id === Number(e.parentElement.dataset.key)){
+        props.setBlogEdit(props.events.results[i])
       }
     }
     props.setEdit(true)
   }
 
-  const eventsPerPage = 18;
-  const pagesVisited = pageNumber * eventsPerPage;
 
-  const pageCount = Math.ceil(props.events.length / eventsPerPage); // Rounding up
 
-  const changePage = ({ selected }) => {
-    // selected the number for the page we want to move too
-    setPageNumber(selected);
-  };
-
-  if (props.events) {
+  if (props.events.results) {
     return(
       <>
         <div className="panels">
           <div className={`panel ${checkActive(1, "active")}`}>
             <Wrapper>
-              {props.events.filter((event) => {
-                  if (props.searchTerm === "")return event;
-                  else if (event.title.toLowerCase().includes(props.searchTerm.toLowerCase()))return event;
-                  else return ''
-                })
-                .slice(pagesVisited, pagesVisited + eventsPerPage)
-                .map((event) => {
-
-
+              {props.events.results.map((event) => {
                 return <EachAdminBlog 
                   className="eachAdminBlog" 
                   key={event.id}
@@ -75,18 +59,6 @@ const EachBlog = (props) => {
             </Wrapper>
           </div>
       </div>
-
-    <ReactPaginate
-            previousLabel={"<"}
-            nextLabel={">"}
-            pageCount={pageCount}
-            onPageChange={changePage}
-            containerClassName={"paginationButtons"}
-            previousLinkClassName={"previousButton"}
-            nextLinkClassName={"nextButton"}
-            disabledClassName={"paginationDisabled"}
-            activeClassName={"paginationActive"}
-      />
     </>
     );
   }

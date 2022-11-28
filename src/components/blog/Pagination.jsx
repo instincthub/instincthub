@@ -1,64 +1,54 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { reqOptions, fetAPI, HOST_URL, goToIdElement } from "../../assets/js/help_func";
+import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 
 function Pagination(props) {
     const [searchParams] = useSearchParams();
-    const violationRef = useRef(null);
 
-    const [pages, setPages] = useState()
+    
     const [limit] = useState(10)
-    const [offset, setOffset] = useState(searchParams.get('offset'));
-    const [rangeLimit, setRangeLimit] = useState(5);
-    const [negRangeLimit, setNegRangeLimit] = useState(0);
+    const [pages, setPages] = useState()
+
+    
+    const [offsetFrom, setOffsetFrom] = useState(0);
+    const [offsetTo, setOffsetTo] = useState(5);
+    const [rangeLimit] = useState(5);
+   
    
     const requestOptions  = reqOptions('get', null)
     const nextOffset = new URLSearchParams(props.data.next).get('offset')
     const previousOffset = new URLSearchParams(props.data.previous).get('offset')
-
-    const RangeOffset = (option) =>{
-        if(rangeLimit <= (option+1)){
-            setRangeLimit(rangeLimit+5)
-            setNegRangeLimit(negRangeLimit+4)
-        }
-        else if (option === pages.length) {
-            setRangeLimit(pages.length)
-            setNegRangeLimit(pages.length-5)
-        }
-        else if(limit+1 === (option+1)){
-            setRangeLimit(option+2)
-            setNegRangeLimit(option-2)
-            alert(option, rangeLimit)
-        }
-        else if(rangeLimit > (option+1)){
-            setRangeLimit(5)
-            setNegRangeLimit(0)
-        }
-    }
-
-    const handleNav = (item) =>{
-        setOffset(item)
-    }
+    let offset_params = Number(searchParams.get('offset'))/props.limit;
 
 
     useEffect(() =>{
 
-        if (searchParams.get('offset')) {
-            fetAPI(props.setData, HOST_URL()+`/api/v1/posts/?limit=${limit}&offset=${searchParams.get('offset')}`, requestOptions, true, false, false)
-        }
+        let tabs = props.tabsValues ? props.tabsValues : '';
+        let search = props.searchValues ? props.searchValues : '';
         
+        // Fetch data whenever there is new search, tab and pagination
+        if (offset_params || props.tabsValues || props.searchValues) {
+            fetchAPI(props.setData, HOST_URL()+`${props.urlPath}?cat=${tabs}&search=${search}&limit=${props.limit}&offset=${searchParams.get('offset')}`, requestOptions, true, false, false)
+
+            if (offset_params >= rangeLimit) {
+                setOffsetFrom(Number(offset_params)-2)
+                setOffsetTo(Number(offset_params)+3)
+            }
+            else{
+                setOffsetFrom(0)
+                setOffsetTo(5)
+            }
+        }
+        else fetchAPI(props.setData, HOST_URL()+`${props.urlPath}?limit=`+props.limit, requestOptions, true);
+
         // Round up and create array.
-        setPages([...Array(Math.ceil(props.data.count/limit)).keys()])
+        if (props.data.count)  setPages([...Array(Math.ceil(props.data.count/props.limit)).keys()]);
         
-        // Add active css class to page current number
-        if (offset === null && document.querySelector('.number')) {
-            document.querySelector('.number').classList.add('pagination_active');
-        }
 
         // eslint-disable-next-line
-    }, [searchParams.get('offset'), props.data.count])
+    }, [searchParams.get('offset'), props.data.count, props.tabsValues, props.searchValues])
 
     
 
@@ -68,20 +58,18 @@ function Pagination(props) {
                 className="pagination_buttons" 
                 role="navigation" 
                 aria-label="Pagination"
-                onClick={()=>props.goToViolation()}
+                onClick={()=>{
+                    props.goToViolation() // scroll to top
+                }} 
                 >
                 
                 {/* Previous Btn */}
-                <div  className={props.data.previous === null ? "pag_nav_wrapper deactivate" : "pag_nav_wrapper"}>
-                    <li className="pagination_first"><Link to={`?offset=0`} 
-                        onClick={()=> {
-                            RangeOffset(0)
-                        }}>First</Link></li>
-                    <li className="previous paginationDisabled" 
-                        onClick={()=> {
-                            handleNav(nextOffset)
-                            RangeOffset((previousOffset/10)-1)
-                        }}>
+                <div  className="pag_nav_wrapper">
+                    <li className={offset_params && props.data.previous != null? "pagination_first" : "pagination_first deactivate"}>
+                        <Link to={`?offset=0`} >First</Link>
+                    </li>
+                    <li className={(offset_params) === pages[0] || props.data.previous === null ? "previous paginationDisabled deactivate" : "previous paginationDisabled"}
+                        >
                         <Link className="previousButton " to={`?offset=${previousOffset ? previousOffset : 0}`}>
                         <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.66927 1.83333L3.08594 6.41667L7.66927 11L6.7526 12.8333L0.335938 6.41667L6.7526 0L7.66927 1.83333Z" fill="white"/>
@@ -91,29 +79,25 @@ function Pagination(props) {
                 </div>
 
                 {/* Inner Number */}
-                {pages.slice(negRangeLimit,rangeLimit).map((option, index)=>{
-                    return<li key={option} className={Number(searchParams.get('offset'))/limit === option ? "pagination_active number" : "number"} data-count={option}
-                    onClick={(e)=>RangeOffset(option)} >
-                        <Link to={`?offset=${option*limit}`}>{option+1}</Link>
+                {pages.slice(offsetFrom,offsetTo).map((option, index)=>{
+                    return<li key={option} className={offset_params === option ? "pagination_active number" : "number"} data-value={option}
+                     >
+                        <Link to={`?offset=${option*props.limit}`}>{option+1}</Link>
                     </li>
                 })}
-                <li className="break"><Link to="#">...</Link></li>
 
                 {/* Next Btn */}
-                <div  className={props.data.next === null ? "pag_nav_wrapper deactivate" : "pag_nav_wrapper"}>
-                    <li className="next">
+                <div  className={props.data.next ? "pag_nav_wrapper" : "pag_nav_wrapper deactivate"}>
+                    <li className={(offset_params) === pages.length-1 ? "next paginationDisabled deactivate" : "next paginationDisabled"}>
                         <Link to={`?offset=${nextOffset}`} className="nextButton" 
-                            onClick={()=> {
-                                handleNav(nextOffset)
-                                RangeOffset(nextOffset/10)
-                            }}>
+                            >
                             <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.330731 1.83333L4.91406 6.41667L0.330731 11L1.2474 12.8333L7.66406 6.41667L1.2474 0L0.330731 1.83333Z" fill="white"/>
                             </svg>
                         </Link>
                     </li>
-                    <li className="pagination_last" onClick={ ()=> RangeOffset(pages.length) }>
-                        <Link to={`?offset=${(pages.length-1) * limit}`}>Last</Link>
+                    <li className={offset_params === pages.length-1 ? "pagination_last deactivate" : "pagination_last"}>
+                        <Link to={`?offset=${(pages.length-1) * props.limit}`}>Last</Link>
                     </li>
                 </div>
             </PaginationUl>
@@ -133,7 +117,7 @@ const PaginationUl = styled.ul `
     .pag_nav_wrapper{
         display: flex;
     }
-    .pag_nav_wrapper.deactivate{
+    .deactivate{
         opacity: .6;
         a{
             pointer-events: none;

@@ -7,7 +7,7 @@ import FilterObjects from "../forms/FilterObjects";
 import FilterArray from "../forms/FilterArray";
 import SubmitBtn from "../forms/SubmitBtn";
 import CheckBoxes from "../forms/CheckBoxes";
-import { reqOptions, fetAPI, HOST_URL, printInputError } from "../../assets/js/help_func";
+import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../../assets/js/help_func";
 
 const BlogCreate = (props) => {
 
@@ -24,7 +24,7 @@ const BlogCreate = (props) => {
 
     let requestOptions  = reqOptions('POST', formdata, true);
 
-    fetAPI(props.set_data, `${HOST_URL()}/api/v1/posts/create/`, requestOptions, true, props.setMessageType, props.setError)
+    fetchAPI(props.set_data, `${HOST_URL()}/api/v1/posts/create/`, requestOptions, true, props.setMessageType, props.setError)
   };
 
   // Disable spinning button after getting status from fetch
@@ -69,23 +69,23 @@ const BlogCreate = (props) => {
 
             <CheckBoxes 
               default={false}
-              cat_list={props.data[0].category_list}/>
+              cat_list={props.data.results[0].category_list}/>
 
             <FilterObjects 
-                options ={props.data[0].author_list} 
+                options ={props.data.results[0].author_list} 
                 exists={props.data.author}
                 input_name="author"
                 label="Author"
             />
 
             <FilterObjects 
-                options ={props.data[0].previous_post_list} 
+                options ={props.data.results[0].previous_post_list} 
                 input_name="previous_post"
                 label="Previous Post"
             />
 
             <FilterObjects 
-                options ={props.data[0].previous_post_list} 
+                options ={props.data.results[0].previous_post_list} 
                 input_name="next_post"
                 label="Next Post"
             />

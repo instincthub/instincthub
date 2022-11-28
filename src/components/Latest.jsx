@@ -1,6 +1,6 @@
 import {React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { reqOptions, fetAPI, HOST_URL } from "../assets/js/help_func";
+import { reqOptions, fetchAPI, HOST_URL } from "../assets/js/help_func";
 
 const Latest = () => {
   const [data, setData] = useState([]);
@@ -9,7 +9,7 @@ const Latest = () => {
 
   useState(()=>{
     let requestOptions  = reqOptions('get', null)
-    fetAPI(setData, HOST_URL()+"/api/v1/posts/top_post/", requestOptions, true)
+    fetchAPI(setData, HOST_URL()+"/api/v1/posts/top_post/", requestOptions, true)
   })
 
   useEffect(()=>{

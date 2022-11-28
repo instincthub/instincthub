@@ -1,32 +1,50 @@
-import {React, useEffect, useState} from "react";
+import {React, useEffect, useState, useRef} from "react";
 import BreadCrumb from "../BreadCrumb";
-import EachBlog from "./EachBlog";
-import Images from "../../assets/images/Images";
-import Comments from "./Comments";
+import CommentsList from "./CommentsList";
+import CommentsAdd from "./CommentsAdd";
 import { useParams } from "react-router-dom";
 import { Markup } from 'react-render-markup';
 import NextPrevious from "./NextPrevious";
+import RecommendedBlog from "./RecommededBlog";
+import StatusMessage from "../message/StatusMessage";
 // import gfm from 'remark-gfm';
-import { reqOptions, fetAPI, HOST_URL} from "../../assets/js/help_func";
+import { reqOptions, fetchAPI, HOST_URL} from "../../assets/js/help_func";
+
 
 const BlogDetailRequest = () => {
+  useState(window.localStorage.setItem('renderCount', 1)) // track initial render
+  const violationRef = useRef(null);
   const [data, setData] = useState([])
+  const [newComments, setNewComments] = useState([])
+  const [messageType, setMessageType] = useState([])
+  const [error, setError] = useState([])
   const [categories, setCategories] = useState([]);
   const [timestamp, setTimestamp] = useState('');
   let { slug } = useParams();
 
+  const goToViolation=(id)=>{
+    violationRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
   useEffect(()=>{
-    let requestOptions  = reqOptions('get', null)
-    fetAPI(setData, HOST_URL()+"/api/v1/posts/post/"+slug, requestOptions, true)
+    /* 
+      Want react to fetch data once instead of twice. 
+      - Set renderCount in useState.
+      - Used the local storage to track the count.
+      - Set the render count to 1 in fetchAPI
+    */
+    if (Number(window.localStorage.getItem('renderCount'))) {
+      let requestOptions  = reqOptions('get', null)
+      fetchAPI(setData, HOST_URL()+"/api/v1/posts/post/"+slug, requestOptions, true)
+      window.localStorage.setItem('renderCount', 0)
+    }
+
 
     if (data.categories) {
       let obj = []
       for (const i in data.categories) obj.push(data.categories[i])
       setCategories(obj)
-      console.log(categories);
-
       setTimestamp(data.timestamp.slice(0, 10))
-      // setName()
     }
     // eslint-disable-next-line
   }, [])
@@ -34,6 +52,10 @@ const BlogDetailRequest = () => {
   if (data.title) {
     return (
       <section>
+        <StatusMessage 
+            setMessageType={setMessageType}
+            messageType={messageType}
+        />
         <BreadCrumb
           prevlink="/blog"
           previous="Blog"
@@ -49,7 +71,7 @@ const BlogDetailRequest = () => {
               </div>
 
               <h5 className="time_before">{timestamp}</h5>
-              <h3 className="views">862</h3>
+              <h3 className="views">{data.view_count}</h3>
             </div>
             <div className="b_label">
             {categories.map((option)=>{
@@ -64,42 +86,21 @@ const BlogDetailRequest = () => {
           </div>
 
           {/* Next and Previous */}
-          <NextPrevious/>
+          <NextPrevious data={data} refs={violationRef}/>
 
-          <Comments />
+          <CommentsList data={data.comments} newComments={newComments}/>
+          <CommentsAdd 
+            data={data} 
+            setNewComments={setNewComments} 
+            newComments={newComments}
+            setMessageType={setMessageType}
+            setError={setError}
+            goToViolation={goToViolation}
+            />
         </div>
-        <div className="more_posts">
-          <div className="container">
-            <h4>Post you may also like </h4>
-            <div className="threecard_grid blog_control ">
-              <EachBlog
-                link=""
-                blogimg={Images.blog1}
-                authorimg={Images.img1}
-                authorname="Sodiq A. Makinde"
-                date="October 5, 2022"
-                title="Password Authentication Vs Passwordless Authentication"
-                encryption="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
-              />
-              <EachBlog
-                blogimg={Images.blog2}
-                authorimg={Images.img2}
-                authorname="Sodiq A. Makinde"
-                date="October 5, 2022"
-                title="Password Authentication Vs Passwordless Authentication"
-                encryption="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
-              />
-              <EachBlog
-                blogimg={Images.blog3}
-                authorimg={Images.img3}
-                authorname="Sodiq A. Makinde"
-                date="October 5, 2022"
-                title="Password Authentication Vs Passwordless Authentication"
-                encryption="Passwords have significantly impacted today's society since the beginning of the 21st century. However, technology is beyond; we use the Internet to perform many activities such as transaction…"
-              />
-            </div>
-          </div>
-        </div>
+
+          <RecommendedBlog data={data.recommended_posts}/>
+        
       </section>
     );
   }

@@ -6,7 +6,7 @@ import ScrollToTop from "../../components/ScrollToTop";
 
 import {
   reqOptions,
-  fetAPI,
+  fetchAPI,
   HOST_URL,
   setCookie,
 } from "../../assets/js/help_func";
@@ -29,7 +29,7 @@ const Login = () => {
         onSubmit={(form) => {
           form.preventDefault();
           let requestOptions = reqOptions("post", new FormData(form.target));
-          fetAPI(
+          fetchAPI(
             setData,
             HOST_URL() + "/api/v1/auth/login/",
             requestOptions,

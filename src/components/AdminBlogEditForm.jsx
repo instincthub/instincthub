@@ -1,4 +1,4 @@
-import {React, useEffect, useState } from "react";
+import {React, useEffect } from "react";
 import styled from "styled-components";
 import CheckBoxes from "./forms/CheckBoxes";
 import FilterObjects from "./forms/FilterObjects";
@@ -6,7 +6,7 @@ import FilterArray from "./forms/FilterArray";
 import SubmitBtn from "./forms/SubmitBtn";
 import TextField from "./forms/TextField";
 import TextArea from "./forms/TextArea";
-import { reqOptions, fetAPI, HOST_URL, printInputError } from "../assets/js/help_func";
+import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/help_func";
 
 
   
@@ -32,7 +32,7 @@ import { reqOptions, fetAPI, HOST_URL, printInputError } from "../assets/js/help
           printInputError(props.error)
         }
 
-    },[props.data.author_list, props.error, props.messageType])
+    },[props])
 
 
 
@@ -50,7 +50,7 @@ import { reqOptions, fetAPI, HOST_URL, printInputError } from "../assets/js/help
 
         let requestOptions  = reqOptions('PUT', formdata, true);
 
-        fetAPI(props.set_data, `${HOST_URL()}/api/v1/posts/post/${props.data.slug}/`, requestOptions, true, props.setMessageType,  props.setError)
+        fetchAPI(props.set_data, `${HOST_URL()}/api/v1/posts/post/${props.data.slug}/`, requestOptions, true, props.setMessageType,  props.setError)
       };
 
       // Disable spinning button after getting status from fetch
@@ -72,7 +72,7 @@ import { reqOptions, fetAPI, HOST_URL, printInputError } from "../assets/js/help
         return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
       }
 
-      if (props.data && props.edit) {
+      if (props.data.id && props.edit) {
         return (
             <HandlingOverlay onClick={()=>props.setEdit(false)}>
                 <div
@@ -96,13 +96,6 @@ import { reqOptions, fetAPI, HOST_URL, printInputError } from "../assets/js/help
                             type="file"
                             name="thumbnail"
                             placeholder="Title"
-                            onChange={(e)=>{
-                              console.log(getBase64Image(e))
-                              // reader.onload = function () {
-                              // localStorage.setItem("image", reader.result);
-                              // document.getElementById("imagePreview").setAttribute("src", localStorage.getItem("image"))
-                              // };
-                            }}
                             />
                             <span>Blog Title</span>
                         </div>
@@ -151,7 +144,7 @@ import { reqOptions, fetAPI, HOST_URL, printInputError } from "../assets/js/help
 
                          {/* Comments OR Feedbacks from Blog */}
                         <section className="feedbackContainer">
-                            <h3> Comments ({props.data.comments.length}) </h3>
+                            <h3> Comments ({props.data.comments ? props.data.comments.length : 0}) </h3>
                             <div className="feedback">
                                 {props.data.comments.map((comment)=>{
                                     

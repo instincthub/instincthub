@@ -1,40 +1,38 @@
 import {React, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import searchIcon from '../../assets/images/svgs/search.svg'
 import { Link } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
-import { reqOptions, fetAPI, HOST_URL } from "../../assets/js/help_func";
+import SearchField from '../forms/SearchField';
+
+import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 
 function Tabs(props) {
 
     const [searchParams] = useSearchParams();
     const [categories, setCategories] = useState();
-    const [searchValue, setSearchValue] = useState([]);
     const requestOptions  = reqOptions('get', null)
 
     useEffect(()=>{
         if (!categories) {// Category List
-            fetAPI(setCategories, HOST_URL()+"/api/v1/posts/post_category/", requestOptions, true);
-        }
-        if (searchParams.get("cat")) { // Filter by categories
-            fetAPI(props.setData, HOST_URL()+"/api/v1/posts/?cat="+searchParams.get("cat"), requestOptions, true)
-        }
-        if(searchValue){
-            fetAPI(props.setData, HOST_URL()+"/api/v1/posts/"+searchValue, requestOptions, true)
+            fetchAPI(setCategories, HOST_URL()+"/api/v1/posts/post_category/", requestOptions, true);
         }
     // eslint-disable-next-line
-    },[searchParams.get("cat"), searchValue])
+    },[searchParams.get("cat")])
 
     if (categories) {
         return (
             <TabsSearch>
                 <div className="tabs">
-                <Link className={searchParams.get("cat") ? 'tab' : 'tab active'} to={'?cat='}>
+                <Link 
+                    className={searchParams.get("cat")==='all' || searchParams.get("cat") === null ? 'tab active' : 'tab'} to={'?cat=all'}
+                    onClick={()=> props.setTabsValues('all')}>
                     <button>All</button>
                 </Link>
 
                 {categories.results.map((option, index)=>{
-                    return <div className={index >= 1 ? 'm_none tab_none' : ''}>
+                    return <div 
+                        className={index >= 1 ? 'm_none tab_none' : ''}
+                        onClick={()=> props.setTabsValues(option.id)}>
                         <Link 
                             to={'?cat='+option.id} 
                             className={Number(searchParams.get("cat")) === option.id ? 'tab active' : 'tab'}
@@ -45,24 +43,8 @@ function Tabs(props) {
                     </div>
                 })}
                 </div>
-                <div className="event-input">
-                {/* <FilterBy selected={selected} setSelected={setSelected} /> */}
-                <div className="search_set">
-                    <img
-                    src={searchIcon}
-                    alt="Search Icon"
-                    />
-                    <input
-                    className="eventt"
-                    type="text"
-                    name="name"
-                    placeholder="Search Blog ..."
-                    onChange={(e) => {
-                        setSearchValue("?search="+e.target.value)
-                    }}
-                    />
-                </div>
-                </div>
+
+                <SearchField setSearchValues={props.setSearchValues}/>
             </TabsSearch>
         );
     }
@@ -77,30 +59,7 @@ const TabsSearch = styled.section`
   .normal_tab {
     background: transparent;
   }
-  .event-input {
-    input {
-      margin-bottom: 20px;
-    }
-  }
-  @media (min-width: 760px) {
-    display: flex;
-    justify-content: space-between;
-    .event-input {
-      .event-select {
-        width: 20%;
-      }
-      .input_search{
-        max-width: 400px;
-      }
-    }
-  }
-  @media (max-width: 540px) {
-    .event-input {
-      .event-select {
-        display: none;
-      }
-    }
-  }
+  
   .tabs {
     margin: 0;
     margin-bottom: 30px;
@@ -134,6 +93,10 @@ const TabsSearch = styled.section`
   }
   .normal_tab.add_tape {
     border-bottom: 2px solid yellow;
+  }
+  @media (min-width: 760px) {
+    display: flex;
+    justify-content: space-between;
   }
   @media(max-width: 500px){
     .m_none{

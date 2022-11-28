@@ -1,4 +1,5 @@
-import { React, useState } from "react";
+import { React, useState, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 // import JsonData from '../Mock-API.json'
 import API from "../../json/D4Blog.json";
 import AdminBlog from "../../components/AdminBlogs";
@@ -11,15 +12,25 @@ import FilterArray from "../../components/forms/FilterArray";
 import StatusMessage from "../../components/message/StatusMessage";
 import ScrollToTop from "../../components/ScrollToTop";
 import AdminBlogEditForm from "../../components/AdminBlogEditForm";
-import { reqOptions, fetAPI, HOST_URL, loginRequired, getCookie} from "../../assets/js/help_func";
+import Pagination from "../../components/blog/Pagination";
+import SearchField from "../../components/forms/SearchField";
+import Tabs from "../../components/blog/Tabs";
+import { loginRequired, getCookie } from "../../assets/js/help_func";
 
 function AdminBlogList() {
   ScrollToTop();
   loginRequired(JSON.parse(getCookie('uu_id')))
+  
+  // Pagination required states:
+  const violationRef = useRef(null);
+  const [searchParams] = useSearchParams();
+  const [searchValues, setSearchValues] = useState([]);
+  const [tabsValues, setTabsValues] = useState([]);
+  const goToViolation=(id)=> violationRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+
 
   const [events, setEvents] = useState(API.slice(0, 20));
-  const [blog_edit, setBlog_edit] = useState([]);
-  const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
+  const [blog_edit, setBlogEdit] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [openModal, setOpenModal] = useState(false); // state for Modal
   const [edit, setEdit] = useState(false); // state for Modal
@@ -35,19 +46,13 @@ function AdminBlogList() {
     props: [type, setType, message]
   */
   const [messageType, setMessageType] = useState('');
-  const [msg, setMsg] = useState(messageType === 'success' ? "Awesome! the blog post was updated." : "Ooops..., It something went wrong. Try again");
   const [error, setError] = useState([])
 
 
   useState(()=>{
-    let requestOptions  = reqOptions('get', null)
-    fetAPI(setEvents, HOST_URL()+"/api/v1/posts/admin/", requestOptions, true)
-  })
-
-  /** ======to do
-   * 1. Handle all form event with handleChange function
-   * 2. No need for Filter as all blog display at one.Navigate using the pagination
-   */
+    // let requestOptions  = reqOptions('get', null)
+    // fetchAPI(setEvents, HOST_URL()+"/api/v1/posts/admin/?limit=20", requestOptions, true)
+  },[events.results])
 
   return (
     <>
@@ -55,50 +60,27 @@ function AdminBlogList() {
       <StatusMessage 
           setMessageType={setMessageType}
           messageType={messageType}
-          message={msg}
       />
 
-      <section className="container">
+      <section className="container" ref={violationRef}>
         <div className="">
           <div className="event-container">
             <HandleSearchAndTab>
-              <div className="tabs">
-                <span
-                  className={`tab ${checkActive(1, "active")}`}
-                  onClick={() => handleClick(1)}
-                >
-                  <button onClick={(e) => setEvents(API)}>All</button>
-                </span>
-                {/* Kindly remove this DIV is there is need to filter by Tab */}
+              {/* <Tabs setData={setEvents} setSearchValues={setSearchValues} setTabsValues={setTabsValues}/> */}
 
-              </div>
               <div className="event-input">
-                <div className="search_set">
-                  <img
-                    src="https://www.svgrepo.com/show/13682/search.svg"
-                    alt=""
-                  />
-                  <input
-                    className="eventt"
-                    type="text"
-                    name="name"
-                    placeholder="Search Blog ..."
-                    onChange={(event) => {
-                      setSearchTerm(event.target.value);
-                    }}
-                  />
-                </div>
+                
+                <SearchField setSearchValues={setSearchValues}/>
 
-                <div className="filter">
+                {/* <div className="filter">
                   <FilterArray 
                     options ={["Last 7days", "Last 14 days", "This month", "Last Month"]} 
                   />
-                </div>
+                </div> */}
 
                 <button
                   className="important-btn"
-                  onClick={() => setOpenModal(true)}
-                >
+                  onClick={() => setOpenModal(true)} >
                   New Blog
                 </button>
               </div>
@@ -107,8 +89,20 @@ function AdminBlogList() {
         </div>
         
         {/* List Blog Post */}
-        <AdminBlog events={events} setBlog_edit={setBlog_edit} setEdit={setEdit} searchTerm={searchTerm}/>
-        
+        <AdminBlog events={events} setBlogEdit={setBlogEdit} setEdit={setEdit} searchTerm={searchTerm}/>
+
+        {
+          <Pagination 
+              data={events}
+              setData={setEvents}
+              limit={20} 
+              offset={searchParams.get("offset")}
+              goToViolation={goToViolation}
+              tabsValues={tabsValues}
+              searchValues={searchValues}
+              urlPath="/api/v1/posts/admin/"
+          />
+        }
       </section>
       <Footer />
 
@@ -132,13 +126,18 @@ const HandleSearchAndTab = styled.section`
   .normal_tab {
     background: transparent;
   }
+  .search_set{
+    margin: 0px 10px;
+    min-width: 200px;
+  }
   .event-input {
-    max-width: 675px;
+    max-width: 500px;
+    margin-left: auto;
     input {
       margin-bottom: 20px;
     }
     .important-btn{
-      min-width: 160px;
+      min-width: 100px;
     }
     .filter{
       width: 170px;

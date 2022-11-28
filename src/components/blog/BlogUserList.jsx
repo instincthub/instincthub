@@ -4,11 +4,13 @@ import styled from 'styled-components';
 import Pagination from './Pagination';
 import Tabs from './Tabs';
 import { useSearchParams } from 'react-router-dom';
-import { reqOptions, fetAPI, HOST_URL } from "../../assets/js/help_func";
+import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 
 const BlogUserList = () => {
     const violationRef = useRef(null);
     const [data, setData] = useState([]);
+    const [searchValues, setSearchValues] = useState(false);
+    const [tabsValues, setTabsValues] = useState(false);
     const [searchParams] = useSearchParams();
     searchParams.get("cat")
 
@@ -17,37 +19,42 @@ const BlogUserList = () => {
     };
 
     useEffect(()=>{
-        let requestOptions  = reqOptions('get', null)
-        fetAPI(setData, HOST_URL()+"/api/v1/posts/", requestOptions, true)
-    },[])
+        // console.log(data.results);
+        
+    },[data.results])
 
-    if (data.results) {
+ 
         return (
             < div ref={violationRef}>
-            <BlogListWrapper className="container">
-                <div className="event_container"  >
+                <BlogListWrapper className="container">
+                    <div className="event_container"  >
 
-                    <Tabs setData={setData}/>
-
-                    <div className='blog_wrapper' >
-                        {data.results.map((option)=>{
-                            return  <div className="blog_control" key={option.id}>
-                                <EachBlog data={option} />
-                            </div>
-                        })}
+                        <Tabs setData={setData} setSearchValues={setSearchValues} setTabsValues={setTabsValues}/>
+                        {
+                            data.results ?
+                        <div className='blog_wrapper' >
+                            {data.results.map((option)=>{
+                                return  <div className="blog_control" key={option.id}>
+                                    <EachBlog data={option} />
+                                </div>
+                            })}
+                        </div>
+                        :''
+                        }
                     </div>
-                </div>
-                <Pagination 
-                    data={data}
-                    setData={setData}
-                    limit={searchParams.get("limit")} 
-                    offset={searchParams.get("offset")}
-                    goToViolation={goToViolation}
-                />
-            </BlogListWrapper>
+                    <Pagination 
+                        data={data}
+                        setData={setData}
+                        limit={10} 
+                        offset={searchParams.get("offset")}
+                        goToViolation={goToViolation}
+                        tabsValues={tabsValues}
+                        searchValues={searchValues}
+                        urlPath="/api/v1/posts/"
+                    />
+                </BlogListWrapper>
             </div>
         );
-    }
 };
 
 export default BlogUserList;

@@ -5,8 +5,6 @@ const TextArea = (props) => {
     const showLabel = (e) =>{
         if (e.target.value) e.target.parentElement.classList.add('value')
         else e.target.parentElement.classList.remove('value')
-
-        console.log(e.target.value);
     }
     return ( 
         <div className="field">

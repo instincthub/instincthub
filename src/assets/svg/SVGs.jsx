@@ -22,7 +22,6 @@ const SVGs = {
   django: require("../svg/django.svg").default,
   html: require("../svg/html.svg").default,
   js: require("../svg/js.svg").default,
-  facebook: require("../svg/facebook.svg").default,
   w_facebook: require("../svg/w_facebook.svg").default,
   w_twitter: require("../svg/w_twitter.svg").default,
   w_linkedin: require("../svg/w_linkedin.svg").default,

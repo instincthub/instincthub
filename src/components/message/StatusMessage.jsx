@@ -1,9 +1,9 @@
-import { React, useEffect} from "react";
+import { React, useState} from "react";
 import styled from "styled-components";
 import IMGs from "../../assets/images/Images";
 
 const StatusMessage = (props) => {
-
+  const msg = props.messageType === 'success' ? "Awesome! The update was made." : "Ooops..., It something went wrong. Try again";
 
   const closeMessage = () =>{
     props.setMessageType('')
@@ -29,7 +29,7 @@ const StatusMessage = (props) => {
             {/* You can set error button by adding IMG.error for error icon */}
             <div className="valid_btn">
               <img src={props.messageType === 'success' ? IMGs.valid : IMGs.error} alt="Status Icon" className="valid" />
-              <span>{props.message}</span>
+              <span>{props.message ? props.message : msg}</span>
             </div>
             <img
               className="close-btn"

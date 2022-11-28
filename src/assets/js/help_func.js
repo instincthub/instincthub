@@ -362,7 +362,7 @@ export const HOST_URL = ()=> {
     return request
   }
   
-  export const fetAPI = (session, api, reqOptions, func=false, setStatus=false, setError=false) =>{
+  export const fetchAPI = (session, api, reqOptions, func=false, setStatus=false, setError=false) =>{
   
       let status = null
       fetch(api, reqOptions)
@@ -390,6 +390,7 @@ export const HOST_URL = ()=> {
                     if(setStatus)  setError([]);
                     session(result);
                     if(setStatus) setStatus('success'); // Display message banner. 
+                    window.localStorage.setItem('renderCount', 1)
                   }
               }
               
