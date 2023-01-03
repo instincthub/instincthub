@@ -49,5 +49,6 @@ const Wrapper = styled.div`
         pointer-events: initial;
         left: 15px;
         line-height: 10px;
+        width: 100%;
     }
 `;

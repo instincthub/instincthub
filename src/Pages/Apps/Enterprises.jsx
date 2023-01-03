@@ -1,5 +1,5 @@
 import React from "react";
-import Accordion from "../../components/Accordion";
+import FAQs from "../../components/FAQs";
 import Images from "../../assets/images/Images";
 import Footer from "../../components/Footer";
 import Newsletter from "../../components/Newsletter";
@@ -37,7 +37,7 @@ const Enterprises = () => {
       <Growth />
       <Carousel />
       {/* <CompanyTestimonial /> */}
-      <Accordion />
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=ENTERPRISE" />
       <Newsletter />
       <Footer />
     </>

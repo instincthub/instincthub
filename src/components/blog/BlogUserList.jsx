@@ -4,6 +4,7 @@ import EachBlog from './EachBlog';
 import styled from 'styled-components';
 import Pagination from './Pagination';
 import Tabs from './Tabs';
+import IsLoading from './IsLoading';
 import { useSearchParams } from 'react-router-dom';
 import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 
@@ -40,7 +41,7 @@ const BlogUserList = () => {
                                 </div>
                             })}
                         </div>
-                        :''
+                        :<IsLoading/>
                         }
                     </div>
                     <Pagination 

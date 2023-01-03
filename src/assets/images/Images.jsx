@@ -43,5 +43,7 @@ const Images = {
   empathy: require("../images/empathy.png"),
   Humility: require("../images/Humility.png"),
   Ownership: require("../images/Ownership.png"),
+  chevronDown: require("../images/svgs/chevron_down.svg"),
+  arrowRight: require("../images/svgs/arrow_right.svg"),
 };
 export default Images;

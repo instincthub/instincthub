@@ -945,17 +945,16 @@ ul.breadcrumb li {
   font-weight: 600;
   color: var(--Gunmetal);
 }
-ul.breadcrumb li + li:before {
-  content: url("https://www.svgrepo.com/show/356409/arrow-right.svg");
-  // background: url("https://www.svgrepo.com/show/356409/arrow-right.svg");
-  width: 20px;
-  position: relative;
-  top: 7px;
-  height: 35px;
-  display: block;
-  padding: 0 10px;
-  display: inline-block;
-}
+// ul.breadcrumb li + li:before {
+//   content: url("https://www.svgrepo.com/show/356409/arrow-right.svg");
+//   width: 20px;
+//   position: relative;
+//   top: 7px;
+//   height: 35px;
+//   display: block;
+//   padding: 0 10px;
+//   display: inline-block;
+// }
 ul.breadcrumb li a {
   color: var(--ChineseSilver);
   text-decoration: none;

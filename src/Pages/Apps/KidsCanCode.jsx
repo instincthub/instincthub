@@ -1,5 +1,5 @@
 import React from "react";
-import Accordion from "../../components/Accordion";
+import FAQs from "../../components/FAQs";
 import Carousel from "../../components/Carousel";
 import KidsFeature from "../../components/KidsFeature";
 import Images from "../../assets/images/Images";
@@ -26,7 +26,7 @@ const Individual = () => {
       {/* <Features /> */}
       <KidsFeature />
       <Carousel id="forKids" />
-      <Accordion />
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=KIDSCANCODE"/>
       <Newsletter />
       <Footer />
     </>

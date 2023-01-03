@@ -1,5 +1,5 @@
-import React from "react";
-import Accordion from "../../components/Accordion";
+import { React, useState } from "react";
+import FAQs from "../../components/FAQs";
 import Carousel from "../../components/Carousel";
 import Images from "../../assets/images/Images";
 import Footer from "../../components/Footer";
@@ -14,12 +14,28 @@ import Process from "../../components/Process";
 import EnterpriseFeatures from "../../components/EContentF";
 import Header from "../../components/navbar/Header";
 import ScrollToTop from "../../components/ScrollToTop";
+import StatusMessage from "../../components/message/StatusMessage";
 
 const Enterprises = () => {
   ScrollToTop()
+
+  /* 
+    Show message for "success" or "error".
+    The default state is ''.
+    Render the StatusMessage below the Header
+    props: [type, setType, message]
+  */
+    const [messageType, setMessageType] = useState('');
+    const [error, setError] = useState([])
+
+  
   return (
     <>
       <Header />
+      <StatusMessage 
+          setMessageType={setMessageType}
+          messageType={messageType}
+      />
       <Banner
         specify="kidscc"
         h1="We help digitalizing course creation from conventional mode to digital."
@@ -44,8 +60,8 @@ const Enterprises = () => {
         button="Schedule Call"
       />
       <Carousel />
-      <Accordion />
-      <Newsletter />
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=ENTERPRISE"/>
+      <Newsletter setMessageType={setMessageType} messageType={messageType} setError={setError} error={error} />
       <Footer />
     </>
   );

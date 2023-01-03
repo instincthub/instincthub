@@ -390,7 +390,7 @@ export const HOST_URL = ()=> {
           (result) => {
               if (func === false) { // if class component
                   session.setState({
-                      items: result,
+                      data: result,
                       status: status
                   })
               }else if (func === true){// if function component
@@ -406,8 +406,8 @@ export const HOST_URL = ()=> {
                   }
               }
               
-              console.log(result)
-              console.log(status)
+              // console.log(result)
+              // console.log(status)
               return result
           },
           (error) => {
@@ -426,6 +426,27 @@ export const HOST_URL = ()=> {
       )
   }
   
+  export const fetchLeadAPI = (setData, url, body=null)=> {
+    var myHeaders = new Headers();
+    myHeaders.append("leadboard-sk-header", "22-072021kidbackendyste3333ifkIks304");
+    myHeaders.append("Cookie", "csrftoken=Wvp0BGFhKnTktgYmKaxrXBdyCWPRt6V8cDxNhJRbLZCIHhqx8hzHM4Z3ZxhF52HM; sessionid=evwh71c9a72wqt1bbdd3h1qo5phap8a7");
+  
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+
+    if(body) requestOptions['body'] = body;
+  
+  
+    fetch(url, requestOptions)
+      .then(response => response.text())
+      .then(result => setData(JSON.parse(result)))
+      .catch(error => console.log('error', error));
+   
+  } 
+
   export const checkEnv = ()=> {
       if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.hostname === "192.168.0.174" || window.location.hostname === "") {
           return "local"

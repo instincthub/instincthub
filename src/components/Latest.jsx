@@ -17,7 +17,6 @@ const Latest = () => {
       let obj = []
       for (const i in data.categories) obj.push(data.categories[i])
       setCategories(obj)
-      console.log(categories);
 
       setTimestamp(data.timestamp.slice(0, 10))
       // setName()

@@ -196,7 +196,8 @@ let Multi = styled.ul`
   .actual {
     font-weight: 500;
     &:after {
-      content: url(https://www.svgrepo.com/show/344644/chevron-down.svg);
+      content: url(${Images.chevronDown.default});
+      /* content: url(../src/assets/images/svgs/chevron_down.svg); */
       display: inline-block;
       width: 35px;
       position: absolute;

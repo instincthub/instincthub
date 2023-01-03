@@ -10,11 +10,6 @@ const JobDetails = () => {
   return (
     <section>
       <Header />
-      <BreadCrumb
-        previous="Career"
-        current="Design ( Mid-level Product design )"
-        prevlink="/products/career"
-      />
       <JobBrief />
       <Footer />
     </section>

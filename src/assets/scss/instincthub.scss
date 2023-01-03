@@ -165,6 +165,7 @@
   border-radius: 5px;
   margin-top: 280px;
   position: relative;
+  padding-bottom: 5px;
   &::after {
     content: "";
     background: url("../svg/testimonial-b.svg") no-repeat;
@@ -466,7 +467,7 @@
   img {
     width: 168.44px;
     height: 32px;
-    object-fit: cover;
+    object-fit: contain;
   }
   div {
     // background-color: var(--AmericanPurple);
@@ -619,7 +620,9 @@
   .partners {
     max-width: 1200px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 .schedule {
