@@ -12,10 +12,10 @@ const Grid = () => {
         <div className="second_guy">
           <div className="grid_container ">
             <div className="per_gird individual"></div>
-            <Individual />
+            {/* <Individual />
             <Enterprises />
             <TechDiversity />
-            <KidCanCode />
+            <KidCanCode /> */}
           </div>
         </div>
       </div>

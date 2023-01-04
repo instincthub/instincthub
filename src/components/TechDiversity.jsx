@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Images from "../assets/images/Images";
+// import { Link } from "react-router-dom";
+// import Images from "../assets/images/Images";
 
 const TechDiversity = () => {
   return (
