@@ -6,6 +6,7 @@ import CommentsList from "./CommentsList";
 import CommentsAdd from "./CommentsAdd";
 import { useParams } from "react-router-dom";
 import { Markup } from 'react-render-markup';
+import ReactMarkdown from "react-markdown";
 import NextPrevious from "./NextPrevious";
 import RecommendedBlog from "./RecommededBlog";
 import StatusMessage from "../message/StatusMessage";
@@ -86,7 +87,12 @@ const BlogDetailRequest = () => {
             </div>
             <h1>{data.title}</h1>
             <main>
-              <Markup markup={data.content} />
+              {
+                data.content.includes('<p>')?
+                <Markup markup={data.content} />
+                :
+                <ReactMarkdown>{data.content}</ReactMarkdown>
+              }
             </main>
             
           </div>

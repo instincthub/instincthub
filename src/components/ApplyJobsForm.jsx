@@ -21,9 +21,14 @@ const ApplyJobsForm = ({ open, onClose }) => {
 
     // Remove thumbnail from field if empty
     var formdata = new FormData(e.target);
+
+    // Get form objects
+    const formDataObj = {};
+    formdata.forEach((value, key) => (formDataObj[key] = value));
+    console.log(JSON.stringify(formDataObj));
     
-    let job_url = 'https://leadapi.instincthub.com/api/v1/careers/job/'+slug
-    fetchLeadAPI(setData, job_url, formdata)
+    let job_url = 'https://leadapi.instincthub.com/api/v1/careers/job_apply/?job_id='+slug
+    fetchLeadAPI(setData, job_url, formDataObj, 'POST')
   };
 
   const _handleImageChange = (e) => {
@@ -37,7 +42,35 @@ const ApplyJobsForm = ({ open, onClose }) => {
         reader.readAsDataURL(file);
     }
 
+    const DummyFormData = {
+      "resume": {},
+      "image": {},
+      "first_ame": "sdasd",
+      "last_name": "asdasds",
+      "email": "noaholatoye101@gmail.com",
+      "nationality": "asdasds",
+      "country_of_residence": "Nigeria",
+      "phone_number": "07063668889",
+      "home_address": "ssdsdsd",
+      "job_title": "asd",
+      "company_name": "Instinct Hub",
+      "company_location": "Instinct Hub",
+      "description": "",
+      "from_date": "",
+      "to_date": "",
+      "institution": "",
+      "course": "",
+      "location": "",
+      "linked": "",
+      "facebook": "",
+      "twitter": "",
+      "website": "",
+      "message": "sadasdadd"
+  }
+
   if (!open) return null;
+
+  console.log(data);
   return (
     <HandlingOverlay onClick={onClose}>
       <ModalContainer
@@ -86,28 +119,24 @@ const ApplyJobsForm = ({ open, onClose }) => {
                   </div>
                   <div className="preview_me"> <img src={imagePreview} alt="Add img" /></div>
                 </div>
-                <TextField type="text" name="title" label="Blog Title" required={true}/>
-                <TextArea name="overview" rows="5" label="Overview" required={true}/>
-                <TextArea name="content" rows="15" label="Content" required={true}/>
+               
 
                 <div className="double_input">
-                
-                  {/* <input type="text" name="first_ame" placeholder="First Name" required/> */}
-                  <TextField type="text" name="first_ame" label="First Name" required={true}/>
+                  <TextField type="text" name="first_name" label="First Name" required={true}/>
                   <TextField type="text" name="last_name" label="Last Name" required={true}/>
                 </div>
 
 
                 <div className="double_input">
-                  <input type="email" name="email" placeholder="Email Address"required/>
-                  <input type="text" name="nationality" placeholder="Nationality" />
+                  <TextField type="email" name="email" label="Email Address" required={true}/>
+                  <TextField type="text" name="nationality" label="Nationality"/>
                 </div>
                 <div className="double_input">
-                  <input type="text" name="country_of_residence" placeholder="Country of Residence" required/>
-                  <input type="number" name="phone_number" placeholder="Mobile Phone" required/>
+                  <TextField type="text" name="country_of_residence" label="Country of Residence" required={true}/>
+                  <TextField type="number" name="phone_number" label="Mobile Phone" required={true}/>
                 </div>
                 <div className="double_input">
-                  <input type="text" name="home_address" placeholder="Home Address" required/>
+                  <TextField type="text" name="home_address" label="Home Address" required={true}/>
                 </div>
               </div>
               {/* /** ====Experience*/}
@@ -119,11 +148,16 @@ const ApplyJobsForm = ({ open, onClose }) => {
 
                 <div className="main_experience">
                   <div className="double_input">
-                    <input type="text" name="job_title" placeholder="Job Title" />
-                    <input type="text" name="company_name" placeholder="Company Name" />
+                    <TextField type="text" name="job_title" label="Job Title"/>
+                    <TextField type="text" name="company_name" label="Company Name"/>
                   </div>
-                  <input type="text" name="company_location" placeholder="Company Location" />
-                  <textarea name="description" id="" placeholder="Description"></textarea>
+
+                  <div className="double_input">
+                    <TextField type="text" name="company_location" label="Company Location"/>
+                  </div>
+                  
+                  <TextArea name="description" rows="5" label="Description" />
+
                   <div className="double_input">
                     <p className="input_label">
                       <label>From</label>
@@ -146,12 +180,18 @@ const ApplyJobsForm = ({ open, onClose }) => {
                 </div>
 
                 <div className="main_experience">
+
                   <div className="double_input">
-                    <input type="text" name="institution" placeholder="Institution" />
-                    <input type="text" name="course" placeholder="Course" />
+                    <TextField type="text" name="institution" label="Institution"/>
+                    <TextField type="text" name="course" label="Course"/>
                   </div>
-                  <input type="text" name="location" placeholder="Location" />
-                  <textarea name="description" id="" placeholder="Description"></textarea>
+
+                  <div className="double_input">
+                    <TextField type="text" name="location" label="Location"/>
+                  </div>
+                  
+                  <TextArea name="description" rows="5" label="Description" />
+
                   <div className="double_input">
                     <p className="input_label">
                       <label>From</label>
@@ -169,33 +209,19 @@ const ApplyJobsForm = ({ open, onClose }) => {
               <div className="personal">
                 <h4>Social Link</h4>
                 <div className="double_input">
-                  <input type="url" name="linked_url" placeholder="Linkedin" />
-                  <input type="url" name="facebook_url" placeholder="Facebook" />
+                  <TextField type="url" name="linked" label="Linkedin Profile URL"/>
+                  <TextField type="url" name="facebook" label="Facebook Profile URL"/>
                 </div>
                 <div className="double_input">
-                  <input type="url" name="twitter_url" placeholder="Twitter" />
-                  <input type="url" name="website_url" placeholder="Website" />
+                  <TextField type="url" name="twitter" label="Twitter Profile URL"/>
+                  <TextField type="url" name="website" label="Website Profile URL"/>
                 </div>
               </div>
               <div className="hiring">
                 <h4>Message to Hiring manager</h4>
-                <textarea
-                  name="message"
-                  id=""
-                  required
-                  placeholder="Dear Hiring Manager, ..."
-                ></textarea>
+                 <TextArea name="message" rows="15" label="Cover Letter" required={true}/>
               </div>
             </>
-            {/* <Step1
-              currentStep={this.state.currentStep}
-              handleChange={this.handleChange}
-              email={this.state.email}
-              firstName={this.state.firstName}
-              lastName={this.state.lastName}
-              password={this.state.password}
-              mobile={this.state.mobile}
-            /> */}
             <div className="action-btn">
               <SubmitBtn add_class="important-btn" labels="Submit Application"/>
             </div>
@@ -226,11 +252,18 @@ const HandlingOverlay = styled.div`
   @media (max-width: 488px) {
     padding: 20px !important;
   }
-  .double_input .field {
+  .double_input .field,
+  .double_input .input_label{
     width: 48.5%;
     input{
       width: 100%;
     }
+  }
+  span.text_label{
+    top: 11px;
+  }
+  .field input:focus + span, .value span {
+    width: auto;
   }
   @media(max-width: 410px){
     .double_input .field {
@@ -282,6 +315,9 @@ const Main = styled.div`
       display: none;
     }
   }
+  /* .field span{
+      top: 11px !important;
+    } */
   .dummy_holder {
     img {
       top: 0;

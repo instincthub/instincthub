@@ -426,18 +426,24 @@ export const HOST_URL = ()=> {
       )
   }
   
-  export const fetchLeadAPI = (setData, url, body=null)=> {
+  export const fetchLeadAPI = (setData, url, body=null, method='GET')=> {
     var myHeaders = new Headers();
     myHeaders.append("leadboard-sk-header", "22-072021kidbackendyste3333ifkIks304");
     myHeaders.append("Cookie", "csrftoken=Wvp0BGFhKnTktgYmKaxrXBdyCWPRt6V8cDxNhJRbLZCIHhqx8hzHM4Z3ZxhF52HM; sessionid=evwh71c9a72wqt1bbdd3h1qo5phap8a7");
   
+    // if(body) {
+    //   myHeaders.append('Content-Type', 'application/json');
+    //   myHeaders.append('Accept', 'application/json');
+    // }
     var requestOptions = {
-      method: 'GET',
+      method: method,
       headers: myHeaders,
       redirect: 'follow'
     };
 
-    if(body) requestOptions['body'] = body;
+    if(body) {
+      requestOptions['body'] = body;
+    }
   
   
     fetch(url, requestOptions)

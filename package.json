@@ -1,6 +1,5 @@
 {
-  "homepage": "https://instincthub.github.io/instincthub",
-  "name": "/",
+  "name": "instincthub",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

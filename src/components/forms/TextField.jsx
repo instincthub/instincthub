@@ -15,7 +15,7 @@ const TextField = (props) => {
                     required={props.required}
                     defaultValue={props.defaultValue}
                     onChange={ (e)=>showLabel(e) }/>
-                <span>{props.label}</span>
+                <span className='text_label'>{props.label}</span>
             </Wrapper>
         </div> 
     );
