@@ -9,7 +9,7 @@ const LandingPage = () => {
     <div>
       {/* <h1>Hello World</h1> */}
       <Navbar />
-      <Grid />
+      {/* <Grid /> */}
     </div>
   );
 };
