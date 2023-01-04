@@ -15,7 +15,7 @@ const Grid = () => {
             <Individual />
             <Enterprises />
             <TechDiversity />
-            {/* <KidCanCode /> */}
+            <KidCanCode />
           </div>
         </div>
       </div>
