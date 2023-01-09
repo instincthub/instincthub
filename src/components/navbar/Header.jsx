@@ -187,24 +187,12 @@ let DesktopCourses = styled.section`
   position: absolute;
   top: 80px;
   background: pink;
-  header{
+  header {
     z-index: 1000;
   }
 `;
 
 let Multi = styled.ul`
-  .actual {
-    font-weight: 500;
-    &:after {
-      content: url(https://www.svgrepo.com/show/344644/chevron-down.svg);
-      display: inline-block;
-      width: 35px;
-      position: absolute;
-      right: 0;
-      height: 35px;
-    }
-  }
-
   @media (min-width: 768px) {
     .actual:after {
       width: 0;

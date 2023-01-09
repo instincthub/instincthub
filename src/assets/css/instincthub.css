@@ -1703,7 +1703,7 @@ input {
   width: 100%;
   font-style: var(--Montserat);
   padding: 15px;
-  border: 1px solid rgba(44, 51, 58, 0.5);
+  border: 1px solid #D8D8D8;
   border-radius: 5px;
   border-radius: 5px;
   height: 50px;
@@ -2273,7 +2273,6 @@ input:valid {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin-right: 10px;
 }
 
 .select_me .select-btn {
@@ -2297,7 +2296,6 @@ input:valid {
       -ms-flex-align: center;
           align-items: center;
   color: var(--Gunmetal);
-  margin-bottom: 30px;
 }
 
 .select_me .select-btn input {
@@ -3239,7 +3237,7 @@ footer ul.breadcrumb li a:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 452px;
-  margin: 0 auto;
+  margin: 50px auto 0px auto;
 }
 
 .paginationButtons .next,
@@ -3249,7 +3247,9 @@ footer ul.breadcrumb li a:hover {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  padding: 5px 15px;
+  padding: 10px 15px 3px 15px;
+  height: 40px;
+  width: 40px;
 }
 
 .paginationButtons .next:hover,
@@ -3272,7 +3272,7 @@ footer ul.breadcrumb li a:hover {
   background: #f3f3f3;
 }
 
-.paginationButtons .paginationActive {
+.paginationButtons .pagination_active {
   font-weight: 600;
   border-bottom: 2px solid #00838f;
 }
@@ -3908,6 +3908,19 @@ footer ul.breadcrumb li a:hover {
   margin-bottom: 0px;
 }
 
+.actual {
+  font-weight: 500;
+}
+
+.actual:after {
+  content: url("../svg/chevron_down.svg");
+  display: inline-block;
+  width: 35px;
+  position: absolute;
+  right: 0;
+  height: 35px;
+}
+
 #ent_testify {
   margin: 0 !important;
   max-width: 1336px !important;
@@ -4187,7 +4200,7 @@ footer ul.breadcrumb li a:hover {
       -ms-flex-align: center;
           align-items: center;
   min-height: 500px;
-  background: url("https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80") no-repeat;
+  background: url("../images/about.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -4485,7 +4498,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .search_set {
-  border: 1px solid #D8D8D8;
+  border: 1px solid #d8d8d8;
   padding: 0 10px;
   border-radius: 5px;
   max-width: 400px;
@@ -4513,7 +4526,7 @@ footer ul.breadcrumb li a:hover {
 
 .b_label button {
   margin-top: 0;
-  margin-right: 15px;
+  margin-right: 5px;
   cursor: auto;
   padding: 8px 15px !important;
 }
@@ -4521,16 +4534,6 @@ footer ul.breadcrumb li a:hover {
 .b_label button:hover {
   background: none;
   color: unset;
-}
-
-.b_label .on_technology {
-  color: #bc658d;
-  border: 2px solid #bc658d;
-}
-
-.b_label .on_security {
-  color: #ea5f5e;
-  border: 2px solid #ea5f5e;
 }
 
 .avatar_time {
@@ -4555,22 +4558,24 @@ footer ul.breadcrumb li a:hover {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  position: relative;
+  top: 6px;
 }
 
 .avatar_time .avatar_before h3 {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
   margin: 0;
   line-height: 22px;
   letter-spacing: 0em;
-  margin-top: 5px;
+  margin-top: 10px;
   text-align: left;
 }
 
 .avatar_time h5 {
   margin: 0;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   line-height: 22px;
   letter-spacing: 0em;
   text-align: left;
@@ -4579,7 +4584,7 @@ footer ul.breadcrumb li a:hover {
 
 .avatar_time h5::before {
   position: relative;
-  top: 5px;
+  top: 7px;
   margin-right: 10px;
   content: url("../svg/clock.svg");
 }
@@ -4637,6 +4642,17 @@ footer ul.breadcrumb li a:hover {
   max-width: 410px;
 }
 
+button.categories {
+  font-size: 10px;
+  border: 0.5px solid #d8d8d8;
+  color: #314a52;
+  padding: 5px 8px !important;
+}
+
+button.categories:hover {
+  background-color: #eaeaea;
+}
+
 .banner_pricing {
   margin-top: 150px;
   margin-bottom: 100px;
@@ -4685,7 +4701,9 @@ footer ul.breadcrumb li a:hover {
 }
 
 .blog_details .blog_d {
-  max-width: 873px;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .blog_details .blog_d h1 {
@@ -4742,49 +4760,11 @@ footer ul.breadcrumb li a:hover {
   margin-bottom: 15px;
 }
 
-.next_prev {
-  margin-top: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.next_prev h3 {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.next_prev p {
-  margin-top: 0;
-}
-
-.next_prev .prev_btn,
-.next_prev .next_btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.next_prev button {
-  margin: 0 15px;
-  margin-top: 10px;
-  height: 45px;
-}
-
-.next_prev .next_btn p {
-  text-align: right;
-}
-
 .comment_section {
-  max-width: 760px;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 70px;
 }
 
 .comment_section h4 {
@@ -4795,7 +4775,7 @@ footer ul.breadcrumb li a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 2px solid #2c333a;
+  border-bottom: 1.5px solid #eaeaea;
   padding-bottom: 10px;
   margin-top: 20px;
 }

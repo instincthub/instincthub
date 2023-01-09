@@ -9,6 +9,7 @@ const SVGs = {
   linkedin: require("../svg/linkedin.svg").default,
   NotFound: require("../svg/NotFound.svg").default,
   Error500: require("../svg/Error500.svg").default,
+  chevron_down: require("../svg/chevron_down.svg").default,
   PageError: require("../svg/PageError.svg").default,
   linkedin_b: require("../svg/linkedin_b.svg").default,
   twitter: require("../svg/twitter.svg").default,
