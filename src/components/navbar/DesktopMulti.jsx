@@ -39,7 +39,9 @@ const Master = () => {
             <TrackLibrary />
 
             <div className="action_point">
-              <button className="important-btn">Track Library</button>
+              <a href="https://skills.instincthub.com/course/tracks/list/">
+                <button className="important-btn">Track Library</button>
+              </a>
             </div>
           </div>
         </div>

@@ -9,9 +9,19 @@ import Banner from "../../components/Banner";
 import Benefits from "../../components/Benefits";
 import Header from "../../components/navbar/Header";
 import ScrollToTop from "../../components/ScrollToTop";
+import { useEffect } from "react";
 
 const Individual = () => {
-  ScrollToTop()
+  ScrollToTop();
+
+  useEffect(() => {
+    document.title = "Kids Can Code ";
+    const meta = document.createElement("meta");
+    meta.name = "description";
+    meta.content =
+      "We have courses that your child can start taking immediately";
+    document.head.appendChild(meta);
+  }, []);
   return (
     <>
       <Header />
@@ -26,7 +36,7 @@ const Individual = () => {
       {/* <Features /> */}
       <KidsFeature />
       <Carousel id="forKids" />
-      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=KIDSCANCODE"/>
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=KIDSCANCODE" />
       <Newsletter />
       <Footer />
     </>

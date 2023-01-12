@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Images from "../assets/images/Images";
 
 const Banner = (props) => {
@@ -9,9 +10,11 @@ const Banner = (props) => {
           <h1>{props.h1}</h1>
           <p>{props.p}</p>
           <div className="txt-align">
-            <a href="https://skills.instincthub.com/students/register/">
+            {/* <a href="https://skills.instincthub.com/students/register/"> */}
+            <Link to="/about/contact/">
               <button className="important-btn">Get Started</button>
-            </a>
+            </Link>
+            {/* </a> */}
           </div>
         </div>
 

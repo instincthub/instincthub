@@ -15,7 +15,9 @@ const Growth = (props) => {
           </p>
           <h3>12+ Online Course</h3>
           <h3>Approved by social expert</h3>
-          <button className="outlined-btn pt-4">Explore Library</button>
+          <button className="outlined-btn pt-4" disabled>
+            Explore Library
+          </button>
         </div>
       </div>
 

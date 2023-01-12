@@ -4,7 +4,6 @@ import Images from "../assets/images/Images";
 import SVGs from "../assets/svg/SVGs";
 
 const Footer = () => {
-
   const getCurrentYear = () => {
     return new Date().getFullYear();
   };
@@ -67,17 +66,25 @@ const Footer = () => {
           <ul>
             <h5>Contact us</h5>
             <li className="location">
-              <a href="">No 1. Apapa lane, Dolphin Estate, Ikoyi, Lagos</a>
+              <a
+                href="https://www.google.com/maps/place/InstinctHub/@6.4567629,3.4093087,17z/data=!4m6!3m5!1s0x103b8b3555484bdd:0xa21382f2f337171d!8m2!3d6.4567576!4d3.4118836!16s%2Fg%2F11jnld7s4m"
+                target="_blank"
+              >
+                No 1. Apapa lane, Dolphin Estate, Ikoyi, Lagos
+              </a>
             </li>
             <li className="phone">
               <a href="tel:+2348162880409" target="_blank" rel="noopener">
                 (+234) 816 288 0409
               </a>
-              <br></br>
+            </li>
+            {/* <br></br> */}
+            <li>
               <a href="tel:+23490164140911" target="_blank" rel="noopener">
                 (+234) 901 641 40911
               </a>
             </li>
+
             <li className="email">
               <a href="mailto:info@instincthub.com">info@instincthub.com</a>
             </li>
@@ -90,7 +97,7 @@ const Footer = () => {
           <div className="main">
             <h5>© {getCurrentYear()} All right reserved</h5>
             <ul>
-              <a href="/">
+              <a href="/policies/privacy-policy">
                 <li>Terms & Conditions</li>
               </a>
               <a href="/policies/privacy-policy">
