@@ -6,7 +6,7 @@ const Error404 = () => {
   return (
     <ErrorState
       img={SVGs.NotFound}
-      text="Something went wrong. Don’t worry, it’s not you. it’s from our end. We are sorry for the inconvenience."
+      text="We couldn't find the page. Try check the link and try again."
       title="Page Not Found"
       p="Ooops"
     />

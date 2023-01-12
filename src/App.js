@@ -45,9 +45,11 @@ function App() {
         <Route path="/products/course-creation/" element={<CourseCreation />} />
         <Route path="/products/pricing/" element={<Pricing />} />
         {/* <Route path="/product/payment/" element={<Payment />} /> */}
-        <Route path="/product/payment=success" element={<Success />} />
-        <Route path="/product/payment=error" element={<Error />} />
-        <Route path="/error404" element={<Error404 />} />
+        {/* <Route path="/products/payment/" element={<Success />} /> */}
+        {/* <Route path="/products/payment/failed" element={<Error />} /> */}
+
+        {/* Errors */}
+        <Route path="*" element={<Error404 />} />
         <Route path="/error500" element={<Error500 />} />
 
         {/* Policies */}

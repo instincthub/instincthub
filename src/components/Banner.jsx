@@ -9,7 +9,9 @@ const Banner = (props) => {
           <h1>{props.h1}</h1>
           <p>{props.p}</p>
           <div className="txt-align">
-            <button className="important-btn">Get Started</button>
+            <a href="https://skills.instincthub.com/students/register/">
+              <button className="important-btn">Get Started</button>
+            </a>
           </div>
         </div>
 

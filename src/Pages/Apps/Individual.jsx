@@ -1,5 +1,5 @@
 import React from "react";
-import Accordion from "../../components/Accordion";
+import FAQs from "../../components/FAQs";
 import Carousel from "../../components/Carousel";
 import WhoWeare from "../../components/WhoWeare";
 import CourseCategory from "../../components/CourseCategory";
@@ -28,7 +28,7 @@ const Individual = () => {
       <Features />
       <CourseCategory />
       <Carousel />
-      <Accordion />
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=INDIVIDUAL"/>
       <Newsletter />
       <Footer />
     </>

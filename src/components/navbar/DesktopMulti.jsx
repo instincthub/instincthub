@@ -30,7 +30,9 @@ const Master = () => {
           <div className={`panel ${checkActive(1, "active")}`}>
             <CourseLibrary />
             <div className="action_point">
-              <button className="important-btn">Course Library</button>
+              <a href="https://skills.instincthub.com/">
+                <button className="important-btn">Course Library</button>
+              </a>
             </div>
           </div>
           <div className={`panel ${checkActive(2, "active")}`}>
@@ -74,34 +76,33 @@ const CourseLibrary = () => {
     <div className="control_list">
       {/* Web Development */}
       <ul>
-        <h5>Web Development</h5>
+        <h5>HTML</h5>
         <li>
-          <a href="">Html5</a>
+          <a href="https://skills.instincthub.com/course/introduction-html-basics/">
+            Introduction to HTML
+          </a>
         </li>
         <li>
-          <a href="">CSS</a>
-        </li>
-        <li>
-          <a href="">Javascript</a>
-        </li>
-        <li>
-          <a href="">React</a>
-        </li>
-        <li>
-          <a href="">Python</a>
+          <a href="https://skills.instincthub.com/course/html-fundamentals/">
+            HTML Fundamental
+          </a>
         </li>
       </ul>
 
       {/* Design */}
       <ul>
-        <h5>Design</h5>
+        <h5>CSS</h5>
         <li>
-          <a href="">User Experience Design</a>
+          <a href="https://skills.instincthub.com/?subject=css">
+            Introduction to CSS
+          </a>
         </li>
         <li>
-          <a href="">3d & Animation</a>
+          <a href="https://skills.instincthub.com/course/Responsive-Web-Design/">
+            Responsive Designs
+          </a>
         </li>
-        <li>
+        {/* <li>
           <a href="">Game Design</a>
         </li>
         <li>
@@ -109,34 +110,47 @@ const CourseLibrary = () => {
         </li>
         <li>
           <a href="">Graphics design & illustration</a>
-        </li>
+        </li> */}
       </ul>
 
       {/* Data Science */}
       <ul>
-        <h5>Data Science</h5>
+        <h5>Javascript</h5>
         <li>
-          <a href="">Python</a>
+          <a href="https://skills.instincthub.com/course/introduction-to-javascript/">
+            Introduction to Javascript
+          </a>
         </li>
         <li>
-          <a href="">Machine Learning</a>
+          <a href="https://skills.instincthub.com/course/janascript-anatomy/">
+            Javascript Anatomy
+          </a>
         </li>
-        <li>
+        {/* <li>
           <a href="">Statistics</a>
         </li>
         <li>
           <a href="">Data Analysis</a>
-        </li>
+        </li> */}
       </ul>
 
       {/* Marketing */}
       <ul>
-        <h5>Design</h5>
+        <h5>Python</h5>
         <li>
-          <a href="">Digital Marketing</a>
+          <a href="https://skills.instincthub.com/course/introduction-to-python-programming-language/">
+            Intro to Python
+          </a>
         </li>
         <li>
-          <a href="">Copywritting</a>
+          <a href="https://skills.instincthub.com/course/week-21-24-python-for-kids/">
+            Python for Kids
+          </a>
+        </li>
+        <li>
+          <a href="https://skills.instincthub.com/course/Python-Control-Flow/">
+            Python Control Flow
+          </a>
         </li>
       </ul>
     </div>
@@ -147,21 +161,31 @@ const TrackLibrary = () => {
     <div className="control_list">
       {/* Web Development */}
       <ul>
-        <h5>Web Development</h5>
+        <h5>Frontend Development</h5>
         <li>
-          <a href="">Html5</a>
+          <a href="https://skills.instincthub.com/course/tracks/units/1/">
+            Git Basics
+          </a>
         </li>
         <li>
-          <a href="">CSS</a>
+          <a href="https://skills.instincthub.com/course/tracks/units/1/">
+            HTML Fundamentals
+          </a>
         </li>
         <li>
-          <a href="">Javascript</a>
+          <a href="https://skills.instincthub.com/course/tracks/units/1/">
+            CSS Basics
+          </a>
         </li>
         <li>
-          <a href="">React</a>
+          <a href="https://skills.instincthub.com/course/tracks/units/1/">
+            Responsive Web Design
+          </a>
         </li>
         <li>
-          <a href="">Python</a>
+          <a href="https://skills.instincthub.com/course/tracks/units/1/">
+            Introduction to Javascript
+          </a>
         </li>
       </ul>
     </div>

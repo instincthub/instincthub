@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 
 /* 
+    Calling component:
+    <SubmitBtn add_class="important-btn" labels="Submit Application"/>
+
+    
     Btn Spinner:
 
     1. Add the "rolling" class on submit. 

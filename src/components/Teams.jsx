@@ -1,27 +1,14 @@
-import React from "react";
-import Images from "../assets/images/Images";
+import { React, useState } from "react";
 import SVGs from "../assets/svg/SVGs";
+import { reqOptions, fetchAPI, HOST_URL } from "../assets/js/help_func";
 
 const Teams = () => {
-  const PerStaff = (props) => {
-    return (
-      <>
-        <div className="per_staff grid-row">
-          <img src={props.image} alt="" />
-          <h4>{props.name}</h4>
-          <p>{props.position}</p>
-          <div className="links">
-            <a href={props.linkedin}>
-              <img src={SVGs.linkedin_b} alt="" />
-            </a>
-            <a href={props.email}>
-              <img src={SVGs.custom_t} alt="" />
-            </a>
-          </div>
-        </div>
-      </>
-    );
-  };
+  const [data, setData] = useState([]);
+
+  useState(()=>{
+    let requestOptions  = reqOptions('get', null)
+    fetchAPI(setData, HOST_URL()+"/api/v1/home_pages/teams/", requestOptions, true)
+  })
 
   return (
     <section id="spaces">
@@ -36,41 +23,27 @@ const Teams = () => {
           </p>
         </div>
         <section className="fourcard_grid">
-          <PerStaff
-            image="https://media.istockphoto.com/photos/studio-shot-of-a-handsome-and-happy-young-man-posing-against-a-grey-picture-id1355110818?k=20&m=1355110818&s=612x612&w=0&h=HZ_nXAm40s_NAoWlPMWFZ4m9NwXJyT66dziTEqlcJIc="
-            name="Sodiq A. Makinde"
-            position="Frontend Engineer"
-            linkedin="https://www.linkedin.com/in/makinde-sodiq-926824216/"
-            email="mailto:msodq2018@gmail.com"
-          />
-          <PerStaff
-            image={Images.img2}
-            name="Tosin A. Alo"
-            position="UIUX Designer"
-            linkedin="https://www.linkedin.com/in/makinde-sodiq-926824216/"
-            email="mailto:msodq2018@gmail.com"
-          />
-          <PerStaff
-            image={Images.img3}
-            name="Victoria Santos"
-            position="Sales Representative"
-            linkedin="https://www.linkedin.com/in/makinde-sodiq-926824216/"
-            email="mailto:msodq2018@gmail.com"
-          />
-          <PerStaff
-            image={Images.img4}
-            name="Victoria Santos"
-            position="Sales Representative"
-            linkedin="https://www.linkedin.com/in/makinde-sodiq-926824216/"
-            email="mailto:msodq2018@gmail.com"
-          />
-          <PerStaff
-            image={Images.img5}
-            name="Victoria Santos"
-            position="Sales Representative"
-            linkedin="https://www.linkedin.com/in/makinde-sodiq-926824216/"
-            email="mailto:msodq2018@gmail.com"
-          />
+        
+        {
+          data.results ?
+            data.results.map((option)=>{
+              return <div className="per_staff grid-row" key={ option.id }>
+                <img src={option.image} alt={ option.name } />
+                <h4>{ option.name }</h4>
+                <p>{ option.role }</p>
+                <div className="links">
+                  <a href={ option.linkedin_url }>
+                    <img src={SVGs.linkedin_b} alt="LinkedIn Logo" />
+                  </a>
+                  <a href={ option.twitter_url }>
+                    <img src={SVGs.custom_t} alt="Twitter Logo" />
+                  </a>
+                </div>
+              </div>
+            })
+          :''
+        }
+        
         </section>
       </div>
     </section>

@@ -1,89 +1,73 @@
-import React from "react";
+import {React, useEffect} from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import SVGs from "../assets/svg/SVGs";
+import TextField from "./forms/TextField";
+import TextArea from "./forms/TextArea";
+import SubmitBtn from "./forms/SubmitBtn";
+import {fetchAPI, printInputError, getCookie } from "../assets/js/help_func";
 
-const CustomLabel = styled.div`
-  /* Control Label */
-  .field {
-    position: relative;
-    margin-top: 25px;
+const ContactForm = (props) => {
+  const FORM = document.querySelector('#ContactForm');
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    // Enable Spinning button
+    e.target.querySelector('[type=submit]').classList.add('rolling');
+    e.target.querySelector('[type=submit]').disabled = true;
+
+    let company_id = "b80d9312-ce8b-4e76-b6e6-02034d2ba28a";
+    let formdata = new FormData(e.target);
+
+    let myHeaders = new Headers();
+    myHeaders.append("leadboard-sk-header", "22-072021kidbackendyste3333ifkIks304");
+    myHeaders.append("Cookie", "csrftoken="+getCookie('csrftoken'));
+    
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
+    };
+
+    fetchAPI(props.setData, `https://leadapi.instincthub.com/api/v1/contacts/contactus/?company_id=${company_id}`, requestOptions, true, props.setMessageType, props.setError)
+  };
+
+  // Disable spinning button after getting status from fetch
+  if (props.messageType && document.querySelector('.rolling')) {
+    document.querySelector('[type=submit]').classList.remove('rolling')
+    document.querySelector('[type=submit]').disabled = false;
   }
 
-  input {
-    border: 0;
-    border: 1px solid #D8D8D8;
+  useEffect(()=>{// Remove overlay if success and display error message if error
+    if(props.error && props.messageType === 'error'){
+      console.log(props.error);
+      printInputError(props.error)
+    }
 
-    border-radius: 5px;
-    font-size: inherit;
-
-    outline: none;
-  }
-  input:focus {
-    border: 1px solid #00838f;
-  }
-  input::placeholder {
-    color: transparent;
-  }
-  input:focus::placeholder {
-    color: transparent;
-  }
-  input + span {
-    position: absolute;
-    top: 3px;
-    left: 15px;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    font-size: 16px;
-  }
-  input:not(:placeholder-shown) + span,
-  input:focus + span {
-    background: #ffffff;
-    top: -10px;
-    height: 20px;
-    padding: 5px;
-    margin: 0;
-    color: #00838f;
-    font-size: 14px;
-    pointer-events: initial;
-    left: 15px;
-    line-height: 10px;
-  }
-`;
-
-const ContactForm = () => {
+    // Enable form btn
+    if(props.messageType){
+      FORM.querySelector('[type=submit]').classList.remove('rolling');
+      FORM.querySelector('[type=submit]').disabled = false;
+      if(props.messageType === 'success') {
+        FORM.querySelector('form').reset();
+      }
+    }
+  // eslint-disable-next-line
+  },[props.error, props.messageType])
   return (
-    <section className="container">
+    <section className="container" id="ContactForm">
       <div className="contact_form">
         <div className="contact_us">
-          <CustomLabel>
-            <form action="">
-              <div class="field">
-                <input type="text" name="text" id="Fname" placeholder="John" />
-                <span>First Name</span>
-              </div>
-              <div class="field">
-                <input type="text" name="text" id="Lname" placeholder="John" />
-                <span>Last Name</span>
-              </div>
-              <div class="field">
-                <input type="email" name="text" id="email" placeholder="John" />
-                <span>Email</span>
-              </div>
-              <div className="input-wrapper">
-                <textarea
-                  name=""
-                  id=""
-                  cols="30"
-                  rows="10"
-                  placeholder="How can we help?"
-                ></textarea>
-                <button type="submit" className="important-btn">
-                  Submit
-                </button>
-              </div>
+          <div>
+            <form onSubmit={handleFormSubmit}>
+              <TextField type="text" name="first_name" label="First Name" required={true}/>
+              <TextField type="text" name="last_name" label="Last Name" required={true}/>
+              <TextField type="text" name="email" label="Email Address" required={true}/>
+              <TextArea name="message" rows="10" label="How can we help?" required={true}/>
+              <SubmitBtn add_class="important-btn" labels="Send"/>
             </form>
-          </CustomLabel>
+          </div>
         </div>
         <div className="address">
           <h2>Contact info</h2>
@@ -162,6 +146,7 @@ const ContactForm = () => {
           <div className="map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.510899659581!2d3.4096949143167032!3d6.456762925727997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b370793d59d%3A0xfd70ea6856627e31!2s1%20Apapa%20Ln%2C%20Dolphin%20Estate%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1663149804716!5m2!1sen!2sng"
+              title="InstinctHub Map Location"
               // width="100%"
               // height="450"
               // style="border:0;"

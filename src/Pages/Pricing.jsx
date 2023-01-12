@@ -1,17 +1,24 @@
-import React from "react";
+import { React, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/navbar/Header";
 // import PricingBanner from "../components/PricingBanner";
-import { useState } from "react";
-import FreePlan from "../components/FreePlan";
+import PlanList from "../components/PlanList";
 import CoursesPlan from "../components/CoursesPlan";
 import EnterprisePlan from "../components/EnterprisesPlan";
 import TrackPlan from "../components/TrackPlan";
 import ScrollToTop from "../components/ScrollToTop";
+import { reqOptions, fetchAPI, HOST_URL } from "../assets/js/help_func";
 
 const Pricing = () => {
   ScrollToTop()
   const [duration, setDuration] = useState('monthly');
+  const [data, setData] = useState([]);
+
+  useState(()=>{
+    let requestOptions  = reqOptions('get', null)
+    fetchAPI(setData, HOST_URL()+"/api/v1/courses/course_plans/", requestOptions, true)
+  })
+
   return (
     <section>
       <Header />
@@ -35,10 +42,7 @@ const Pricing = () => {
       </section>
 
       <section className="subsc container fourcard_grid">
-        <FreePlan duration={duration}/>
-        <CoursesPlan duration={duration}/>
-        <TrackPlan duration={duration}/>
-        <EnterprisePlan duration={duration}/>
+        <PlanList duration={duration} data={data} />
       </section>
 
       <Footer />

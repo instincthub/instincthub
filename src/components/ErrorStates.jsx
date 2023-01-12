@@ -13,7 +13,7 @@ const ErrorState = (props) => {
         <h3>{props.title}</h3>
         <p>{props.text}</p>
 
-        <Link to="">Please try back later</Link>
+        <Link to="/">Back to homepage</Link>
       </div>
     </Container>
   );
