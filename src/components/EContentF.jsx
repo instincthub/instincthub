@@ -31,14 +31,22 @@ const CreatorsFeatures = (props) => {
           <p className="cap_lock-txt">{props.fp}</p>
           <h2>{props.h2}</h2>
           <p>
-            Nisl vel amet ac quam cursus pharetra et. Volutpat consectetur
-            integer purus risus etiam in vivamus. Maecenas donec leo amet
-            feugiat morbi semper velit. Consectetur egestas aliquam nulla magna
-            nisl mauris et lectus.
+            We understand that our users may have different needs, and we are
+            dedicated to providing the best possible service to each and every
+            one of them. We look forward to hearing from you and helping you
+            make the most of our platform.
+          </p>
+          <p>
+            If you have any questions or concerns about our website or the
+            services we offer, please don't hesitate to reach out to us. Our
+            friendly and knowledgeable customer support team is here to help
+            you.
           </p>
 
           <div className="get_start mt-2">
-            <button className="outlined-btn schedule">{props.button}</button>
+            <a href="tel:+23490164140911">
+              <button className="outlined-btn schedule">{props.button}</button>
+            </a>
           </div>
         </div>
       </div>

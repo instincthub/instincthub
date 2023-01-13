@@ -24,29 +24,21 @@ const Features = () => {
             </div>
             <div className="flexible">
               <h4>Enterprise-grading System </h4>
-              <p>Easy to access Materials on the go anytime.</p>
+              <p>
+                Scalable and reliable technology for businesses of all sizes
+              </p>
             </div>
             <div className="group">
               <h4>Dedicated Success Team </h4>
-              <p>
-                We’ll create a partnership with you to develope and implement a
-                learning strategy that aligned with your business Values.
-              </p>
+              <p>Expert support and guidance to help you achieve your goals</p>
             </div>
             <div className="group">
               <h4>Personalized Learning</h4>
-              <p>
-                We help structure learning path based on your organization
-                needs, and also engage your employees and monitor their
-                progress.
-              </p>
+              <p>Customized education tailored to meet your individual needs</p>
             </div>
             <div className="accessible">
               <h4>Multiple Projects</h4>
-              <p>
-                We’ll create a partnership with you to develope and implement a
-                learning strategy that aligned with your business Values.
-              </p>
+              <p>Efficiently manage and track progress on multiple projects</p>
             </div>
             <div className="community">
               <h4>Community Support</h4>

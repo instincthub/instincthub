@@ -7,8 +7,7 @@ const C_Banner = () => {
         <div className="contact_banner">
           <h1>Get in touch</h1>
           <p>
-            Vel vivamus sit tincidunt sed nibh id pharetra. Consequat vel eu, at
-            cras. Duis feugiat mauris, sit nec ut.
+            Connect with us and take the first step towards achieving your goals
           </p>
         </div>
       </div>

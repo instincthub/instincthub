@@ -10,10 +10,10 @@ const CareerBanner = () => {
             <div className="main_content">
               <h1>Join us in building the future of Learning</h1>
               <p>
-                At Instincthub, we’re on a mission to create a world where
-                learning is frictionless. We’re looking for talented and
-                friendly people to join us on this journey. Think you’d be a
-                good fit?
+                Join us in building the future of learning and help us create a
+                world where everyone has the opportunity to reach their full
+                potential. Apply today to become a part of our team and start
+                your journey towards a more fulfilling career.
               </p>
               <Link to="#openpositions" smooth>
                 <button className="important-btn">View open positions</button>

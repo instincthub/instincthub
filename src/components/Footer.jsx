@@ -27,19 +27,21 @@ const Footer = () => {
           <ul>
             <h5>Instincthub</h5>
             <li>
-              <a href="">About</a>
+              <Link to="/about/">About</Link>
             </li>
             <li>
-              <a href="">Pricing</a>
+              <Link to="/products/pricing/">Pricing</Link>
             </li>
             <li>
-              <a href="">Courses</a>
+              <a href="https://skills.instincthub.com/">Courses</a>
             </li>
             <li>
-              <a href="">Track</a>
+              <a href="https://skills.instincthub.com/course/tracks/list/">
+                Track
+              </a>
             </li>
             <li>
-              <a href="">Blog</a>
+              <Link to="/blog">Blog</Link>
             </li>
           </ul>
         </div>

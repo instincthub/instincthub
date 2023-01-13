@@ -30,8 +30,8 @@ const Enterprises = () => {
       <Header />
       <Banner
         specify="indv"
-        h1="A trusted partner for your employee development"
-        p="Built for complex enterprise-grading system, tracking both individual and team statistics and can be configured to location, business unit and office geography. "
+        h1="Help your employees acquire the right tech skills at the right time"
+        p="Remote, hybrid and in-person teams can be trained from anywhere in the world with our learning management system built for the modern workforce."
         img={Images.enterprise_landing}
       />
       <div className="ent_partner ">
