@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FAQs from "../../components/FAQs";
 import Carousel from "../../components/Carousel";
 import WhoWeare from "../../components/WhoWeare";
@@ -12,7 +12,14 @@ import Header from "../../components/navbar/Header";
 import ScrollToTop from "../../components/ScrollToTop";
 
 const Individual = () => {
-  ScrollToTop()
+  ScrollToTop();
+  useEffect(() => {
+    document.title = "Individual - Browse Course Libraries";
+    const meta = document.createElement("meta");
+    meta.name = "description";
+    meta.content = "You've enrolled as an individual.";
+    document.head.appendChild(meta);
+  }, []);
   return (
     <>
       <Header />
@@ -28,7 +35,7 @@ const Individual = () => {
       <Features />
       <CourseCategory />
       <Carousel />
-      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=INDIVIDUAL"/>
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=INDIVIDUAL" />
       <Newsletter />
       <Footer />
     </>

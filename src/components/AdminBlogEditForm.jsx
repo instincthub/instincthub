@@ -9,7 +9,6 @@ import TextArea from "./forms/TextArea";
 import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/help_func";
 
 
-  
   const AdminBlogEditForm = (props) => {
     // const [thumbnail, setThumbnail] = useState(props.data.thumbnail)
     useEffect(()=>{
@@ -23,7 +22,6 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/he
         }
         // if (update && props.data.author_list)  setShowMessage(true)
         // else setShowMessage(false)
-
         // Remove overlay if success and display error message if error
         if (props.events && props.messageType === 'success') {
           props.setEdit(false)
@@ -33,8 +31,6 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/he
         }
 
     },[props])
-
-
 
 
     const handleFormSubmit = (e) => {

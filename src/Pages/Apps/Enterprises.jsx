@@ -13,9 +13,18 @@ import Carousel from "../../components/Carousel";
 import CompanyTestimonial from "../../components/Ent_Testimonials";
 import Header from "../../components/navbar/Header";
 import ScrollToTop from "../../components/ScrollToTop";
+import { useEffect } from "react";
 
 const Enterprises = () => {
-  ScrollToTop()
+  ScrollToTop();
+  useEffect(() => {
+    document.title = "Enterprises - Browse testimonies from other Companies";
+    const meta = document.createElement("meta");
+    meta.name = "description";
+    meta.content =
+      "We can get you and your staff started with Digital Training ";
+    document.head.appendChild(meta);
+  }, []);
   return (
     <>
       <Header />

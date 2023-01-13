@@ -97,18 +97,9 @@ const Header = () => {
                   <li>
                     <div className="actual">Course Library</div>
                     <ul>
-                      <h5>Web Development</h5>
+                      <h5>HTML</h5>
                       <li>HTML</li>
                       <li>CSS</li>
-                      <li>Javascript</li>
-                      <li>React</li>
-                      <li>Python</li>
-                      <h5>Designs</h5>
-                      <li>HTML</li>
-                      <li>CSS</li>
-                      <li>Javascript</li>
-                      <li>React</li>
-                      <li>Python</li>
                     </ul>
                   </li>
                   <li>
@@ -137,24 +128,32 @@ const Header = () => {
                 <Link to="/about/contact/">Contact</Link>
               </li>
               <div className="sign_up" id="mobile">
-                <Link to="/login">
+                {/* <Link to="/login/"> */}
+                <a href="https://skills.instincthub.com/accounts/login/">
                   <button className="outlined-btn">Login</button>
-                </Link>
-                <Link to="/">
+                </a>
+                {/* </Link> */}
+                {/* <Link to="/"> */}
+                <a href="https://skills.instincthub.com/students/register/">
                   <button className="important-btn">Get Started</button>
-                </Link>
+                </a>
+                {/* </Link> */}
               </div>
             </Multi>
           </BlurBackground>
 
           {/* DESKTOP SIGN-UP */}
           <div className="sign_up" id="screen">
-            <Link to="/login/">
+            {/* <Link to="/login/"> */}
+            <a href="https://skills.instincthub.com/accounts/login/">
               <button className="outlined-btn">Login</button>
-            </Link>
-            <Link to="/">
+            </a>
+            {/* </Link> */}
+            {/* <Link to="/"> */}
+            <a href="https://skills.instincthub.com/students/register/">
               <button className="important-btn">Get Started</button>
-            </Link>
+            </a>
+            {/* </Link> */}
           </div>
           {/* HAMBURGER */}
           <div
@@ -187,7 +186,7 @@ let DesktopCourses = styled.section`
   position: absolute;
   top: 80px;
   background: pink;
-  header{
+  header {
     z-index: 1000;
   }
 `;
@@ -195,6 +194,7 @@ let DesktopCourses = styled.section`
 let Multi = styled.ul`
   .actual {
     font-weight: 500;
+    cursor: pointer;
     &:after {
       content: url(${Images.chevronDown.default});
       /* content: url(../src/assets/images/svgs/chevron_down.svg); */

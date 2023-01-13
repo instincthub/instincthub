@@ -15,9 +15,10 @@ import EnterpriseFeatures from "../../components/EContentF";
 import Header from "../../components/navbar/Header";
 import ScrollToTop from "../../components/ScrollToTop";
 import StatusMessage from "../../components/message/StatusMessage";
+import { useEffect } from "react";
 
 const Enterprises = () => {
-  ScrollToTop()
+  ScrollToTop();
 
   /* 
     Show message for "success" or "error".
@@ -25,16 +26,22 @@ const Enterprises = () => {
     Render the StatusMessage below the Header
     props: [type, setType, message]
   */
-    const [messageType, setMessageType] = useState('');
-    const [error, setError] = useState([])
+  useEffect(() => {
+    document.title = "Create Courses ";
+    const meta = document.createElement("meta");
+    meta.name = "description";
+    meta.content = "Create your first course with us !!!";
+    document.head.appendChild(meta);
+  }, []);
+  const [messageType, setMessageType] = useState("");
+  const [error, setError] = useState([]);
 
-  
   return (
     <>
       <Header />
-      <StatusMessage 
-          setMessageType={setMessageType}
-          messageType={messageType}
+      <StatusMessage
+        setMessageType={setMessageType}
+        messageType={messageType}
       />
       <Banner
         specify="kidscc"
@@ -60,8 +67,13 @@ const Enterprises = () => {
         button="Schedule Call"
       />
       <Carousel />
-      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=ENTERPRISE"/>
-      <Newsletter setMessageType={setMessageType} messageType={messageType} setError={setError} error={error} />
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=ENTERPRISE" />
+      <Newsletter
+        setMessageType={setMessageType}
+        messageType={messageType}
+        setError={setError}
+        error={error}
+      />
       <Footer />
     </>
   );

@@ -165,7 +165,6 @@
   border-radius: 5px;
   margin-top: 280px;
   position: relative;
-  padding-bottom: 5px;
   &::after {
     content: "";
     background: url("../svg/testimonial-b.svg") no-repeat;
@@ -467,7 +466,7 @@
   img {
     width: 168.44px;
     height: 32px;
-    object-fit: contain;
+    object-fit: cover;
   }
   div {
     // background-color: var(--AmericanPurple);
@@ -620,9 +619,7 @@
   .partners {
     max-width: 1200px;
     display: flex;
-    justify-content: space-evenly;
-    margin-right: auto;
-    margin-left: auto;
+    justify-content: space-between;
   }
 }
 .schedule {
@@ -662,6 +659,17 @@
     font-size: 28px;
     line-height: 45px;
     margin-bottom: 0px;
+  }
+}
+.actual {
+  font-weight: 500;
+  &:after {
+    content: url("../svg/chevron_down.svg");
+    display: inline-block;
+    width: 35px;
+    position: absolute;
+    right: 0;
+    height: 35px;
   }
 }
 #ent_testify {
@@ -903,8 +911,7 @@
   justify-content: center;
   align-items: center;
   min-height: 500px;
-  background: url("../images/about.jpg")
-    no-repeat;
+  background: url("../images/about.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -1153,7 +1160,7 @@
   }
 }
 .search_set {
-  border: 1px solid #D8D8D8;
+  border: 1px solid #d8d8d8;
   padding: 0 10px;
   border-radius: 5px;
   max-width: 400px;
@@ -1275,16 +1282,16 @@
     }
   }
 }
-button.categories{
-    font-size: 10px;
-    border: .5px solid #D8D8D8 ;
-    color: #314A52;
-    padding: 5px 8px !important;
+button.categories {
+  font-size: 10px;
+  border: 0.5px solid #d8d8d8;
+  color: #314a52;
+  padding: 5px 8px !important;
 
-    &:hover{
-      background-color: #EAEAEA;
-    }
+  &:hover {
+    background-color: #eaeaea;
   }
+}
 .banner_pricing {
   margin-top: 150px;
   margin-bottom: 100px;
@@ -1391,7 +1398,7 @@ button.categories{
   }
   .eachcomment {
     display: flex;
-    border-bottom: 1.5px solid #EAEAEA;
+    border-bottom: 1.5px solid #eaeaea;
     padding-bottom: 10px;
     margin-top: 20px;
     img {

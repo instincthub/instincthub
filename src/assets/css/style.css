@@ -1702,7 +1702,7 @@ input {
   width: 100%;
   font-style: var(--Montserat);
   padding: 15px;
-  border: 1px solid rgba(44, 51, 58, 0.5);
+  border: 1px solid #D8D8D8;
   border-radius: 5px;
   border-radius: 5px;
   height: 50px;
@@ -2272,7 +2272,6 @@ input:valid {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin-right: 10px;
 }
 
 .select_me .select-btn {
@@ -2296,7 +2295,6 @@ input:valid {
       -ms-flex-align: center;
           align-items: center;
   color: var(--Gunmetal);
-  margin-bottom: 30px;
 }
 
 .select_me .select-btn input {
@@ -2887,7 +2885,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container .grid-3 .ent_d3 {
-  background: url("../images/tech-diversity.jpg") no-repeat;
+  background: url("../images/tech-diversity_overlay.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -2932,7 +2930,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container .grid-4 .ent_d4 {
-  background: url("../images/kids-cann-code.jpg") no-repeat;
+  background: url("../images/kids-cann-code_overlay.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -3020,7 +3018,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .grid_container .ent .ent_d2 {
-  background: url("../images/enterprise.jpg") no-repeat;
+  background: url("../images/enterprise_overlay.jpg") no-repeat;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -3524,13 +3522,13 @@ footer ul.breadcrumb li a:hover {
 
 .mini_flex .the_form {
   border-radius: 5px;
-  border: 1px solid rgba(44, 51, 58, 0.2);
+  border: 1px solid #D8D8D8;
   padding: 20px;
 }
 
 .mini_flex .the_form input {
   margin-top: 20px;
-  border: 1px solid rgba(44, 51, 58, 0.5);
+  border: 1px solid #D8D8D8;
   border-radius: 5px;
 }
 
@@ -3551,6 +3549,8 @@ textarea {
   border: 1px solid #D8D8D8;
   border-radius: 5px;
   outline: none;
+  font-family: 'Nunito';
+  font-size: 16px;
 }
 
 textarea:focus {
@@ -4913,24 +4913,6 @@ textarea:focus {
   text-align: center;
 }
 
-.plans {
-  border: 1px solid rgba(44, 51, 58, 0.2);
-  border-radius: 5px;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  margin-bottom: 50px;
-  position: relative;
-}
-
-.plans:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  -webkit-box-shadow: var(--shadow);
-          box-shadow: var(--shadow);
-}
-
 .subsc {
   padding-top: 150px;
   margin-bottom: 100px;
@@ -4939,6 +4921,7 @@ textarea:focus {
 .subsc .plan_top {
   text-align: left;
   background-color: #fdfdfd;
+  padding: 10px 15px;
 }
 
 .subsc .plan_top a {
@@ -4948,7 +4931,6 @@ textarea:focus {
   letter-spacing: 0em;
   text-align: center;
   color: var(--DarkCyan);
-  margin-left: 15px;
 }
 
 .subsc .plan_top h3 {
@@ -4957,6 +4939,10 @@ textarea:focus {
   color: var(--White);
   font-size: 18px;
   margin: 0;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0pc;
 }
 
 .subsc .plan_top .price {
@@ -4974,18 +4960,14 @@ textarea:focus {
   text-align: center;
 }
 
-.subsc .plan_top h4 {
-  padding-top: 15px;
-  font-weight: 600;
-  margin-left: 15px;
-  margin-bottom: 15px;
+.subsc .plan_top .save_msg {
+  font-size: 12px;
+  font-style: italic;
 }
 
-.subsc .plan_top p {
-  padding-bottom: 15px;
-  margin-top: 0px;
-  margin-left: 15px;
-  font-weight: 500;
+.subsc .plan_top h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .subsc .access {
@@ -4995,8 +4977,28 @@ textarea:focus {
 .subsc .access button {
   margin-top: 50px;
   width: 100%;
-  float: bottom;
   background: var(--DarkCyan);
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+}
+
+.subsc .access button:hover {
+  background-color: #2C333A;
+}
+
+.subsc .access button.schedule {
+  background-color: #2C333A;
+}
+
+.subsc .access button.schedule:before {
+  content: none;
+}
+
+.subsc .access button.schedule:hover {
+  background-color: #20262b;
 }
 
 .subsc .access li {
@@ -6474,8 +6476,24 @@ textarea:focus {
             justify-content: space-between;
     margin-bottom: 100px;
   }
+  .subsc .grid-row {
+    padding-bottom: 90px;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  .subsc .grid-row:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    -webkit-box-shadow: var(--shadow);
+            box-shadow: var(--shadow);
+  }
   .subsc .plans {
-    min-height: 1126px;
     margin-bottom: 20px;
   }
   .project_overview {
