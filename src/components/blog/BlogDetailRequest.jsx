@@ -26,36 +26,28 @@ const BlogDetailRequest = () => {
   const [timestamp, setTimestamp] = useState("");
   let { slug } = useParams();
 
-  const goToViolation = (id) => {
-    violationRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  useEffect(() => {
-    /* 
-      Want react to fetch data once instead of twice. 
-      - Set renderCount in useState.
-      - Used the local storage to track the count.
-      - Set the render count to 1 in fetchAPI
-    */
-    if (Number(window.localStorage.getItem("renderCount"))) {
-      let requestOptions = reqOptions("get", null);
+  useState(()=>{
+      let requestOptions = reqOptions("GET", null);
       fetchAPI(
         setData,
         HOST_URL() + "/api/v1/posts/post/" + slug,
         requestOptions,
         true
       );
-      window.localStorage.setItem("renderCount", 0);
-    }
+  })
 
-    if (data && data.categories) {
-      let obj = [];
-      for (const i in data.categories) obj.push(data.categories[i]);
-      setCategories(obj);
-      setTimestamp(data.timestamp.slice(0, 10));
-    }
-    // eslint-disable-next-line
-  }, []);
+  const goToViolation = (id) => {
+    violationRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  useEffect(() => {
+      if (data && data.categories && !categories) {
+        let obj = [];
+        for (const i in data.categories) obj.push(data.categories[i]);
+        setCategories(obj);
+        setTimestamp(data.timestamp.slice(0, 10));
+      }
+  }, [data]);
 
   if (data && data.title) {
     return (

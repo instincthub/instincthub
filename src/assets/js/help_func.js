@@ -366,10 +366,17 @@ export const HOST_URL = ()=> {
   
   // Set type to null if not required. 
   export const reqOptions = (method, data, bearer=null) =>{
-    let myHeaders = new Headers();
-    myHeaders.append(SK_KEY, SK_VALUE());
-    myHeaders.append("Cookie", "csrftoken="+getCookie('csrftoken'));
+    // let myHeaders = new Headers();
+    // myHeaders.append(SK_KEY, SK_VALUE());
+    // myHeaders.append("Cookie", "csrftoken="+getCookie('csrftoken'));
     // myHeaders.append("Content-Type", "application/json");
+
+    let myHeaders =  {
+      'instincthub-sk-header': SK_VALUE(),
+      'X-CSRFToken': getCookie('CSRF-TOKEN'),
+      'Origin': window.location.origin
+    }
+
     if (bearer){ 
         let access = JSON.parse(getCookie('uu_id')).access_token
         myHeaders.append("Authorization", "Bearer "+access);
