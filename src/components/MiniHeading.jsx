@@ -8,10 +8,10 @@ const MiniHeading = (props) => {
           <p className="cap_lock-txt">How it works</p>
           <h2>Our Work Process</h2>
           <p>
-            Nisi ut ultricies feugiat aliquam dignissim. Orci velit ultrices non
-            est lectus. Aliquet dui vulputate auctor dictumst mauris lobortis.
-            Faucibus viverra donec placerat quam consectetur cum faucibus augue
-            elit. Urna donec sagittis.
+            From course creation to hosting on the platform. Create your course
+            to upload on our platform to watch it rack in revenue for you. We
+            have a well-simplified process to make earnings from your course
+            easy.
           </p>
         </div>
       </div>

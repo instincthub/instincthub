@@ -16,21 +16,19 @@ const Process = () => {
       <div className="container triple">
         <Pgauge
           img={SVGs.brief}
-          h3="Project Brief"
-          p=" Aenean integer commodo tristique eget et habitant suspendisse.
-            Elementum amet, tortor nunc duis sed platea facilisi morbi. Quis
-            adipiscing ornare eu."
+          h3="Pin your content curriculum"
+          p="Create a comprehensive curriculum plan that aligns with your goals and effectively guides students toward mastery of the material."
         />
         <Pgauge
           specify="arrow_decor"
           img={SVGs.creation}
-          h3="Content Creation"
-          p="Aenean integer commodo tristique eget et habitant suspendisse. Elementum amet, tortor nunc duis sed platea facilisi morbi. Quis adipiscing ornare eu."
+          h3="Record your course"
+          p="Capture high-quality audio and video recordings of your course lectures, with clear and engaging delivery, to enhance student learning and engagement."
         />
         <Pgauge
           img={SVGs.handoff}
-          h3="Project Handoff"
-          p="Aenean integer commodo tristique eget et habitant suspendisse. Elementum amet, tortor nunc duis sed platea facilisi morbi. Quis adipiscing ornare eu."
+          h3="Launch your course"
+          p=" Launch your course and take the first step towards sharing your expertise and creating a successful online business."
         />
       </div>
     </section>

@@ -12,15 +12,15 @@ const WhoWeare = () => {
 
       <div className="whoweare container">
         <div className="per_who student">
-          <h3>120K</h3>
-          <p>Our Students</p>
+          <h3>1.6K</h3>
+          <p>Students</p>
         </div>
         <div className="per_who quality">
-          <h3>60+</h3>
+          <h3>40+</h3>
           <p>Quality Courses</p>
         </div>
         <div className="per_who instructor">
-          <h3>17</h3>
+          <h3>12</h3>
           <p>Experience Instructors</p>
         </div>
       </div>

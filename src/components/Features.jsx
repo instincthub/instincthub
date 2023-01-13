@@ -22,19 +22,28 @@ const Features = () => {
           <div className="manage_features">
             <div className="accessible">
               <h4>Easy Accessable</h4>
-              <p>Easy to access Materials on the go anytime.</p>
+              <p>
+                Seamless and convenient access to the tools and resources you
+                need
+              </p>
             </div>
             <div className="flexible">
               <h4>Flexible Study Time</h4>
-              <p>Easy to access Materials on the go anytime.</p>
+              <p>
+                Study at your own pace and schedule with flexible learning
+                options
+              </p>
             </div>
             <div className="affordable">
               <h4>Most Affordable Cost</h4>
-              <p>Easy to access Materials on the go anytime.</p>
+              <p>Access high-quality education at an affordable cost</p>
             </div>
             <div className="community">
               <h4>Community Support</h4>
-              <p>Easy to access Materials on the go anytime.</p>
+              <p>
+                Connect and collaborate with a community of like-minded
+                individuals
+              </p>
             </div>
           </div>
         </div>

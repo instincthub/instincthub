@@ -26,27 +26,27 @@ const CoreValue = () => {
         <PerBenefit
           svg={SVGs.growth}
           name="Fast Growth"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu quam ornare ornare sit semper nec etiam nisl, quis."
+          desc="Experience rapid expansion and development with our fast-growing team"
         />
         <PerBenefit
           svg={SVGs.team}
           name="Great team"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu quam ornare ornare sit semper nec etiam nisl, quis."
+          desc="Experience excellence and exceptional results with our talented and dedicated team"
         />
         <PerBenefit
           svg={SVGs.workstation}
           name="Dynamic Workspaces"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu quam ornare ornare sit semper nec etiam nisl, quis."
+          desc="Elevate your productivity and creativity with our dynamic workspaces"
         />
         <PerBenefit
           svg={SVGs.dollar}
           name="Competitive Salary"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu quam ornare ornare sit semper nec etiam nisl, quis."
+          desc="We retain top talents with our competitive salary packages"
         />
         <PerBenefit
           svg={SVGs.plane}
           name="Paid Holiday"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu quam ornare ornare sit semper nec etiam nisl, quis."
+          desc="Enjoy a well-deserved break with our comprehensive paid holiday package"
         />
       </div>
     </section>

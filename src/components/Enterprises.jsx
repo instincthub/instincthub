@@ -12,9 +12,10 @@ const Enterprises = () => {
           <div className="trans">
             <h2>Enterprises</h2>
             <p className="max405">
-              You don’t need to be a genius or a visionary, or even a college
-              graduate for that matter, to be successful. You just need
-              framework and a dream.
+              Keep your employees up-to-date with the latest tech skills. <br />
+              Our 'Tech Skills for Employees' training program offers
+              customizable courses for your team's specific needs. Invest in
+              their success today.
             </p>
             <Link to="products/enterprise/">
               <button className="outlined-btn cab">Training</button>

@@ -8,11 +8,13 @@ const CareerGrowth = () => {
         <p className="cap_lock-txt">Room for Growth</p>
         <h2>Our business opportunity is massive, and growing</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae sit
-          aliquet non justo odio tincidunt aliquam non. Dui lectus neque, et,
-          aliquam gravida enim. Eget dis nullam integer mauris egestas
-          tincidunt. Leo consectetur accumsan mauris feugiat egestas sit.
-          Vulputate lectus egestas quis viverra sit.
+          Unlock the full potential of your career with our massive and growing
+          business opportunity. Our organization is committed to providing you
+          with the resources and support you need to succeed. Whether you're an
+          entrepreneur looking to start your own business, an experienced
+          professional looking to expand your reach, or just someone who wants
+          to take control of your financial future, our opportunity has
+          something for everyone.
         </p>
       </div>
 

@@ -14,9 +14,11 @@ const CourseCategory = () => {
         <h3 className="javascript">Javascript</h3>
         <h3 className="php">Php</h3>
       </div>
-      <a href="https://skills.instincthub.com/">
-        <button className="outlined-btn">Browse all courses</button>
-      </a>
+      <div style={{ textAlign: "center" }}>
+        <a href="https://skills.instincthub.com/">
+          <button className="outlined-btn">Browse all courses</button>
+        </a>
+      </div>
     </div>
   );
 };

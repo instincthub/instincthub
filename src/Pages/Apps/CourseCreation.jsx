@@ -45,8 +45,8 @@ const Enterprises = () => {
       />
       <Banner
         specify="kidscc"
-        h1="We help digitalizing course creation from conventional mode to digital."
-        p="Suscipit adipiscing placerat rhoncus pretium. Maecenas sodales cras dignissim ipsum turpis gravida. In bibendum sed gravida vitae dignissim. "
+        h1="Come and impact lives with us. and turn your knowlegde into income"
+        p="Become a creator, change lives- including yours. "
         img={Images.videogif}
       />
       <div className="ent_partner">
@@ -61,10 +61,12 @@ const Enterprises = () => {
       <Process />
       <EnterpriseFeatures
         img={Images.on_phone}
-        fp="Get a quote"
-        h2="We start with discovery call to understand"
-        p="Nisl vel amet ac quam cursus pharetra et. Volutpat consectetur integer purus risus etiam in vivamus. Maecenas donec leo amet feugiat morbi semper velit. Consectetur egestas aliquam nulla magna nisl mauris et lectus. "
-        button="Schedule Call"
+        // fp="Get a quote"
+        h2="Why you should start with us"
+        // p="You get to teach your course your way
+        // You get to inspire thousand of learners
+        // You get rewarded with payments for your knowledge "
+        button="Start With Us"
       />
       <Carousel />
       <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=ENTERPRISE" />

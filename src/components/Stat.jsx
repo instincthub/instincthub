@@ -13,16 +13,16 @@ const Stat = () => {
     <section className="container" id="change_top">
       <article className="stats">
         <Statistics
-          h3="12%"
+          h3="99%"
           p=" Users are statisfied with our service and features on Instincthub App"
         />
         <Statistics
-          h3="160+"
-          p="Our students have a 80% completion ratio, thanks to the amazing LMS. "
+          h3="800+"
+          p="students have a 80% completion ratio, thanks to the amazing LMS. "
         />
         <Statistics
-          h3="86%"
-          p=" Users are statisfied with our service and features on Instincthub App"
+          h3="1600+"
+          p="people already registered for our Learning Management System"
         />
       </article>
     </section>
