@@ -9,8 +9,8 @@ const RecommendedBlog = (props) => {
         <div className="event_container"  >
 
             <div className='blog_wrapper' >
-                {props.data.map((option)=>{
-                    return  <div className="blog_control" key={option.id}>
+                {props.data.map((option, index)=>{
+                    return  <div className="blog_control" key={index}>
                         <EachBlog data={option} />
                     </div>
                 })}

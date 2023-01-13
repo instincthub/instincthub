@@ -1,6 +1,7 @@
 import { React, useEffect, useState, useRef } from "react";
 import blogDetailsDefault from "../../json/blogDetailsDefault.json";
 import categoriesDefault from "../../json/categoriesDefault.json";
+import styled from "styled-components";
 import BreadCrumb from "../BreadCrumb";
 import CommentsList from "./CommentsList";
 import CommentsAdd from "./CommentsAdd";
@@ -13,10 +14,11 @@ import StatusMessage from "../message/StatusMessage";
 // import gfm from 'remark-gfm';
 import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 
+
 const BlogDetailRequest = () => {
   useState(window.localStorage.setItem("renderCount", 1)); // track initial render
   const violationRef = useRef(null);
-  const [data, setData] = useState(blogDetailsDefault);
+  const [data, setData] = useState();
   const [newComments, setNewComments] = useState([]);
   const [messageType, setMessageType] = useState([]);
   const [error, setError] = useState([]);
@@ -46,7 +48,7 @@ const BlogDetailRequest = () => {
       window.localStorage.setItem("renderCount", 0);
     }
 
-    if (data.categories) {
+    if (data && data.categories) {
       let obj = [];
       for (const i in data.categories) obj.push(data.categories[i]);
       setCategories(obj);
@@ -55,7 +57,7 @@ const BlogDetailRequest = () => {
     // eslint-disable-next-line
   }, []);
 
-  if (data.title) {
+  if (data && data.title) {
     return (
       <section>
         <StatusMessage
@@ -81,7 +83,7 @@ const BlogDetailRequest = () => {
             <div className="b_label">
               {categories
                 ? categories.map((option) => {
-                    <button
+                    return <button
                       key={option.id}
                       className="outlined-btn on_education categories"
                     >
@@ -118,6 +120,23 @@ const BlogDetailRequest = () => {
       </section>
     );
   }
+  else{
+    return(
+      <Loading className="container">
+      <p className="mt-10">Blog Loading...</p>
+
+      </Loading>
+    )
+  }
 };
 
 export default BlogDetailRequest;
+
+
+const Loading = styled.div`
+  height: 80vh;
+  p{
+    text-align: center;
+    margin-top: 200px;
+  }
+`
