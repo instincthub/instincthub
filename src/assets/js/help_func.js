@@ -416,8 +416,8 @@ export const HOST_URL = ()=> {
                   }
               }
               
-              // console.log(result)
-              // console.log(status)
+              console.log(result)
+              console.log(status)
               return result
           },
           (error) => {
