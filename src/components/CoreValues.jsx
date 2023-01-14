@@ -20,7 +20,7 @@ const CoreValues = () => {
           <div className="mini_heading">
             <p className="cap_lock-txt">OUR VALUE</p>
             <h2>instinctHub values</h2>
-            <p> Everyone deserves the freedom to pursue their purpose, our mantra is to create a renewed sense of purpose through digital education. <strong>instinctHub</strong> is guided by four principles:</p>
+            <p> Everyone deserves the freedom to pursue their purpose, our mantra is to create a renewed sense of purpose through digital education. <strong>instinctHub</strong> is guided by these four principles:</p>
           </div>
 
           <div className="about_feature">

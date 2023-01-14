@@ -10,7 +10,7 @@ const Testimonials = () => {
 
   useState(()=>{
     let requestOptions  = reqOptions('get', null)
-    fetchAPI(setData, HOST_URL()+"/api/v1/courses/testimonies/", requestOptions, true)
+    fetchAPI(setData, HOST_URL()+"/api/v1/assessment/testimonies/", requestOptions, true)
   })
 
   var settings = {
@@ -61,13 +61,13 @@ const Testimonials = () => {
           <div className=" testimonial_class">
             <Slider {...settings} className="testimonial_carousels">
                 {
-                  data.results.map((option)=>{
-                    return <div>
+                  data.results.map((option, index)=>{
+                    return <div key={index}>
                       <div className="per_review">
-                        <p> {option.description} </p>
+                        <p> {option.content} </p>
                         <div className="overflow">
-                          <img src={option.image}  alt={option.name}  />
-                          <h3>{option.name} </h3>
+                          <img src={option.img}  alt={option.full_name}  />
+                          <h3>{option.full_name} </h3>
                         </div>
                       </div>
                     </div>
