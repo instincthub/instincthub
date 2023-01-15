@@ -84,6 +84,9 @@ const Header = () => {
           <BlurBackground>
             <Multi className={showMenu}>
               <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
                 <div
                   className="actual main_target"
                   onMouseEnter={() => setOpenModal(false)}
