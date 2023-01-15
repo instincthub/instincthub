@@ -26,10 +26,10 @@ const FAQs = (props) => {
                   <input
                     type="checkbox"
                     name="toggle_accordion"
-                    id="acc4"
+                    id={option.id}
                     className="acc_input"
                   />
-                  <label htmlFor="acc4" className="acc_label">
+                  <label htmlFor={option.id} className="acc_label">
                     {option.question}
                   </label>
 
