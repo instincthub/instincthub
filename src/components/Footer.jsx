@@ -86,10 +86,6 @@ const Footer = () => {
                 (+234) 901 641 40911
               </a>
             </li>
-
-            <li className="email">
-              <a href="mailto:info@instincthub.com">info@instincthub.com</a>
-            </li>
           </ul>
         </div>
       </div>

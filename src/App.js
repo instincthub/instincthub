@@ -22,6 +22,7 @@ import Individual from "./Pages/Apps/Individual";
 import KidsCanCode from "./Pages/Apps/KidsCanCode";
 import Enterprise from "./Pages/Apps/Enterprises";
 import CourseCreation from "./Pages/Apps/CourseCreation";
+import UserProfile from "./Pages/UserProfile";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
 
         {/* Admin Login */}
         <Route exact path="/login/" element={<AdminLogin />} />
+
+        {/* Users */}
+        <Route path="/:slug/" element={<UserProfile />} />
 
         {/* About */}
         <Route path="/about/" element={<About />} />

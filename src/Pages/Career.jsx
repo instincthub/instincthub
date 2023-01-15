@@ -21,7 +21,7 @@ const About = () => {
       <CareerGrowth />
       <CareerBenefit />
       <CoreValues />
-      <Jobs  />
+      {/* <Jobs  /> */}
       {/* <SelectDrop selected={selected} setSelected={setSelected} /> */}
       <Newsletter />
       <Footer />
