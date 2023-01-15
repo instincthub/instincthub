@@ -68,8 +68,11 @@ const PlanList = (props) => {
 
                 {/* Courses Plan if free, enterprise */}
                 
-                <a href={(option.slug === 'free') ? 'https://skills.instincthub.com' : (option.slug === 'enterprise') ? 'https://leadboard.com' : courses }>
-                  <button className="native-btn">{ (option.slug === 'enterprise') ? 'Schedule a call' : 'Choose Plan' }</button>
+                <a 
+                  href={(option.slug === 'free') ? 'https://skills.instincthub.com' : (option.slug === 'enterprise') ? 'https://wa.me/message/5IA2QYCI53SUM1' : courses }
+                  rel="noopener noreferrer"
+                  target="blank">
+                  <button className="native-btn">{ (option.slug === 'enterprise') ? 'Chat With Us' : 'Choose Plan' }</button>
                 </a>
               </ul>
             </div>
