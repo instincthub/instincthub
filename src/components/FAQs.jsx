@@ -1,6 +1,8 @@
 import { React, useState } from "react";
+import FAQAnswers from "./FAQAnswers";
 import { reqOptions, fetchAPI, HOST_URL } from "../assets/js/help_func";
 import H2headings from "./H2headings";
+
 
 const FAQs = (props) => {
   const [data, setData] = useState([]);
@@ -17,9 +19,10 @@ const FAQs = (props) => {
           <H2headings
             class="container h2heading"
             h2="Frequently Asked Question"
-            p="The best decision you can make for your self is to invest heavely into your learning."
+            p="The best decision you can make for your self is to invest heavily into your learning."
           />
           <div className="accordion ">
+          
             {data.results.map((option) => {
               return (
                 <div key={option.id}>
@@ -34,7 +37,7 @@ const FAQs = (props) => {
                   </label>
 
                   <div className="acc_content">
-                    <p> {option.answer} </p>
+                    <FAQAnswers answer={option.answer} />
                   </div>
                 </div>
               );
