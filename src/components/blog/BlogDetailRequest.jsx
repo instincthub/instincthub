@@ -11,6 +11,7 @@ import ReactMarkdown from "react-markdown";
 import NextPrevious from "./NextPrevious";
 import RecommendedBlog from "./RecommededBlog";
 import StatusMessage from "../message/StatusMessage";
+import { PageLoading } from "./PageLoading";
 // import gfm from 'remark-gfm';
 import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 
@@ -114,21 +115,11 @@ const BlogDetailRequest = () => {
   }
   else{
     return(
-      <Loading className="container">
-      <p className="mt-10">Blog Loading...</p>
-
-      </Loading>
+      <>
+        <PageLoading labels="Blog" />
+      </>
     )
   }
 };
 
 export default BlogDetailRequest;
-
-
-const Loading = styled.div`
-  height: 80vh;
-  p{
-    text-align: center;
-    margin-top: 200px;
-  }
-`

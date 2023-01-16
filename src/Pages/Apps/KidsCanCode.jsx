@@ -36,7 +36,7 @@ const Individual = () => {
       {/* <Features /> */}
       <KidsFeature />
       <Carousel id="forKids" />
-      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=KIDSCANCODE" />
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=" />
       <Newsletter />
       <Footer />
     </>

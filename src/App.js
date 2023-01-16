@@ -57,7 +57,7 @@ function App() {
         <Route path="/error500" element={<Error500 />} />
 
         {/* Policies */}
-        <Route path="/policies/privacy-policy/" element={<Policy />} />
+        <Route path="/policies/:slug/" element={<Policy />} />
 
         {/* Posts */}
         <Route exact path="/blog" element={<Blog />} />

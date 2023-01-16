@@ -46,7 +46,7 @@ const Enterprises = () => {
       <Growth />
       <Carousel />
       {/* <CompanyTestimonial /> */}
-      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=ENTERPRISE" />
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=" />
       <Newsletter />
       <Footer />
     </>

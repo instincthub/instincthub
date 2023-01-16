@@ -50,17 +50,13 @@ const Footer = () => {
             <h5>Helpful Links</h5>
 
             <li>
-              <Link to="/policies/privacy-policy/">Privacy and policy</Link>
-            </li>
-
-            <li>
-              <a href="">Terms & Condition</a>
+              <Link to="/policies/privacy-policy/">Policies</Link>
             </li>
             <li>
-              <a href="">Support</a>
+              <Link to="/policies/community-guidelines/">Community Guidelines</Link>
             </li>
             <li>
-              <a href="">Events</a>
+            <Link to="/policies/refund-policy/">Refund Policy</Link>
             </li>
           </ul>
         </div>
@@ -95,12 +91,12 @@ const Footer = () => {
           <div className="main">
             <h5>© {getCurrentYear()} All right reserved</h5>
             <ul>
-              <a href="/policies/privacy-policy">
-                <li>Terms & Conditions</li>
-              </a>
-              <a href="/policies/privacy-policy">
-                <li>Privacy</li>
-              </a>
+              <li>
+                <Link to="/policies/privacy-policy/">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/policies/terms-and-conditions/">Terms & Condition</Link>
+              </li>
             </ul>
           </div>
 
