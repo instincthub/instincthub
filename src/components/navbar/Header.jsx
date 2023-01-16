@@ -88,15 +88,15 @@ const Header = () => {
               </li>
               <li>
                 <div
-                  className="actual main_target"
-                  onMouseEnter={() => setOpenModal(false)}
-                  onClick={() => setOpenModal(true)}
-                  // onClick={() => setOpenModal(false)}
+                // className="actual main_target"
+                // onMouseEnter={() => setOpenModal(false)}
+                // onClick={() => setOpenModal(true)}
+                // // onClick={() => setOpenModal(false)}
                 >
-                  Courses
+                  <a href="https://skills.instincthub.com/"> Courses</a>
                 </div>
 
-                <ul className="sub_bro">
+                {/* <ul className="sub_bro">
                   <li>
                     <div className="actual">Course Library</div>
                     <ul>
@@ -113,7 +113,7 @@ const Header = () => {
                       <li>Be of good </li>
                     </ul>
                   </li>
-                </ul>
+                </ul> */}
               </li>
               <li>
                 <Link to="/about/career/">Career</Link>
