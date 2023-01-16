@@ -421,6 +421,7 @@ export const HOST_URL = ()=> {
                     if(setStatus) setStatus('success'); // Display message banner. 
                     window.localStorage.setItem('renderCount', 1)
                   }
+                  else if(status === 404) setStatus(status)
               }
               
               console.log(result)

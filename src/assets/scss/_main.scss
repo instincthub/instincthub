@@ -386,6 +386,8 @@ label,
 ol {
   list-style: none;
   counter-reset: item;
+  margin-left: 45px;
+  position: relative;
 
   li {
     counter-increment: item;
@@ -404,6 +406,8 @@ ol {
       height: 25px;
       text-align: center;
       display: inline-block;
+      position: absolute;
+      left: -45px;
     }
   }
 }

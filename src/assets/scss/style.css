@@ -371,6 +371,25 @@ ul li {
   margin: 8px 0;
   letter-spacing: 0em;
   text-align: left;
+  position: relative;
+}
+.content ul li {
+  margin-left: 45px;
+}
+.content ul li:before {
+  margin-right: 16px;
+  margin-top: 6px;
+  content: counter(item);
+  border: 3px solid var(--Gunmetal);
+  border-radius: 100%;
+  color: white;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  left: -45px;
 }
 
 ::-moz-placeholder {
@@ -390,6 +409,8 @@ label,
 ol {
   list-style: none;
   counter-reset: item;
+  position: relative;
+  margin-left: 45px;
 }
 ol li {
   counter-increment: item;
@@ -408,6 +429,8 @@ ol li:before {
   height: 25px;
   text-align: center;
   display: inline-block;
+  position: absolute;
+  left: -45px;
 }
 
 .display_pic {

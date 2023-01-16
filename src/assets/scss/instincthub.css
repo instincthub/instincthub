@@ -2405,6 +2405,12 @@ nav h2 {
   .content a {
     color: #cc3852;
     margin-right: 10px;
+    font-weight: 500;
+    transition: .3s ease-in;
+  }
+  .content a:hover{
+    opacity: .7;
+    font-weight: 600;
   }
 }
 @media (max-width: 740px) {
