@@ -36,10 +36,10 @@ const Teams = () => {
                     <h4>{option.name}</h4>
                     <p>{option.role}</p>
                     <div className="links">
-                      <a href={option.linkedin_url}>
+                      <a href={option.linkedin_url} target="blanc" rel="noopener noreferrer">
                         <img src={SVGs.linkedin_b} alt="LinkedIn Logo" />
                       </a>
-                      <a href={option.twitter_url}>
+                      <a href={option.twitter_url} target="blanc" rel="noopener noreferrer">
                         <img src={SVGs.custom_t} alt="Twitter Logo" />
                       </a>
                     </div>
