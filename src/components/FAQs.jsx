@@ -24,8 +24,8 @@ const FAQs = (props) => {
               return (
                 <div key={option.id}>
                   <input
-                    type="checkbox"
-                    name="toggle_accordion"
+                    type="radio"
+                    name="FAQs"
                     id={option.id}
                     className="acc_input"
                   />
