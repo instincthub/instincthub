@@ -69,7 +69,7 @@ const Enterprises = () => {
         button="Start With Us"
       />
       <Carousel />
-      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=ENTERPRISE" />
+      <FAQs apiPath="/api/v1/home_pages/faqs/?limit=10&product_name=" />
       <Newsletter
         setMessageType={setMessageType}
         messageType={messageType}

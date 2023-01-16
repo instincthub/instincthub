@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { reqOptions, fetchAPI, HOST_URL } from "../assets/js/help_func";
 import { Link, Navigate, Routes, Route } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import NoMatch from "./Status/NoMatch";
+import { PageLoading } from "./blog/PageLoading";
 
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import styled from "styled-components";
@@ -75,14 +75,22 @@ const PolicyDetails = () => {
       </Wrapper>
     );
   }
-
-  if(status === 404){
+  else if(status === 404){
     return (
         <>
           <Navigate to='/404/page/not/found/'/>
         </>
     )
-}
+  }
+  else{
+    return(
+      <>
+        <PageLoading labels="Blog" />
+      </>
+    )
+  }
+
+  
 };
 
 export default PolicyDetails;
