@@ -15,7 +15,6 @@ import { PageLoading } from "./PageLoading";
 // import gfm from 'remark-gfm';
 import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 
-
 const BlogDetailRequest = () => {
   useState(window.localStorage.setItem("renderCount", 1)); // track initial render
   const violationRef = useRef(null);
@@ -27,27 +26,27 @@ const BlogDetailRequest = () => {
   const [timestamp, setTimestamp] = useState("");
   let { slug } = useParams();
 
-  useState(()=>{
-      let requestOptions = reqOptions("GET", null);
-      fetchAPI(
-        setData,
-        HOST_URL() + "/api/v1/posts/post/" + slug,
-        requestOptions,
-        true
-      );
-  })
+  useState(() => {
+    let requestOptions = reqOptions("GET", null);
+    fetchAPI(
+      setData,
+      HOST_URL() + "/api/v1/posts/post/" + slug,
+      requestOptions,
+      true
+    );
+  });
 
   const goToViolation = (id) => {
     violationRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   useEffect(() => {
-      if (data && data.categories && !categories) {
-        let obj = [];
-        for (const i in data.categories) obj.push(data.categories[i]);
-        setCategories(obj);
-        setTimestamp(data.timestamp.slice(0, 10));
-      }
+    if (data && data.categories && !categories) {
+      let obj = [];
+      for (const i in data.categories) obj.push(data.categories[i]);
+      setCategories(obj);
+      setTimestamp(data.timestamp.slice(0, 10));
+    }
   }, [data]);
 
   if (data && data.title) {
@@ -76,12 +75,14 @@ const BlogDetailRequest = () => {
             <div className="b_label">
               {categories
                 ? categories.map((option) => {
-                    return <button
-                      key={option.id}
-                      className="outlined-btn on_education categories"
-                    >
-                      {option.title}
-                    </button>;
+                    return (
+                      <button
+                        key={option.id}
+                        className="outlined-btn on_education categories"
+                      >
+                        {option.title}
+                      </button>
+                    );
                   })
                 : ""}
             </div>
@@ -112,13 +113,12 @@ const BlogDetailRequest = () => {
         <RecommendedBlog data={data.recommended_posts} />
       </section>
     );
-  }
-  else{
-    return(
+  } else {
+    return (
       <>
         <PageLoading labels="Blog" />
       </>
-    )
+    );
   }
 };
 

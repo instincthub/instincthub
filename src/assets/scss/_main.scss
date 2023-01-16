@@ -1456,7 +1456,7 @@ input {
   width: 100%;
   font-style: var(--Montserat);
   padding: 15px;
-  border: 1px solid #D8D8D8;
+  border: 1px solid #d8d8d8;
 
   border-radius: 5px;
   border-radius: 5px;
@@ -2021,7 +2021,7 @@ input:valid {
   animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navlinks {
     flex-direction: column;
     display: flex;

@@ -442,6 +442,8 @@ label,
 ol {
   list-style: none;
   counter-reset: item;
+  margin-left: 45px;
+  position: relative;
 }
 
 ol li {
@@ -462,6 +464,8 @@ ol li:before {
   height: 25px;
   text-align: center;
   display: inline-block;
+  position: absolute;
+  left: -45px;
 }
 
 .display_pic {
@@ -1141,17 +1145,6 @@ ul.breadcrumb li {
   color: var(--Gunmetal);
 }
 
-ul.breadcrumb li + li:before {
-  content: url("https://www.svgrepo.com/show/356409/arrow-right.svg");
-  width: 20px;
-  position: relative;
-  top: 7px;
-  height: 35px;
-  display: block;
-  padding: 0 10px;
-  display: inline-block;
-}
-
 ul.breadcrumb li a {
   color: var(--ChineseSilver);
   text-decoration: none;
@@ -1702,7 +1695,7 @@ input {
   width: 100%;
   font-style: var(--Montserat);
   padding: 15px;
-  border: 1px solid #D8D8D8;
+  border: 1px solid #d8d8d8;
   border-radius: 5px;
   border-radius: 5px;
   height: 50px;
@@ -2345,7 +2338,7 @@ input:valid {
   animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navlinks {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

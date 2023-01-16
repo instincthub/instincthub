@@ -76,22 +76,91 @@ const Header = () => {
       <DesktopMulti open={openModal} onClose={() => setOpenModal(false)} />
       <header>
         <nav className="container">
-          <a href="/" className="logo">
-            <img src={Images.logo} alt="" />
-          </a>
+          <div className="appsTrue">
+            <div className="apps">
+              {/* <svg
+                fill="#000000"
+                width="800px"
+                height="800px"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <g id="SVGRepo_iconCarrier">
+                  <title>Products</title>
+
+                  <path d="M104,160a56,56,0,1,1,56-56A56.06,56.06,0,0,1,104,160Z" />
+
+                  <path d="M256,160a56,56,0,1,1,56-56A56.06,56.06,0,0,1,256,160Z" />
+
+                  <path d="M408,160a56,56,0,1,1,56-56A56.06,56.06,0,0,1,408,160Z" />
+
+                  <path d="M104,312a56,56,0,1,1,56-56A56.06,56.06,0,0,1,104,312Z" />
+
+                  <path d="M256,312a56,56,0,1,1,56-56A56.06,56.06,0,0,1,256,312Z" />
+
+                  <path d="M408,312a56,56,0,1,1,56-56A56.06,56.06,0,0,1,408,312Z" />
+
+                  <path d="M104,464a56,56,0,1,1,56-56A56.06,56.06,0,0,1,104,464Z" />
+
+                  <path d="M256,464a56,56,0,1,1,56-56A56.06,56.06,0,0,1,256,464Z" />
+
+                  <path d="M408,464a56,56,0,1,1,56-56A56.06,56.06,0,0,1,408,464Z" />
+                </g>
+              </svg> */}
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                role="presentation"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M4 5.01C4 4.451 4.443 4 5.01 4h1.98C7.549 4 8 4.443 8 5.01v1.98C8 7.549 7.557 8 6.99 8H5.01C4.451 8 4 7.557 4 6.99V5.01zm0 6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98C8 13.549 7.557 14 6.99 14H5.01C4.451 14 4 13.557 4 12.99v-1.98zm6-6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98C14 7.549 13.557 8 12.99 8h-1.98C10.451 8 10 7.557 10 6.99V5.01zm0 6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98c0 .558-.443 1.01-1.01 1.01h-1.98c-.558 0-1.01-.443-1.01-1.01v-1.98zm6-6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98C20 7.549 19.557 8 18.99 8h-1.98C16.451 8 16 7.557 16 6.99V5.01zm0 6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98c0 .558-.443 1.01-1.01 1.01h-1.98c-.558 0-1.01-.443-1.01-1.01v-1.98zm-12 6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98C8 19.549 7.557 20 6.99 20H5.01C4.451 20 4 19.557 4 18.99v-1.98zm6 0c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98c0 .558-.443 1.01-1.01 1.01h-1.98c-.558 0-1.01-.443-1.01-1.01v-1.98zm6 0c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98c0 .558-.443 1.01-1.01 1.01h-1.98c-.558 0-1.01-.443-1.01-1.01v-1.98z"
+                ></path>
+              </svg>
+
+              <ul className="products">
+                <div>
+                  <li>
+                    <img src="" alt="" />
+                    <Link to="/products/individual">Individuals</Link>
+                  </li>
+                  <li>
+                    <Link to="/products/kidscancode/">Kids Can Code</Link>
+                  </li>
+
+                  <li>
+                    <Link to="/products/enterprise/">Enterprises</Link>
+                  </li>
+                  <li>
+                    <a href="https://tech.instincthub.com/">Tech Diversity</a>
+                  </li>
+                </div>
+              </ul>
+            </div>
+            <a href="/" className="logo">
+              <img src={Images.logo} alt="" />
+            </a>
+          </div>
 
           {/* ***Perform all multi in this ul */}
           <BlurBackground>
             <Multi className={showMenu}>
               <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
                 <div
-                // className="actual main_target"
-                // onMouseEnter={() => setOpenModal(false)}
-                // onClick={() => setOpenModal(true)}
-                // // onClick={() => setOpenModal(false)}
+                  className="actual main_target"
+                  onMouseEnter={() => setOpenModal(false)}
+                  onClick={() => setOpenModal(true)}
+                  // onClick={() => setOpenModal(false)}
                 >
                   <a href="https://skills.instincthub.com/"> Courses</a>
                 </div>
@@ -184,7 +253,57 @@ const Header = () => {
 
 export default Header;
 
-let Container = styled.section``;
+let Container = styled.section`
+  .apps {
+    position: realtive;
+    #SVGRepo_iconCarrier rect {
+      fill: #000000;
+      &:hover {
+        fill: #fff;
+      }
+    }
+    &:hover {
+      ul {
+        display: block;
+      }
+    }
+    svg {
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      margin-top: 2px;
+      border-radius: 50px;
+      margin-right: 15px;
+      padding: 5px;
+      transition: 0.3s;
+      &:hover {
+        background-color: rgba(0, 131, 143, 0.1);
+        fill: var(--DarkCyan);
+      }
+    }
+    ul {
+      // border: 1px solid yellow;
+      display: none;
+      position: absolute;
+      top: 50px;
+      div {
+        margin-top: 30px;
+        background-color: #fff;
+        box-shadow: 0px -2px 8px rgb(0 0 0 / 5%), 0px 2px 8px rgb(0 0 0 / 5%);
+
+        padding: 10px;
+        width: 200px;
+      }
+    }
+  }
+  .logo {
+    margin-top: 5px;
+  }
+  .appsTrue {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
 let DesktopCourses = styled.section`
   position: absolute;
   top: 80px;
