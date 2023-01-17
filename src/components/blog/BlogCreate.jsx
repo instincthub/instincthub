@@ -24,7 +24,7 @@ const BlogCreate = (props) => {
 
     let requestOptions  = reqOptions('POST', formdata, true);
 
-    fetchAPI(props.set_data, `${HOST_URL()}/api/v1/posts/create/`, requestOptions, true, props.setMessageType, props.setError)
+    fetchAPI(props.setCreated, `${HOST_URL()}/api/v1/posts/create/`, requestOptions, true, props.setMessageType, props.setError)
   };
 
   // Disable spinning button after getting status from fetch

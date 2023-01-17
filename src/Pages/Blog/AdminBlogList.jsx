@@ -1,4 +1,4 @@
-import { React, useState, useRef } from "react";
+import { React, useState, useRef, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 // import JsonData from '../Mock-API.json'
 import API from "../../json/D4Blog.json";
@@ -19,7 +19,7 @@ import { loginRequired, getCookie } from "../../assets/js/help_func";
 
 function AdminBlogList() {
   ScrollToTop();
-  loginRequired(JSON.parse(getCookie('uu_id')))
+  loginRequired(getCookie('u_id'))
   
   // Pagination required states:
   const violationRef = useRef(null);
@@ -31,6 +31,7 @@ function AdminBlogList() {
 
   const [events, setEvents] = useState(API.slice(0, 20));
   const [blog_edit, setBlogEdit] = useState([]);
+  const [created, setCreated] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [openModal, setOpenModal] = useState(false); // state for Modal
   const [edit, setEdit] = useState(false); // state for Modal
@@ -49,10 +50,12 @@ function AdminBlogList() {
   const [error, setError] = useState([])
 
 
-  useState(()=>{
-    // let requestOptions  = reqOptions('get', null)
-    // fetchAPI(setEvents, HOST_URL()+"/api/v1/posts/admin/?limit=20", requestOptions, true)
-  },[events.results])
+  useEffect(()=>{
+    if (created && created.slug) {
+      events.results.unshift(created)
+      setCreated([])
+    }
+  },[created.slug])
 
   return (
     <>
@@ -107,7 +110,7 @@ function AdminBlogList() {
       <Footer />
 
       {/* MODALS */}
-      <Create openModal={openModal} setOpenModal={setOpenModal} data={events} set_data={setEvents} setMessageType={setMessageType} messageType={messageType} setError={setError} error={error}/>
+      <Create openModal={openModal} setOpenModal={setOpenModal} data={events} setCreated={setCreated} setMessageType={setMessageType} messageType={messageType} setError={setError} error={error}/>
 
       <AdminBlogEditForm events={events} edit={edit} setEdit={setEdit} data={blog_edit} set_data={setEvents} setMessageType={setMessageType} messageType={messageType} setError={setError}/>
 

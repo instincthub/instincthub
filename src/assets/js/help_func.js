@@ -1,23 +1,15 @@
 export const HOST_URL = ()=> {
-    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.hostname === "192.168.0.174" || window.location.hostname === "") {
-        return "http://127.0.0.1:8000"
-    }
-    else{
-        return "https://api.instincthub.com"
-    }
+  if (process.env.NODE_ENV === "development") {
+      return "http://127.0.0.1:8000"
   }
-
-  export const SK_KEY = "instincthub-sk-header"
-
-  export const SK_VALUE = () =>{
-    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.hostname === "192.168.0.174" || window.location.hostname === "") {
-      return "22-072021kidbackendyste3333ifkIks304"
-    }
-    else{
-      return "sk-dvbfkbvfbkfkbssnjdv232299sddsk"
-    }
-    
+  else{
+      return "https://api.instincthub.com"
   }
+}
+
+  // export const SK_KEY = "instincthub-sk-header"
+  export const SK_KEY = process.env.REACT_APP_SK_KEY
+  export const SK_VALUE = process.env.REACT_APP_SK_VALUE
 
 
   export const checkUrl = (string)=> {
@@ -366,21 +358,14 @@ export const HOST_URL = ()=> {
   
   // Set type to null if not required. 
   export const reqOptions = (method, data, bearer=null) =>{
-    // let myHeaders = new Headers();
-    // myHeaders.append(SK_KEY, SK_VALUE());
-    // myHeaders.append("Cookie", "csrftoken="+getCookie('csrftoken'));
-    // myHeaders.append("Content-Type", "application/json");
 
     let myHeaders =  {
-      'instincthub-sk-header': SK_VALUE(),
       'X-CSRFToken': getCookie('CSRF-TOKEN'),
       'Origin': window.location.origin
     }
+    myHeaders[SK_KEY] = SK_VALUE
 
-    if (bearer){ 
-        let access = JSON.parse(getCookie('uu_id')).access_token
-        myHeaders.append("Authorization", "Bearer "+access);
-    }
+    if (bearer)  myHeaders["Authorization"] = "Bearer "+getCookie('access');
     
     var request = {
       method: method,
@@ -392,6 +377,7 @@ export const HOST_URL = ()=> {
   }
   
   export const fetchAPI = (session, api, reqOptions, func=false, setStatus=false, setError=false) =>{
+    console.log(reqOptions);
   
       let status = null
       fetch(api, reqOptions)
@@ -424,8 +410,11 @@ export const HOST_URL = ()=> {
                   else if(status === 404) setStatus(status)
               }
               
-              console.log(result)
-              console.log(status)
+              if (process.env.NODE_ENV === "development") {
+                console.log(result)
+                console.log(status)
+              }
+              
               return result
           },
           (error) => {

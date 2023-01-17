@@ -21,7 +21,6 @@ const EachBlog = (props) => {
   }
 
 
-
   if (props.events.results) {
     return(
       <>
