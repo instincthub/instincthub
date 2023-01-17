@@ -377,7 +377,6 @@ export const HOST_URL = ()=> {
   }
   
   export const fetchAPI = (session, api, reqOptions, func=false, setStatus=false, setError=false) =>{
-    console.log(reqOptions);
   
       let status = null
       fetch(api, reqOptions)
