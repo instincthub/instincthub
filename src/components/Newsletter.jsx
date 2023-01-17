@@ -81,9 +81,9 @@ const Newsletter = (props) => {
           <div className="subscribe">
             <h2>Subscribe to Newsletter</h2>
             <p>
-              Subscribe to our newsletter and stay connected with our community.
-              Get exclusive access to industry-specific updates, valuable
-              insights, and special offers that are tailored to your needs.
+              Stay connected with our community. Get exclusive access to
+              industry-specific updates, valuable insights, and special offers
+              that are tailored to your needs.
             </p>
             <form onSubmit={handleFormSubmit}>
               <TextField

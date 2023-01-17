@@ -3,7 +3,6 @@ import FAQAnswers from "./FAQAnswers";
 import { reqOptions, fetchAPI, HOST_URL } from "../assets/js/help_func";
 import H2headings from "./H2headings";
 
-
 const FAQs = (props) => {
   const [data, setData] = useState([]);
 
@@ -21,14 +20,13 @@ const FAQs = (props) => {
             h2="Frequently Asked Question"
             p="The best decision you can make for your self is to invest heavily into your learning."
           />
-          <div className="accordion ">
-          
+          <div className="accordion">
             {data.results.map((option) => {
               return (
                 <div key={option.id}>
                   <input
-                    type="checkbox"
-                    name="toggle_accordion"
+                    type="radio"
+                    name="FAQs"
                     id={option.id}
                     className="acc_input"
                   />

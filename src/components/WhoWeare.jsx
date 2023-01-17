@@ -21,7 +21,7 @@ const WhoWeare = () => {
         </div>
         <div className="per_who instructor">
           <h3>12</h3>
-          <p>Experience Instructors</p>
+          <p>Experience Instructor</p>
         </div>
       </div>
     </div>
