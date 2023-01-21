@@ -148,7 +148,7 @@ const Wrapper = styled.div`
   }
   @media (max-width: 450px) {
     .flex_2 {
-      margin-top: 200px;
+      margin-top: 250px !important;
     }
   }
   .panels {
