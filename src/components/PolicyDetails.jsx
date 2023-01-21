@@ -151,7 +151,7 @@ const Wrapper = styled.div`
       margin-top: 250px !important;
     }
   }
-  .panels {
-    margin-top: 150px;
-  }
+  // .panels {
+  //   margin-top: 150px;
+  // }
 `;
