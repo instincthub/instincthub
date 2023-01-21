@@ -3,7 +3,6 @@ import { reqOptions, fetchAPI, HOST_URL } from "../assets/js/help_func";
 import { Link, Navigate, Routes, Route } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PageLoading } from "./blog/PageLoading";
-
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import styled from "styled-components";
 import ReactTimeAgo from "react-time-ago";
@@ -63,7 +62,7 @@ const PolicyDetails = () => {
             <div className={`panel active`}>
               <div className="phone_top content">
                 <p>
-                  Last Updated:{" "}
+                  Last Updated:
                   <ReactTimeAgo
                     date={new Date(data.last_updated)}
                     locale="en-US"
@@ -102,7 +101,6 @@ const Wrapper = styled.div`
     max-width: 700px;
     margin-right: auto;
     margin-right: auto;
-    margin-top: 0px;
   }
   h1 {
     font-size: 2em;
@@ -120,6 +118,11 @@ const Wrapper = styled.div`
     margin-bottom: 0px;
     margin-top: 18px;
   }
+  @media (min-width: 768px) {
+    .content {
+      padding: 0 20px !important;
+    }
+  }
   h4 {
     font-size: 0.8em;
     font-weight: 600;
@@ -132,5 +135,23 @@ const Wrapper = styled.div`
     font-weight: 600;
     margin-bottom: 0px;
     margin-top: 14px;
+  }
+  @media (min-width: 768px) {
+    .content {
+      padding: 0;
+    }
+  }
+  @media (max-width: 768px) {
+    .flex_2 {
+      margin-top: 130px;
+    }
+  }
+  @media (max-width: 450px) {
+    .flex_2 {
+      margin-top: 200px;
+    }
+  }
+  .panels {
+    margin-top: 150px;
   }
 `;
