@@ -7,9 +7,8 @@ export const HOST_URL = ()=> {
   }
 }
 
-  // export const SK_KEY = "instincthub-sk-header"
-  export const SK_KEY = process.env.REACT_APP_SK_KEY
-  export const SK_VALUE = process.env.REACT_APP_SK_VALUE
+export const SK_KEY = process.env.REACT_APP_SK_KEY
+export const SK_VALUE = process.env.REACT_APP_SK_VALUE
 
 
   export const checkUrl = (string)=> {
@@ -401,9 +400,9 @@ export const HOST_URL = ()=> {
                     setStatus('error') // Display message banner. 
                   }
                   else if(status === 201 || status === 200){
-                    if(setStatus)  setError([]);
                     session(result);
-                    if(setStatus) setStatus('success'); // Display message banner. 
+                  if(setStatus && setError)  setError([]);
+                  if(setStatus) setStatus('success'); // Display message banner. 
                     window.localStorage.setItem('renderCount', 1)
                   }
                   else if(status === 404) setStatus(status)
