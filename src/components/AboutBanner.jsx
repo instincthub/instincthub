@@ -8,7 +8,7 @@ const AboutBanner = () => {
         <p>
           In today’s business environment, companies need to continually
           reinvent themselves. We take an innovation-led approach to help
-          clients “imagine and invent” their future.
+          stakeholders “imagine and invent” their future.
         </p>
       </div>
     </div>

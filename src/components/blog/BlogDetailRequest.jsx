@@ -14,6 +14,7 @@ import StatusMessage from "../message/StatusMessage";
 import { PageLoading } from "./PageLoading";
 // import gfm from 'remark-gfm';
 import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
+import { Helmet } from "react-helmet";
 
 const BlogDetailRequest = () => {
   useState(window.localStorage.setItem("renderCount", 1)); // track initial render
@@ -52,6 +53,13 @@ const BlogDetailRequest = () => {
   if (data && data.title) {
     return (
       <section>
+        <Helmet>
+          <title>{data.title}</title>
+          <meta name="description" content={data.overview} />
+          <meta property="og:title" content={ data.title } />
+          <meta property="og:url" content={ window.location.href } />
+          <meta property="og:image" content={ data.thumbnail } />
+        </Helmet>
         <StatusMessage
           setMessageType={setMessageType}
           messageType={messageType}

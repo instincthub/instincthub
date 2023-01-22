@@ -9,14 +9,15 @@ const AboutProcess = () => {
           <p className="cap_lock-txt">About Instincthub</p>
           <h2>Our Work Process</h2>
           <p>
-            At Instincthub, our approach to learning management is centered
+            At instinctHub, our approach to learning management is centered
             around delivering seamless and effective solutions that meet the
-            unique needs of our clients. Our work process is designed to ensure
+            unique needs of both our learners and partners. 
+            Our work process is designed to ensure
             that we deliver the highest quality service and support, while also
-            providing a smooth and efficient experience for our clients.
+            providing a smooth and efficient experience for our users.
           </p>
           <p>
-            We begin by working closely with our clients to understand their
+            We begin by working closely with our learners and partners to understand their
             specific needs and goals. This includes conducting a thorough
             analysis of their existing learning management system and
             identifying areas that need improvement. Based on this analysis, we
@@ -25,10 +26,10 @@ const AboutProcess = () => {
           </p>
           <p>
             Next, we implement the solution and provide training support to
-            ensure that our clients are able to fully utilize all of its
-            features and capabilities. Our team is available to assist with any
+            ensure that our users are able to fully utilize all of its
+            features and capabilities. We are available to assist with any
             questions or issues that may arise and provide ongoing support to
-            ensure that the system continues to meet the client's needs.
+            ensure that the system continues to meet the your needs.
           </p>
           <p>
             Our students have testified how satisfied they are with our work
@@ -39,8 +40,8 @@ const AboutProcess = () => {
             satisfaction of the students.
           </p>
           <p>
-            At Instincthub, we take pride in providing a seamless and effective
-            learning management solution that empowers our clients to achieve
+            At instinctHub, we take pride in providing a seamless and effective
+            learning management solution that empowers our stakeholders to achieve
             their goals and reach their full potential.
           </p>
           {/* <button className="outlined-btn mt-1">Learn More</button> */}

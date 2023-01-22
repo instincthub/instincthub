@@ -15,9 +15,9 @@ const CareerBanner = () => {
                 potential. Apply today to become a part of our team and start
                 your journey towards a more fulfilling career.
               </p>
-              <Link to="#openpositions" smooth>
+              {/* <Link to="#openpositions" smooth>
                 <button className="important-btn">View open positions</button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
