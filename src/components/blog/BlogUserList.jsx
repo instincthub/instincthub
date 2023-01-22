@@ -5,23 +5,31 @@ import styled from "styled-components";
 import Pagination from "./Pagination";
 import Tabs from "./Tabs";
 import { useSearchParams } from "react-router-dom";
+import ErrorBoundry from '../ErrorBoundary'
+import { PageLoading } from "./PageLoading";
+
 import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 
 const BlogUserList = () => {
   const violationRef = useRef(null);
-  const [data, setData] = useState(BlogDefaultData);
+  const [data, setData] = useState();
+  const [componentErr, setComponentErr] = useState(false);
   const [searchValues, setSearchValues] = useState(false);
   const [tabsValues, setTabsValues] = useState(false);
   const [searchParams] = useSearchParams();
   searchParams.get("cat");
+  useState(()=>{
+    let requestOptions  = reqOptions('get', null)
+    fetchAPI(setData, HOST_URL()+"/api/v1/posts/", requestOptions, true)
+  })
 
   const goToViolation = (id) => {
     violationRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   useEffect(() => {
-    // console.log(data.results);
-  }, [data.results]);
+    
+  }, [data]);
 
   return (
     <div ref={violationRef}>
@@ -32,7 +40,7 @@ const BlogUserList = () => {
             setSearchValues={setSearchValues}
             setTabsValues={setTabsValues}
           />
-          {data.results ? (
+          {data && data.results ? (
             <div className="blog_wrapper">
               {data.results.map((option) => {
                 return (
@@ -42,20 +50,25 @@ const BlogUserList = () => {
                 );
               })}
             </div>
-          ) : (
-            ""
-          )}
+          ) : <PageLoading labels="Blog list"/>
+
+          
+          }
         </div>
-        <Pagination
-          data={data}
-          setData={setData}
-          limit={10}
-          offset={searchParams.get("offset")}
-          goToViolation={goToViolation}
-          tabsValues={tabsValues}
-          searchValues={searchValues}
-          urlPath="/api/v1/posts/"
-        />
+        <ErrorBoundry setComponentErr={setComponentErr}>
+        {data && data.results ? 
+          <Pagination
+            data={data}
+            setData={setData}
+            limit={10}
+            offset={searchParams.get("offset")}
+            goToViolation={goToViolation}
+            tabsValues={tabsValues}
+            searchValues={searchValues}
+            urlPath="/api/v1/posts/"
+          />
+          :''}
+        </ErrorBoundry>
       </BlogListWrapper>
     </div>
   );
