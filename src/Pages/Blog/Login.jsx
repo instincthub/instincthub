@@ -14,10 +14,14 @@ import {
 const Login = () => {
   ScrollToTop();
   const [data, setData] = useState([]);
+
+  
   useEffect(() => {
-    if (data.access_token) {
-      let json_str = JSON.stringify(data);
-      setCookie("uu_id", json_str, 30);
+    if (data && data.access_token) {
+      setCookie('access', data.access_token, 30)
+      setCookie('refresh', data.refresh_token, 30)
+      setCookie('u_id', data.user.id, 30)
+      setCookie('username', data.user.username, 30)
       window.location.href = "/blog/admin";
     }
   }, [data]);
