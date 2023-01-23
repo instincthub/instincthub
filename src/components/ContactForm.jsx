@@ -28,7 +28,7 @@ const ContactForm = (props) => {
 
     let requestOptions = {
       method: "POST",
-      headers: myHeaders,
+      headers: {"leadboard-sk-header": "22-072021kidbackendyste3333ifkIks304"},
       body: formdata,
       redirect: "follow",
     };
