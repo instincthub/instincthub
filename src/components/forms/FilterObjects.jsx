@@ -23,7 +23,7 @@ const FilterObjects = (props) => {
       <SelectMe className="select_me">
         <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
           <div>
-            <input type="text" className="dropdown input_drop" defaultValue={id} id={'id_'+props.input_name} name={props.input_name} readOnly />
+            <input type="text" className="dropdown input_drop" defaultValue={id} id={'id_'+props.input_name} name={props.input_name} hidden />
             <p>{selected}</p>
           </div>
           <label className="filter_label">{props.label}</label>
@@ -38,9 +38,11 @@ const FilterObjects = (props) => {
             {objects.map((option) => (
               <div
                 className="select_items"
+                data-id={option.id}
                 onClick={(e) => {
                   setSelected(option.title);
-                  setID(option.id)
+                  // setID(option.id)
+                  document.querySelector(`input[name=${props.input_name}]`).value = option.id;
                   setIsActive(false);
                 }}
               >

@@ -39,10 +39,11 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/he
         // Enable Spinning button
         e.target.querySelector('[type=submit]').classList.add('rolling');
         e.target.querySelector('[type=submit]').disabled = true;
-
+        
         // Remove thumbnail from field if empty
         var formdata = new FormData(e.target);
         if (!formdata.get('thumbnail').size) formdata.delete('thumbnail')
+        console.log(formdata.get('author'));
 
         let requestOptions  = reqOptions('PUT', formdata, true);
 
@@ -109,7 +110,7 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/he
 
                         <FilterObjects 
                             options ={props.data.author_list} 
-                            exists={props.data.author}
+                            exists={{id:props.data.author.id, title:props.data.author.user.first_name + ' ' + props.data.author.user.last_name}}
                             input_name="author"
                             label="Author"
                         />

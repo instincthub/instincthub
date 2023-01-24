@@ -12,7 +12,7 @@ const FilterArray = (props) => {
           {/* {selected} */}
 
           <div>
-            <input type="text" defaultValue={selected} name={props.input_name} readOnly className="input_drop" />
+            <input type="text" defaultValue={selected} name={props.input_name} hidden className="input_drop" />
             <p>{selected}</p>
           </div>
           <label className="filter_label">{props.label}</label>
@@ -28,8 +28,10 @@ const FilterArray = (props) => {
               <div
                 key={option}
                 className="select_items"
+                id={option}
                 onClick={(e) => {
-                  setSelected(option);
+                  // setSelected(option);
+                  document.querySelector(`input[name=${props.input_name}]`).value = option;
                   setIsActive(false);
                 }}
               >
