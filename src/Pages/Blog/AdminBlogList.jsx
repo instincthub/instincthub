@@ -17,7 +17,7 @@ import { loginRequired, getCookie } from "../../assets/js/help_func";
 
 function AdminBlogList() {
   ScrollToTop();
-  loginRequired(getCookie('u_id'))
+  loginRequired(getCookie('access'))
   
   // Pagination required states:
   const violationRef = useRef(null);
