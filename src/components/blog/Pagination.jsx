@@ -17,7 +17,7 @@ function Pagination(props) {
   const [offsetTo, setOffsetTo] = useState(5);
   const [rangeLimit] = useState(5);
 
-  const requestOptions = reqOptions("get", null);
+  const requestOptions = reqOptions("get", null, true);
   const nextOffset = new URLSearchParams(props.data.next).get("offset");
   const previousOffset = new URLSearchParams(props.data.previous).get("offset");
   let offset_params = Number(searchParams.get("offset")) / props.limit;
@@ -28,12 +28,12 @@ function Pagination(props) {
 
     // Fetch data whenever there is new search, tab and pagination
     if (offset_params || props.tabsValues || props.searchValues) {
+      let search_offset = searchParams.get("offset") ? "&offset="+searchParams.get("offset"):'';
       fetchAPI(
         props.setData,
         HOST_URL() +
           `${props.urlPath}?cat=${tabs}&search=${search}&limit=${
-            props.limit
-          }&offset=${searchParams.get("offset")}`,
+            props.limit+search_offset}`,
         requestOptions,
         true,
         false,

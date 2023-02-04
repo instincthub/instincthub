@@ -13,11 +13,15 @@ import ScrollToTop from "../../components/ScrollToTop";
 import AdminBlogEditForm from "../../components/AdminBlogEditForm";
 import Pagination from "../../components/blog/Pagination";
 import SearchField from "../../components/forms/SearchField";
-import { loginRequired, getCookie } from "../../assets/js/help_func";
+import {getCookie } from "../../assets/js/help_func";
+import { useNavigate } from "react-router-dom";
+import { LoginRequired } from "../../components/forms/LoginRequired";
 
 function AdminBlogList() {
   ScrollToTop();
-  loginRequired(getCookie('access'))
+
+  const navigate = useNavigate()
+  LoginRequired()
   
   // Pagination required states:
   const violationRef = useRef(null);

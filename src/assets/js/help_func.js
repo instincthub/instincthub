@@ -285,7 +285,7 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
   }
   
   
-  export const handleError = (status, items, registerForm, r_path) =>{
+  export const handleError = (status, items, registerForm, r_path, navigate) =>{
     const serverTag = document.querySelector('.server_err')
   
     if (status === 400){
@@ -301,7 +301,7 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
           serverTag.querySelector('h3').textContent = "We already have your details!"
   
           spinBtn(registerForm, 'none', false)
-          window.location.href = "#Socials"
+          navigate("#Socials")
         }
       }
       else{
@@ -315,7 +315,7 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
     }
     else if (status === 200 || status === 201 || status === 202){
       if (r_path !== null) {
-        window.location.href = r_path
+        navigate(r_path)
       }
     }
     else{
@@ -324,7 +324,7 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
           serverTag.querySelector('a').innerHTML = ''
           serverTag.querySelector('h3').textContent = items.detail
           spinBtn(registerForm, 'none', false)
-          window.location.href = "#Socials" 
+          navigate("#Socials")
       }
         
     }
@@ -381,10 +381,6 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
       fetch(api, reqOptions)
       .then(res => {
           status=res.status; 
-          if (status === 401) { // Login required
-            loginRequired(status)
-          }
-
           return res.json()
       })
       .then(
@@ -465,14 +461,6 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
       else{
           return "production"
       }
-  }
-  
-  export const loginRequired = (status) =>{
-    // console.log(status)
-      if(status === 401 || status === null) { // Login Required
-          console.log(window.location.href )
-          window.location.href = `/login/?next=${window.location.pathname+window.location.search}`
-        }
   }
   
   export const spinBtn = (form, display, status) =>{
