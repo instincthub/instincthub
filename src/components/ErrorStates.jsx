@@ -1,16 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import SVGs from "../assets/svg/SVGs";
-import Navbar from "./Nav4Landing";
 
 const ErrorState = (props) => {
   return (
     <Container>
-      <Navbar />
       <div className="status">
         <img src={props.img} alt="" />
-        <h3>{props.title}</h3>
+        <h3 >{props.title}</h3>
         <p>{props.text}</p>
 
         <Link to="/">Back to homepage</Link>

@@ -15,6 +15,7 @@ import { PageLoading } from "./PageLoading";
 // import gfm from 'remark-gfm';
 import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 import { Helmet } from "react-helmet";
+import Error404 from "../Status/Error404";
 
 const BlogDetailRequest = () => {
   useState(window.localStorage.setItem("renderCount", 1)); // track initial render
@@ -121,13 +122,9 @@ const BlogDetailRequest = () => {
         <RecommendedBlog data={data.recommended_posts} />
       </section>
     );
-  } else {
-    return (
-      <>
-        <PageLoading labels="Blog" />
-      </>
-    );
-  }
+  } 
+  else if(data && data.detail === 'Not found.') return<Error404/>
+  else return <PageLoading labels="Blog" />
 };
 
 export default BlogDetailRequest;
