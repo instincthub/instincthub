@@ -10,7 +10,7 @@ const LandingPage = () => {
     <div>
       <Helmet>
         <title>instinctHub - Learning Made Easy</title>
-        <meta name="description" content="Welcome to our online learning platform! Here, you'll find a wealth of knowledge and resources at your fingertips. Whether you're a student, professional, or lifelong learner, we've got something for you. Our platform is designed to be interactive, engaging and easy-to-use. With a variety of courses, videos, assessments, and interactive activities, you'll be able to learn at your own pace and on your own schedule. We are committed to providing you with the best educational experience, and our team of experienced educators is always available to support you. Join us today and start expanding your horizons!" />
+        <meta name="description" content="Welcome to our learning platform! Here, you'll find a wealth of knowledge and resources at your fingertips. Whether you're a student, professional, or lifelong learner, we've got something for you. Our platform is designed to be interactive, engaging and easy-to-use. With a variety of courses, videos, assessments, and interactive activities, you'll be able to learn at your own pace and on your own schedule. We are committed to providing you with the best educational experience, and our team of experienced educators is always available to support you. Join us today and start expanding your horizons!" />
       </Helmet>
       <Navbar />
       <Grid />
