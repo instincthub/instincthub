@@ -43,6 +43,9 @@ const EachBlog = (props) => {
                   <div className="comments_dels">
                     <h2>{event.commentCount} </h2>
                     <div className="img_cod">
+                      <Link to={'/blog/'+event.slug} target="blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M5 21q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h14q.825 0 1.413.587Q21 4.175 21 5v14q0 .825-.587 1.413Q19.825 21 19 21Zm0-2h14V7H5v12Zm7-2q-2.05 0-3.662-1.113Q6.725 14.775 6 13q.725-1.775 2.338-2.887Q9.95 9 12 9t3.663 1.113Q17.275 11.225 18 13q-.725 1.775-2.337 2.887Q14.05 17 12 17Zm0-1.5q1.4 0 2.55-.663 1.15-.662 1.8-1.837-.65-1.175-1.8-1.838Q13.4 10.5 12 10.5t-2.55.662Q8.3 11.825 7.65 13q.65 1.175 1.8 1.837 1.15.663 2.55.663Zm0-2.5Zm0 1.5q.625 0 1.062-.438.438-.437.438-1.062t-.438-1.062Q12.625 11.5 12 11.5t-1.062.438Q10.5 12.375 10.5 13t.438 1.062q.437.438 1.062.438Z"/></svg>
+                      </Link>
                       <svg width="25" height="24" viewBox="0 0 25 24"  xmlns="http://www.w3.org/2000/svg">
                         <path d="M19.1406 9.5H15.1406V3.5H9.14062V9.5H5.14062L12.1406 16.5L19.1406 9.5ZM11.1406 11.5V5.5H13.1406V11.5H14.3106L12.1406 13.67L9.97062 11.5H11.1406ZM5.14062 18.5H19.1406V20.5H5.14062V18.5Z" fill="#2C333A"/>
                       </svg>
@@ -131,7 +134,7 @@ let EachAdminBlog = styled.div`
   .img_cod {
     display: flex;
     justify-content: space-between;
-    width: 35%;
+    width: 60%;
     img {
       width: 30px;
       height: 30px;

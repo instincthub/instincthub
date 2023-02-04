@@ -284,52 +284,6 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
       
   }
   
-  
-  export const handleError = (status, items, registerForm, r_path, navigate) =>{
-    const serverTag = document.querySelector('.server_err')
-  
-    if (status === 400){
-      if (items.user){
-        if (items.user[0] === "This field must be unique.") {
-          serverTag.style.display="block";
-          serverTag.style.backgroundColor = "var(--DarkCyan)"
-  
-          if (document.location.pathname === '/register/details' || document.location.pathname === '/register/details/') {
-            serverTag.querySelector('a button span').innerHTML = 'Take Assessment'
-            serverTag.querySelector('a').href = '/quiz/'
-          }
-          serverTag.querySelector('h3').textContent = "We already have your details!"
-  
-          spinBtn(registerForm, 'none', false)
-          navigate("#Socials")
-        }
-      }
-      else{
-        spinBtn(registerForm, 'none', false) // spin button: parameter >> form, display and status
-        Object.entries(items).forEach((item, index)=> {
-          const [key, value] = item;
-          printInputError(key, value, index)
-        });
-        document.querySelector('.server_err').style.display="none";
-      }
-    }
-    else if (status === 200 || status === 201 || status === 202){
-      if (r_path !== null) {
-        navigate(r_path)
-      }
-    }
-    else{
-      if(status === 401){
-          serverTag.style.display="block";
-          serverTag.querySelector('a').innerHTML = ''
-          serverTag.querySelector('h3').textContent = items.detail
-          spinBtn(registerForm, 'none', false)
-          navigate("#Socials")
-      }
-        
-    }
-  }
-  
   // Prefill user input 
   export const prefillInput = (items) =>{
     Object.entries(items).forEach((item, index)=> {
