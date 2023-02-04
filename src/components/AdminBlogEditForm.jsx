@@ -71,7 +71,7 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/he
 
       if (props.data.id && props.edit) {
         return (
-            <HandlingOverlay onClick={()=>props.setEdit(false)}>
+            <HandlingOverlay>
                 <div
                     onClick={(e) => {
                     e.stopPropagation();

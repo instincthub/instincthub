@@ -47,7 +47,7 @@ const BlogCreate = (props) => {
 
   if (!props.openModal) return null;
   return (
-    <HandlingOverlay onClick={()=>props.setOpenModal(false)}>
+    <HandlingOverlay>
       <ModalContainer onClick={(e) =>e.stopPropagation()}>
         <Main>
           <form onSubmit={handleFormSubmit}>
