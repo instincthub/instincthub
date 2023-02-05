@@ -10,8 +10,6 @@ const StatusMessage = ({setStatus, status, message}) => {
   const msg = status === 200 || status === 201 ? "Awesome! The update was made." : "Ooops..., It something went wrong. Try again";
   const icons = status === 200 || status === 201 ? IMGs.valid : IMGs.error;
 
-  console.log('mesg', msg);
-
   const closeMessage = () =>{
     setStatus()
   }
