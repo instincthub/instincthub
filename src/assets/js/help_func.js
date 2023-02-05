@@ -345,13 +345,9 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
                       status: status
                   })
               }else if (func === true){// if function component
-                  if (status === 400) {
-                    if(setStatus) setError(result);
-                    setStatus('error') // Display message banner. 
-                  }
-                  else if(status === 201 || status === 200 || status === 404){
-                    session(result);
-                  }
+                if(setError) setError(result);
+                if(setStatus) setStatus(status) // Display message banner. 
+                session(result);
               }
               
               if (process.env.NODE_ENV === "development") {

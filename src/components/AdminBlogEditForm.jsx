@@ -23,14 +23,14 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/he
         // if (update && props.data.author_list)  setShowMessage(true)
         // else setShowMessage(false)
         // Remove overlay if success and display error message if error
-        if (props.events && props.messageType === 'success') {
+        if (props.events && props.messageType === 201) {
           props.setEdit(false)
         }
-        else if(props.error && props.messageType === 'error'){
-          printInputError(props.error)
-        }
+        // else{
+        //   printInputError(props.error)
+        // }
 
-    },[props])
+    },[props.messageType])
 
 
     const handleFormSubmit = (e) => {
@@ -43,7 +43,6 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/he
         // Remove thumbnail from field if empty
         var formdata = new FormData(e.target);
         if (!formdata.get('thumbnail').size) formdata.delete('thumbnail')
-        console.log(formdata.get('author'));
 
         let requestOptions  = reqOptions('PUT', formdata, true);
 

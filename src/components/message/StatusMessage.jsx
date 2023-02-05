@@ -2,18 +2,25 @@ import { React, useState} from "react";
 import styled from "styled-components";
 import IMGs from "../../assets/images/Images";
 
-const StatusMessage = (props) => {
-  const msg = props.messageType === 'success' ? "Awesome! The update was made." : "Ooops..., It something went wrong. Try again";
+/*
+  Calling Component
+  <StatusMessage setStatus={setStatus} status={status} message={message}/>
+*/
+const StatusMessage = ({setStatus, status, message}) => {
+  const msg = status === 200 || status === 201 ? "Awesome! The update was made." : "Ooops..., It something went wrong. Try again";
+  const icons = status === 200 || status === 201 ? IMGs.valid : IMGs.error;
+
+  console.log('mesg', msg);
 
   const closeMessage = () =>{
-    props.setMessageType('')
+    setStatus()
   }
 
-  if (props.messageType === 'success' || props.messageType === 'error') {
+  if (status === 200 || status === 201) {
 
     // Auto close message after 10 seconds
     setTimeout(() => {
-      props.setMessageType('');
+      setStatus('');
     }, 10000);
 
     return (
@@ -28,8 +35,8 @@ const StatusMessage = (props) => {
           >
             {/* You can set error button by adding IMG.error for error icon */}
             <div className="valid_btn">
-              <img src={props.messageType === 'success' ? IMGs.valid : IMGs.error} alt="Status Icon" className="valid" />
-              <span>{props.message ? props.message : msg}</span>
+              <img src={icons} alt="Status Icon" className="valid" />
+              <span>{message ? message : msg}</span>
             </div>
             <img
               className="close-btn"

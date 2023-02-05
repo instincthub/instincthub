@@ -63,8 +63,8 @@ function AdminBlogList() {
     <>
       <Header />
       <StatusMessage 
-          setMessageType={setMessageType}
-          messageType={messageType}
+          setStatus={setMessageType}
+          status={messageType}
       />
 
       <section className="container" ref={violationRef}>

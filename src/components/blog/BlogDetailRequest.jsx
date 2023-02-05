@@ -62,8 +62,8 @@ const BlogDetailRequest = () => {
           <meta property="og:image" content={ data.thumbnail } />
         </Helmet>
         <StatusMessage
-          setMessageType={setMessageType}
-          messageType={messageType}
+          setStatus={setMessageType}
+          status={messageType}
         />
         <BreadCrumb prevlink="/blog" previous="Blog" current={data.title} />
         <div className="container blog_details">

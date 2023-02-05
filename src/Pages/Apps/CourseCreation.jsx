@@ -40,8 +40,8 @@ const Enterprises = () => {
     <>
       <Header />
       <StatusMessage
-        setMessageType={setMessageType}
-        messageType={messageType}
+        setStatus={setMessageType}
+        status={messageType}
       />
       <Banner
         specify="kidscc"

@@ -73,8 +73,8 @@ const Newsletter = (props) => {
   return (
     <>
       <StatusMessage
-        setMessageType={setMessageType}
-        messageType={messageType}
+        setStatus={setMessageType}
+        status={messageType}
       />
       <NewsletterSection className="container" id="newsLetter">
         <section className="newsletter_s">

@@ -24,8 +24,8 @@ const Contact = () => {
       </Helmet>
       <Header />
       <StatusMessage 
-          setMessageType={setMessageType}
-          messageType={messageType}
+          setStatus={setMessageType}
+          status={messageType}
       />
       <C_Banner />
       <ContactForm 
