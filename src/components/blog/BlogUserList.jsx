@@ -13,11 +13,11 @@ import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
 const BlogUserList = () => {
   const violationRef = useRef(null);
   const [data, setData] = useState();
-  const [componentErr, setComponentErr] = useState(false);
   const [searchValues, setSearchValues] = useState(false);
   const [tabsValues, setTabsValues] = useState(false);
   const [searchParams] = useSearchParams();
   searchParams.get("cat");
+
   useState(()=>{
     let requestOptions  = reqOptions('get', null)
     fetchAPI(setData, HOST_URL()+"/api/v1/posts/", requestOptions, true)
@@ -30,6 +30,7 @@ const BlogUserList = () => {
   useEffect(() => {
     
   }, [data]);
+  console.log(data);
 
   return (
     <div ref={violationRef}>
@@ -55,7 +56,7 @@ const BlogUserList = () => {
           
           }
         </div>
-        <ErrorBoundry setComponentErr={setComponentErr}>
+        <ErrorBoundry>
         {data && data.results ? 
           <Pagination
             data={data}
@@ -66,6 +67,7 @@ const BlogUserList = () => {
             tabsValues={tabsValues}
             searchValues={searchValues}
             urlPath="/api/v1/posts/"
+            tokens={false}
           />
           :''}
         </ErrorBoundry>

@@ -17,7 +17,7 @@ function Pagination(props) {
   const [offsetTo, setOffsetTo] = useState(5);
   const [rangeLimit] = useState(5);
 
-  const requestOptions = reqOptions("get", null, true);
+  const requestOptions = reqOptions("get", null, props.tokens ? props.tokens : false);
   const nextOffset = new URLSearchParams(props.data.next).get("offset");
   const previousOffset = new URLSearchParams(props.data.previous).get("offset");
   let offset_params = Number(searchParams.get("offset")) / props.limit;

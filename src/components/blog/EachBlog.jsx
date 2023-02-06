@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const EachBlog = (props) => {
   const [objects, setObjects] = useState([])
-
   /*
     Objects trows error when you loop with map or forEach.
     Solution: convert to array.
