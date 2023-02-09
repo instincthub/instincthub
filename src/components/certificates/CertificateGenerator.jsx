@@ -6,6 +6,7 @@ import Images from '../../assets/images/Images';
 import { Link } from 'react-router-dom';
 import ShareCertificate from './ShareCertificate';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import DateInWord from '../forms/DateInWord';
 
 // import Share
 
@@ -114,9 +115,9 @@ const CertificateGenerator = () => {
             <div className='bold_line'>
               <section>
                 <div className='cert_header'>
-                  <p>{certificateData.id}</p>
+                  <p>Issued: <DateInWord date={certificateData.date}/></p>
                   
-                  <p>{certificateData.date}</p>
+                  <p>Certificate: {certificateData.id}</p>
                 </div>
 
                 <main>
@@ -163,6 +164,14 @@ const CertificateGenerator = () => {
             
             <ShareCertificate certificateUrl={certificateData.thumbnail}/>
           </div>
+
+          {/* User Meta */}
+          {/* <div className='company_meta'>
+            <div className="company_logo">
+              <img src={(certificateData.user)&&certificateData.user.thumbnail}  />
+            </div>
+            <Link to={"/org/"+certificateData.org_username}><h2 className='company_title'>{certificateData.org_title}</h2></Link>
+          </div> */}
         </div>
       </ReactCertFooter>
    </div>
