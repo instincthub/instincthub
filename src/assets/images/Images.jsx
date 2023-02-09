@@ -1,5 +1,6 @@
 const Images = {
   logo: require("../images/instincthub.png"),
+  sterling: require("../svg/sterling.svg"),
   avatar: require("../images/avatar.png"),
   pencil: require("../images/pencil.png"),
   valid: require("../images/Valid.png"),
@@ -45,5 +46,19 @@ const Images = {
   Ownership: require("../images/Ownership.png"),
   chevronDown: require("../images/svgs/chevron_down.svg"),
   arrowRight: require("../images/svgs/arrow_right.svg"),
+  divider: require("../svg/divider.svg"),
+  techBadge: require("../images/tech-badge.png"),
+  certSignature: require("../images/signature.jpg"),
+  certThumbnail: require("../images/certificate_thumbnail.jpg"),
+  thumbnail: require("../images/thumbnail.png"),
+  link: require("../svg/link.svg"),
+  badge: require("../svg/badge.svg"),
+  jpeg: require("../svg/file-image-regular.svg"),
+  pdf: require("../svg/file-pdf-regular.svg"),
+  twitter: require("../svg/twitter.svg"),
+  linkedin: require("../svg/linkedin.svg"),
+  email: require("../svg/envelope-regular.svg"),
+  whatsapp: require("../svg/whatsapp.svg"),
+  facebook: require("../svg/facebook.svg"),
 };
 export default Images;
