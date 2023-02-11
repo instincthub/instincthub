@@ -329,49 +329,72 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
     return request
   }
   
-  export const fetchAPI = (session, api, reqOptions, func=false, setStatus=false, setError=false) =>{
-  
-      let status = null
-      fetch(api, reqOptions)
-      .then(res => {
-          status=res.status; 
-          return res.json()
+  export const fetchAPI = (
+    session,
+    api,
+    reqOptions,
+    func = false,
+    setStatus = false,
+    setError = false
+  ) => {
+    let status = null;
+    fetch(api, reqOptions)
+      .then((res) => {
+        status = res.status;
+        return res.json();
       })
       .then(
-          (result) => {
-              if (func === false) { // if class component
-                  session.setState({
-                      data: result,
-                      status: status
-                  })
-              }else if (func === true){// if function component
-                if(setError) setError(result);
-                if(setStatus) setStatus(status) // Display message banner. 
-                session(result);
+        (result) => {
+          if (func === false) {
+            // if class component
+            session.setState({
+              data: result,
+              status: status,
+            });
+          } else if (func === true) {
+            // if function component
+            if (status === 400) {
+              if (setError) setError(result);
+            } else if (status === 201 || status === 200) {
+              session(result);
+              if ( setError) setError();// Display message banner.
+            } else if (status === 404) {
+                setStatus(status);
               }
-              
-              if (process.env.NODE_ENV === "development") {
-                console.log(result)
-                console.log(status)
-              }
-              
-              return result
-          },
-          (error) => {
-              if (func === false) {
-                  session.setState({
-                      error: error
-                  })
-              }
-              else{
-                //   session(error)
-                  
-              }
-              console.log(error.message)
-              return error.message
           }
-      )
-  }
+  
+          if (setStatus) setStatus(status)
+  
+          if (process.env.NODE_ENV === "development") {
+            console.log(reqOptions);
+            console.log(result);
+            console.log(status);
+          }
+  
+          return result;
+        },
+        (error) => {
+          if (func === false) {
+            session.setState({
+              error: error,
+            });
+          } else {
+            //   session(error)
+          }
+          if (process.env.NODE_ENV === "development") {
+            console.log(reqOptions);
+            console.log(reqOptions);
+            console.log(error.message);
+          }
+          // Sentry.withScope(function (scope) {
+          //   scope.setLevel("warning");
+          //   // The exception has the event level set by the scope (info).
+          //   Sentry.captureException(error);
+          // });
+          return error.message;
+        }
+      );
+  };
   
   export const fetchLeadAPI = (setData, url, body=null, method='GET')=> {
     var myHeaders = new Headers();

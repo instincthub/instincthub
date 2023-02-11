@@ -106,6 +106,7 @@ function AdminBlogList() {
               tabsValues={tabsValues}
               searchValues={searchValues}
               urlPath="/api/v1/posts/admin/"
+              tokens={true}
           />
         }
       </section>
