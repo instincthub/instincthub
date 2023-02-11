@@ -44,7 +44,7 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/he
         var formdata = new FormData(e.target);
         if (!formdata.get('thumbnail').size) formdata.delete('thumbnail')
 
-        let requestOptions  = reqOptions('PUT', formdata, true);
+        let requestOptions  = reqOptions('PUT', formdata);
 
         fetchAPI(props.set_data, `${HOST_URL()}/api/v1/posts/post/${props.data.slug}/`, requestOptions, true, props.setMessageType,  props.setError)
       };
