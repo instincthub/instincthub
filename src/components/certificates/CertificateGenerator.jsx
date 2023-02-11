@@ -3,10 +3,11 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import styled from 'styled-components';
 import Images from '../../assets/images/Images';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ShareCertificate from './ShareCertificate';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import DateInWord from '../forms/DateInWord';
+import { reqOptions, fetchAPI, HOST_URL, SK_KEY, SK_VALUE } from "../../assets/js/help_func";
 
 // import Share
 
@@ -15,7 +16,8 @@ const CertificateGenerator = () => {
     badge: Images.techBadge,
     signature: Images.certSignature
   });
-  const certSignature = useState(Images.certSignature.default);
+  const [data, setData] = useState(false);
+  let { user, id } = useParams();
   // const certSignature = useState(cert_signature);
   const [certificateData, setCertificateData] = useState({
     recipient: 'Noah Olatoye',
@@ -30,18 +32,25 @@ const CertificateGenerator = () => {
     org_logo: Images.thumbnail,
     org_username: "instinctHub",
   });
-  console.log(certMeta);
-  useEffect(()=>{
-    
 
-  },[certMeta])
+  useEffect(()=>{
+    if(!data){
+      let requestOptions = reqOptions("GET", null);
+      fetchAPI(setData, HOST_URL() + `/api/v1/certificates/${user}/${id}/`, requestOptions, true);
+    }
+   
+    if (document.querySelector('#certificate') && data && !data.results.thumbnail) {
+      downloadJPEG('send')
+    }
+  },[data])
 
   const handleChange = (event) => {
     setCertificateData({
-      ...certificateData,
+      ...data.results,
       [event.target.name]: event.target.value
     });
   };
+  
 
   const downloadPDF = () => {
     const input = document.getElementById('certificate');
@@ -51,131 +60,144 @@ const CertificateGenerator = () => {
         const imgData = canvas.toDataURL('image/jpeg', 1.0);
         const pdf = new jsPDF("landscape");
         pdf.addImage(imgData, 'JPEG', 5, -3, 0, 220);
-        pdf.save(`${certificateData.recipient}_certificate.pdf`);
+        pdf.save(`${data.results.recipient}_certificate.pdf`);
       });
       input.classList.remove('scaled');
   };
 
-  const downloadJPEG = () => {
+  const downloadJPEG = (action) => {
     const input = document.getElementById('certificate');
     input.classList.add('scaled');
 
     html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL('image/jpeg', 1.0);
+      const imgData = canvas.toDataURL('image/jpeg', 4);
 
-      // document.body.appendChild(convertBase64ToImageObject(imgData))
+      if(action === 'send'){ 
+        // Save thumbnail in server for the purpose of social sharing
+        convertBase64ToImageObject(imgData)
+      }
+      else{
+        const link = document.createElement('a');
+        link.download = `${data.results.recipient}_certificate.jpeg`;
+        link.href = imgData;
+        console.log(link.href);
+        link.click();
+      }
 
-      const link = document.createElement('a');
-      link.download = `${certificateData.recipient}_certificate.jpeg`;
-      link.href = imgData;
-      console.log(link.href);
-      link.click();
+      
     });
 
     input.classList.remove('scaled');
   };
 
   function convertBase64ToImageObject(base64Image) {
-    const binaryData = atob(base64Image.split(',')[1]);
-    const binaryDataArray = new Uint8Array(binaryData.length);
-    for (let i = 0; i < binaryData.length; i++) {
-      binaryDataArray[i] = binaryData.charCodeAt(i);
+    // Send base64Image to the server to save certificate thumbnail 
+    // in server for the purpose of social sharing
+
+    let context ={
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        thumbnail: base64Image
+      })
     }
-    const blob = new Blob([binaryDataArray], { type: 'image/jpeg' });
-    const image = new Image();
-    image.src = URL.createObjectURL(blob);
-    return image;
+    context['headers'][SK_KEY] = SK_VALUE
+    fetchAPI(setData, HOST_URL() + `/api/v1/certificates/${user}/${id}/`, context, true);
   }
 
-  return (
-    <div>
-      <ReactCertificate id='wrapCertificate' className='container'>
-        {/* <form>
-          <input
-            type="text"
-            name="recipient"
-            placeholder="Recipient Name"
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="title"
-            placeholder="Course Name"
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="date"
-            placeholder="Date"
-            onChange={handleChange}
-          />
-        </form> */}
-        <div id="certificate">
-          <div className='container'>
-            <div className='bold_line'>
-              <section>
-                <div className='cert_header'>
-                  <p>Issued: <DateInWord date={certificateData.date}/></p>
-                  
-                  <p>Certificate: {certificateData.id}</p>
-                </div>
-
-                <main>
-                  <img src={certMeta[0].badge} className="badge" />
-                  <p className='cert_rider1'>This is to certify that {certificateData.recipient} successfully achieved a Techsavvy in</p>
-                  <h2 className='course_title'>{certificateData.title}</h2>
-                  <p className='cert_rider2'>This certifies proeficiency in the fundamental of <ReactMarkdown>{certificateData.subject}</ReactMarkdown></p>
-                </main>
-
-                <div className='cert_bottom'>
-                  <img src={Images.logo} className="logo1"/>
-                  {certificateData.partner && <img src={certificateData.partner} className="logo2"/>}
-                  <div className='cert_signature'>
-                    <img src={certMeta[0].signature} className="signature"/>
-                    <p className='title_signature'>CEO of instinctHub</p>
+  if(data && data.results){
+    return (
+      <div>
+        <ReactCertificate id='wrapCertificate' className='container'>
+          {/* <form>
+            <input
+              type="text"
+              name="recipient"
+              placeholder="Recipient Name"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="title"
+              placeholder="Course Name"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="date"
+              placeholder="Date"
+              onChange={handleChange}
+            />
+          </form> */}
+          <div id="certificate">
+            <div className='container'>
+              <div className='bold_line'>
+                <section>
+                  <div className='cert_header'>
+                    <p>Issued: <DateInWord date={data.results.date}/></p>
+                    
+                    <p>Certificate: {data.results.id}</p>
                   </div>
-                </div>
-              </section>
 
+                  <main>
+                    <img src={certMeta[0].badge} className="badge" />
+                    <p className='cert_rider1'>This is to certify that {data.results.recipient} successfully achieved a Techsavvy in</p>
+                    <h2 className='course_title'>{data.results.title}</h2>
+                    <p className='cert_rider2'>This certifies proeficiency in the fundamental of <ReactMarkdown>{data.results.subject}</ReactMarkdown></p>
+                  </main>
+
+                  <div className='cert_bottom'>
+                    <img src={Images.logo} className="logo1"/>
+                    {data.results.partner && <img src={data.results.partner} className="logo2"/>}
+                    <div className='cert_signature'>
+                      <img src={certMeta[0].signature} className="signature"/>
+                      <p className='title_signature'>CEO of instinctHub</p>
+                    </div>
+                  </div>
+                </section>
+
+                
+              </div>
+            </div>
+          </div>
+        </ReactCertificate>
+        <ReactCertFooter className='cert_footer'>
+          <div className='container'>
+            <div className='company_meta'>
+              <div className="company_logo">
+                {data.results.org_logo ? <img src={data.results.org_logo} /> : <span className='no_logo'>{data.results.org_full_name.substring(0, 2)}</span>}
+              </div>
+              <Link to={"/org/"+data.results.org_username}><h2 className='company_title'>{data.results.org_full_name}</h2></Link>
+            </div>
+            <div className='download_meta'>
+              <h2>{data.results.title}</h2>
+              <p>{data.results.description}</p>
+            </div>
+
+            {/* User Meta */}
+            <div className='company_meta recipient'>
+              <div className="company_logo">
+                {data.results.recipient_thumbnail ? <img src={data.results.recipient_thumbnail} /> : <span className='no_logo'>{data.results.recipient.substring(0, 2)}</span>}
+              </div>
+              <a href={"https://skills.instincthub.com/"+data.results.recipient_username}><h2 className='company_title'>{data.results.recipient}</h2></a>
+            </div>
+
+            <div className='downloads'>
+              <div className='download_icons'>
+                <p>Download: </p> 
+                <img onClick={downloadJPEG} src={Images.jpeg.default} />
+                <img onClick={downloadPDF} src={Images.pdf.default} />
+              </div>
               
+              <ShareCertificate certificateUrl={data.results.thumbnail}/>
             </div>
           </div>
-        </div>
-      </ReactCertificate>
-      <ReactCertFooter className='cert_footer'>
-        <div className='container'>
-          <div className='company_meta'>
-            <div className="company_logo">
-              <img src={certificateData.org_logo}  />
-            </div>
-            <Link to={"/org/"+certificateData.org_username}><h2 className='company_title'>{certificateData.org_title}</h2></Link>
-          </div>
-          <div className='download_meta'>
-            <h2>{certificateData.title}</h2>
-            <p>{certificateData.overview}</p>
-          </div>
-
-          <div className='downloads'>
-            <div className='download_icons'>
-              <p>Download: </p> 
-              <img onClick={downloadJPEG} src={Images.jpeg.default} />
-              <img onClick={downloadPDF} src={Images.pdf.default} />
-            </div>
-            
-            <ShareCertificate certificateUrl={certificateData.thumbnail}/>
-          </div>
-
-          {/* User Meta */}
-          {/* <div className='company_meta'>
-            <div className="company_logo">
-              <img src={(certificateData.user)&&certificateData.user.thumbnail}  />
-            </div>
-            <Link to={"/org/"+certificateData.org_username}><h2 className='company_title'>{certificateData.org_title}</h2></Link>
-          </div> */}
-        </div>
-      </ReactCertFooter>
-   </div>
-  );
+        </ReactCertFooter>
+    </div>
+    );
+  }
 };
 
 export default CertificateGenerator;
@@ -222,7 +244,9 @@ const ReactCertificate = styled.div`
   
 
   #certificate{
-    background: repeating-linear-gradient( 45deg, #f4f4f4, #f4f4f4 10px, #fff 10px, #fff 20px );
+    /* background: repeating-linear-gradient( 45deg, #f4f4f4, #f4f4f4 10px, var(--white) 10px, var(--white) 20px ); */
+    background: var(--white);
+    background: #f4f5fa;
     background-size: 10px 10px;
     overflow: hidden;
     width: 100%;
@@ -241,7 +265,7 @@ const ReactCertificate = styled.div`
       margin: auto;
       display: flex;
       align-items: center;
-      background: #ffffff90;
+      background: var(--white)fff90;
       div.bold_line{
         display: flex;
         align-items: center;
@@ -253,9 +277,10 @@ const ReactCertificate = styled.div`
           45deg,
           #f4f4f4,
           #f4f4f4 10px,
-          #fff 10px,
-          #fff 20px
+          var(--white) 10px,
+          var(--white) 20px
         );
+        background: #fff;
         section{
           margin: auto;
           /* padding: 10px; */
@@ -439,6 +464,11 @@ const ReactCertFooter = styled.div`
   padding-top: 50px;
   padding-bottom: 50px;
   margin-bottom: 0px;
+  margin-top: 15px;
+
+  .container{
+    margin-bottom: 0px;
+  }
 
   .company_meta{
     max-height: 100px;
@@ -453,10 +483,11 @@ const ReactCertFooter = styled.div`
       border-radius: 100px;
       margin-right: 10px;
       position: relative;
+      display: flex;
       img{
         border-radius: 100px;
       }
-      &::after{
+      &.active::after{
         content: '';
         background: url(${Images.badge.default});
         width: 20px;
@@ -467,6 +498,17 @@ const ReactCertFooter = styled.div`
         position: absolute;
         right: -5px;
         top: -5px;
+      }
+      .no_logo{
+        display: inline-block;
+        text-align: center;
+        margin: auto;
+        font-weight: 700;
+        background: var(--Gunmetal);
+        color: var(--white);
+        width: 30px;
+        height: 28px;
+        border-radius: 100px;
       }
     }
     h2{
@@ -491,14 +533,23 @@ const ReactCertFooter = styled.div`
   }
   .download_meta{
     margin-top: 30px;
+    max-width: 800px;
     h2{
       font-size: 1.3em;
       margin-bottom: 0px;
       line-height: 100%;
     }
   }
-  .downloads{
+  .recipient{
     margin-top: 30px;
+    h2{
+      color: var(--Gunmetal);
+      &::after{
+        filter: brightness(10%);
+      }
+    }
+  }
+  .downloads{
     .download_icons{
       display: flex;
       align-items: center;
@@ -515,7 +566,7 @@ const ReactCertFooter = styled.div`
 
           &:hover{
               border-radius: 5px;
-              background: #fff;
+              background: var(--white);
               filter: brightness(150%);
           }
       }

@@ -54,7 +54,7 @@ function App() {
         {/* <Route path="/products/payment/failed" element={<Error />} /> */}
 
         {/* Certificate */}
-        <Route path="certificates/:user/:course" element={<Certificates />} />
+        <Route path="certificates/:user/:id" element={<Certificates />} />
 
         {/* Errors */}
         <Route path="*" element={<Error404 />} />
