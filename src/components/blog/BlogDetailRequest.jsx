@@ -96,13 +96,13 @@ const BlogDetailRequest = () => {
                 : ""}
             </div>
             <h1>{data.title}</h1>
-            <main>
+            <ReactMain>
               {data.content.includes("<p>") ? (
                 <Markup markup={data.content} />
               ) : (
                 <ReactMarkdown>{data.content}</ReactMarkdown>
               )}
-            </main>
+            </ReactMain>
           </div>
 
           {/* Next and Previous */}
@@ -128,3 +128,16 @@ const BlogDetailRequest = () => {
 };
 
 export default BlogDetailRequest;
+
+const ReactMain = styled.main`
+  a{
+    font-weight: 600;
+    color: var(--ViridianGreen);
+    transition: .2s ease-in;
+    &:hover{
+      color: var(--DarkCyan);
+      text-transform: underline;
+      text-decoration: underline;
+    }
+  }
+`;

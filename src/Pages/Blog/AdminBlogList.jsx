@@ -57,7 +57,7 @@ function AdminBlogList() {
       events.results.unshift(created)
       setCreated([])
     }
-  },[created.slug])
+  },[created.slug, messageType])
 
   return (
     <>

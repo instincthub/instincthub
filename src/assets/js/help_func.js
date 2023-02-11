@@ -358,8 +358,8 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
               if(setStatus) setStatus(status); // Display message banner.
             } else if (status === 201 || status === 200) {
               session(result);
-              if (setStatus && setError) setError([]);
-              if (setStatus) setStatus("success"); // Display message banner.
+              if (setStatus && setError) setError(false);
+              if (setStatus) setStatus(status) // Display message banner.
             }
           }
   
