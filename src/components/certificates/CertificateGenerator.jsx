@@ -7,36 +7,24 @@ import { Link, useParams } from 'react-router-dom';
 import ShareCertificate from './ShareCertificate';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import DateInWord from '../forms/DateInWord';
-import { reqOptions, fetchAPI, HOST_URL, SK_KEY, SK_VALUE } from "../../assets/js/help_func";
+import { reqOptions, fetchAPI, HOST_URL, SK_KEY, SK_VALUE, PageHeroBanner } from "../../assets/js/help_func";
+import { Helmet } from 'react-helmet';
+import Error404 from '../Status/Error404';
+import { PageLoading } from '../blog/PageLoading';
 
 // import Share
 
 const CertificateGenerator = () => {
-  const certMeta = useState({
-    badge: Images.techBadge,
-    signature: Images.certSignature
-  });
   const [data, setData] = useState(false);
+  const [status, setStatus] = useState(false);
+  const [error, setError] = useState(false);
   let { user, id } = useParams();
-  // const certSignature = useState(cert_signature);
-  const [certificateData, setCertificateData] = useState({
-    recipient: 'Noah Olatoye',
-    title: 'Introduction to Figma',
-    overview: 'The Front End Web Development Techdegree provides a comprehensive education in the basics of Front End Web Development, including HTML, CSS, and Javascript.',
-    subject: '**HTML**, **CSS** and **Javascript**.',
-    date: '2022-12-10',
-    id: '2022-12-10',
-    thumbnail: 'https://instincthub.com/static/media/instincthub.87d965bf287cdcdc5874.png',
-    partner: Images.sterling.default,
-    org_title: "instinctHub",
-    org_logo: Images.thumbnail,
-    org_username: "instinctHub",
-  });
+  // data.results.thumbnail
 
   useEffect(()=>{
     if(!data){
       let requestOptions = reqOptions("GET", null);
-      fetchAPI(setData, HOST_URL() + `/api/v1/certificates/${user}/${id}/`, requestOptions, true);
+      fetchAPI(setData, HOST_URL() + `/api/v1/certificates/${user}/${id}/`, requestOptions, true, setStatus, setError);
     }
    
     if (document.querySelector('#certificate') && data && !data.results.thumbnail) {
@@ -44,13 +32,12 @@ const CertificateGenerator = () => {
     }
   },[data])
 
-  const handleChange = (event) => {
-    setCertificateData({
-      ...data.results,
-      [event.target.name]: event.target.value
-    });
-  };
-  
+  // const handleChange = (event) => {
+  //   setCertificateData({
+  //     ...data.results,
+  //     [event.target.name]: event.target.value
+  //   });
+  // };
 
   const downloadPDF = () => {
     const input = document.getElementById('certificate');
@@ -110,6 +97,14 @@ const CertificateGenerator = () => {
   if(data && data.results){
     return (
       <div>
+        <Helmet>
+          <title>Certificate of Completion by instinctHub</title>
+          <meta name="description" content="" />
+          <meta name="description" content={data.overview} />
+          <meta property="og:title" content={ data.title } />
+          <meta property="og:url" content={ window.location.href } />
+          <meta property="og:image" content={ data.thumbnail } />
+        </Helmet>
         <ReactCertificate id='wrapCertificate' className='container'>
           {/* <form>
             <input
@@ -142,7 +137,7 @@ const CertificateGenerator = () => {
                   </div>
 
                   <main>
-                    <img src={certMeta[0].badge} className="badge" />
+                    <img src={Images.techBadge} className="badge" />
                     <p className='cert_rider1'>This is to certify that {data.results.recipient} successfully achieved a Techsavvy in</p>
                     <h2 className='course_title'>{data.results.title}</h2>
                     <p className='cert_rider2'>This certifies proeficiency in the fundamental of <ReactMarkdown>{data.results.subject}</ReactMarkdown></p>
@@ -152,7 +147,7 @@ const CertificateGenerator = () => {
                     <img src={Images.logo} className="logo1"/>
                     {data.results.partner && <img src={data.results.partner} className="logo2"/>}
                     <div className='cert_signature'>
-                      <img src={certMeta[0].signature} className="signature"/>
+                      <img src={Images.certSignature} className="signature"/>
                       <p className='title_signature'>CEO of instinctHub</p>
                     </div>
                   </div>
@@ -191,12 +186,18 @@ const CertificateGenerator = () => {
                 <img onClick={downloadPDF} src={Images.pdf.default} />
               </div>
               
-              <ShareCertificate certificateUrl={data.results.thumbnail}/>
+              <ShareCertificate certificateUrl={window.location.href}/>
             </div>
           </div>
         </ReactCertFooter>
     </div>
     );
+  }
+  else if(error && error.detail === 'Certificate not found'){
+    return <Error404/>
+  }
+  else{
+    return <PageLoading labels="Certificate"/>
   }
 };
 
@@ -421,7 +422,7 @@ const ReactCertificate = styled.div`
         width: 60% !important;
         margin: 37px auto 62px auto !important;
         .badge{
-          width: 80px !important;
+          width: 85px !important;
           height: 80px !important;
         }
         h2.course_title{

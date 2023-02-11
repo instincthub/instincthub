@@ -353,17 +353,15 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
             });
           } else if (func === true) {
             // if function component
-            if (status === 400) {
+            if (status === 400 || status === 500 || status === 404) {
               if (setError) setError(result);
+              if(setStatus) setStatus(status); // Display message banner.
             } else if (status === 201 || status === 200) {
               session(result);
-              if ( setError) setError();// Display message banner.
-            } else if (status === 404) {
-                setStatus(status);
-              }
+              if (setStatus && setError) setError([]);
+              if (setStatus) setStatus("success"); // Display message banner.
+            }
           }
-  
-          if (setStatus) setStatus(status)
   
           if (process.env.NODE_ENV === "development") {
             console.log(reqOptions);
@@ -376,10 +374,10 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
         (error) => {
           if (func === false) {
             session.setState({
-              error: error,
+              error: error.message,
             });
           } else {
-            //   session(error)
+              setError(error.message)
           }
           if (process.env.NODE_ENV === "development") {
             console.log(reqOptions);
