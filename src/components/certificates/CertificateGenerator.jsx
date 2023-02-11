@@ -100,10 +100,10 @@ const CertificateGenerator = () => {
         <Helmet>
           <title>Certificate of Completion by instinctHub</title>
           <meta name="description" content="" />
-          <meta name="description" content={data.overview} />
-          <meta property="og:title" content={ data.title } />
+          <meta name="description" content={data.results.description} />
+          <meta property="og:title" content={ data.results.title } />
           <meta property="og:url" content={ window.location.href } />
-          <meta property="og:image" content={ data.thumbnail } />
+          <meta property="og:image" content={ data.results.thumbnail } />
         </Helmet>
         <ReactCertificate id='wrapCertificate' className='container'>
           {/* <form>
