@@ -363,7 +363,7 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
             }
           }
   
-          if (process.env.NODE_ENV === "production") {
+          if (process.env.NODE_ENV === "development") {
             console.log(reqOptions);
             console.log(result);
             console.log(status);
@@ -379,7 +379,7 @@ export const SK_VALUE = process.env.REACT_APP_SK_VALUE
           } else {
               setError(error.message)
           }
-          if (process.env.NODE_ENV === "production") {
+          if (process.env.NODE_ENV === "development") {
             console.log(reqOptions);
             console.log(reqOptions);
             console.log(error.message);
