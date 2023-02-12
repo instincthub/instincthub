@@ -6,7 +6,7 @@ import FilterArray from "./forms/FilterArray";
 import SubmitBtn from "./forms/SubmitBtn";
 import TextField from "./forms/TextField";
 import TextArea from "./forms/TextArea";
-import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/help_func";
+import { reqOptions, fetchAPI, HOST_URL, printInputError, getCookie } from "../assets/js/help_func";
 
 
   const AdminBlogEditForm = (props) => {
@@ -44,9 +44,9 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError } from "../assets/js/he
         var formdata = new FormData(e.target);
         if (!formdata.get('thumbnail').size) formdata.delete('thumbnail')
 
-        let requestOptions  = reqOptions('PUT', formdata);
+        let requestOptions  = reqOptions('PUT', formdata, true);
 
-        fetchAPI(props.set_data, `${HOST_URL()}/api/v1/posts/post/${props.data.slug}/`, requestOptions, true, props.setMessageType,  props.setError)
+        fetchAPI(props.set_data, `${HOST_URL()}/api/v1/posts/post/${props.data.slug}/?token=${getCookie('access')}`, requestOptions, true, props.setMessageType,  props.setError)
       };
 
       // Disable spinning button after getting status from fetch
