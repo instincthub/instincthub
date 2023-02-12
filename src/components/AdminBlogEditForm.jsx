@@ -23,7 +23,7 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError, getCookie } from "../a
         // if (update && props.data.author_list)  setShowMessage(true)
         // else setShowMessage(false)
         // Remove overlay if success and display error message if error
-        if (props.messageType === 201) {
+        if (props.messageType === 200) {
           props.setEdit(false)
         }
         // else{
@@ -44,9 +44,9 @@ import { reqOptions, fetchAPI, HOST_URL, printInputError, getCookie } from "../a
         var formdata = new FormData(e.target);
         if (!formdata.get('thumbnail').size) formdata.delete('thumbnail')
 
-        let requestOptions  = reqOptions('PUT', formdata);
+        let requestOptions  = reqOptions('PUT', formdata, true);
 
-        fetchAPI(props.set_data, `${HOST_URL()}/api/v1/posts/post/${props.data.slug}/?token=${getCookie('access')}&u_id=${getCookie('u_id')}`, requestOptions, true, props.setMessageType,  props.setError)
+        fetchAPI(props.set_data, `${HOST_URL()}/api/v1/posts/update/${props.data.slug}/`, requestOptions, true, props.setMessageType,  props.setError)
       };
 
       // Disable spinning button after getting status from fetch
