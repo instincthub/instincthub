@@ -131,7 +131,7 @@ const CertificateGenerator = () => {
               <div className='bold_line'>
                 <section>
                   <div className='cert_header'>
-                    <p>Issued: <DateInWord date={data.results.date}/></p>
+                    <p>Issued: <DateInWord date={data.results.issued}/></p>
                     
                     <p>Certificate: {data.results.id}</p>
                   </div>
