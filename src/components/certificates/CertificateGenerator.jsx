@@ -140,7 +140,7 @@ const CertificateGenerator = () => {
                     <img src={Images.techBadge} className="badge" />
                     <p className='cert_rider1'>This is to certify that {data.results.recipient} successfully achieved a Techsavvy in</p>
                     <h2 className='course_title'>{data.results.title}</h2>
-                    <p className='cert_rider2'>This certifies proeficiency in the fundamental of <ReactMarkdown>{data.results.subject}</ReactMarkdown></p>
+                    <p className='cert_rider2'>This certifies proficiency in the fundamental of <ReactMarkdown>{data.results.subject}</ReactMarkdown></p>
                   </main>
 
                   <div className='cert_bottom'>
