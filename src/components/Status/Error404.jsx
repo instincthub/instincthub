@@ -1,16 +1,19 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import SVGs from "../../assets/svg/SVGs";
 import ErrorState from "../ErrorStates";
+import { SeoHeader } from "../navbar/SeoHeader";
 
 const Error404 = () => {
   return (
     <>
-      <Helmet>
-          <title>Not Found</title>
-          <meta name="description" content="The requested resource was not found on this server."  />
-          <meta property="og:title" content="Not Found" />
-        </Helmet>
+    <SeoHeader
+        title="Not Found"
+        description="The requested resource was not found on this server."
+        type="webapp"
+        name="InstinctHub"
+        thumbnail=''
+        url={window.location.href}
+      />
    
     <ErrorState
       img={SVGs.NotFound}

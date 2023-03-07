@@ -8,9 +8,9 @@ import ShareCertificate from './ShareCertificate';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import DateInWord from '../forms/DateInWord';
 import { reqOptions, fetchAPI, HOST_URL, SK_KEY, SK_VALUE, PageHeroBanner } from "../../assets/js/help_func";
-import { Helmet } from 'react-helmet';
 import Error404 from '../Status/Error404';
 import { PageLoading } from '../blog/PageLoading';
+import { SeoHeader } from '../navbar/SeoHeader';
 
 // import Share
 
@@ -97,14 +97,14 @@ const CertificateGenerator = () => {
   if(data && data.results){
     return (
       <div>
-        <Helmet>
-          <title>Certificate of Completion by instinctHub</title>
-          <meta name="description" content="" />
-          <meta name="description" content={data.results.description} />
-          <meta property="og:title" content={ data.results.title } />
-          <meta property="og:url" content={ window.location.href } />
-          <meta property="og:image" content={ data.results.thumbnail } />
-        </Helmet>
+      <SeoHeader
+        title={data.results.org_full_name + " Certificate of Completion by instinctHub"}
+        description={data.results.description}
+        type="webapp"
+        name={ data.results.title } 
+        thumbnail={ data.results.thumbnail }
+        url={window.location.href}
+      />
         <ReactCertificate id='wrapCertificate' className='container'>
           {/* <form>
             <input

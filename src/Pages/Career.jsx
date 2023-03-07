@@ -9,17 +9,21 @@ import CareerBenefit from "../components/CareerBenefit";
 import CareerGrowth from "../components/CareerGrowth";
 import CareerBanner from "../components/CareerBanner";
 import ScrollToTop from "../components/ScrollToTop";
-import { Helmet } from "react-helmet";
+import { SeoHeader } from "../components/navbar/SeoHeader";
 
 const About = () => {
   ScrollToTop()
 
   return (
     <section>
-      <Helmet>
-        <title>Career at instinctHub</title>
-        <meta name="description" content="Unlock the full potential of your career with our massive and growing business opportunity. Our organization is committed to providing you with the resources and support you need to succeed. " />
-      </Helmet>
+      <SeoHeader
+        title="Career at instinctHub"
+        description="Unlock the full potential of your career with our massive and growing business opportunity. Our organization is committed to providing you with the resources and support you need to succeed."
+        type="webapp"
+        name="InstinctHub"
+        thumbnail=''
+        url={window.location.href}
+      />
       <Header />
       <CareerBanner />
       <CareerGrowth />

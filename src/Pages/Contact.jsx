@@ -7,7 +7,7 @@ import Newsletter from "../components/Newsletter";
 import StatusMessage from "../components/message/StatusMessage";
 import ScrollToTop from "../components/ScrollToTop";
 import TopModal from "../components/message/StatusMessage";
-import { Helmet } from "react-helmet";
+import { SeoHeader } from "../components/navbar/SeoHeader";
 
 const Contact = () => {
   ScrollToTop();
@@ -18,10 +18,14 @@ const Contact = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact instinctHub</title>
-        <meta name="description" content="Connect with us and take the first step towards achieving your goals." />
-      </Helmet>
+    <SeoHeader
+        title="Contact instinctHub"
+        description="Connect with us and take the first step towards achieving your goals."
+        type="webapp"
+        name="InstinctHub"
+        thumbnail=''
+        url={window.location.href}
+      />
       <Header />
       <StatusMessage 
           setStatus={setMessageType}

@@ -14,13 +14,13 @@ import StatusMessage from "../message/StatusMessage";
 import { PageLoading } from "./PageLoading";
 // import gfm from 'remark-gfm';
 import { reqOptions, fetchAPI, HOST_URL } from "../../assets/js/help_func";
-import { Helmet } from "react-helmet";
 import Error404 from "../Status/Error404";
+import { SeoHeader } from "../navbar/SeoHeader";
 
 const BlogDetailRequest = () => {
   useState(window.localStorage.setItem("renderCount", 1)); // track initial render
   const violationRef = useRef(null);
-  const [data, setData] = useState();
+  const [data, setData] = useState(0);
   const [newComments, setNewComments] = useState([]);
   const [messageType, setMessageType] = useState([]);
   const [error, setError] = useState([]);
@@ -28,7 +28,7 @@ const BlogDetailRequest = () => {
   const [timestamp, setTimestamp] = useState("");
   let { slug } = useParams();
 
-  useState(() => {
+  if(data === 0){
     let requestOptions = reqOptions("GET", null);
     fetchAPI(
       setData,
@@ -36,7 +36,7 @@ const BlogDetailRequest = () => {
       requestOptions,
       true
     );
-  });
+  };
 
   const goToViolation = (id) => {
     violationRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -54,13 +54,14 @@ const BlogDetailRequest = () => {
   if (data && data.title) {
     return (
       <section>
-        <Helmet>
-          <title>{data.title}</title>
-          <meta name="description" content={data.overview} />
-          <meta property="og:title" content={ data.title } />
-          <meta property="og:url" content={ window.location.href } />
-          <meta property="og:image" content={ data.thumbnail } />
-        </Helmet>
+      <SeoHeader
+        title={data.title}
+        description={data.overview}
+        type="webapp"
+        name={(data.author) && `${data.author.user.first_name} ${data.author.user.last_name}`}
+        thumbnail={data.thumbnail}
+        url={window.location.href}
+      />
         <StatusMessage
           setStatus={setMessageType}
           status={messageType}
