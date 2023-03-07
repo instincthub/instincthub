@@ -3,16 +3,20 @@ import Footer from "../components/Footer";
 import PolicyDetails from "../components/PolicyDetails";
 import Header from "../components/navbar/Header";
 import ScrollToTop from "../components/ScrollToTop";
-import { Helmet } from "react-helmet";
+import { SeoHeader } from "../components/navbar/SeoHeader";
 
 const About = () => {
   ScrollToTop()
   return (
     <section>
-      <Helmet>
-        <title>instinctHub Policies</title>
-        <meta name="description" content="At instinctHub, we believe in fostering a positive and inclusive community for all users." />
-      </Helmet>
+      <SeoHeader
+          title="instinctHub Policies"
+          description="At instinctHub, we believe in fostering a positive and inclusive community for all users."
+          type="webapp"
+          name="InstinctHub"
+          thumbnail=''
+          url={window.location.href}
+        />
       <Header />
       <PolicyDetails />
       <Footer />
