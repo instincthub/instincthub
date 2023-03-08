@@ -24,39 +24,42 @@ const Latest = () => {
     // eslint-disable-next-line
   }, [data.categories])
 
-  if (data.title) {
-    return (
-      <section className="container" id="latestBlog">
-        <div className="mt-10 mini_heading txt-align">
-          <p className="cap_lock-txt">Our Blog</p>
-          <h2>Insight and advice from our experienced team.</h2>
-        </div>
+  if (!data.title) {
+    return(<div>Loading...</div>)
+  }
 
-        <div className="main_latest">
-          <img src={data.thumbnail} alt={data.title} />
+  
+  return (
+    <section className="container" id="latestBlog">
+      <div className="mt-10 mini_heading txt-align">
+        <p className="cap_lock-txt">Our Blog</p>
+        <h2>Insight and advice from our experienced team.</h2>
+      </div>
 
-          <div className="blog_title">
-            <div className="b_label">
-            {categories.map((option)=>{
-              return <button key={option.id} className="outlined-btn on_education categories">{option.title}</button>
-            })}
+      <div className="main_latest">
+        <img src={data.thumbnail} alt={data.title} />
+
+        <div className="blog_title">
+          <div className="b_label">
+          {categories.map((option)=>{
+            return <button key={option.id} className="outlined-btn on_education categories">{option.title}</button>
+          })}
+          </div>
+          <Link to={"/blog/"+data.slug}><h2>{data.title}</h2></Link>
+          <p>{ data.overview }</p>
+          <div className="avatar_time">
+            <div className="avatar_before">
+              {/* <img src={Images.img3} alt="" /> */}
+              <img src={data.author.profile_picture} alt="" />
+              <h3>{data.author.title}</h3>
             </div>
-            <Link to={"/blog/"+data.slug}><h2>{data.title}</h2></Link>
-            <p>{ data.overview }</p>
-            <div className="avatar_time">
-              <div className="avatar_before">
-                {/* <img src={Images.img3} alt="" /> */}
-                <img src={data.author.profile_picture} alt="" />
-                <h3>{data.author.title}</h3>
-              </div>
 
-              <h5 className="time_before">{timestamp}</h5>
-            </div>
+            <h5 className="time_before">{timestamp}</h5>
           </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
 };
 
 export default Latest;

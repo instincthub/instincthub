@@ -30,7 +30,6 @@ const BlogUserList = () => {
   useEffect(() => {
     
   }, [data]);
-  console.log(data);
 
   return (
     <div ref={violationRef}>
